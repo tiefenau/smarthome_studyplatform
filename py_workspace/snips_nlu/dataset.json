@@ -1,0 +1,5681 @@
+{
+  "language": "en",
+  "intents": {
+    "displayFloorPlan": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Show me the floor plan of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "bridge"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Kennedy Bridge"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the blueprint of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "COMPOUND"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Fraunhofer FKIE"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the draft for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "bunker"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Hill 60 Bunker"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the layout of the "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "city"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Wachtberg"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me rough draft of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "dam"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Aabach"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the skeleton of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "FARM"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Gut Schiff"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the sketch  of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "Garage"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "KBM Motorfahrzeuge"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display floor plan for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "Nuclear Facility"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Unterweser Nuclear Power Plant"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display blueprint for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "MedicalSupportFacility"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "MS1 Bonn"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display draft for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "Field Hospital"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "208 Field Hospital"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the layout of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "RegionalRoad"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "L83"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display rough draft for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "AntiPersonnelMinefield"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "APMF 134"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the skeleton of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "Washing Facility"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "WF 432"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the sketch of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "townhall"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Rathhaus Wachtberg"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Bring up the floor plan for "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "SHIPYARD"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "Cologne shipyard"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Fetch me the blueprint of "
+            },
+            {
+              "slot_name": "facility",
+              "entity": "facility",
+              "text": "Rail facility repair"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "facilityName",
+              "entity": "facilityName",
+              "text": "RFR 123"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "populateHeatmap": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Get me the heatmap of "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "AssumedNeutral"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Fraunhofer FKIE"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Get me the heatmap of "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Faker"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Electronic Ranging Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Fraunhofer FKIE"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Get me the hotspots of "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Suspect"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Fraunhofer FKIE"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the heatmap for all "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Friend"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Command Support Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the heatmap for "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "AssumedHostile"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Supply Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the heatmap for all "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "AssumedInvolved"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Recovery Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Cologne"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the hotspots of "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Joker"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Surveillance Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the hotspots for "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Neutral"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Tactical Exploitation Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the heatmap for "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Friend"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Armour Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Cologne"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Show me the hotspots of "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Pending"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Diving Engineer Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Bonn"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Display the hotspots for "
+            },
+            {
+              "slot_name": "hostility",
+              "entity": "hostility",
+              "text": "Unknown"
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "C2 Aviation Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Cologne"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Give me heatmap for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "C2 Aviation Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Give me heatmap for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "C2 Aviation Unit"
+            },
+            {
+              "text": " at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "Cologne"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I need heatmap for all "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "C2 Aviation Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "locateEntity": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Where are "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Command Support Unit"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I can't find "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Combat Unit"
+            },
+            {
+              "text": "? Can you help me?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I am searching for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Supply Unit"
+            },
+            {
+              "text": "? Can you suggest?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I am looking for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Recovery Unit"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where can I find "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Engineer Unit"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Are there any "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Military Police Unit"
+            },
+            {
+              "text": " closer to the "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "bridge"
+            },
+            {
+              "text": " being attacked?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me all the "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Artillery Unit"
+            },
+            {
+              "text": " placed at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "corridor"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Locate "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Armour Recovery Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Thunderbird"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Locate "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Infantry Unit"
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "3rd Infantry Division"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where is unit "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Gunslingers"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where is "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Battle Axe"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where is "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Command Support Unit"
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Battle Axe"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I can't find "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Combat Unit"
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Black Panther"
+            },
+            {
+              "text": "? Can you help me?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I am searching for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Supply Unit"
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Diamondbacks"
+            },
+            {
+              "text": "? Can you suggest?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I am looking for "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Recovery Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Viking"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where can I find "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Engineer Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "The Professionals"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Is there any "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Military Police Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Gunslingers"
+            },
+            {
+              "text": " closer to the "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "bridge"
+            },
+            {
+              "text": " being attacked?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me is there any "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Artillery Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Yellow Jackets"
+            },
+            {
+              "text": " placed at "
+            },
+            {
+              "slot_name": "location",
+              "entity": "location",
+              "text": "corridor"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Find me "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Refuel Aviation Unit"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Find me "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "7th Infantry Division"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Find me "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Topographical Survey Unit"
+            },
+            {
+              "text": " named "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Avengers"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where was "
+            },
+            {
+              "slot_name": "unitName",
+              "entity": "unitName",
+              "text": "Gunslingers"
+            },
+            {
+              "slot_name": "reportedDate",
+              "entity": "snips/datetime",
+              "text": "yesterday at 10am"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Where were "
+            },
+            {
+              "slot_name": "unit",
+              "entity": "unit",
+              "text": "Command Support Unit"
+            },
+            {
+              "slot_name": "reportedDate",
+              "entity": "snips/datetime",
+              "text": "day before yesterday"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "entities": {
+    "facility": {
+      "automatically_extensible": false,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "NETWORK",
+          "synonyms": [
+            "Network",
+            "network"
+          ]
+        },
+        {
+          "value": "Airfield",
+          "synonyms": [
+            "airfield",
+            "AIRFIELD"
+          ]
+        },
+        {
+          "value": "ANCHORAGE",
+          "synonyms": [
+            "Anchorage",
+            "anchorage"
+          ]
+        },
+        {
+          "value": "MilitaryObstacle",
+          "synonyms": [
+            "militaryobstacle",
+            "MILITARYOBSTACLE",
+            "Military Obstacle"
+          ]
+        },
+        {
+          "value": "apron",
+          "synonyms": [
+            "Apron",
+            "APRON"
+          ]
+        },
+        {
+          "value": "Basin",
+          "synonyms": [
+            "BASIN",
+            "basin"
+          ]
+        },
+        {
+          "value": "BERTH",
+          "synonyms": [
+            "Berth",
+            "berth"
+          ]
+        },
+        {
+          "value": "bridge",
+          "synonyms": [
+            "BRIDGE",
+            "Bridge"
+          ]
+        },
+        {
+          "value": "supportarea",
+          "synonyms": [
+            "Support Area",
+            "SupportArea",
+            "SUPPORTAREA"
+          ]
+        },
+        {
+          "value": "depot",
+          "synonyms": [
+            "Depot",
+            "DEPOT"
+          ]
+        },
+        {
+          "value": "drydock",
+          "synonyms": [
+            "DRYDOCK",
+            "DryDock",
+            "Dry Dock"
+          ]
+        },
+        {
+          "value": "harbour",
+          "synonyms": [
+            "Harbour",
+            "HARBOUR"
+          ]
+        },
+        {
+          "value": "jetty",
+          "synonyms": [
+            "Jetty",
+            "JETTY"
+          ]
+        },
+        {
+          "value": "MedicalFacility",
+          "synonyms": [
+            "MEDICALFACILITY",
+            "Medical Facility",
+            "medicalfacility"
+          ]
+        },
+        {
+          "value": "quay",
+          "synonyms": [
+            "Quay",
+            "QUAY"
+          ]
+        },
+        {
+          "value": "Railway",
+          "synonyms": [
+            "railway",
+            "RAILWAY"
+          ]
+        },
+        {
+          "value": "road",
+          "synonyms": [
+            "Road",
+            "ROAD"
+          ]
+        },
+        {
+          "value": "Runway",
+          "synonyms": [
+            "runway",
+            "RUNWAY"
+          ]
+        },
+        {
+          "value": "SLIPWAY",
+          "synonyms": [
+            "Slipway",
+            "slipway"
+          ]
+        },
+        {
+          "value": "airdefenceradarsite",
+          "synonyms": [
+            "Air Defence Radar Site",
+            "Site air-defence radar",
+            "AirDefenceRadarSite",
+            "AIRDEFENCERADARSITE"
+          ]
+        },
+        {
+          "value": "AirborneEarlyWarningGroundFacility",
+          "synonyms": [
+            "airborneearlywarninggroundfacility",
+            "Airborne Early Warning Ground Facility",
+            "AIRBORNEEARLYWARNINGGROUNDFACILITY"
+          ]
+        },
+        {
+          "value": "Aircraft Maintenance Facility",
+          "synonyms": [
+            "AircraftMaintenanceFacility",
+            "Maintenance facility aircraft",
+            "AIRCRAFTMAINTENANCEFACILITY",
+            "aircraftmaintenancefacility"
+          ]
+        },
+        {
+          "value": "AircraftProductionAndAssemblyMilitaryMaterielFacility",
+          "synonyms": [
+            "AIRCRAFTPRODUCTIONANDASSEMBLYMILITARYMATERIELFACILITY",
+            "Military materiel facility aircraft production and assembly",
+            "Aircraft Production And Assembly Military Materiel Facility",
+            "aircraftproductionandassemblymilitarymaterielfacility"
+          ]
+        },
+        {
+          "value": "Production complex aircraft",
+          "synonyms": [
+            "aircraftproductioncomplex",
+            "AircraftProductionComplex",
+            "Aircraft Production Complex",
+            "AIRCRAFTPRODUCTIONCOMPLEX"
+          ]
+        },
+        {
+          "value": "AlternateDecontaminationFacility",
+          "synonyms": [
+            "alternatedecontaminationfacility",
+            "Alternate Decontamination Facility",
+            "ALTERNATEDECONTAMINATIONFACILITY"
+          ]
+        },
+        {
+          "value": "AMMUNITIONANDEXPLOSIVESPRODUCTIONMILITARYMATERIELFACILITY",
+          "synonyms": [
+            "Military materiel facility ammunition and explosives production",
+            "AmmunitionAndExplosivesProductionMilitaryMaterielFacility",
+            "Ammunition And Explosives Production Military Materiel Facility",
+            "ammunitionandexplosivesproductionmilitarymaterielfacility"
+          ]
+        },
+        {
+          "value": "AMMUNITIONCACHE",
+          "synonyms": [
+            "AmmunitionCache",
+            "ammunitioncache",
+            "Ammunition Cache"
+          ]
+        },
+        {
+          "value": "ammunitionsupplydump",
+          "synonyms": [
+            "AMMUNITIONSUPPLYDUMP",
+            "Supply dump ammunition",
+            "AmmunitionSupplyDump",
+            "Ammunition Supply Dump"
+          ]
+        },
+        {
+          "value": "ammunitionsupplypoint",
+          "synonyms": [
+            "AMMUNITIONSUPPLYPOINT",
+            "AmmunitionSupplyPoint",
+            "Ammunition Supply Point"
+          ]
+        },
+        {
+          "value": "Ammunition Transfer Point",
+          "synonyms": [
+            "AMMUNITIONTRANSFERPOINT",
+            "AmmunitionTransferPoint",
+            "ammunitiontransferpoint"
+          ]
+        },
+        {
+          "value": "Apartment Building",
+          "synonyms": [
+            "apartmentbuilding",
+            "APARTMENTBUILDING",
+            "ApartmentBuilding"
+          ]
+        },
+        {
+          "value": "armamentproductionmilitarymaterielfacility",
+          "synonyms": [
+            "ArmamentProductionMilitaryMaterielFacility",
+            "Military materiel facility armament production",
+            "Armament Production Military Materiel Facility",
+            "ARMAMENTPRODUCTIONMILITARYMATERIELFACILITY"
+          ]
+        },
+        {
+          "value": "Armour Or Artillery Maintenance Facility",
+          "synonyms": [
+            "ARMOURORARTILLERYMAINTENANCEFACILITY",
+            "armourorartillerymaintenancefacility",
+            "ArmourOrArtilleryMaintenanceFacility",
+            "Maintenance facility armour/artillery"
+          ]
+        },
+        {
+          "value": "armymilitarybaseorfacility",
+          "synonyms": [
+            "ArmyMilitaryBaseOrFacility",
+            "Military base/facility army",
+            "Army Military Base Or Facility",
+            "ARMYMILITARYBASEORFACILITY"
+          ]
+        },
+        {
+          "value": "ArtilleryLocatingSite",
+          "synonyms": [
+            "Artillery Locating Site",
+            "Site artillery locating",
+            "ARTILLERYLOCATINGSITE",
+            "artillerylocatingsite"
+          ]
+        },
+        {
+          "value": "atomicenergyreactormilitarymaterielfacility",
+          "synonyms": [
+            "ATOMICENERGYREACTORMILITARYMATERIELFACILITY",
+            "AtomicEnergyReactorMilitaryMaterielFacility",
+            "Military materiel facility atomic energy reactor",
+            "Atomic Energy Reactor Military Materiel Facility"
+          ]
+        },
+        {
+          "value": "bank",
+          "synonyms": [
+            "BANK",
+            "Bank"
+          ]
+        },
+        {
+          "value": "barracks",
+          "synonyms": [
+            "BARRACKS",
+            "Barracks"
+          ]
+        },
+        {
+          "value": "Bath",
+          "synonyms": [
+            "bath",
+            "BATH"
+          ]
+        },
+        {
+          "value": "berm",
+          "synonyms": [
+            "Berm",
+            "BERM"
+          ]
+        },
+        {
+          "value": "bivouac",
+          "synonyms": [
+            "BIVOUAC",
+            "Bivouac"
+          ]
+        },
+        {
+          "value": "BRIDGEENGINEERINGEQUIPMENTPRODUCTIONMILITARYMATERIELFACILITY",
+          "synonyms": [
+            "Bridge Engineering Equipment Production Military Materiel Facility",
+            "Military materiel facility engineering equipment production bridge",
+            "BridgeEngineeringEquipmentProductionMilitaryMaterielFacility",
+            "bridgeengineeringequipmentproductionmilitarymaterielfacility"
+          ]
+        },
+        {
+          "value": "Building",
+          "synonyms": [
+            "BUILDING",
+            "building"
+          ]
+        },
+        {
+          "value": "BUILTUPAREA",
+          "synonyms": [
+            "BuiltUpArea",
+            "builtuparea",
+            "Built Up Area"
+          ]
+        },
+        {
+          "value": "bunker",
+          "synonyms": [
+            "Bunker",
+            "BUNKER"
+          ]
+        },
+        {
+          "value": "cache",
+          "synonyms": [
+            "CACHE",
+            "Cache"
+          ]
+        },
+        {
+          "value": "Camp",
+          "synonyms": [
+            "CAMP",
+            "camp"
+          ]
+        },
+        {
+          "value": "CANAL",
+          "synonyms": [
+            "Canal",
+            "canal"
+          ]
+        },
+        {
+          "value": "CASUALTYCOLLECTIONPOINT",
+          "synonyms": [
+            "Casualty Collection Point",
+            "CasualtyCollectionPoint",
+            "casualtycollectionpoint"
+          ]
+        },
+        {
+          "value": "CEMETERY",
+          "synonyms": [
+            "Cemetery",
+            "cemetery"
+          ]
+        },
+        {
+          "value": "chemicalandbiologicalwarfareproductionmilitarymaterielfacility",
+          "synonyms": [
+            "CHEMICALANDBIOLOGICALWARFAREPRODUCTIONMILITARYMATERIELFACILITY",
+            "Military materiel facility chemical and biological warfare production",
+            "ChemicalAndBiologicalWarfareProductionMilitaryMaterielFacility",
+            "Chemical And Biological Warfare Production Military Materiel Facility"
+          ]
+        },
+        {
+          "value": "chemicalproductioncomplex",
+          "synonyms": [
+            "ChemicalProductionComplex",
+            "CHEMICALPRODUCTIONCOMPLEX",
+            "Production complex chemical",
+            "Chemical Production Complex"
+          ]
+        },
+        {
+          "value": "CITY",
+          "synonyms": [
+            "city",
+            "City"
+          ]
+        },
+        {
+          "value": "civiliancollectionpoint",
+          "synonyms": [
+            "CivilianCollectionPoint",
+            "Civilian Collection Point",
+            "CIVILIANCOLLECTIONPOINT"
+          ]
+        },
+        {
+          "value": "CivilianMilitaryCoordinationCentre",
+          "synonyms": [
+            "civilianmilitarycoordinationcentre",
+            "Civilian Military Coordination Centre",
+            "CIVILIANMILITARYCOORDINATIONCENTRE"
+          ]
+        },
+        {
+          "value": "CLASSIFICATIONFACILITY",
+          "synonyms": [
+            "Classification Facility",
+            "classificationfacility",
+            "ClassificationFacility"
+          ]
+        },
+        {
+          "value": "ClearedWay",
+          "synonyms": [
+            "Cleared Way",
+            "CLEAREDWAY",
+            "clearedway"
+          ]
+        },
+        {
+          "value": "Combat Outpost",
+          "synonyms": [
+            "CombatOutpost",
+            "COMBATOUTPOST",
+            "combatoutpost"
+          ]
+        },
+        {
+          "value": "CommandPostFacility",
+          "synonyms": [
+            "COMMANDPOSTFACILITY",
+            "Command Post Facility",
+            "commandpostfacility"
+          ]
+        },
+        {
+          "value": "Communication Station",
+          "synonyms": [
+            "communicationstation",
+            "COMMUNICATIONSTATION",
+            "CommunicationStation"
+          ]
+        },
+        {
+          "value": "CommunicationTower",
+          "synonyms": [
+            "communicationtower",
+            "Communication Tower",
+            "COMMUNICATIONTOWER"
+          ]
+        },
+        {
+          "value": "COMPOUND",
+          "synonyms": [
+            "Compound",
+            "compound"
+          ]
+        },
+        {
+          "value": "Concrete Lined Bed Ford",
+          "synonyms": [
+            "ConcreteLinedBedFord",
+            "CONCRETELINEDBEDFORD",
+            "concretelinedbedford",
+            "Ford concrete lined bed"
+          ]
+        },
+        {
+          "value": "CONTROLTOWER",
+          "synonyms": [
+            "controltower",
+            "ControlTower",
+            "Control Tower"
+          ]
+        },
+        {
+          "value": "Cropland",
+          "synonyms": [
+            "cropland",
+            "CROPLAND"
+          ]
+        },
+        {
+          "value": "crossingorlevelcrossing",
+          "synonyms": [
+            "CROSSINGORLEVELCROSSING",
+            "CrossingOrLevelCrossing",
+            "Crossing Or Level Crossing"
+          ]
+        },
+        {
+          "value": "CulturalSite",
+          "synonyms": [
+            "Cultural Site",
+            "CULTURALSITE",
+            "culturalsite"
+          ]
+        },
+        {
+          "value": "culvert",
+          "synonyms": [
+            "Culvert",
+            "CULVERT"
+          ]
+        },
+        {
+          "value": "Cut",
+          "synonyms": [
+            "cut",
+            "CUT"
+          ]
+        },
+        {
+          "value": "Dam",
+          "synonyms": [
+            "dam",
+            "DAM"
+          ]
+        },
+        {
+          "value": "DecontaminationFacility",
+          "synonyms": [
+            "DECONTAMINATIONFACILITY",
+            "decontaminationfacility",
+            "Decontamination Facility"
+          ]
+        },
+        {
+          "value": "DemolitionDebris",
+          "synonyms": [
+            "Demolition Debris",
+            "demolitiondebris",
+            "DEMOLITIONDEBRIS"
+          ]
+        },
+        {
+          "value": "DETAINEECOLLECTIONPOINT",
+          "synonyms": [
+            "Detainee Collection Point",
+            "detaineecollectionpoint",
+            "DetaineeCollectionPoint"
+          ]
+        },
+        {
+          "value": "DetaineeHoldingArea",
+          "synonyms": [
+            "Detainee Holding Area",
+            "detaineeholdingarea",
+            "DETAINEEHOLDINGAREA"
+          ]
+        },
+        {
+          "value": "dismountedcbrnobservationpost",
+          "synonyms": [
+            "DISMOUNTEDCBRNOBSERVATIONPOST",
+            "Dismounted C B R N Observation Post",
+            "DismountedCBRNObservationPost"
+          ]
+        },
+        {
+          "value": "ditchotherfacility",
+          "synonyms": [
+            "DitchOtherFacility",
+            "Ditch Other Facility",
+            "DITCHOTHERFACILITY"
+          ]
+        },
+        {
+          "value": "DrainageOrSewage",
+          "synonyms": [
+            "drainageorsewage",
+            "DRAINAGEORSEWAGE",
+            "Drainage Or Sewage"
+          ]
+        },
+        {
+          "value": "DRESSINGSTATION",
+          "synonyms": [
+            "DressingStation",
+            "Dressing Station",
+            "dressingstation"
+          ]
+        },
+        {
+          "value": "Electric Power Facility Utility Facility Research Service",
+          "synonyms": [
+            "electricpowerfacilityutilityfacilityresearchservice",
+            "ElectricPowerFacilityUtilityFacilityResearchService",
+            "ELECTRICPOWERFACILITYUTILITYFACILITYRESEARCHSERVICE",
+            "Service research utility facility electric power facility"
+          ]
+        },
+        {
+          "value": "Electrical Supply Facility",
+          "synonyms": [
+            "ELECTRICALSUPPLYFACILITY",
+            "ElectricalSupplyFacility",
+            "electricalsupplyfacility"
+          ]
+        },
+        {
+          "value": "ELECTRONICINSTALLATION",
+          "synonyms": [
+            "ElectronicInstallation",
+            "electronicinstallation",
+            "Electronic Installation"
+          ]
+        },
+        {
+          "value": "electronicwarfareinstallation",
+          "synonyms": [
+            "ElectronicWarfareInstallation",
+            "Electronic Warfare Installation",
+            "ELECTRONICWARFAREINSTALLATION"
+          ]
+        },
+        {
+          "value": "Electronic Warfare Site",
+          "synonyms": [
+            "Site electronic warfare",
+            "ElectronicWarfareSite",
+            "ELECTRONICWARFARESITE",
+            "electronicwarfaresite"
+          ]
+        },
+        {
+          "value": "EMBANKMENT",
+          "synonyms": [
+            "Embankment",
+            "embankment"
+          ]
+        },
+        {
+          "value": "emplacement",
+          "synonyms": [
+            "Emplacement",
+            "EMPLACEMENT"
+          ]
+        },
+        {
+          "value": "Military materiel facility engineering equipment production",
+          "synonyms": [
+            "engineeringequipmentproductionmilitarymaterielfacility",
+            "ENGINEERINGEQUIPMENTPRODUCTIONMILITARYMATERIELFACILITY",
+            "Engineering Equipment Production Military Materiel Facility",
+            "EngineeringEquipmentProductionMilitaryMaterielFacility"
+          ]
+        },
+        {
+          "value": "equipmentmanufacture",
+          "synonyms": [
+            "EquipmentManufacture",
+            "Equipment Manufacture",
+            "EQUIPMENTMANUFACTURE"
+          ]
+        },
+        {
+          "value": "FARM",
+          "synonyms": [
+            "Farm",
+            "farm"
+          ]
+        },
+        {
+          "value": "Fence",
+          "synonyms": [
+            "FENCE",
+            "fence"
+          ]
+        },
+        {
+          "value": "ferryorfordaccess",
+          "synonyms": [
+            "FERRYORFORDACCESS",
+            "Ferry Or Ford Access",
+            "FerryOrFordAccess"
+          ]
+        },
+        {
+          "value": "ferrystation",
+          "synonyms": [
+            "FERRYSTATION",
+            "FerryStation",
+            "Ferry Station"
+          ]
+        },
+        {
+          "value": "Bulk fuel installation field",
+          "synonyms": [
+            "FIELDBULKFUELINSTALLATION",
+            "Field Bulk Fuel Installation",
+            "fieldbulkfuelinstallation",
+            "FieldBulkFuelInstallation"
+          ]
+        },
+        {
+          "value": "FieldStorageAreaAmmunition",
+          "synonyms": [
+            "Field Storage Area Ammunition",
+            "fieldstorageareaammunition",
+            "FIELDSTORAGEAREAAMMUNITION"
+          ]
+        },
+        {
+          "value": "FieldStorageModuleAmmunition",
+          "synonyms": [
+            "FIELDSTORAGEMODULEAMMUNITION",
+            "Field Storage Module Ammunition",
+            "fieldstoragemoduleammunition"
+          ]
+        },
+        {
+          "value": "FieldStorageSiteAmmunition",
+          "synonyms": [
+            "fieldstoragesiteammunition",
+            "FIELDSTORAGESITEAMMUNITION",
+            "Field Storage Site Ammunition"
+          ]
+        },
+        {
+          "value": "FieldStorageStackAmmunition",
+          "synonyms": [
+            "FIELDSTORAGESTACKAMMUNITION",
+            "fieldstoragestackammunition",
+            "Field Storage Stack Ammunition"
+          ]
+        },
+        {
+          "value": "firefightersbarracks",
+          "synonyms": [
+            "Fire Fighters Barracks",
+            "FIREFIGHTERSBARRACKS",
+            "FireFightersBarracks"
+          ]
+        },
+        {
+          "value": "flaktower",
+          "synonyms": [
+            "FlakTower",
+            "Flak Tower",
+            "Tower flak",
+            "FLAKTOWER"
+          ]
+        },
+        {
+          "value": "Fort",
+          "synonyms": [
+            "FORT",
+            "fort"
+          ]
+        },
+        {
+          "value": "Fortification",
+          "synonyms": [
+            "fortification",
+            "FORTIFICATION"
+          ]
+        },
+        {
+          "value": "forwardarmingandrefuellingpointfacility",
+          "synonyms": [
+            "Forward Arming And Refuelling Point Facility",
+            "ForwardArmingAndRefuellingPointFacility",
+            "FORWARDARMINGANDREFUELLINGPOINTFACILITY"
+          ]
+        },
+        {
+          "value": "forwardobserverposition",
+          "synonyms": [
+            "Forward Observer Position",
+            "FORWARDOBSERVERPOSITION",
+            "ForwardObserverPosition"
+          ]
+        },
+        {
+          "value": "FORWARDOPERATINGBASE",
+          "synonyms": [
+            "Forward Operating Base",
+            "ForwardOperatingBase",
+            "forwardoperatingbase"
+          ]
+        },
+        {
+          "value": "FossilFuelPowerPlant",
+          "synonyms": [
+            "FOSSILFUELPOWERPLANT",
+            "fossilfuelpowerplant",
+            "Power plant fossil fuel",
+            "Fossil Fuel Power Plant"
+          ]
+        },
+        {
+          "value": "FOXHOLE",
+          "synonyms": [
+            "Foxhole",
+            "foxhole"
+          ]
+        },
+        {
+          "value": "FreightTerminal",
+          "synonyms": [
+            "Freight Terminal",
+            "FREIGHTTERMINAL",
+            "freightterminal"
+          ]
+        },
+        {
+          "value": "FuelHandlingPoint",
+          "synonyms": [
+            "fuelhandlingpoint",
+            "FUELHANDLINGPOINT",
+            "Fuel Handling Point"
+          ]
+        },
+        {
+          "value": "Garage",
+          "synonyms": [
+            "GARAGE",
+            "garage"
+          ]
+        },
+        {
+          "value": "GasProcessingFacility",
+          "synonyms": [
+            "gasprocessingfacility",
+            "GASPROCESSINGFACILITY",
+            "Gas Processing Facility"
+          ]
+        },
+        {
+          "value": "Gate",
+          "synonyms": [
+            "GATE",
+            "gate"
+          ]
+        },
+        {
+          "value": "GeneralMotorVehicleProductionComplex",
+          "synonyms": [
+            "Production complex general motor vehicle",
+            "GENERALMOTORVEHICLEPRODUCTIONCOMPLEX",
+            "generalmotorvehicleproductioncomplex",
+            "General Motor Vehicle Production Complex"
+          ]
+        },
+        {
+          "value": "GOVERNMENTBUILDING",
+          "synonyms": [
+            "Government Building",
+            "governmentbuilding",
+            "GovernmentBuilding"
+          ]
+        },
+        {
+          "value": "GOVERNMENTALLEADERSHIP",
+          "synonyms": [
+            "Governmental Leadership",
+            "GovernmentalLeadership",
+            "governmentalleadership"
+          ]
+        },
+        {
+          "value": "grave",
+          "synonyms": [
+            "Grave",
+            "GRAVE"
+          ]
+        },
+        {
+          "value": "Site ground surveillance radar",
+          "synonyms": [
+            "GROUNDSURVEILLANCERADARSITE",
+            "Ground Surveillance Radar Site",
+            "groundsurveillanceradarsite",
+            "GroundSurveillanceRadarSite"
+          ]
+        },
+        {
+          "value": "Production complex guided missile",
+          "synonyms": [
+            "GUIDEDMISSILEPRODUCTIONCOMPLEX",
+            "guidedmissileproductioncomplex",
+            "GuidedMissileProductionComplex",
+            "Guided Missile Production Complex"
+          ]
+        },
+        {
+          "value": "Hamlet",
+          "synonyms": [
+            "HAMLET",
+            "hamlet"
+          ]
+        },
+        {
+          "value": "hangar",
+          "synonyms": [
+            "Hangar",
+            "HANGAR"
+          ]
+        },
+        {
+          "value": "HeadquartersFacility",
+          "synonyms": [
+            "headquartersfacility",
+            "HEADQUARTERSFACILITY",
+            "Headquarters Facility"
+          ]
+        },
+        {
+          "value": "Helipad",
+          "synonyms": [
+            "HELIPAD",
+            "helipad"
+          ]
+        },
+        {
+          "value": "HELIPORT",
+          "synonyms": [
+            "Heliport",
+            "heliport"
+          ]
+        },
+        {
+          "value": "HighTechnologyComplex",
+          "synonyms": [
+            "HIGHTECHNOLOGYCOMPLEX",
+            "hightechnologycomplex",
+            "High Technology Complex"
+          ]
+        },
+        {
+          "value": "HISTORICSITE",
+          "synonyms": [
+            "historicsite",
+            "HistoricSite",
+            "Historic Site"
+          ]
+        },
+        {
+          "value": "House",
+          "synonyms": [
+            "HOUSE",
+            "house"
+          ]
+        },
+        {
+          "value": "Hut",
+          "synonyms": [
+            "hut",
+            "HUT"
+          ]
+        },
+        {
+          "value": "HydroelectricPowerPlant",
+          "synonyms": [
+            "hydroelectricpowerplant",
+            "HYDROELECTRICPOWERPLANT",
+            "Power plant hydroelectric",
+            "Hydroelectric Power Plant"
+          ]
+        },
+        {
+          "value": "IndustrialWorks",
+          "synonyms": [
+            "industrialworks",
+            "INDUSTRIALWORKS",
+            "Industrial Works"
+          ]
+        },
+        {
+          "value": "Installation",
+          "synonyms": [
+            "INSTALLATION",
+            "installation"
+          ]
+        },
+        {
+          "value": "junctionrailway",
+          "synonyms": [
+            "Railway junction",
+            "Junction Railway",
+            "JUNCTIONRAILWAY",
+            "JunctionRailway"
+          ]
+        },
+        {
+          "value": "LIGHTHOUSE",
+          "synonyms": [
+            "lighthouse",
+            "Lighthouse"
+          ]
+        },
+        {
+          "value": "LOADINGPLATFORM",
+          "synonyms": [
+            "loadingplatform",
+            "LoadingPlatform",
+            "Loading Platform"
+          ]
+        },
+        {
+          "value": "LOCK",
+          "synonyms": [
+            "lock",
+            "Lock"
+          ]
+        },
+        {
+          "value": "LogisticSite",
+          "synonyms": [
+            "Logistic Site",
+            "Site logistic",
+            "logisticsite",
+            "LOGISTICSITE"
+          ]
+        },
+        {
+          "value": "Logistics Release Point",
+          "synonyms": [
+            "LogisticsReleasePoint",
+            "logisticsreleasepoint",
+            "LOGISTICSRELEASEPOINT"
+          ]
+        },
+        {
+          "value": "MaintenanceCollectionPoint",
+          "synonyms": [
+            "Maintenance Collection Point",
+            "maintenancecollectionpoint",
+            "MAINTENANCECOLLECTIONPOINT"
+          ]
+        },
+        {
+          "value": "MAINTENANCEFACILITY",
+          "synonyms": [
+            "Maintenance Facility",
+            "maintenancefacility",
+            "MaintenanceFacility"
+          ]
+        },
+        {
+          "value": "market",
+          "synonyms": [
+            "MARKET",
+            "Market"
+          ]
+        },
+        {
+          "value": "Mass Grave",
+          "synonyms": [
+            "MASSGRAVE",
+            "MassGrave",
+            "massgrave"
+          ]
+        },
+        {
+          "value": "memorialmonument",
+          "synonyms": [
+            "MemorialMonument",
+            "Memorial Monument",
+            "MEMORIALMONUMENT"
+          ]
+        },
+        {
+          "value": "Meteorological Facility",
+          "synonyms": [
+            "meteorologicalfacility",
+            "MeteorologicalFacility",
+            "METEOROLOGICALFACILITY"
+          ]
+        },
+        {
+          "value": "MilitaryAirportOrAirbase",
+          "synonyms": [
+            "Military Airport Or Airbase",
+            "Military base/facility airport/airbase",
+            "MILITARYAIRPORTORAIRBASE",
+            "militaryairportorairbase"
+          ]
+        },
+        {
+          "value": "Military Base Or Facility",
+          "synonyms": [
+            "MilitaryBaseOrFacility",
+            "MILITARYBASEORFACILITY",
+            "militarybaseorfacility"
+          ]
+        },
+        {
+          "value": "Site military bridging",
+          "synonyms": [
+            "Military Bridging Site",
+            "MILITARYBRIDGINGSITE",
+            "MilitaryBridgingSite",
+            "militarybridgingsite"
+          ]
+        },
+        {
+          "value": "MilitaryLoadingPlatform",
+          "synonyms": [
+            "Loading platform military",
+            "Military Loading Platform",
+            "militaryloadingplatform",
+            "MILITARYLOADINGPLATFORM"
+          ]
+        },
+        {
+          "value": "Military Seaport Or Naval Base",
+          "synonyms": [
+            "MILITARYSEAPORTORNAVALBASE",
+            "militaryseaportornavalbase",
+            "MilitarySeaportOrNavalBase",
+            "Military base/facility seaport/naval base"
+          ]
+        },
+        {
+          "value": "mine",
+          "synonyms": [
+            "Mine",
+            "MINE"
+          ]
+        },
+        {
+          "value": "MISSILEANDSPACESYSTEMPRODUCTIONMILITARYMATERIELFACILITY",
+          "synonyms": [
+            "Missile And Space System Production Military Materiel Facility",
+            "MissileAndSpaceSystemProductionMilitaryMaterielFacility",
+            "missileandspacesystemproductionmilitarymaterielfacility",
+            "Military materiel facility missile and space system production"
+          ]
+        },
+        {
+          "value": "MissileSite",
+          "synonyms": [
+            "Missile Site",
+            "MISSILESITE",
+            "missilesite"
+          ]
+        },
+        {
+          "value": "Motor Vehicle Maintenance Facility",
+          "synonyms": [
+            "Maintenance facility motor vehicle",
+            "motorvehiclemaintenancefacility",
+            "MOTORVEHICLEMAINTENANCEFACILITY",
+            "MotorVehicleMaintenanceFacility"
+          ]
+        },
+        {
+          "value": "MunitionsComplex",
+          "synonyms": [
+            "munitionscomplex",
+            "Munitions Complex",
+            "MUNITIONSCOMPLEX"
+          ]
+        },
+        {
+          "value": "navalairstation",
+          "synonyms": [
+            "NAVALAIRSTATION",
+            "NavalAirStation",
+            "Naval Air Station"
+          ]
+        },
+        {
+          "value": "navigationradarsite",
+          "synonyms": [
+            "Site navigation radar",
+            "Navigation Radar Site",
+            "NavigationRadarSite",
+            "NAVIGATIONRADARSITE"
+          ]
+        },
+        {
+          "value": "Nuclear Facility",
+          "synonyms": [
+            "nuclearfacility",
+            "NUCLEARFACILITY",
+            "NuclearFacility"
+          ]
+        },
+        {
+          "value": "nuclearpowerplant",
+          "synonyms": [
+            "Power plant nuclear",
+            "Nuclear Power Plant",
+            "NUCLEARPOWERPLANT",
+            "NuclearPowerPlant"
+          ]
+        },
+        {
+          "value": "observationpost",
+          "synonyms": [
+            "Observation Post",
+            "OBSERVATIONPOST",
+            "ObservationPost"
+          ]
+        },
+        {
+          "value": "ObservationTower",
+          "synonyms": [
+            "observationtower",
+            "OBSERVATIONTOWER",
+            "Observation Tower"
+          ]
+        },
+        {
+          "value": "Office",
+          "synonyms": [
+            "OFFICE",
+            "office"
+          ]
+        },
+        {
+          "value": "Omnirange Station",
+          "synonyms": [
+            "omnirangestation",
+            "OMNIRANGESTATION",
+            "OmnirangeStation"
+          ]
+        },
+        {
+          "value": "openskymininginstallation",
+          "synonyms": [
+            "Open Sky Mining Installation",
+            "Mining installation open sky",
+            "OPENSKYMININGINSTALLATION",
+            "OpenSkyMiningInstallation"
+          ]
+        },
+        {
+          "value": "ORCHARD",
+          "synonyms": [
+            "Orchard",
+            "orchard"
+          ]
+        },
+        {
+          "value": "P O L Point",
+          "synonyms": [
+            "polpoint",
+            "POLPoint",
+            "POLPOINT"
+          ]
+        },
+        {
+          "value": "Passenger Terminal",
+          "synonyms": [
+            "PassengerTerminal",
+            "passengerterminal",
+            "PASSENGERTERMINAL"
+          ]
+        },
+        {
+          "value": "personnelbarrier",
+          "synonyms": [
+            "Personnel Barrier",
+            "PersonnelBarrier",
+            "PERSONNELBARRIER"
+          ]
+        },
+        {
+          "value": "petrochemicalrefinery",
+          "synonyms": [
+            "PETROCHEMICALREFINERY",
+            "Petrochemical Refinery",
+            "PetrochemicalRefinery"
+          ]
+        },
+        {
+          "value": "PETROLEUMPRODUCTIONCOMPLEX",
+          "synonyms": [
+            "Petroleum Production Complex",
+            "PetroleumProductionComplex",
+            "petroleumproductioncomplex",
+            "Production complex petroleum"
+          ]
+        },
+        {
+          "value": "pier",
+          "synonyms": [
+            "Pier",
+            "PIER"
+          ]
+        },
+        {
+          "value": "pipeline",
+          "synonyms": [
+            "PIPELINE",
+            "Pipeline"
+          ]
+        },
+        {
+          "value": "Police Check Point",
+          "synonyms": [
+            "POLICECHECKPOINT",
+            "Check point police",
+            "PoliceCheckPoint",
+            "policecheckpoint"
+          ]
+        },
+        {
+          "value": "PoliceStation",
+          "synonyms": [
+            "POLICESTATION",
+            "policestation",
+            "Police Station"
+          ]
+        },
+        {
+          "value": "PORT",
+          "synonyms": [
+            "port",
+            "Port"
+          ]
+        },
+        {
+          "value": "powerline",
+          "synonyms": [
+            "PowerLine",
+            "POWERLINE",
+            "Power Line"
+          ]
+        },
+        {
+          "value": "PrisonerOfWarCamp",
+          "synonyms": [
+            "Prisoner Of War Camp",
+            "prisonerofwarcamp",
+            "PRISONEROFWARCAMP"
+          ]
+        },
+        {
+          "value": "PrisonerOfWarCollectionPoint",
+          "synonyms": [
+            "PRISONEROFWARCOLLECTIONPOINT",
+            "Prisoner Of War Collection Point",
+            "prisonerofwarcollectionpoint"
+          ]
+        },
+        {
+          "value": "PrisonerOfWarHoldingArea",
+          "synonyms": [
+            "PRISONEROFWARHOLDINGAREA",
+            "prisonerofwarholdingarea",
+            "Prisoner Of War Holding Area"
+          ]
+        },
+        {
+          "value": "PROCESSINGFACILITY",
+          "synonyms": [
+            "Processing Facility",
+            "processingfacility",
+            "ProcessingFacility"
+          ]
+        },
+        {
+          "value": "PublicWaterServiceUtilityFacilityResearchService",
+          "synonyms": [
+            "Service research utility facility public water service",
+            "Public Water Service Utility Facility Research Service",
+            "publicwaterserviceutilityfacilityresearchservice",
+            "PUBLICWATERSERVICEUTILITYFACILITYRESEARCHSERVICE"
+          ]
+        },
+        {
+          "value": "Pumping Station",
+          "synonyms": [
+            "PUMPINGSTATION",
+            "PumpingStation",
+            "pumpingstation"
+          ]
+        },
+        {
+          "value": "Electronic installation radar dome",
+          "synonyms": [
+            "RadarDomeElectronicInstallation",
+            "radardomeelectronicinstallation",
+            "RADARDOMEELECTRONICINSTALLATION",
+            "Radar Dome Electronic Installation"
+          ]
+        },
+        {
+          "value": "radarhead",
+          "synonyms": [
+            "Radar Head",
+            "RADARHEAD",
+            "RadarHead"
+          ]
+        },
+        {
+          "value": "RADARPOST",
+          "synonyms": [
+            "RadarPost",
+            "Radar Post",
+            "radarpost"
+          ]
+        },
+        {
+          "value": "radarsite",
+          "synonyms": [
+            "Site radar",
+            "Radar Site",
+            "RADARSITE",
+            "RadarSite"
+          ]
+        },
+        {
+          "value": "RaftSite",
+          "synonyms": [
+            "Site raft",
+            "RAFTSITE",
+            "raftsite",
+            "Raft Site"
+          ]
+        },
+        {
+          "value": "RAILFACILITIES",
+          "synonyms": [
+            "RailFacilities",
+            "Rail Facilities",
+            "railfacilities"
+          ]
+        },
+        {
+          "value": "railhead",
+          "synonyms": [
+            "Rail Head",
+            "RAILHEAD",
+            "RailHead"
+          ]
+        },
+        {
+          "value": "Railway Crossing",
+          "synonyms": [
+            "railwaycrossing",
+            "RailwayCrossing",
+            "RAILWAYCROSSING"
+          ]
+        },
+        {
+          "value": "Railway Or River Crossing",
+          "synonyms": [
+            "railwayorrivercrossing",
+            "Crossing railway/river",
+            "RAILWAYORRIVERCROSSING",
+            "RailwayOrRiverCrossing"
+          ]
+        },
+        {
+          "value": "RearmRefuelAndResupplyPoint",
+          "synonyms": [
+            "REARMREFUELANDRESUPPLYPOINT",
+            "rearmrefuelandresupplypoint",
+            "Rearm refuel and resupply point",
+            "Rearm Refuel And Resupply Point"
+          ]
+        },
+        {
+          "value": "RefuelOnTheMovePoint",
+          "synonyms": [
+            "refuelonthemovepoint",
+            "REFUELONTHEMOVEPOINT",
+            "Refuel On The Move Point"
+          ]
+        },
+        {
+          "value": "REFUGEEHOLDINGAREA",
+          "synonyms": [
+            "Refugee Holding Area",
+            "refugeeholdingarea",
+            "RefugeeHoldingArea"
+          ]
+        },
+        {
+          "value": "Relay Facility",
+          "synonyms": [
+            "relayfacility",
+            "RELAYFACILITY",
+            "RelayFacility"
+          ]
+        },
+        {
+          "value": "Religious Facility",
+          "synonyms": [
+            "religiousfacility",
+            "RELIGIOUSFACILITY",
+            "ReligiousFacility"
+          ]
+        },
+        {
+          "value": "Rail facility repair",
+          "synonyms": [
+            "repairrailfacility",
+            "REPAIRRAILFACILITY",
+            "Repair Rail Facility",
+            "RepairRailFacility"
+          ]
+        },
+        {
+          "value": "RESERVOIR",
+          "synonyms": [
+            "Reservoir",
+            "reservoir"
+          ]
+        },
+        {
+          "value": "Revetment",
+          "synonyms": [
+            "REVETMENT",
+            "revetment"
+          ]
+        },
+        {
+          "value": "roadinterchange",
+          "synonyms": [
+            "RoadInterchange",
+            "Road Interchange",
+            "ROADINTERCHANGE"
+          ]
+        },
+        {
+          "value": "Row House",
+          "synonyms": [
+            "ROWHOUSE",
+            "RowHouse",
+            "rowhouse"
+          ]
+        },
+        {
+          "value": "RUINS",
+          "synonyms": [
+            "Ruins",
+            "ruins"
+          ]
+        },
+        {
+          "value": "SCHOOL",
+          "synonyms": [
+            "School",
+            "school"
+          ]
+        },
+        {
+          "value": "sensorfusionpost",
+          "synonyms": [
+            "SENSORFUSIONPOST",
+            "Sensor Fusion Post",
+            "SensorFusionPost"
+          ]
+        },
+        {
+          "value": "Sensor Outpost Or Listening Post",
+          "synonyms": [
+            "SensorOutpostOrListeningPost",
+            "SENSOROUTPOSTORLISTENINGPOST",
+            "sensoroutpostorlisteningpost"
+          ]
+        },
+        {
+          "value": "sewagetreatmentplant",
+          "synonyms": [
+            "SEWAGETREATMENTPLANT",
+            "SewageTreatmentPlant",
+            "Sewage Treatment Plant"
+          ]
+        },
+        {
+          "value": "shed",
+          "synonyms": [
+            "SHED",
+            "Shed"
+          ]
+        },
+        {
+          "value": "ShipConstructionMilitaryMaterielFacility",
+          "synonyms": [
+            "SHIPCONSTRUCTIONMILITARYMATERIELFACILITY",
+            "shipconstructionmilitarymaterielfacility",
+            "Ship Construction Military Materiel Facility",
+            "Military materiel facility ship construction"
+          ]
+        },
+        {
+          "value": "SHIPYARD",
+          "synonyms": [
+            "shipyard",
+            "Shipyard"
+          ]
+        },
+        {
+          "value": "SHOP",
+          "synonyms": [
+            "Shop",
+            "shop"
+          ]
+        },
+        {
+          "value": "SHORANSTATION",
+          "synonyms": [
+            "ShoranStation",
+            "Shoran Station",
+            "shoranstation"
+          ]
+        },
+        {
+          "value": "SMOKESTACK",
+          "synonyms": [
+            "smokestack",
+            "Smokestack"
+          ]
+        },
+        {
+          "value": "STEEPLE",
+          "synonyms": [
+            "steeple",
+            "Steeple"
+          ]
+        },
+        {
+          "value": "Stone Lined Bed Ford",
+          "synonyms": [
+            "StoneLinedBedFord",
+            "STONELINEDBEDFORD",
+            "stonelinedbedford",
+            "Ford stone lined bed"
+          ]
+        },
+        {
+          "value": "Submarine Military Base Or Facility",
+          "synonyms": [
+            "Military base/facility submarine",
+            "SubmarineMilitaryBaseOrFacility",
+            "submarinemilitarybaseorfacility",
+            "SUBMARINEMILITARYBASEORFACILITY"
+          ]
+        },
+        {
+          "value": "SupplyCache",
+          "synonyms": [
+            "SUPPLYCACHE",
+            "Supply Cache",
+            "supplycache"
+          ]
+        },
+        {
+          "value": "supplydump",
+          "synonyms": [
+            "SupplyDump",
+            "Supply Dump",
+            "SUPPLYDUMP"
+          ]
+        },
+        {
+          "value": "SupplyPoint",
+          "synonyms": [
+            "Supply Point",
+            "supplypoint",
+            "SUPPLYPOINT"
+          ]
+        },
+        {
+          "value": "SURFACESHELTER",
+          "synonyms": [
+            "Surface Shelter",
+            "Shelter surface",
+            "SurfaceShelter",
+            "surfaceshelter"
+          ]
+        },
+        {
+          "value": "SURFACESURVEILLANCEJAMMERELECTRONICINSTALLATION",
+          "synonyms": [
+            "Surface Surveillance Jammer Electronic Installation",
+            "Electronic installation surface surveillance jammer",
+            "SurfaceSurveillanceJammerElectronicInstallation",
+            "surfacesurveillancejammerelectronicinstallation"
+          ]
+        },
+        {
+          "value": "Site surface to surface missile",
+          "synonyms": [
+            "surfacetosurfacemissilesite",
+            "SurfaceToSurfaceMissileSite",
+            "SURFACETOSURFACEMISSILESITE",
+            "Surface To Surface Missile Site"
+          ]
+        },
+        {
+          "value": "Tacan Station",
+          "synonyms": [
+            "TACANSTATION",
+            "tacanstation",
+            "TacanStation"
+          ]
+        },
+        {
+          "value": "TacticalIntelligenceCentre",
+          "synonyms": [
+            "TACTICALINTELLIGENCECENTRE",
+            "Tactical Intelligence Centre",
+            "tacticalintelligencecentre",
+            "Intelligence centre tactical"
+          ]
+        },
+        {
+          "value": "technologicalresearchfacilityutilityfacilityresearchservice",
+          "synonyms": [
+            "Service research utility facility technological research facility",
+            "Technological Research Facility Utility Facility Research Service",
+            "TechnologicalResearchFacilityUtilityFacilityResearchService",
+            "TECHNOLOGICALRESEARCHFACILITYUTILITYFACILITYRESEARCHSERVICE"
+          ]
+        },
+        {
+          "value": "Service research utility facility telecommunications facility",
+          "synonyms": [
+            "telecommunicationsfacilityutilityfacilityresearchservice",
+            "TELECOMMUNICATIONSFACILITYUTILITYFACILITYRESEARCHSERVICE",
+            "Telecommunications Facility Utility Facility Research Service",
+            "TelecommunicationsFacilityUtilityFacilityResearchService"
+          ]
+        },
+        {
+          "value": "TelevisionTransmitterTower",
+          "synonyms": [
+            "Tower television transmitter",
+            "Television Transmitter Tower",
+            "televisiontransmittertower",
+            "TELEVISIONTRANSMITTERTOWER"
+          ]
+        },
+        {
+          "value": "Thermal Power Plant",
+          "synonyms": [
+            "Power plant thermal",
+            "thermalpowerplant",
+            "THERMALPOWERPLANT",
+            "ThermalPowerPlant"
+          ]
+        },
+        {
+          "value": "Tower",
+          "synonyms": [
+            "TOWER",
+            "tower"
+          ]
+        },
+        {
+          "value": "town",
+          "synonyms": [
+            "Town",
+            "TOWN"
+          ]
+        },
+        {
+          "value": "townhall",
+          "synonyms": [
+            "Town Hall",
+            "TOWNHALL",
+            "TownHall"
+          ]
+        },
+        {
+          "value": "TRAFFICCONTROLPOST",
+          "synonyms": [
+            "TrafficControlPost",
+            "Traffic Control Post",
+            "trafficcontrolpost"
+          ]
+        },
+        {
+          "value": "trail",
+          "synonyms": [
+            "Trail",
+            "TRAIL"
+          ]
+        },
+        {
+          "value": "TransloadingFacility",
+          "synonyms": [
+            "transloadingfacility",
+            "TRANSLOADINGFACILITY",
+            "Transloading Facility"
+          ]
+        },
+        {
+          "value": "TransportFacility",
+          "synonyms": [
+            "Transport Facility",
+            "transportfacility",
+            "TRANSPORTFACILITY"
+          ]
+        },
+        {
+          "value": "Transportation Station",
+          "synonyms": [
+            "TRANSPORTATIONSTATION",
+            "transportationstation",
+            "TransportationStation"
+          ]
+        },
+        {
+          "value": "Trench",
+          "synonyms": [
+            "trench",
+            "TRENCH"
+          ]
+        },
+        {
+          "value": "TUNNEL",
+          "synonyms": [
+            "Tunnel",
+            "tunnel"
+          ]
+        },
+        {
+          "value": "undergroundmininginstallation",
+          "synonyms": [
+            "UndergroundMiningInstallation",
+            "Underground Mining Installation",
+            "Mining installation underground",
+            "UNDERGROUNDMININGINSTALLATION"
+          ]
+        },
+        {
+          "value": "UndergroundShelter",
+          "synonyms": [
+            "Shelter underground",
+            "UNDERGROUNDSHELTER",
+            "Underground Shelter",
+            "undergroundshelter"
+          ]
+        },
+        {
+          "value": "UnderwaterMiningInstallation",
+          "synonyms": [
+            "underwatermininginstallation",
+            "Mining installation underwater",
+            "Underwater Mining Installation",
+            "UNDERWATERMININGINSTALLATION"
+          ]
+        },
+        {
+          "value": "UNITOFACCOMMODATION",
+          "synonyms": [
+            "UnitOfAccommodation",
+            "unitofaccommodation",
+            "Unit Of Accommodation"
+          ]
+        },
+        {
+          "value": "unknowntypeimprovedbed",
+          "synonyms": [
+            "UnknownTypeImprovedBed",
+            "Improved bed type unknown",
+            "Unknown Type Improved Bed",
+            "UNKNOWNTYPEIMPROVEDBED"
+          ]
+        },
+        {
+          "value": "URBANAREA",
+          "synonyms": [
+            "Urban Area",
+            "UrbanArea",
+            "urbanarea"
+          ]
+        },
+        {
+          "value": "UTILITYFACILITYRESEARCHSERVICE",
+          "synonyms": [
+            "Service research utility facility",
+            "UtilityFacilityResearchService",
+            "Utility Facility Research Service",
+            "utilityfacilityresearchservice"
+          ]
+        },
+        {
+          "value": "VehicleLot",
+          "synonyms": [
+            "Vehicle Lot",
+            "vehiclelot",
+            "VEHICLELOT"
+          ]
+        },
+        {
+          "value": "VEHICLEPRODUCTIONMILITARYMATERIELFACILITY",
+          "synonyms": [
+            "Vehicle Production Military Materiel Facility",
+            "Military materiel facility vehicle production",
+            "VehicleProductionMilitaryMaterielFacility",
+            "vehicleproductionmilitarymaterielfacility"
+          ]
+        },
+        {
+          "value": "VILLAGE",
+          "synonyms": [
+            "Village",
+            "village"
+          ]
+        },
+        {
+          "value": "WALL",
+          "synonyms": [
+            "Wall",
+            "wall"
+          ]
+        },
+        {
+          "value": "Warehouse",
+          "synonyms": [
+            "WAREHOUSE",
+            "warehouse"
+          ]
+        },
+        {
+          "value": "Washing Facility",
+          "synonyms": [
+            "washingfacility",
+            "WashingFacility",
+            "WASHINGFACILITY"
+          ]
+        },
+        {
+          "value": "WasteHeap",
+          "synonyms": [
+            "wasteheap",
+            "Waste Heap",
+            "WASTEHEAP"
+          ]
+        },
+        {
+          "value": "WATERSUPPLYFACILITY",
+          "synonyms": [
+            "watersupplyfacility",
+            "Water Supply Facility",
+            "WaterSupplyFacility"
+          ]
+        },
+        {
+          "value": "WATERTOWER",
+          "synonyms": [
+            "Water Tower",
+            "watertower",
+            "WaterTower"
+          ]
+        },
+        {
+          "value": "waterwork",
+          "synonyms": [
+            "Waterwork",
+            "WATERWORK"
+          ]
+        },
+        {
+          "value": "Wind Turbine",
+          "synonyms": [
+            "WINDTURBINE",
+            "WindTurbine",
+            "windturbine"
+          ]
+        },
+        {
+          "value": "windmill",
+          "synonyms": [
+            "Windmill",
+            "WINDMILL"
+          ]
+        },
+        {
+          "value": "worshipplace",
+          "synonyms": [
+            "WORSHIPPLACE",
+            "Worship Place",
+            "WorshipPlace"
+          ]
+        },
+        {
+          "value": "DITCH",
+          "synonyms": [
+            "ditch",
+            "Ditch"
+          ]
+        },
+        {
+          "value": "ComposedAntiTankObstacle",
+          "synonyms": [
+            "COMPOSEDANTITANKOBSTACLE",
+            "Composed Anti Tank Obstacle",
+            "composedantitankobstacle"
+          ]
+        },
+        {
+          "value": "Minefield",
+          "synonyms": [
+            "minefield",
+            "MINEFIELD"
+          ]
+        },
+        {
+          "value": "WIREOBSTACLE",
+          "synonyms": [
+            "WireObstacle",
+            "Wire Obstacle",
+            "wireobstacle"
+          ]
+        },
+        {
+          "value": "Abatis",
+          "synonyms": [
+            "ABATIS",
+            "abatis"
+          ]
+        },
+        {
+          "value": "antitankwall",
+          "synonyms": [
+            "ANTITANKWALL",
+            "AntiTankWall",
+            "Anti Tank Wall"
+          ]
+        },
+        {
+          "value": "beampostobstacle",
+          "synonyms": [
+            "BEAMPOSTOBSTACLE",
+            "BeamPostObstacle",
+            "Beam Post Obstacle"
+          ]
+        },
+        {
+          "value": "CRATEROBSTACLE",
+          "synonyms": [
+            "craterobstacle",
+            "CraterObstacle",
+            "Crater Obstacle"
+          ]
+        },
+        {
+          "value": "Demolition Debris Obstacle",
+          "synonyms": [
+            "DEMOLITIONDEBRISOBSTACLE",
+            "DemolitionDebrisObstacle",
+            "demolitiondebrisobstacle"
+          ]
+        },
+        {
+          "value": "Falling Block Obstacle",
+          "synonyms": [
+            "FallingBlockObstacle",
+            "fallingblockobstacle",
+            "FALLINGBLOCKOBSTACLE"
+          ]
+        },
+        {
+          "value": "ROADBLOCK",
+          "synonyms": [
+            "roadblock",
+            "Roadblock"
+          ]
+        },
+        {
+          "value": "VEHICLEBARRIER",
+          "synonyms": [
+            "Barrier vehicle",
+            "VehicleBarrier",
+            "Vehicle Barrier",
+            "vehiclebarrier"
+          ]
+        },
+        {
+          "value": "wallobstacle",
+          "synonyms": [
+            "WallObstacle",
+            "Wall Obstacle",
+            "WALLOBSTACLE"
+          ]
+        },
+        {
+          "value": "ANTITANKDITCH",
+          "synonyms": [
+            "AntiTankDitch",
+            "antitankditch",
+            "Anti Tank Ditch"
+          ]
+        },
+        {
+          "value": "LANDMINEFIELD",
+          "synonyms": [
+            "landminefield",
+            "LandMinefield",
+            "Land Minefield"
+          ]
+        },
+        {
+          "value": "maritimeminefield",
+          "synonyms": [
+            "MARITIMEMINEFIELD",
+            "MaritimeMinefield",
+            "Maritime Minefield"
+          ]
+        },
+        {
+          "value": "AntiPersonnelMinefield",
+          "synonyms": [
+            "Anti Personnel Minefield",
+            "antipersonnelminefield",
+            "Minefield anti-personnel",
+            "ANTIPERSONNELMINEFIELD"
+          ]
+        },
+        {
+          "value": "antitankminefield",
+          "synonyms": [
+            "ANTITANKMINEFIELD",
+            "Minefield anti-tank",
+            "AntiTankMinefield",
+            "Anti Tank Minefield"
+          ]
+        },
+        {
+          "value": "Mixed Minefield",
+          "synonyms": [
+            "Minefield mixed",
+            "MixedMinefield",
+            "MIXEDMINEFIELD",
+            "mixedminefield"
+          ]
+        },
+        {
+          "value": "barbedwireentanglement",
+          "synonyms": [
+            "BarbedWireEntanglement",
+            "Barbed Wire Entanglement",
+            "BARBEDWIREENTANGLEMENT"
+          ]
+        },
+        {
+          "value": "doubleapronfencewireobstacle",
+          "synonyms": [
+            "DoubleApronFenceWireObstacle",
+            "Double Apron Fence Wire Obstacle",
+            "Wire obstacle double apron fence",
+            "DOUBLEAPRONFENCEWIREOBSTACLE"
+          ]
+        },
+        {
+          "value": "DOUBLEFENCEWIREOBSTACLE",
+          "synonyms": [
+            "DoubleFenceWireObstacle",
+            "doublefencewireobstacle",
+            "Wire obstacle double fence",
+            "Double Fence Wire Obstacle"
+          ]
+        },
+        {
+          "value": "doublestrandconcertinawireobstacle",
+          "synonyms": [
+            "Double Strand Concertina Wire Obstacle",
+            "DoubleStrandConcertinaWireObstacle",
+            "Wire obstacle double strand concertina",
+            "DOUBLESTRANDCONCERTINAWIREOBSTACLE"
+          ]
+        },
+        {
+          "value": "Wire obstacle high wire fence",
+          "synonyms": [
+            "HIGHWIREFENCEWIREOBSTACLE",
+            "High Wire Fence Wire Obstacle",
+            "HighWireFenceWireObstacle",
+            "highwirefencewireobstacle"
+          ]
+        },
+        {
+          "value": "lowwirefencewireobstacle",
+          "synonyms": [
+            "LOWWIREFENCEWIREOBSTACLE",
+            "Low Wire Fence Wire Obstacle",
+            "Wire obstacle low wire fence",
+            "LowWireFenceWireObstacle"
+          ]
+        },
+        {
+          "value": "Wire obstacle single concertina",
+          "synonyms": [
+            "SINGLECONCERTINAWIREOBSTACLE",
+            "SingleConcertinaWireObstacle",
+            "Single Concertina Wire Obstacle",
+            "singleconcertinawireobstacle"
+          ]
+        },
+        {
+          "value": "SINGLEFENCEWIREOBSTACLE",
+          "synonyms": [
+            "SingleFenceWireObstacle",
+            "singlefencewireobstacle",
+            "Wire obstacle single fence",
+            "Single Fence Wire Obstacle"
+          ]
+        },
+        {
+          "value": "TripWire",
+          "synonyms": [
+            "Trip Wire",
+            "tripwire",
+            "TRIPWIRE"
+          ]
+        },
+        {
+          "value": "TRIPLESTRANDCONCERTINAWIREOBSTACLE",
+          "synonyms": [
+            "Wire obstacle triple strand concertina",
+            "TripleStrandConcertinaWireObstacle",
+            "triplestrandconcertinawireobstacle",
+            "Triple Strand Concertina Wire Obstacle"
+          ]
+        },
+        {
+          "value": "BRIGADESUPPORTAREA",
+          "synonyms": [
+            "Brigade Support Area",
+            "BrigadeSupportArea",
+            "brigadesupportarea"
+          ]
+        },
+        {
+          "value": "Division Support Area",
+          "synonyms": [
+            "divisionsupportarea",
+            "DivisionSupportArea",
+            "DIVISIONSUPPORTAREA"
+          ]
+        },
+        {
+          "value": "Regimental Support Area",
+          "synonyms": [
+            "regimentalsupportarea",
+            "REGIMENTALSUPPORTAREA",
+            "RegimentalSupportArea"
+          ]
+        },
+        {
+          "value": "AmmunitionDepot",
+          "synonyms": [
+            "ammunitiondepot",
+            "Ammunition Depot",
+            "AMMUNITIONDEPOT",
+            "Depot ammunition"
+          ]
+        },
+        {
+          "value": "Biological Depot",
+          "synonyms": [
+            "BIOLOGICALDEPOT",
+            "Depot biological",
+            "BiologicalDepot",
+            "biologicaldepot"
+          ]
+        },
+        {
+          "value": "CBRNDepot",
+          "synonyms": [
+            "CBRNDEPOT",
+            "C B R N Depot",
+            "Depot CBRN",
+            "cbrndepot"
+          ]
+        },
+        {
+          "value": "CHEMICALSDEPOT",
+          "synonyms": [
+            "ChemicalsDepot",
+            "Chemicals Depot",
+            "Depot chemicals",
+            "chemicalsdepot"
+          ]
+        },
+        {
+          "value": "ENGINEERDEPOT",
+          "synonyms": [
+            "engineerdepot",
+            "EngineerDepot",
+            "Engineer Depot",
+            "Depot engineer"
+          ]
+        },
+        {
+          "value": "Depot medical",
+          "synonyms": [
+            "Medical Depot",
+            "MedicalDepot",
+            "MEDICALDEPOT",
+            "medicaldepot"
+          ]
+        },
+        {
+          "value": "missileammunitiondepot",
+          "synonyms": [
+            "Depot missile ammunition",
+            "MissileAmmunitionDepot",
+            "Missile Ammunition Depot",
+            "MISSILEAMMUNITIONDEPOT"
+          ]
+        },
+        {
+          "value": "nuclearstoragedepot",
+          "synonyms": [
+            "Nuclear Storage Depot",
+            "NuclearStorageDepot",
+            "NUCLEARSTORAGEDEPOT",
+            "Depot nuclear storage"
+          ]
+        },
+        {
+          "value": "P O L Depot",
+          "synonyms": [
+            "poldepot",
+            "Depot POL",
+            "POLDEPOT",
+            "POLDepot"
+          ]
+        },
+        {
+          "value": "Field Hospital",
+          "synonyms": [
+            "FieldHospital",
+            "FIELDHOSPITAL",
+            "Hospital field",
+            "fieldhospital"
+          ]
+        },
+        {
+          "value": "FIXEDHOSPITAL",
+          "synonyms": [
+            "FixedHospital",
+            "Fixed Hospital",
+            "Hospital fixed",
+            "fixedhospital"
+          ]
+        },
+        {
+          "value": "HOSPITAL",
+          "synonyms": [
+            "Hospital",
+            "hospital"
+          ]
+        },
+        {
+          "value": "MedicalSupportFacility",
+          "synonyms": [
+            "MEDICALSUPPORTFACILITY",
+            "Medical Support Facility",
+            "medicalsupportfacility"
+          ]
+        },
+        {
+          "value": "UnitMedicalStation",
+          "synonyms": [
+            "UNITMEDICALSTATION",
+            "Unit Medical Station",
+            "unitmedicalstation"
+          ]
+        },
+        {
+          "value": "Lane",
+          "synonyms": [
+            "lane",
+            "LANE"
+          ]
+        },
+        {
+          "value": "LocalRoad",
+          "synonyms": [
+            "LOCALROAD",
+            "Local Road",
+            "localroad"
+          ]
+        },
+        {
+          "value": "MainRoad",
+          "synonyms": [
+            "Main Road",
+            "mainroad",
+            "MAINROAD"
+          ]
+        },
+        {
+          "value": "MOTORWAY",
+          "synonyms": [
+            "Motorway",
+            "motorway"
+          ]
+        },
+        {
+          "value": "PEDESTRIANROAD",
+          "synonyms": [
+            "PedestrianRoad",
+            "pedestrianroad",
+            "Pedestrian Road"
+          ]
+        },
+        {
+          "value": "railwaytrack",
+          "synonyms": [
+            "RAILWAYTRACK",
+            "RailwayTrack",
+            "Railway Track"
+          ]
+        },
+        {
+          "value": "RegionalRoad",
+          "synonyms": [
+            "Regional Road",
+            "regionalroad",
+            "REGIONALROAD"
+          ]
+        },
+        {
+          "value": "track",
+          "synonyms": [
+            "Track",
+            "TRACK"
+          ]
+        },
+        {
+          "value": "bridge",
+          "synonyms": []
+        },
+        {
+          "value": "COMPOUND",
+          "synonyms": []
+        },
+        {
+          "value": "bunker",
+          "synonyms": []
+        },
+        {
+          "value": "city",
+          "synonyms": []
+        },
+        {
+          "value": "dam",
+          "synonyms": []
+        },
+        {
+          "value": "FARM",
+          "synonyms": []
+        },
+        {
+          "value": "Garage",
+          "synonyms": []
+        },
+        {
+          "value": "Nuclear Facility",
+          "synonyms": []
+        },
+        {
+          "value": "MedicalSupportFacility",
+          "synonyms": []
+        },
+        {
+          "value": "Field Hospital",
+          "synonyms": []
+        },
+        {
+          "value": "RegionalRoad",
+          "synonyms": []
+        },
+        {
+          "value": "AntiPersonnelMinefield",
+          "synonyms": []
+        },
+        {
+          "value": "Washing Facility",
+          "synonyms": []
+        },
+        {
+          "value": "townhall",
+          "synonyms": []
+        },
+        {
+          "value": "SHIPYARD",
+          "synonyms": []
+        },
+        {
+          "value": "Rail facility repair",
+          "synonyms": []
+        }
+      ]
+    },
+    "facilityName": {
+      "automatically_extensible": true,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "Kennedy Bridge",
+          "synonyms": []
+        },
+        {
+          "value": "Rathhaus Wachtberg",
+          "synonyms": []
+        },
+        {
+          "value": "Kennedy Bridge",
+          "synonyms": []
+        },
+        {
+          "value": "Fraunhofer FKIE",
+          "synonyms": []
+        },
+        {
+          "value": "Hill 60 Bunker",
+          "synonyms": []
+        },
+        {
+          "value": "Wachtberg",
+          "synonyms": []
+        },
+        {
+          "value": "Aabach",
+          "synonyms": []
+        },
+        {
+          "value": "Gut Schiff",
+          "synonyms": []
+        },
+        {
+          "value": "KBM Motorfahrzeuge",
+          "synonyms": []
+        },
+        {
+          "value": "Unterweser Nuclear Power Plant",
+          "synonyms": []
+        },
+        {
+          "value": "MS1 Bonn",
+          "synonyms": []
+        },
+        {
+          "value": "208 Field Hospital",
+          "synonyms": []
+        },
+        {
+          "value": "L83",
+          "synonyms": []
+        },
+        {
+          "value": "APMF 134",
+          "synonyms": []
+        },
+        {
+          "value": "WF 432",
+          "synonyms": []
+        },
+        {
+          "value": "Rathhaus Wachtberg",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne shipyard",
+          "synonyms": []
+        },
+        {
+          "value": "RFR 123",
+          "synonyms": []
+        }
+      ]
+    },
+    "hmContext": {
+      "automatically_extensible": false,
+      "use_synonyms": false,
+      "data": [
+        {
+          "value": "activity",
+          "synonyms": []
+        },
+        {
+          "value": "bombing",
+          "synonyms": []
+        },
+        {
+          "value": "attacks",
+          "synonyms": []
+        }
+      ]
+    },
+    "hostility": {
+      "automatically_extensible": false,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "AssumedFriend",
+          "synonyms": [
+            "Assumed Friend",
+            "assumedfriend",
+            "assumed friend"
+          ]
+        },
+        {
+          "value": "AssumedHostile",
+          "synonyms": [
+            "Assumed Hostile",
+            "assumedhostile",
+            "assumed hostile"
+          ]
+        },
+        {
+          "value": "AssumedInvolved",
+          "synonyms": [
+            "Assumed Involved",
+            "assumedinvolved",
+            "assumed involved"
+          ]
+        },
+        {
+          "value": "AssumedNeutral",
+          "synonyms": [
+            "Assumed Neutral",
+            "assumedneutral",
+            "assumed neutral"
+          ]
+        },
+        {
+          "value": "Faker",
+          "synonyms": [
+            "faker"
+          ]
+        },
+        {
+          "value": "Friend",
+          "synonyms": [
+            "friend",
+            "friendly"
+          ]
+        },
+        {
+          "value": "Hostile",
+          "synonyms": [
+            "hostile"
+          ]
+        },
+        {
+          "value": "Involved",
+          "synonyms": [
+            "involved"
+          ]
+        },
+        {
+          "value": "Joker",
+          "synonyms": [
+            "joker"
+          ]
+        },
+        {
+          "value": "Neutral",
+          "synonyms": [
+            "neutral"
+          ]
+        },
+        {
+          "value": "Pending",
+          "synonyms": [
+            "pending"
+          ]
+        },
+        {
+          "value": "Suspect",
+          "synonyms": [
+            "suspect"
+          ]
+        },
+        {
+          "value": "Unknown",
+          "synonyms": [
+            "unknown"
+          ]
+        },
+        {
+          "value": "AssumedNeutral",
+          "synonyms": []
+        },
+        {
+          "value": "Faker",
+          "synonyms": []
+        },
+        {
+          "value": "Suspect",
+          "synonyms": []
+        },
+        {
+          "value": "Friend",
+          "synonyms": []
+        },
+        {
+          "value": "AssumedHostile",
+          "synonyms": []
+        },
+        {
+          "value": "AssumedInvolved",
+          "synonyms": []
+        },
+        {
+          "value": "Joker",
+          "synonyms": []
+        },
+        {
+          "value": "Neutral",
+          "synonyms": []
+        },
+        {
+          "value": "Friend",
+          "synonyms": []
+        },
+        {
+          "value": "Pending",
+          "synonyms": []
+        },
+        {
+          "value": "Unknown",
+          "synonyms": []
+        }
+      ]
+    },
+    "location": {
+      "automatically_extensible": true,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "bridge",
+          "synonyms": [
+            "link",
+            "overpass",
+            "platform",
+            "branch",
+            "extension"
+          ]
+        },
+        {
+          "value": "corridor",
+          "synonyms": [
+            "entranceway",
+            "entrance hall",
+            "passage",
+            "hallway"
+          ]
+        },
+        {
+          "value": "Bonn",
+          "synonyms": []
+        },
+        {
+          "value": "Fraunhofer FKIE",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne",
+          "synonyms": []
+        },
+        {
+          "value": "Fraunhofer FKIE",
+          "synonyms": []
+        },
+        {
+          "value": "Fraunhofer FKIE",
+          "synonyms": []
+        },
+        {
+          "value": "Fraunhofer FKIE",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne",
+          "synonyms": []
+        },
+        {
+          "value": "Bonn",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne",
+          "synonyms": []
+        },
+        {
+          "value": "Cologne",
+          "synonyms": []
+        },
+        {
+          "value": "bridge",
+          "synonyms": []
+        },
+        {
+          "value": "corridor",
+          "synonyms": []
+        },
+        {
+          "value": "bridge",
+          "synonyms": []
+        },
+        {
+          "value": "corridor",
+          "synonyms": []
+        }
+      ]
+    },
+    "unit": {
+      "automatically_extensible": false,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "CombatServiceSupportUnit",
+          "synonyms": [
+            "Combat Service Support Unit",
+            "combatservicesupportunit",
+            "COMBATSERVICESUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "CombatSupportUnit",
+          "synonyms": [
+            "Combat Support Unit",
+            "combatsupportunit",
+            "COMBATSUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "CombatUnit",
+          "synonyms": [
+            "Combat Unit",
+            "combatunit",
+            "COMBATUNIT"
+          ]
+        },
+        {
+          "value": "SpecialOperationsForcesUnit",
+          "synonyms": [
+            "Special Operations Forces Unit",
+            "specialoperationsforcesunit",
+            "SPECIALOPERATIONSFORCESUNIT"
+          ]
+        },
+        {
+          "value": "CommandSupportUnit",
+          "synonyms": [
+            "Command Support Unit",
+            "commandsupportunit",
+            "COMMANDSUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "AdministrativeUnit",
+          "synonyms": [
+            "Administrative Unit",
+            "administrativeunit",
+            "ADMINISTRATIVEUNIT"
+          ]
+        },
+        {
+          "value": "MaintenanceUnit",
+          "synonyms": [
+            "Maintenance Unit",
+            "maintenanceunit",
+            "MAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "CombatServiceSupportAviationUnit",
+          "synonyms": [
+            "Combat Service Support Aviation Unit",
+            "combatservicesupportaviationunit",
+            "COMBATSERVICESUPPORTAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "LogisticsUnit",
+          "synonyms": [
+            "Logistics Unit",
+            "logisticsunit",
+            "LOGISTICSUNIT"
+          ]
+        },
+        {
+          "value": "MedicalUnit",
+          "synonyms": [
+            "Medical Unit",
+            "medicalunit",
+            "MEDICALUNIT"
+          ]
+        },
+        {
+          "value": "SupplyUnit",
+          "synonyms": [
+            "Supply Unit",
+            "supplyunit",
+            "SUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "TransportationAndSupplyUnit",
+          "synonyms": [
+            "Transportation And Supply Unit",
+            "transportationandsupplyunit",
+            "TRANSPORTATIONANDSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "TransportationUnit",
+          "synonyms": [
+            "Transportation Unit",
+            "transportationunit",
+            "TRANSPORTATIONUNIT"
+          ]
+        },
+        {
+          "value": "PublicAffairsUnit",
+          "synonyms": [
+            "Public Affairs Unit",
+            "publicaffairsunit",
+            "PUBLICAFFAIRSUNIT"
+          ]
+        },
+        {
+          "value": "FinanceUnit",
+          "synonyms": [
+            "Finance Unit",
+            "financeunit",
+            "FINANCEUNIT"
+          ]
+        },
+        {
+          "value": "LabourUnit",
+          "synonyms": [
+            "Labour Unit",
+            "labourunit",
+            "LABOURUNIT"
+          ]
+        },
+        {
+          "value": "LegalServicesUnit",
+          "synonyms": [
+            "Legal Services Unit",
+            "legalservicesunit",
+            "LEGALSERVICESUNIT"
+          ]
+        },
+        {
+          "value": "MoraleOrWelfareOrRecreationUnit",
+          "synonyms": [
+            "Morale Or Welfare Or Recreation Unit",
+            "moraleorwelfareorrecreationunit",
+            "MORALEORWELFAREORRECREATIONUNIT"
+          ]
+        },
+        {
+          "value": "MortuaryOrGravesRegistryUnit",
+          "synonyms": [
+            "Mortuary Or Graves Registry Unit",
+            "mortuaryorgravesregistryunit",
+            "MORTUARYORGRAVESREGISTRYUNIT"
+          ]
+        },
+        {
+          "value": "PersonnelServicesUnit",
+          "synonyms": [
+            "Personnel Services Unit",
+            "personnelservicesunit",
+            "PERSONNELSERVICESUNIT"
+          ]
+        },
+        {
+          "value": "PostalUnit",
+          "synonyms": [
+            "Postal Unit",
+            "postalunit",
+            "POSTALUNIT"
+          ]
+        },
+        {
+          "value": "QuartermasterUnit",
+          "synonyms": [
+            "Quartermaster Unit",
+            "quartermasterunit",
+            "QUARTERMASTERUNIT"
+          ]
+        },
+        {
+          "value": "ReligiousOrChaplainUnit",
+          "synonyms": [
+            "Religious Or Chaplain Unit",
+            "religiousorchaplainunit",
+            "RELIGIOUSORCHAPLAINUNIT"
+          ]
+        },
+        {
+          "value": "ReplacementHoldingUnit",
+          "synonyms": [
+            "Replacement Holding Unit",
+            "replacementholdingunit",
+            "REPLACEMENTHOLDINGUNIT"
+          ]
+        },
+        {
+          "value": "BroadcastPublicAffairsUnit",
+          "synonyms": [
+            "Broadcast Public Affairs Unit",
+            "broadcastpublicaffairsunit",
+            "BROADCASTPUBLICAFFAIRSUNIT"
+          ]
+        },
+        {
+          "value": "JointInformationPublicAffairsUnit",
+          "synonyms": [
+            "Joint Information Public Affairs Unit",
+            "jointinformationpublicaffairsunit",
+            "JOINTINFORMATIONPUBLICAFFAIRSUNIT"
+          ]
+        },
+        {
+          "value": "RecoveryUnit",
+          "synonyms": [
+            "Recovery Unit",
+            "recoveryunit",
+            "RECOVERYUNIT"
+          ]
+        },
+        {
+          "value": "ElectroOpticalMaintenanceUnit",
+          "synonyms": [
+            "Electro Optical Maintenance Unit",
+            "Maintenance unit electro-optical",
+            "electroopticalmaintenanceunit",
+            "ELECTROOPTICALMAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "ElectronicsOrArmamentMaintenanceUnit",
+          "synonyms": [
+            "Electronics Or Armament Maintenance Unit",
+            "Maintenance unit electronics/armament",
+            "electronicsorarmamentmaintenanceunit",
+            "ELECTRONICSORARMAMENTMAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "HeavyMaintenanceUnit",
+          "synonyms": [
+            "Heavy Maintenance Unit",
+            "Maintenance unit heavy",
+            "heavymaintenanceunit",
+            "HEAVYMAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "MissileMaintenanceUnit",
+          "synonyms": [
+            "Missile Maintenance Unit",
+            "Maintenance unit missile",
+            "missilemaintenanceunit",
+            "MISSILEMAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "OrdnanceMaintenanceUnit",
+          "synonyms": [
+            "Ordnance Maintenance Unit",
+            "Maintenance unit ordnance",
+            "ordnancemaintenanceunit",
+            "ORDNANCEMAINTENANCEUNIT"
+          ]
+        },
+        {
+          "value": "ArmourRecoveryUnit",
+          "synonyms": [
+            "Armour Recovery Unit",
+            "armourrecoveryunit",
+            "ARMOURRECOVERYUNIT"
+          ]
+        },
+        {
+          "value": "MedicalEvacuationAviationUnit",
+          "synonyms": [
+            "Medical Evacuation Aviation Unit",
+            "medicalevacuationaviationunit",
+            "MEDICALEVACUATIONAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "RefuelAviationUnit",
+          "synonyms": [
+            "Refuel Aviation Unit",
+            "refuelaviationunit",
+            "REFUELAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "UtilityAviationUnit",
+          "synonyms": [
+            "Utility Aviation Unit",
+            "utilityaviationunit",
+            "UTILITYAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "DentalUnit",
+          "synonyms": [
+            "Dental Unit",
+            "dentalunit",
+            "DENTALUNIT"
+          ]
+        },
+        {
+          "value": "MedicalTransportUnit",
+          "synonyms": [
+            "Medical Transport Unit",
+            "medicaltransportunit",
+            "MEDICALTRANSPORTUNIT"
+          ]
+        },
+        {
+          "value": "MedicalTreatmentUnit",
+          "synonyms": [
+            "Medical Treatment Unit",
+            "medicaltreatmentunit",
+            "MEDICALTREATMENTUNIT"
+          ]
+        },
+        {
+          "value": "PsychologicalUnit",
+          "synonyms": [
+            "Psychological Unit",
+            "psychologicalunit",
+            "PSYCHOLOGICALUNIT"
+          ]
+        },
+        {
+          "value": "SurgicalUnit",
+          "synonyms": [
+            "Surgical Unit",
+            "surgicalunit",
+            "SURGICALUNIT"
+          ]
+        },
+        {
+          "value": "VeterinaryUnit",
+          "synonyms": [
+            "Veterinary Unit",
+            "veterinaryunit",
+            "VETERINARYUNIT"
+          ]
+        },
+        {
+          "value": "ClassIIIAviationSupplyUnit",
+          "synonyms": [
+            "Class I I I Aviation Supply Unit",
+            "Supply unit class III aviation",
+            "classiiiaviationsupplyunit",
+            "CLASSIIIAVIATIONSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "ClassIIISupplyUnit",
+          "synonyms": [
+            "Class I I I Supply Unit",
+            "Supply unit class III",
+            "classiiisupplyunit",
+            "CLASSIIISUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "ClassIISupplyUnit",
+          "synonyms": [
+            "Class I I Supply Unit",
+            "Supply unit class II",
+            "classiisupplyunit",
+            "CLASSIISUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "ClassISupplyUnit",
+          "synonyms": [
+            "Class I Supply Unit",
+            "Supply unit class I",
+            "classisupplyunit",
+            "CLASSISUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "ClassIVSupplyUnit",
+          "synonyms": [
+            "Class I V Supply Unit",
+            "Supply unit class IV",
+            "classivsupplyunit",
+            "CLASSIVSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "ClassVSupplyUnit",
+          "synonyms": [
+            "Class V Supply Unit",
+            "Supply unit class V",
+            "classvsupplyunit",
+            "CLASSVSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "LaundryOrBathSupplyUnit",
+          "synonyms": [
+            "Laundry Or Bath Supply Unit",
+            "Supply unit laundry/bath",
+            "laundryorbathsupplyunit",
+            "LAUNDRYORBATHSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "PipelineUnit",
+          "synonyms": [
+            "Pipeline Unit",
+            "pipelineunit",
+            "PIPELINEUNIT"
+          ]
+        },
+        {
+          "value": "WaterPurificationUnit",
+          "synonyms": [
+            "Water Purification Unit",
+            "waterpurificationunit",
+            "WATERPURIFICATIONUNIT"
+          ]
+        },
+        {
+          "value": "WaterSupplyUnit",
+          "synonyms": [
+            "Water Supply Unit",
+            "Supply unit water",
+            "watersupplyunit",
+            "WATERSUPPLYUNIT"
+          ]
+        },
+        {
+          "value": "APODOrAPOEUnit",
+          "synonyms": [
+            "A P O D Or A P O E Unit",
+            "apodorapoeunit",
+            "APODORAPOEUNIT"
+          ]
+        },
+        {
+          "value": "LoadingOrUnloadingHandlingUnit",
+          "synonyms": [
+            "Loading Or Unloading Handling Unit",
+            "Handling unit loading/unloading",
+            "loadingorunloadinghandlingunit",
+            "LOADINGORUNLOADINGHANDLINGUNIT"
+          ]
+        },
+        {
+          "value": "MissileTransportationUnit",
+          "synonyms": [
+            "Missile Transportation Unit",
+            "Transportation unit missile",
+            "missiletransportationunit",
+            "MISSILETRANSPORTATIONUNIT"
+          ]
+        },
+        {
+          "value": "MovementControlUnit",
+          "synonyms": [
+            "Movement Control Unit",
+            "movementcontrolunit",
+            "MOVEMENTCONTROLUNIT"
+          ]
+        },
+        {
+          "value": "RailwaysTransportationUnit",
+          "synonyms": [
+            "Railways Transportation Unit",
+            "Transportation unit railways",
+            "railwaystransportationunit",
+            "RAILWAYSTRANSPORTATIONUNIT"
+          ]
+        },
+        {
+          "value": "SPODOrSPOEUnit",
+          "synonyms": [
+            "S P O D Or S P O E Unit",
+            "spodorspoeunit",
+            "SPODORSPOEUNIT"
+          ]
+        },
+        {
+          "value": "MilitaryIntelligenceUnit",
+          "synonyms": [
+            "Military Intelligence Unit",
+            "militaryintelligenceunit",
+            "MILITARYINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "AirTrafficControlUnit",
+          "synonyms": [
+            "Air Traffic Control Unit",
+            "airtrafficcontrolunit",
+            "AIRTRAFFICCONTROLUNIT"
+          ]
+        },
+        {
+          "value": "EngineerUnit",
+          "synonyms": [
+            "Engineer Unit",
+            "engineerunit",
+            "ENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "CBRNUnit",
+          "synonyms": [
+            "CBRN Unit",
+            "Chemical Biological Radiological or Nuclear (CBRN) unit",
+            "cbrnunit",
+            "CBRNUNIT"
+          ]
+        },
+        {
+          "value": "CombatControlUnit",
+          "synonyms": [
+            "Combat Control Unit",
+            "combatcontrolunit",
+            "COMBATCONTROLUNIT"
+          ]
+        },
+        {
+          "value": "ExplosiveOrdnanceDisposalUnit",
+          "synonyms": [
+            "Explosive Ordnance Disposal Unit",
+            "explosiveordnancedisposalunit",
+            "EXPLOSIVEORDNANCEDISPOSALUNIT"
+          ]
+        },
+        {
+          "value": "InitialTerminalGuidanceUnit",
+          "synonyms": [
+            "Initial Terminal Guidance Unit",
+            "initialterminalguidanceunit",
+            "INITIALTERMINALGUIDANCEUNIT"
+          ]
+        },
+        {
+          "value": "LandingSupportUnit",
+          "synonyms": [
+            "Landing Support Unit",
+            "landingsupportunit",
+            "LANDINGSUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "LawEnforcementUnit",
+          "synonyms": [
+            "Law Enforcement Unit",
+            "lawenforcementunit",
+            "LAWENFORCEMENTUNIT"
+          ]
+        },
+        {
+          "value": "MilitaryPoliceUnit",
+          "synonyms": [
+            "Military Police Unit",
+            "militarypoliceunit",
+            "MILITARYPOLICEUNIT"
+          ]
+        },
+        {
+          "value": "SearchAndRescueAviationUnit",
+          "synonyms": [
+            "Search And Rescue Aviation Unit",
+            "searchandrescueaviationunit",
+            "SEARCHANDRESCUEAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "ShorePatrolUnit",
+          "synonyms": [
+            "Shore Patrol Unit",
+            "shorepatrolunit",
+            "SHOREPATROLUNIT"
+          ]
+        },
+        {
+          "value": "AerialExploitationUnit",
+          "synonyms": [
+            "Aerial Exploitation Unit",
+            "aerialexploitationunit",
+            "AERIALEXPLOITATIONUNIT"
+          ]
+        },
+        {
+          "value": "CounterIntelligenceUnit",
+          "synonyms": [
+            "Counter Intelligence Unit",
+            "counterintelligenceunit",
+            "COUNTERINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "SignalsIntelligenceUnit",
+          "synonyms": [
+            "Signals Intelligence Unit",
+            "signalsintelligenceunit",
+            "SIGNALSINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "ElectronicWarfareUnit",
+          "synonyms": [
+            "Electronic Warfare Unit",
+            "electronicwarfareunit",
+            "ELECTRONICWARFAREUNIT"
+          ]
+        },
+        {
+          "value": "InterrogationUnit",
+          "synonyms": [
+            "Interrogation Unit",
+            "interrogationunit",
+            "INTERROGATIONUNIT"
+          ]
+        },
+        {
+          "value": "JointIntelligenceUnit",
+          "synonyms": [
+            "Joint Intelligence Unit",
+            "jointintelligenceunit",
+            "JOINTINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "MeteorologicalUnit",
+          "synonyms": [
+            "Meteorological Unit",
+            "meteorologicalunit",
+            "METEOROLOGICALUNIT"
+          ]
+        },
+        {
+          "value": "OperationsMilitaryIntelligenceUnit",
+          "synonyms": [
+            "Operations Military Intelligence Unit",
+            "Military intelligence unit operations",
+            "operationsmilitaryintelligenceunit",
+            "OPERATIONSMILITARYINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "SurveillanceUnit",
+          "synonyms": [
+            "Surveillance Unit",
+            "surveillanceunit",
+            "SURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "TacticalExploitationUnit",
+          "synonyms": [
+            "Tactical Exploitation Unit",
+            "tacticalexploitationunit",
+            "TACTICALEXPLOITATIONUNIT"
+          ]
+        },
+        {
+          "value": "TopographicalSurveyUnit",
+          "synonyms": [
+            "Topographical Survey Unit",
+            "topographicalsurveyunit",
+            "TOPOGRAPHICALSURVEYUNIT"
+          ]
+        },
+        {
+          "value": "ElectronicRangingUnit",
+          "synonyms": [
+            "Electronic Ranging Unit",
+            "electronicrangingunit",
+            "ELECTRONICRANGINGUNIT"
+          ]
+        },
+        {
+          "value": "DirectionFindingElectronicWarfareUnit",
+          "synonyms": [
+            "Direction Finding Electronic Warfare Unit",
+            "Electronic warfare unit direction finding",
+            "directionfindingelectronicwarfareunit",
+            "DIRECTIONFINDINGELECTRONICWARFAREUNIT"
+          ]
+        },
+        {
+          "value": "InterceptElectronicWarfareUnit",
+          "synonyms": [
+            "Intercept Electronic Warfare Unit",
+            "Electronic warfare unit intercept",
+            "interceptelectronicwarfareunit",
+            "INTERCEPTELECTRONICWARFAREUNIT"
+          ]
+        },
+        {
+          "value": "JammingElectronicWarfareUnit",
+          "synonyms": [
+            "Jamming Electronic Warfare Unit",
+            "Electronic warfare unit jamming",
+            "jammingelectronicwarfareunit",
+            "JAMMINGELECTRONICWARFAREUNIT"
+          ]
+        },
+        {
+          "value": "GroundStationModuleSurveillanceUnit",
+          "synonyms": [
+            "Ground Station Module Surveillance Unit",
+            "Surveillance unit ground station module",
+            "groundstationmodulesurveillanceunit",
+            "GROUNDSTATIONMODULESURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "GroundSurveillanceRadarSurveillanceUnit",
+          "synonyms": [
+            "Ground Surveillance Radar Surveillance Unit",
+            "Surveillance unit ground surveillance radar",
+            "groundsurveillanceradarsurveillanceunit",
+            "GROUNDSURVEILLANCERADARSURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "LongRangeSurveillanceUnit",
+          "synonyms": [
+            "Long Range Surveillance Unit",
+            "Surveillance unit long range",
+            "longrangesurveillanceunit",
+            "LONGRANGESURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "SCMSensorSurveillanceUnit",
+          "synonyms": [
+            "S C M Sensor Surveillance Unit",
+            "Surveillance unit sensor SCM",
+            "scmsensorsurveillanceunit",
+            "SCMSENSORSURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "SensorSurveillanceUnit",
+          "synonyms": [
+            "Sensor Surveillance Unit",
+            "Surveillance unit sensor",
+            "sensorsurveillanceunit",
+            "SENSORSURVEILLANCEUNIT"
+          ]
+        },
+        {
+          "value": "BridgingUnit",
+          "synonyms": [
+            "Bridging Unit",
+            "bridgingunit",
+            "BRIDGINGUNIT"
+          ]
+        },
+        {
+          "value": "ConstructionEngineerUnit",
+          "synonyms": [
+            "Construction Engineer Unit",
+            "constructionengineerunit",
+            "CONSTRUCTIONENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "CounterMobilityEngineerUnit",
+          "synonyms": [
+            "Counter Mobility Engineer Unit",
+            "countermobilityengineerunit",
+            "COUNTERMOBILITYENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "DivingEngineerUnit",
+          "synonyms": [
+            "Diving Engineer Unit",
+            "divingengineerunit",
+            "DIVINGENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "MobilitySupportEngineerUnit",
+          "synonyms": [
+            "Mobility Support Engineer Unit",
+            "mobilitysupportengineerunit",
+            "MOBILITYSUPPORTENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "ReconnaissanceEngineerUnit",
+          "synonyms": [
+            "Reconnaissance Engineer Unit",
+            "reconnaissanceengineerunit",
+            "RECONNAISSANCEENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "RoadOrRailwaysEngineerUnit",
+          "synonyms": [
+            "Road Or Railways Engineer Unit",
+            "roadorrailwaysengineerunit",
+            "ROADORRAILWAYSENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "NavalConstructionEngineerUnit",
+          "synonyms": [
+            "Naval Construction Engineer Unit",
+            "navalconstructionengineerunit",
+            "NAVALCONSTRUCTIONENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "MineLayingEngineerUnit",
+          "synonyms": [
+            "Mine Laying Engineer Unit",
+            "minelayingengineerunit",
+            "MINELAYINGENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "MineClearingEngineerUnit",
+          "synonyms": [
+            "Mine Clearing Engineer Unit",
+            "mineclearingengineerunit",
+            "MINECLEARINGENGINEERUNIT"
+          ]
+        },
+        {
+          "value": "BiologicalReconnaissanceUnit",
+          "synonyms": [
+            "Biological Reconnaissance Unit",
+            "biologicalreconnaissanceunit",
+            "BIOLOGICALRECONNAISSANCEUNIT"
+          ]
+        },
+        {
+          "value": "BiologicalUnit",
+          "synonyms": [
+            "Biological Unit",
+            "biologicalunit",
+            "BIOLOGICALUNIT"
+          ]
+        },
+        {
+          "value": "CBRNReconnaissanceUnit",
+          "synonyms": [
+            "C B R N Reconnaissance Unit",
+            "cbrnreconnaissanceunit",
+            "CBRNRECONNAISSANCEUNIT"
+          ]
+        },
+        {
+          "value": "ChemicalUnit",
+          "synonyms": [
+            "Chemical Unit",
+            "chemicalunit",
+            "CHEMICALUNIT"
+          ]
+        },
+        {
+          "value": "DecontaminationUnit",
+          "synonyms": [
+            "Decontamination Unit",
+            "decontaminationunit",
+            "DECONTAMINATIONUNIT"
+          ]
+        },
+        {
+          "value": "NuclearUnit",
+          "synonyms": [
+            "Nuclear Unit",
+            "nuclearunit",
+            "NUCLEARUNIT"
+          ]
+        },
+        {
+          "value": "ReconnaissanceChemicalUnit",
+          "synonyms": [
+            "Reconnaissance Chemical Unit",
+            "Chemical unit reconnaissance",
+            "reconnaissancechemicalunit",
+            "RECONNAISSANCECHEMICALUNIT"
+          ]
+        },
+        {
+          "value": "SmokeChemicalUnit",
+          "synonyms": [
+            "Smoke Chemical Unit",
+            "Chemical unit smoke",
+            "smokechemicalunit",
+            "SMOKECHEMICALUNIT"
+          ]
+        },
+        {
+          "value": "SmokeOrDecontaminationChemicalUnit",
+          "synonyms": [
+            "Smoke Or Decontamination Chemical Unit",
+            "Chemical unit smoke/decontamination",
+            "smokeordecontaminationchemicalunit",
+            "SMOKEORDECONTAMINATIONCHEMICALUNIT"
+          ]
+        },
+        {
+          "value": "AirSecurityPoliceUnit",
+          "synonyms": [
+            "Air Security Police Unit",
+            "Security police unit air",
+            "airsecuritypoliceunit",
+            "AIRSECURITYPOLICEUNIT"
+          ]
+        },
+        {
+          "value": "BorderPatrolUnit",
+          "synonyms": [
+            "Border Patrol Unit",
+            "borderpatrolunit",
+            "BORDERPATROLUNIT"
+          ]
+        },
+        {
+          "value": "CentralIntelligenceUnit",
+          "synonyms": [
+            "Central Intelligence Unit",
+            "centralintelligenceunit",
+            "CENTRALINTELLIGENCEUNIT"
+          ]
+        },
+        {
+          "value": "CivilianLawEnforcementUnit",
+          "synonyms": [
+            "Civilian Law Enforcement Unit",
+            "civilianlawenforcementunit",
+            "CIVILIANLAWENFORCEMENTUNIT"
+          ]
+        },
+        {
+          "value": "AntiArmourUnit",
+          "synonyms": [
+            "Anti Armour Unit",
+            "antiarmourunit",
+            "ANTIARMOURUNIT"
+          ]
+        },
+        {
+          "value": "CombatAviationUnit",
+          "synonyms": [
+            "Combat Aviation Unit",
+            "combataviationunit",
+            "COMBATAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "ArmourUnit",
+          "synonyms": [
+            "Armour Unit",
+            "armourunit",
+            "ARMOURUNIT"
+          ]
+        },
+        {
+          "value": "ArtilleryUnit",
+          "synonyms": [
+            "Artillery Unit",
+            "artilleryunit",
+            "ARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "InfantryUnit",
+          "synonyms": [
+            "Infantry Unit",
+            "infantryunit",
+            "INFANTRYUNIT"
+          ]
+        },
+        {
+          "value": "ReconnaissanceUnit",
+          "synonyms": [
+            "Reconnaissance Unit",
+            "reconnaissanceunit",
+            "RECONNAISSANCEUNIT"
+          ]
+        },
+        {
+          "value": "AntisubmarineWarfareAviationUnit",
+          "synonyms": [
+            "Antisubmarine Warfare Aviation Unit",
+            "antisubmarinewarfareaviationunit",
+            "ANTISUBMARINEWARFAREAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "AttackAviationUnit",
+          "synonyms": [
+            "Attack Aviation Unit",
+            "attackaviationunit",
+            "ATTACKAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "MineCountermeasureAviationUnit",
+          "synonyms": [
+            "Mine Countermeasure Aviation Unit",
+            "minecountermeasureaviationunit",
+            "MINECOUNTERMEASUREAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "ReconnaissanceAviationUnit",
+          "synonyms": [
+            "Reconnaissance Aviation Unit",
+            "reconnaissanceaviationunit",
+            "RECONNAISSANCEAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "FieldArtilleryUnit",
+          "synonyms": [
+            "Field Artillery Unit",
+            "fieldartilleryunit",
+            "FIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "GroundBasedAirDefenceUnit",
+          "synonyms": [
+            "Ground Based Air Defence Unit",
+            "groundbasedairdefenceunit",
+            "GROUNDBASEDAIRDEFENCEUNIT"
+          ]
+        },
+        {
+          "value": "ArtilleryMeteorologicalUnit",
+          "synonyms": [
+            "Artillery Meteorological Unit",
+            "artillerymeteorologicalunit",
+            "ARTILLERYMETEOROLOGICALUNIT"
+          ]
+        },
+        {
+          "value": "ArtillerySurveyUnit",
+          "synonyms": [
+            "Artillery Survey Unit",
+            "artillerysurveyunit",
+            "ARTILLERYSURVEYUNIT"
+          ]
+        },
+        {
+          "value": "FieldArtilleryTargetAcquisitionUnit",
+          "synonyms": [
+            "Field Artillery Target Acquisition Unit",
+            "fieldartillerytargetacquisitionunit",
+            "FIELDARTILLERYTARGETACQUISITIONUNIT"
+          ]
+        },
+        {
+          "value": "HowitzerOrGunFieldArtilleryUnit",
+          "synonyms": [
+            "Howitzer Or Gun Field Artillery Unit",
+            "howitzerorgunfieldartilleryunit",
+            "HOWITZERORGUNFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "MissileFieldArtilleryUnit",
+          "synonyms": [
+            "Missile Field Artillery Unit",
+            "missilefieldartilleryunit",
+            "MISSILEFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "MortarFieldArtilleryUnit",
+          "synonyms": [
+            "Mortar Field Artillery Unit",
+            "mortarfieldartilleryunit",
+            "MORTARFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "RocketFieldArtilleryUnit",
+          "synonyms": [
+            "Rocket Field Artillery Unit",
+            "rocketfieldartilleryunit",
+            "ROCKETFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "OpticalFieldArtilleryTargetAcquisitionUnit",
+          "synonyms": [
+            "Optical Field Artillery Target Acquisition Unit",
+            "opticalfieldartillerytargetacquisitionunit",
+            "OPTICALFIELDARTILLERYTARGETACQUISITIONUNIT"
+          ]
+        },
+        {
+          "value": "RadarFieldArtilleryTargetAcquisitionUnit",
+          "synonyms": [
+            "Radar Field Artillery Target Acquisition Unit",
+            "radarfieldartillerytargetacquisitionunit",
+            "RADARFIELDARTILLERYTARGETACQUISITIONUNIT"
+          ]
+        },
+        {
+          "value": "SoundFieldArtilleryTargetAcquisitionUnit",
+          "synonyms": [
+            "Sound Field Artillery Target Acquisition Unit",
+            "soundfieldartillerytargetacquisitionunit",
+            "SOUNDFIELDARTILLERYTARGETACQUISITIONUNIT"
+          ]
+        },
+        {
+          "value": "MultiRocketLauncherFieldArtilleryUnit",
+          "synonyms": [
+            "Multi Rocket Launcher Field Artillery Unit",
+            "multirocketlauncherfieldartilleryunit",
+            "MULTIROCKETLAUNCHERFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "SingleRocketLauncherFieldArtilleryUnit",
+          "synonyms": [
+            "Single Rocket Launcher Field Artillery Unit",
+            "singlerocketlauncherfieldartilleryunit",
+            "SINGLEROCKETLAUNCHERFIELDARTILLERYUNIT"
+          ]
+        },
+        {
+          "value": "CompositeWeaponsGroundBasedAirDefenceUnit",
+          "synonyms": [
+            "Composite Weapons Ground Based Air Defence Unit",
+            "compositeweaponsgroundbasedairdefenceunit",
+            "COMPOSITEWEAPONSGROUNDBASEDAIRDEFENCEUNIT"
+          ]
+        },
+        {
+          "value": "GroundBasedAirDefenceTargetingUnit",
+          "synonyms": [
+            "Ground Based Air Defence Targeting Unit",
+            "groundbasedairdefencetargetingunit",
+            "GROUNDBASEDAIRDEFENCETARGETINGUNIT"
+          ]
+        },
+        {
+          "value": "GunGroundBasedAirDefenceUnit",
+          "synonyms": [
+            "Gun Ground Based Air Defence Unit",
+            "gungroundbasedairdefenceunit",
+            "GUNGROUNDBASEDAIRDEFENCEUNIT"
+          ]
+        },
+        {
+          "value": "MissileGroundBasedAirDefenceUnit",
+          "synonyms": [
+            "Missile Ground Based Air Defence Unit",
+            "missilegroundbasedairdefenceunit",
+            "MISSILEGROUNDBASEDAIRDEFENCEUNIT"
+          ]
+        },
+        {
+          "value": "AviationSOFUnit",
+          "synonyms": [
+            "Aviation SOF Unit",
+            "aviationsofunit",
+            "AVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "CivilAffairsUnit",
+          "synonyms": [
+            "Civil Affairs Unit",
+            "civilaffairsunit",
+            "CIVILAFFAIRSUNIT"
+          ]
+        },
+        {
+          "value": "PsychologicalOperationsUnit",
+          "synonyms": [
+            "Psychological Operations Unit",
+            "psychologicaloperationsunit",
+            "PSYCHOLOGICALOPERATIONSUNIT"
+          ]
+        },
+        {
+          "value": "RangerUnit",
+          "synonyms": [
+            "Ranger Unit",
+            "rangerunit",
+            "RANGERUNIT"
+          ]
+        },
+        {
+          "value": "SEALUnit",
+          "synonyms": [
+            "SEAL Unit",
+            "sealunit",
+            "SEALUNIT"
+          ]
+        },
+        {
+          "value": "SpecialBoatUnit",
+          "synonyms": [
+            "Special Boat Unit",
+            "specialboatunit",
+            "SPECIALBOATUNIT"
+          ]
+        },
+        {
+          "value": "SpecialForcesUnit",
+          "synonyms": [
+            "Special Forces Unit",
+            "specialforcesunit",
+            "SPECIALFORCESUNIT"
+          ]
+        },
+        {
+          "value": "SpecialOperationsSupportUnit",
+          "synonyms": [
+            "Special Operations Support Unit",
+            "specialoperationssupportunit",
+            "SPECIALOPERATIONSSUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "SpecialSSNRUnit",
+          "synonyms": [
+            "Special SSNR Unit",
+            "specialssnrunit",
+            "SPECIALSSNRUNIT"
+          ]
+        },
+        {
+          "value": "UnderwaterDemolitionUnit",
+          "synonyms": [
+            "Underwater Demolition Unit",
+            "underwaterdemolitionunit",
+            "UNDERWATERDEMOLITIONUNIT"
+          ]
+        },
+        {
+          "value": "AttackAviationSOFUnit",
+          "synonyms": [
+            "Attack Aviation SOF Unit",
+            "attackaviationsofunit",
+            "ATTACKAVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "CombatSearchAndRescueAviationUnit",
+          "synonyms": [
+            "Combat Search And Rescue Aviation Unit",
+            "combatsearchandrescueaviationunit",
+            "COMBATSEARCHANDRESCUEAVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "PsychologicalOperationsAviationSOFUnit",
+          "synonyms": [
+            "Psychological Operations Aviation SOF Unit",
+            "psychologicaloperationsaviationsofunit",
+            "PSYCHOLOGICALOPERATIONSAVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "RefuelAviationSOFUnit",
+          "synonyms": [
+            "Refuel Aviation SOF Unit",
+            "refuelaviationsofunit",
+            "REFUELAVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "SpecialOperationsSupportAviationSOFUnit",
+          "synonyms": [
+            "Special Operations Support Aviation SOF Unit",
+            "specialoperationssupportaviationsofunit",
+            "SPECIALOPERATIONSSUPPORTAVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "UtilityAviationSOFUnit",
+          "synonyms": [
+            "Utility Aviation SOF Unit",
+            "utilityaviationsofunit",
+            "UTILITYAVIATIONSOFUNIT"
+          ]
+        },
+        {
+          "value": "C2AviationUnit",
+          "synonyms": [
+            "C2 Aviation Unit",
+            "c2aviationunit",
+            "C2AVIATIONUNIT"
+          ]
+        },
+        {
+          "value": "FireSupportCoordinationUnit",
+          "synonyms": [
+            "Fire Support Coordination Unit",
+            "firesupportcoordinationunit",
+            "FIRESUPPORTCOORDINATIONUNIT"
+          ]
+        },
+        {
+          "value": "HeadquartersAndSignalsUnit",
+          "synonyms": [
+            "Headquarters And Signals Unit",
+            "headquartersandsignalsunit",
+            "HEADQUARTERSANDSIGNALSUNIT"
+          ]
+        },
+        {
+          "value": "HeadquartersStaffUnit",
+          "synonyms": [
+            "Headquarters Staff Unit",
+            "headquartersstaffunit",
+            "HEADQUARTERSSTAFFUNIT"
+          ]
+        },
+        {
+          "value": "InformationWarfareUnit",
+          "synonyms": [
+            "Information Warfare Unit",
+            "informationwarfareunit",
+            "INFORMATIONWARFAREUNIT"
+          ]
+        },
+        {
+          "value": "SignalUnit",
+          "synonyms": [
+            "Signal Unit",
+            "signalunit",
+            "SIGNALUNIT"
+          ]
+        },
+        {
+          "value": "CommandOperationsSignalUnit",
+          "synonyms": [
+            "Command Operations Signal Unit",
+            "Signal unit command operations",
+            "commandoperationssignalunit",
+            "COMMANDOPERATIONSSIGNALUNIT"
+          ]
+        },
+        {
+          "value": "LargeExtensionNodeSignalUnit",
+          "synonyms": [
+            "Large Extension Node Signal Unit",
+            "Signal unit node large extension",
+            "largeextensionnodesignalunit",
+            "LARGEEXTENSIONNODESIGNALUNIT"
+          ]
+        },
+        {
+          "value": "NodeCentreSignalUnit",
+          "synonyms": [
+            "Node Centre Signal Unit",
+            "Signal unit node centre",
+            "nodecentresignalunit",
+            "NODECENTRESIGNALUNIT"
+          ]
+        },
+        {
+          "value": "RadioRelaySignalUnit",
+          "synonyms": [
+            "Radio Relay Signal Unit",
+            "Signal unit radio relay",
+            "radiorelaysignalunit",
+            "RADIORELAYSIGNALUNIT"
+          ]
+        },
+        {
+          "value": "RadioSignalUnit",
+          "synonyms": [
+            "Radio Signal Unit",
+            "Signal unit radio",
+            "radiosignalunit",
+            "RADIOSIGNALUNIT"
+          ]
+        },
+        {
+          "value": "SignalSupportUnit",
+          "synonyms": [
+            "Signal Support Unit",
+            "signalsupportunit",
+            "SIGNALSUPPORTUNIT"
+          ]
+        },
+        {
+          "value": "SmallExtensionNodeSignalUnit",
+          "synonyms": [
+            "Small Extension Node Signal Unit",
+            "Signal unit node small extension",
+            "smallextensionnodesignalunit",
+            "SMALLEXTENSIONNODESIGNALUNIT"
+          ]
+        },
+        {
+          "value": "TacticalSatelliteSignalUnit",
+          "synonyms": [
+            "Tactical Satellite Signal Unit",
+            "Signal unit tactical satellite",
+            "tacticalsatellitesignalunit",
+            "TACTICALSATELLITESIGNALUNIT"
+          ]
+        },
+        {
+          "value": "TelephoneSwitchSignalUnit",
+          "synonyms": [
+            "Telephone Switch Signal Unit",
+            "Signal unit telephone switch",
+            "telephoneswitchsignalunit",
+            "TELEPHONESWITCHSIGNALUNIT"
+          ]
+        },
+        {
+          "value": "TeletypeCentreSignalUnit",
+          "synonyms": [
+            "Teletype Centre Signal Unit",
+            "Signal unit teletype centre",
+            "teletypecentresignalunit",
+            "TELETYPECENTRESIGNALUNIT"
+          ]
+        },
+        {
+          "value": "Electronic Ranging Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Command Support Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Supply Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Recovery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Surveillance Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Tactical Exploitation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Armour Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Diving Engineer Unit",
+          "synonyms": []
+        },
+        {
+          "value": "C2 Aviation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "C2 Aviation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "C2 Aviation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "C2 Aviation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Command Support Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Combat Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Supply Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Recovery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Engineer Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Military Police Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Artillery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Armour Recovery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Infantry Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Command Support Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Combat Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Supply Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Recovery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Engineer Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Military Police Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Artillery Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Refuel Aviation Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Topographical Survey Unit",
+          "synonyms": []
+        },
+        {
+          "value": "Command Support Unit",
+          "synonyms": []
+        }
+      ]
+    },
+    "unitName": {
+      "automatically_extensible": true,
+      "use_synonyms": true,
+      "data": [
+        {
+          "value": "1st Armored Division",
+          "synonyms": []
+        },
+        {
+          "value": "2nd Armored Division",
+          "synonyms": []
+        },
+        {
+          "value": "3rd Armored Division",
+          "synonyms": []
+        },
+        {
+          "value": "11th Airborne Division",
+          "synonyms": []
+        },
+        {
+          "value": "17th Airborne Division",
+          "synonyms": []
+        },
+        {
+          "value": "1st Infantry Division",
+          "synonyms": []
+        },
+        {
+          "value": "3rd Infantry Division",
+          "synonyms": []
+        },
+        {
+          "value": "7th Infantry Division",
+          "synonyms": []
+        },
+        {
+          "value": "Viking",
+          "synonyms": []
+        },
+        {
+          "value": "Thunderbird",
+          "synonyms": []
+        },
+        {
+          "value": "Battle Axe",
+          "synonyms": []
+        },
+        {
+          "value": "Black Panther",
+          "synonyms": []
+        },
+        {
+          "value": "Rainbow",
+          "synonyms": []
+        },
+        {
+          "value": "The Professionals",
+          "synonyms": []
+        },
+        {
+          "value": "Gunslingers",
+          "synonyms": []
+        },
+        {
+          "value": "Yellow Jackets",
+          "synonyms": []
+        },
+        {
+          "value": "Avengers",
+          "synonyms": []
+        },
+        {
+          "value": "Thunderbird",
+          "synonyms": []
+        },
+        {
+          "value": "3rd Infantry Division",
+          "synonyms": []
+        },
+        {
+          "value": "Gunslingers",
+          "synonyms": []
+        },
+        {
+          "value": "Battle Axe",
+          "synonyms": []
+        },
+        {
+          "value": "Battle Axe",
+          "synonyms": []
+        },
+        {
+          "value": "Black Panther",
+          "synonyms": []
+        },
+        {
+          "value": "Diamondbacks",
+          "synonyms": []
+        },
+        {
+          "value": "Viking",
+          "synonyms": []
+        },
+        {
+          "value": "The Professionals",
+          "synonyms": []
+        },
+        {
+          "value": "Gunslingers",
+          "synonyms": []
+        },
+        {
+          "value": "Yellow Jackets",
+          "synonyms": []
+        },
+        {
+          "value": "7th Infantry Division",
+          "synonyms": []
+        },
+        {
+          "value": "Avengers",
+          "synonyms": []
+        },
+        {
+          "value": "Gunslingers",
+          "synonyms": []
+        }
+      ]
+    },
+    "snips/datetime": {}
+  }
+}
