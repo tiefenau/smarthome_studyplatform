@@ -12,8 +12,11 @@ m = sr.Microphone()
 
 
 def forward_query_to_data_ingestion(userQuery):
-    response = requests.post('http://127.0.0.1:9001/data/ingestion/user-query', data={'userQuery': userQuery})
-    logger.info('Request forwarded to data ingestion with user query [' + userQuery + ']')
+    try:
+        response = requests.post('http://127.0.0.1:9001/data/ingestion/user-query', data={'userQuery': userQuery})
+        logger.info('Request forwarded to data ingestion with user query [' + userQuery + ']')
+    except requests.ConnectionError as e:
+        logger.error('Error forwarding request to data-ingestion pipeline {0}'. format(e))
 
 try:
     logger.info('Initiating speech recognition.')
