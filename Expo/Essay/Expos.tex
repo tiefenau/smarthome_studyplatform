@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper, bibtotoc, DIV11, oneside, openleft, listof=totoc, xcolor=dvipsnames] {scrbook}
+%\documentclass[xcolor=dvipsnames] {beamer}
+\usepackage[a4paper, includeheadfoot, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[ngerman,american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[automark]{scrpage2}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[htt]{hyphenat}
+\usepackage{cite}
+\usepackage{wallpaper}
+\usepackage{listings}
+%\usepackage{color}
+\usepackage{mathtools}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\rmfamily
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{helvet}
+\usepackage{pdfpages}
+\usepackage{glossaries} 
+\usepackage{pdflscape}
+\setlength\parindent{0ex}
+\usepackage[nooneline]{caption}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tabularx}
+
+\usepackage{titlesec}
+\titlespacing*{\subsection}{0pt}{1.1\baselineskip}{\baselineskip}
+
+\renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
+\renewcommand*{\chapterheadendvskip}{\vspace{1cm}}
+
+\definecolor{codegray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\lstset{basicstyle=\small\ttfamily, frame=single, backgroundcolor=\color{codegray},
+  breaklines, showstringspaces=false, commentstyle=\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue}, stringstyle=\color{darkred},
+  xleftmargin=0.5cm, numbers=left, language=java}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}  
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\onehalfspacing
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+%\setheadsepline[\textwidth]{1pt}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\makeglossaries
+%\include{Abk/Abk}
+
+\begin{document}
+\frontmatter
+
+	\include{Deckblatt/Deckblatt}
+	\ClearWallPaper
+	
+	\thispagestyle{empty}
+	%\cleardoublepage
+	
+	%\pagenumbering{roman}
+	\include{Copyright/Copyright}
+	%\include{Danksagung/Danksagung}
+	\printglossary[style=long,title={Abkürzungsverzeichnis}]
+	%\include{Begriffsverzeichnis/Begriffsverzeichnis}
+
+	\pdfbookmark[2]{Inhaltsverzeichnis}{toc}
+	\tableofcontents
+	
+	%\cleardoublepage
+	%\ofoot{\pagemark}
+	
+	\mainmatter	
+	%\include{Zusammenfassung/Zusammenfassung}
+	\ofoot{\pagemark}
+    \setcounter{page}{0}
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+	\include{Einleitung/Einleitung}
+	\include{Methode/Methode}
+	%\include{Resultate/Resultate}
+	%\include{Diskussion/Diskussion}
+	
+	%\include{Literatur/Literatur}
+	%\include{Appendix/Appendix}
+\end{document}
