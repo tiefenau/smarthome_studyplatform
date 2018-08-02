@@ -24,5 +24,8 @@ public interface Constants {
 			+ "\\d+\\:\\d+\\:\\d+\\."
 			+ "\\d+\\+\\d+\\:\\d+\\-asr\\-(\\w+)?(\\_)?\\.nlu\\.json";
 	
-	public static final String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm:ss.SSSSS";
+//	public static final String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm:ss.SSSSS";
+	public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
+	
+	public static final String INPUT_FILE_TIME_FORMAT = "yyyy-MM-dd'T'HH_mm_ss.SSSSSSSSS";
 }

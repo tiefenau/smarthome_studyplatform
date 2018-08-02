@@ -11,6 +11,8 @@ public class DataIngestionProperties {
 
 	private boolean snipsWatch;
 	private String hotword;
+	private String databaseName;
+	private String databaseUrl;
 
 	public boolean isSnipsWatch() {
 		return snipsWatch;
@@ -26,5 +28,21 @@ public class DataIngestionProperties {
 
 	public void setHotword(String hotword) {
 		this.hotword = hotword;
+	}
+
+	public String getDatabaseName() {
+		return databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+	}
+
+	public String getDatabaseUrl() {
+		return databaseUrl;
+	}
+
+	public void setDatabaseUrl(String databaseUrl) {
+		this.databaseUrl = databaseUrl;
 	}
 }

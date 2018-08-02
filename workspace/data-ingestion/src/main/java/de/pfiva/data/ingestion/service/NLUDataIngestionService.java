@@ -10,15 +10,14 @@ import org.springframework.stereotype.Service;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
-import de.pfiva.data.ingestion.model.snips.InboundQueryData;
 import de.pfiva.data.ingestion.model.snips.SnipsOutput;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 
 @Service
 public class NLUDataIngestionService {
 	
-	private static final int FILES_COUNTER_THRESHOLD = 4;
-	private static final int VALID_TIME_DIFFERENCE = 5;
+//	private static final int FILES_COUNTER_THRESHOLD = 4;
+//	private static final int VALID_TIME_DIFFERENCE = 5;
 
 	private static Logger logger = LoggerFactory.getLogger(NLUDataIngestionService.class);
 	
@@ -31,10 +30,10 @@ public class NLUDataIngestionService {
 //	private NLUOutput nluOutput;
 	
 	public void extractInboundFileData(InputFile inputFile) {
-		InboundQueryData inboundQueryData = fileExtractor.extractInboundFileData(inputFile);
-		if(inboundQueryData != null) {
-			inboundQueryData.setHotword(properties.getHotword());
-			dbService.ingestDataToDB(inboundQueryData);
+		SnipsOutput snipsOutput = fileExtractor.extractInboundFileData(inputFile);
+		if(snipsOutput != null) {
+			snipsOutput.setHotword(properties.getHotword());
+			dbService.ingestDataToDB(snipsOutput);
 		}
 	}
 	
@@ -49,16 +48,23 @@ public class NLUDataIngestionService {
 			// Do intent classification only if query is present
 			if(queryTuple.getQuery() != null) {
 				SnipsOutput snipsOutput = nluService.classifyIntents(queryTuple.getQuery());
-				if(snipsOutput != null) {
-					if(queryTuple.getHotword() != null) {
-						snipsOutput.setHotword(queryTuple.getHotword());						
-					}
-					
-					snipsOutput.setTimestamp(LocalDateTime.now());
-					
-					// Push data to db layer
-					dbService.ingestDataToDB(snipsOutput);
+				
+				if(snipsOutput == null) {
+					// Cannot classify intents, therefore just save user query
+					snipsOutput = new SnipsOutput();
+					snipsOutput.setInput(queryTuple.getQuery());
 				}
+				
+				if(queryTuple.getHotword() != null) {
+					snipsOutput.setHotword(queryTuple.getHotword());						
+				}
+				
+				snipsOutput.setTimestamp(LocalDateTime.now());
+				
+				// Push data to db layer
+				boolean dbInsertionStatus = dbService.ingestDataToDB(snipsOutput);
+				
+				//TODO - build mechanism for sending notification to smart watch
 			}
 			
 			

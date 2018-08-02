@@ -1,14 +1,20 @@
 package de.pfiva.data.ingestion.model.snips;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-public class SnipsOutput extends InboundQueryData {
+public class SnipsOutput {
 
 	private String id;
 	private String input;
 	private Intent intent;
 	private List<Slot> slots;
 	private String sessionId;
+	
+	private String filename;
+	private String filePath;
+	private String hotword;
+	private LocalDateTime timestamp;
 	
 	public String getId() {
 		return id;
@@ -40,9 +46,35 @@ public class SnipsOutput extends InboundQueryData {
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	public String getHotword() {
+		return hotword;
+	}
+	public void setHotword(String hotword) {
+		this.hotword = hotword;
+	}
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
+	
 	@Override
 	public String toString() {
 		return "SnipsOutput [id=" + id + ", input=" + input + ", intent=" + intent + ", slots=" + slots + ", sessionId="
-				+ sessionId + ", toString()=" + super.toString() + "]";
+				+ sessionId + ", filename=" + filename + ", filePath=" + filePath + ", hotword=" + hotword
+				+ ", timestamp=" + timestamp + "]";
 	}
 }

@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -26,6 +27,8 @@ public class SnipsNLUService {
 
 	private static final Logger logger = LoggerFactory.getLogger(SnipsNLUService.class);
 	
+	private static final String NLU_ENGINE_URL = "http://127.0.0.1:5000";
+	
 	@Autowired RestTemplate restTemplate;
 	
 	public SnipsOutput classifyIntents(String query) {
@@ -37,7 +40,7 @@ public class SnipsNLUService {
 	}
 	
 	private ResponseEntity<String> executeNLUEngine(String query) {
-		String url = "http://127.0.0.1:5000/intents";
+		String url = NLU_ENGINE_URL + "/intents";
 		logger.info("Sending request to url :" + url 
 				+ ", with user query [" + query + "].");
 		
@@ -48,10 +51,14 @@ public class SnipsNLUService {
 		body.add("query", query);
 		
 		HttpEntity<?> requestEntity = new HttpEntity<Object>(body, headers);
-		ResponseEntity<String> response = restTemplate.
-				exchange(url, HttpMethod.POST, requestEntity, String.class);
+		ResponseEntity<String> response = null;
+		try {
+			response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
+			logger.info("Response from server\n" + response.getBody());
+		} catch(RestClientException e) {
+			logger.error("Error fetching data from NLU Engine at " + NLU_ENGINE_URL);
+		}
 		
-		logger.info("Response from server\n" + response.getBody());
 		return response;
 	}
 	
