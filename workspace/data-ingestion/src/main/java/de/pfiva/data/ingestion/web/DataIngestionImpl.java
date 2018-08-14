@@ -75,4 +75,21 @@ public class DataIngestionImpl implements IDataIngestion {
 			logger.info("Error while parsing input file details", e);
 		}
 	}
+
+	
+	@Override
+	@RequestMapping(value = "/client-token", method = RequestMethod.POST)
+	public void saveClientRegistrationToken(@RequestBody String requestBody) {
+		try {
+			Map<String, String> responseMap = DataIngestionUtils.parseResponseBody(requestBody);
+			String clientName = responseMap.get("clientName");
+			String token = responseMap.get("token");
+			if(token != null && !token.isEmpty()) {
+				logger.info("Token received for [" + clientName + "] as [" + token + "].");
+				dataIngestionService.saveClientRegistrationToken(clientName, token);
+			}
+		} catch(UnsupportedEncodingException e) {
+			logger.info("Error while parsing client details", e);
+		}
+	}
 }

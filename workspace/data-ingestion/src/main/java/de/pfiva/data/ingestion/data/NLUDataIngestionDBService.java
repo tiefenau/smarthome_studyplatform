@@ -2,7 +2,9 @@ package de.pfiva.data.ingestion.data;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
@@ -125,4 +128,39 @@ public class NLUDataIngestionDBService {
 		logger.info("Inserted [" + slots.size() + "] records in slots_tbl");
 	}
 
+	public void saveClientRegistrationTokenToDB(String clientName, String token) {
+		if(token != null && !token.isEmpty()) {
+			
+			// If client does not exists then insert other wise update token
+			
+			if(clientName != null && !clientName.isEmpty()) {
+				List<String> clientNames = jdbcTemplate
+						.query(DataIngestionDBQueries.FETCH_CLIENT_NAMES, new RowMapper<String>() {
+
+					@Override
+					public String mapRow(ResultSet rs, int rowNum) throws SQLException {						
+						return rs.getString("client_name");
+					}
+				});
+				
+				logger.info("Existing clients : " + clientNames);
+				
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+				String currentDateTime = LocalDateTime.now().format(formatter);
+				
+				if(clientNames.contains(clientName)) {
+					// Update client token
+					logger.info("Client [" + clientName + "] exists, therefore updating client token.");
+					
+					jdbcTemplate.update(DataIngestionDBQueries.UPDATE_CLIENT_TOKEN, token, currentDateTime, clientName);
+				} else {
+					// Insert new client details
+					logger.info("Client [" + clientName + "] does not exists,"
+							+ " therefore inserting details for new client.");
+					
+					jdbcTemplate.update(DataIngestionDBQueries.INSERT_CLIENTS_TBL, clientName, token, currentDateTime);
+				}
+			}
+		}
+	}
 }

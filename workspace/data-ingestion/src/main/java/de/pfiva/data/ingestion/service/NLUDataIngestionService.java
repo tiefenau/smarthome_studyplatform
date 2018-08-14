@@ -70,6 +70,10 @@ public class NLUDataIngestionService {
 			
 		}
 	}
+
+	public void saveClientRegistrationToken(String clientName, String token) {
+		dbService.saveClientRegistrationTokenToDB(clientName, token);
+	}
 	
 	// On receiving data, check for completion, if data
 	// is complete push to database.

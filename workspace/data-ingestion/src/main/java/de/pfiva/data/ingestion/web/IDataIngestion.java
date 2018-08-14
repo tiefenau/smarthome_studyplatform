@@ -7,4 +7,6 @@ public interface IDataIngestion {
 	public void activateSnipsWatch(boolean snipsWatch);
 	
 	public void captureUserQuery(String requestBody);
+	
+	public void saveClientRegistrationToken(String requestBody);
 }
