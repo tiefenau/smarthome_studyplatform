@@ -20,6 +20,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
+import de.pfiva.data.ingestion.model.NLUData;
 import de.pfiva.data.ingestion.model.snips.Intent;
 import de.pfiva.data.ingestion.model.snips.Slot;
 import de.pfiva.data.ingestion.model.snips.SnipsOutput;
@@ -162,5 +163,25 @@ public class NLUDataIngestionDBService {
 				}
 			}
 		}
+	}
+
+	public List<NLUData> getQueryIntentFeedbackData() {
+		logger.info("Fetching Query, Intent, Feedback data");
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_QUERY_INTENT_FEEDBACK_DATA, new NLUDataRowMapper());
+	}
+
+	public List<Slot> getSlotsForIntent(int intentId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_SLOTS_BY_INTENT_ID,
+				new Object[] { intentId }, new RowMapper<Slot>() {
+
+			@Override
+			public Slot mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Slot slot = new Slot();
+				slot.setSlotName(rs.getString("slot_name"));
+				slot.setRawValue(rs.getString("slot_value"));
+				
+				return slot;
+			}
+		});
 	}
 }

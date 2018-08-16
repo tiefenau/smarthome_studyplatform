@@ -1,6 +1,7 @@
 package de.pfiva.data.ingestion.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
+import de.pfiva.data.ingestion.model.NLUData;
+import de.pfiva.data.ingestion.model.snips.Slot;
 import de.pfiva.data.ingestion.model.snips.SnipsOutput;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 
@@ -65,6 +68,8 @@ public class NLUDataIngestionService {
 				boolean dbInsertionStatus = dbService.ingestDataToDB(snipsOutput);
 				
 				//TODO - build mechanism for sending notification to smart watch
+				// might have to create notification service, for creating notification query
+				// and sending the query.
 			}
 			
 			
@@ -73,6 +78,28 @@ public class NLUDataIngestionService {
 
 	public void saveClientRegistrationToken(String clientName, String token) {
 		dbService.saveClientRegistrationTokenToDB(clientName, token);
+	}
+
+	public List<NLUData> getCompleteNLUData() {
+		List<NLUData> nluData = dbService.getQueryIntentFeedbackData();
+		
+		// NLUData is incomplete without slots. Therefore fetch slots from slots table
+		for(NLUData data : nluData) {
+			if(data.getSnipsOutput() != null) {
+				if(data.getSnipsOutput().getIntent() != null) {
+					int intentId = data.getSnipsOutput().getIntent().getIntentId();
+					if(intentId != 0) {
+						logger.info("Fetching slots for intent [" + intentId + "].");
+						List<Slot> slots = dbService.getSlotsForIntent(intentId);
+						if(slots != null && !slots.isEmpty()) {
+							data.getSnipsOutput().setSlots(slots);
+						}
+					}
+				}
+			}
+		}
+		
+		return nluData;
 	}
 	
 	// On receiving data, check for completion, if data

@@ -1,6 +1,7 @@
 package de.pfiva.data.ingestion.web;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
+import de.pfiva.data.ingestion.model.NLUData;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 
 @RestController
@@ -91,5 +93,11 @@ public class DataIngestionImpl implements IDataIngestion {
 		} catch(UnsupportedEncodingException e) {
 			logger.info("Error while parsing client details", e);
 		}
+	}
+
+	@Override
+	@RequestMapping(value = "/nlu-data", method = RequestMethod.GET)
+	public List<NLUData> getCompleteNLUData() {
+		return dataIngestionService.getCompleteNLUData();
 	}
 }
