@@ -53,6 +53,12 @@
     	<artifactId>sqlite-jdbc</artifactId>
 <!--     	<version>3.23.1</version> -->
 	</dependency>
+	
+	<dependency>
+		<groupId>de.pfiva</groupId>
+		<artifactId>data-model</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   
   <dependencyManagement>

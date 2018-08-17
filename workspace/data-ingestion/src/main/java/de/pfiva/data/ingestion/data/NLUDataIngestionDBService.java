@@ -20,10 +20,10 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
-import de.pfiva.data.ingestion.model.NLUData;
-import de.pfiva.data.ingestion.model.snips.Intent;
-import de.pfiva.data.ingestion.model.snips.Slot;
-import de.pfiva.data.ingestion.model.snips.SnipsOutput;
+import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.snips.Intent;
+import de.pfiva.data.model.snips.Slot;
+import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
 public class NLUDataIngestionDBService {
@@ -67,10 +67,7 @@ public class NLUDataIngestionDBService {
 				
 				ps.setString(1, snipsOutput.getInput());
 				ps.setString(2, snipsOutput.getHotword());
-				
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
-				String currentDateTimeString = snipsOutput.getTimestamp().format(formatter);
-				ps.setString(3, currentDateTimeString);
+				ps.setString(3, snipsOutput.getTimestamp());
 				
 				String completeFileLocation = null;
 				if(snipsOutput.getFilename() != null && snipsOutput.getFilePath() != null) {

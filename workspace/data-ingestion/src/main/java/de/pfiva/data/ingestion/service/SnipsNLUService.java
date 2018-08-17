@@ -20,7 +20,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.pfiva.data.ingestion.model.snips.SnipsOutput;
+import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
 public class SnipsNLUService {

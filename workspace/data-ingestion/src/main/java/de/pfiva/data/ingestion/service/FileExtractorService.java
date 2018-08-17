@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
-import de.pfiva.data.ingestion.model.snips.SnipsOutput;
+import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
 public class FileExtractorService {
@@ -46,7 +46,7 @@ public class FileExtractorService {
 			if(snipsOutput != null) {
 				snipsOutput.setFilename(filename);
 				snipsOutput.setFilePath(filePath);
-				snipsOutput.setTimestamp(DataIngestionUtils.extractTimestamp(filename));				
+				snipsOutput.setTimestamp(DataIngestionUtils.extractTimestamp(filename));
 			}
 			
 		} catch(JsonParseException e) {

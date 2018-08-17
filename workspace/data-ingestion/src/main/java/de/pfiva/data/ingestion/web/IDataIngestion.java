@@ -2,7 +2,7 @@ package de.pfiva.data.ingestion.web;
 
 import java.util.List;
 
-import de.pfiva.data.ingestion.model.NLUData;
+import de.pfiva.data.model.NLUData;
 
 public interface IDataIngestion {
 

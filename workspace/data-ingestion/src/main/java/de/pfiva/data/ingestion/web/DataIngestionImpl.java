@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
-import de.pfiva.data.ingestion.model.NLUData;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
+import de.pfiva.data.model.NLUData;
 
 @RestController
 @RequestMapping(value = "data/ingestion")

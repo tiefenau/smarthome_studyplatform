@@ -1,6 +1,7 @@
 package de.pfiva.data.ingestion.service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -8,13 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
-import de.pfiva.data.ingestion.model.NLUData;
-import de.pfiva.data.ingestion.model.snips.Slot;
-import de.pfiva.data.ingestion.model.snips.SnipsOutput;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
+import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.snips.Slot;
+import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
 public class NLUDataIngestionService {
@@ -62,7 +64,8 @@ public class NLUDataIngestionService {
 					snipsOutput.setHotword(queryTuple.getHotword());						
 				}
 				
-				snipsOutput.setTimestamp(LocalDateTime.now());
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+				snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
 				
 				// Push data to db layer
 				boolean dbInsertionStatus = dbService.ingestDataToDB(snipsOutput);
@@ -99,6 +102,7 @@ public class NLUDataIngestionService {
 			}
 		}
 		
+		logger.info("Total user queries fetched [" + nluData.size() + "].");
 		return nluData;
 	}
 	
