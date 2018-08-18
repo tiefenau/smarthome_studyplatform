@@ -12,6 +12,9 @@ public interface DataIngestionDBQueries {
 	public static final String INSERT_SLOTS_TBL = "INSERT INTO slots_tbl(slot_name,"
 			+ " slot_value, intent_id) VALUES(?,?,?)";
 	
+	public static final String INSERT_FEEDBACK_QUERY = "INSERT INTO feedback_tbl(feedback_query,"
+			+ " query_id) VALUES(?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	
@@ -33,4 +36,7 @@ public interface DataIngestionDBQueries {
 
 	public static final String GET_SLOTS_BY_INTENT_ID = "select slot_name, slot_value"
 			+ " from slots_tbl where intent_id = ?";
+	
+	public static final String GET_CLIENT_TOKEN = "SELECT client_token from clients_tbl"
+			+ " where client_name = ?";
 }

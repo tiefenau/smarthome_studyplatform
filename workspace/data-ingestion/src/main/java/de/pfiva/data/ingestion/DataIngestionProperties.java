@@ -13,6 +13,11 @@ public class DataIngestionProperties {
 	private String hotword;
 	private String databaseName;
 	private String databaseUrl;
+	private boolean feedbackAfterIntentClassification;
+	
+	private String firebaseUrl;
+	private String firebaseServerKey;
+	private String clientName;
 
 	public boolean isSnipsWatch() {
 		return snipsWatch;
@@ -44,5 +49,37 @@ public class DataIngestionProperties {
 
 	public void setDatabaseUrl(String databaseUrl) {
 		this.databaseUrl = databaseUrl;
+	}
+
+	public boolean isFeedbackAfterIntentClassification() {
+		return feedbackAfterIntentClassification;
+	}
+
+	public void setFeedbackAfterIntentClassification(boolean feedbackAfterIntentClassification) {
+		this.feedbackAfterIntentClassification = feedbackAfterIntentClassification;
+	}
+
+	public String getFirebaseUrl() {
+		return firebaseUrl;
+	}
+
+	public void setFirebaseUrl(String firebaseUrl) {
+		this.firebaseUrl = firebaseUrl;
+	}
+
+	public String getFirebaseServerKey() {
+		return firebaseServerKey;
+	}
+
+	public void setFirebaseServerKey(String firebaseServerKey) {
+		this.firebaseServerKey = firebaseServerKey;
+	}
+
+	public String getClientName() {
+		return clientName;
+	}
+
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
 	}
 }

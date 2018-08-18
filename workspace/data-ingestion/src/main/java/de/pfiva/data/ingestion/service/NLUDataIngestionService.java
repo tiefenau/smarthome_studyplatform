@@ -31,6 +31,7 @@ public class NLUDataIngestionService {
 	@Autowired private QueryResolverService queryResolverService;
 	@Autowired private DataIngestionProperties properties;
 	@Autowired private SnipsNLUService nluService;
+	@Autowired private FeedbackService feedbackService;
 	
 //	private NLUOutput nluOutput;
 	
@@ -68,14 +69,14 @@ public class NLUDataIngestionService {
 				snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
 				
 				// Push data to db layer
-				boolean dbInsertionStatus = dbService.ingestDataToDB(snipsOutput);
+				int queryId = dbService.ingestDataToDB(snipsOutput);
 				
-				//TODO - build mechanism for sending notification to smart watch
-				// might have to create notification service, for creating notification query
-				// and sending the query.
+
+				// Send notification
+				if(properties.isFeedbackAfterIntentClassification()) {
+					feedbackService.sendFeedback(snipsOutput, queryId);						
+				}
 			}
-			
-			
 		}
 	}
 

@@ -32,10 +32,10 @@ public class NLUDataIngestionDBService {
 	
 	@Autowired JdbcTemplate jdbcTemplate;
 	
-	public boolean ingestDataToDB(SnipsOutput snipsOutput) {
+	public int ingestDataToDB(SnipsOutput snipsOutput) {
 		if(snipsOutput == null) {
 			logger.info("Nothing to push in database.");
-			return false;
+			return 0;
 		}
 		
 		// Insert in query_tbl
@@ -53,7 +53,7 @@ public class NLUDataIngestionDBService {
 		}
 		
 		logger.info("Insertion in databse successful.");
-		return true;
+		return queryTableRowId;
 	}
 
 	private int insertIntoQueryTable(SnipsOutput snipsOutput) {
@@ -180,5 +180,30 @@ public class NLUDataIngestionDBService {
 				return slot;
 			}
 		});
+	}
+
+	public String getClientToken(String clientName) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_CLIENT_TOKEN,
+				String.class, clientName);
+	}
+
+	public int pushFeedbackToDB(int queryId, String feedbackQuery) {
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con
+						.prepareStatement(DataIngestionDBQueries.INSERT_FEEDBACK_QUERY,
+								new String[] {"feedback_id"});
+				
+				ps.setString(1, feedbackQuery);
+				ps.setInt(2, queryId);
+				return ps;
+			}
+		}, keyHolder);
+		
+		logger.info("Insertion into feedback_tbl successful");
+		return keyHolder.getKey().intValue();
 	}
 }
