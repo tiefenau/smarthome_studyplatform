@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "349930716752",
+    "firebase_url": "https://assistant-73333.firebaseio.com",
+    "project_id": "assistant-73333",
+    "storage_bucket": "assistant-73333.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349930716752:android:a9ccea1e6a8501cf",
+        "android_client_info": {
+          "package_name": "de.pfiva.mobile.voiceassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349930716752-6d36td22b3d5q84uctceeetvnbn909l7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.pfiva.mobile.voiceassistant",
+            "certificate_hash": "4a53dd4b102078b56a4afba9353d5e33a02ee26a"
+          }
+        },
+        {
+          "client_id": "349930716752-qjhmv66iat8qobft8mrifl8801cdpfr4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcRmP-VvV2mkdKAsYzduIddNlVrivjBjE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349930716752-qjhmv66iat8qobft8mrifl8801cdpfr4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
