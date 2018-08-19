@@ -206,4 +206,9 @@ public class NLUDataIngestionDBService {
 		logger.info("Insertion into feedback_tbl successful");
 		return keyHolder.getKey().intValue();
 	}
+
+	public int saveFeedbackResponse(int id, String userResponse, String timestamp) {
+		return jdbcTemplate.update(DataIngestionDBQueries.INSERT_FEEDBACK_RESPONSE,
+				userResponse, timestamp, id);
+	}
 }

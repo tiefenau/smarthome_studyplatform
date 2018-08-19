@@ -14,6 +14,7 @@ import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
+import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
@@ -105,6 +106,21 @@ public class NLUDataIngestionService {
 		
 		logger.info("Total user queries fetched [" + nluData.size() + "].");
 		return nluData;
+	}
+
+	public boolean saveFeedbackResponse(Feedback feedback) {
+		int rowsAffected = 0;
+		if(feedback != null) {
+			rowsAffected = dbService.saveFeedbackResponse(feedback.getId(),
+					feedback.getUserResponse(), feedback.getTimestamp());			
+		}
+		if(rowsAffected == 1) {
+			logger.info("Saved user response [" + feedback.getUserResponse() + 
+					"] for feedback id [" + feedback.getId() + "]");
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	// On receiving data, check for completion, if data

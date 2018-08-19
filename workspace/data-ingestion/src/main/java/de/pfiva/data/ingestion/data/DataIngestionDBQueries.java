@@ -15,6 +15,10 @@ public interface DataIngestionDBQueries {
 	public static final String INSERT_FEEDBACK_QUERY = "INSERT INTO feedback_tbl(feedback_query,"
 			+ " query_id) VALUES(?,?)";
 	
+	public static final String INSERT_FEEDBACK_RESPONSE = "UPDATE feedback_tbl SET user_response = ?,"
+			+ " feedback_timestamp = ?"
+			+ " WHERE feedback_id = ?";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	

@@ -7,6 +7,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +19,7 @@ import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
+import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 
 @RestController
@@ -99,5 +102,15 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/nlu-data", method = RequestMethod.GET)
 	public List<NLUData> getCompleteNLUData() {
 		return dataIngestionService.getCompleteNLUData();
+	}
+
+	@Override
+	@RequestMapping(value = "/feedback", method = RequestMethod.POST)
+	public ResponseEntity<Boolean> saveFeedbackResponse(@RequestBody Feedback feedback) {
+		boolean status = false;
+		if(feedback != null) {
+			status = dataIngestionService.saveFeedbackResponse(feedback);
+		}
+		return new ResponseEntity<Boolean>(Boolean.valueOf(status), HttpStatus.OK);
 	}
 }
