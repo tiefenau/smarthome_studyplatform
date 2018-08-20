@@ -49,6 +49,14 @@ public class FeedbackActivity extends AppCompatActivity {
         // Intent Feedback components
         intentFeedbackButtonBar = (LinearLayout) findViewById(R.id.intent_feedback_button_bar);
         feedbackResponseYes = (Button) findViewById(R.id.feedback_response_yes);
+
+        feedbackResponseYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveFeedbackResponse(Constants.YES_RESPONSE);
+            }
+        });
+
         feedbackResponseOther = (Button) findViewById(R.id.feedback_response_other);
 
         // General Feedback components
@@ -59,38 +67,16 @@ public class FeedbackActivity extends AppCompatActivity {
         feedbackSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NLUDataService nluDataService = getNLUDataServiceInstance();
-
-                Feedback feedback = new Feedback();
-                feedback.setId(feedbackData.getFeedbackId());
-                feedback.setFeedbackQuery(feedbackData.getText());
-                feedback.setUserResponse(feedbackInput.getText().toString());
-                SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
-                feedback.setTimestamp(formatter.format(new Date()));
-
-                Call<Boolean> feedbackResponseCall = nluDataService.saveFeedbackResponse(feedback);
-                feedbackResponseCall.enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Toast toast;
-                        if(response.body().booleanValue()) {
-                            toast = Toast.makeText(FeedbackActivity.this,
-                                    "Feedback response saved successfully.", Toast.LENGTH_SHORT);
-                        } else {
-                            toast = Toast.makeText(FeedbackActivity.this,
-                                    "Unable to save feedback response.", Toast.LENGTH_SHORT);
-                        }
-                        toast.show();
-
-                        Intent feedbackIntent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(feedbackIntent);
-                    }
-
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-
-                    }
-                });
+                String response = feedbackInput.getText().toString();
+                if(response != null && !response.trim().isEmpty()) {
+                    // Empty spaces should not be saved
+                    saveFeedbackResponse(response);
+                } else {
+                    Toast toast = Toast.makeText(FeedbackActivity.this,
+                            "Response cannot be empty string", Toast.LENGTH_LONG);
+                    toast.show();
+                    feedbackInput.getText().clear();
+                }
             }
         });
 
@@ -105,6 +91,43 @@ public class FeedbackActivity extends AppCompatActivity {
                 createScreenForIntentFeedback();
             }
         }
+    }
+
+    private void saveFeedbackResponse(String feedbackResponse) {
+        NLUDataService nluDataService = getNLUDataServiceInstance();
+
+        Feedback feedback = new Feedback();
+        feedback.setId(feedbackData.getFeedbackId());
+        feedback.setFeedbackQuery(feedbackData.getText());
+        feedback.setUserResponse(feedbackResponse);
+        SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
+        feedback.setTimestamp(formatter.format(new Date()));
+
+        Call<Boolean> feedbackResponseCall = nluDataService.saveFeedbackResponse(feedback);
+        feedbackResponseCall.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                Toast toast;
+                if(response.body().booleanValue()) {
+                    toast = Toast.makeText(FeedbackActivity.this,
+                            "Feedback response saved successfully.", Toast.LENGTH_SHORT);
+                } else {
+                    toast = Toast.makeText(FeedbackActivity.this,
+                            "Unable to save feedback response.", Toast.LENGTH_SHORT);
+                }
+                toast.show();
+
+                Intent feedbackIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(feedbackIntent);
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast toast = Toast.makeText(FeedbackActivity.this,
+                        "Unable to save feedback response.", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
     }
 
     private void createScreenForGeneralFeedback() {

@@ -10,4 +10,5 @@ public interface Constants {
     public static final String FEEDBACK_DATA_KEY = "feedbackData";
 
     public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
+    public static final String YES_RESPONSE = "Yes";
 }
