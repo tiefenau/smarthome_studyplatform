@@ -1,5 +1,7 @@
 package de.pfiva.data.ingestion.service;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -79,7 +82,9 @@ public class FeedbackService {
 		return feedback;
 	}
 	
-	private void postFeedbackToFirebase(Tuple<FeedbackType, String> feeback, int feedbackId) {
+	@Async
+	private CompletableFuture<String> postFeedbackToFirebase(Tuple<FeedbackType,
+			String> feeback, int feedbackId) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		String firebaseServerKey = "key=" + properties.getFirebaseServerKey();
@@ -106,6 +111,8 @@ public class FeedbackService {
 		ResponseEntity<String> response = restTemplate.exchange(properties.getFirebaseUrl(),
 				HttpMethod.POST, requestEntity, String.class);
 		logger.info("Response from firebase server [" + response.getBody() + "]");
+		
+		return CompletableFuture.completedFuture(response.getBody());
 	}
 
 	private String getClientToken() {

@@ -31,4 +31,13 @@ public class DataIngestionConfiguration {
 	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
 		return new JdbcTemplate(dataSource);
 	}
+	
+//	@Bean
+//	public Executor asyncExecutor() {
+//		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+//		executor.setQueueCapacity(500);
+//        executor.setThreadNamePrefix("GithubLookup-");
+//        executor.initialize();
+//		return executor;
+//	}
 }
