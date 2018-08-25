@@ -2,6 +2,7 @@ import speech_recognition as sr
 import logging
 import requests
 from argparse import ArgumentParser
+import json
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -45,9 +46,17 @@ def main(speechLanguage, api):
 				if api == 'GoogleSpeech':
 					value = r.recognize_google(audio, language=parseLanguageForSpeech(speechLanguage))
 				elif api == 'GoogleCloudSpeech':
-					value = r.recognize_google_cloud(audio, language=parseLanguageForSpeech(speechLanguage))
+					credentialFilePath = '/Users/rahullao/Documents/Master Thesis/smarthome_studyplatform/py_workspace/voice_assistant1.0/googleCloudSpeech/serviceAccount.json'
+					jsonData = None
+					with open(credentialFilePath) as jsonFile:
+						jsonData = json.load(jsonFile)
+					if jsonData is not None:
+						jsonString = json.dumps(jsonData)	
+						value = r.recognize_google_cloud(audio, language=parseLanguageForSpeech(speechLanguage), credentials_json=jsonString)
 				elif api == 'MicrosoftBingSpeech':
 					value = r.recognize_bing(audio, language=parseLanguageForSpeech(speechLanguage))
+				elif api == 'Wit':
+					value = r.recognize_wit(audio, key='UEZKR2N5KQR4FUEDEHTPPE7KF7QVJSRR')
 				else:
 					logger.error('API not supported')
 					exit()
