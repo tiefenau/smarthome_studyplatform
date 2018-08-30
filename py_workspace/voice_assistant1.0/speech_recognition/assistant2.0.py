@@ -57,6 +57,8 @@ def main(speechLanguage, api):
 					value = r.recognize_bing(audio, language=parseLanguageForSpeech(speechLanguage))
 				elif api == 'Wit':
 					value = r.recognize_wit(audio, key='UEZKR2N5KQR4FUEDEHTPPE7KF7QVJSRR')
+				elif api == 'CMUSphinx':
+					value = r.recognize_sphinx(audio)
 				else:
 					logger.error('API not supported')
 					exit()
