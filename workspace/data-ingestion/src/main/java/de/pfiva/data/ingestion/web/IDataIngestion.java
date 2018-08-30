@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.notification.ClientToken;
 
 public interface IDataIngestion {
 
@@ -15,7 +16,7 @@ public interface IDataIngestion {
 	
 	public void captureUserQuery(String requestBody);
 	
-	public void saveClientRegistrationToken(String requestBody);
+	public void saveClientRegistrationToken(ClientToken clientToken);
 	
 	public List<NLUData> getCompleteNLUData();
 	

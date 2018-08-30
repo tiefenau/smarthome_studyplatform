@@ -21,6 +21,7 @@ import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.notification.ClientToken;
 
 @RestController
 @RequestMapping(value = "data/ingestion")
@@ -84,20 +85,15 @@ public class DataIngestionImpl implements IDataIngestion {
 	
 	@Override
 	@RequestMapping(value = "/client-token", method = RequestMethod.POST)
-	public void saveClientRegistrationToken(@RequestBody String requestBody) {
-		try {
-			Map<String, String> responseMap = DataIngestionUtils.parseResponseBody(requestBody);
-			String clientName = responseMap.get("clientName");
-			String token = responseMap.get("token");
-			if(token != null && !token.isEmpty()) {
-				logger.info("Token received for [" + clientName + "] as [" + token + "].");
-				dataIngestionService.saveClientRegistrationToken(clientName, token);
-			}
-		} catch(UnsupportedEncodingException e) {
-			logger.info("Error while parsing client details", e);
+	public void saveClientRegistrationToken(@RequestBody ClientToken clientToken) {
+		String clientName = clientToken.getClientName();
+		String token = clientToken.getToken();
+		if(token != null && !token.isEmpty()) {
+			logger.info("Token received for [" + clientName + "] as [" + token + "].");
+			dataIngestionService.saveClientRegistrationToken(clientName, token);
 		}
 	}
-
+	
 	@Override
 	@RequestMapping(value = "/nlu-data", method = RequestMethod.GET)
 	public List<NLUData> getCompleteNLUData() {
