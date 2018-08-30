@@ -84,11 +84,13 @@ public class FeedbackActivity extends AppCompatActivity {
 
         if(intent.hasExtra(Constants.FEEDBACK_DATA_KEY)) {
             feedbackData = (Data) intent.getSerializableExtra(Constants.FEEDBACK_DATA_KEY);
-            userFeedbackQuery.setText(feedbackData.getText());
-            if(feedbackData.getFeedbackType() == FeedbackType.GENERAL) {
-                createScreenForGeneralFeedback();
-            } else {
-                createScreenForIntentFeedback();
+            if(feedbackData != null) {
+                userFeedbackQuery.setText(feedbackData.getText());
+                if(feedbackData.getFeedbackType() == FeedbackType.GENERAL) {
+                    createScreenForGeneralFeedback();
+                } else {
+                    createScreenForIntentFeedback();
+                }
             }
         }
     }

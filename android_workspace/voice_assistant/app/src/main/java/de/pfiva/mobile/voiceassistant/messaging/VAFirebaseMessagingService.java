@@ -33,10 +33,10 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
+        Log.i(TAG, "From: " + remoteMessage.getFrom());
         if(remoteMessage.getData().size() > 0) {
             Map<String, String> data = remoteMessage.getData();
-            Log.d(TAG, "Message data payload: " + data);
+            Log.i(TAG, "Message data payload: " + data);
 
             Data feedbackData = new Data();
             feedbackData.setFeedbackId(Integer.valueOf(data.get("feedbackId")));
