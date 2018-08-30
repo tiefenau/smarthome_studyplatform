@@ -5,13 +5,13 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import de.pfiva.mobile.voiceassistant.Constants;
-import de.pfiva.mobile.voiceassistant.network.ClientTokenRegistrationTask;
-import de.pfiva.mobile.voiceassistant.network.model.ClientToken;
+import de.pfiva.data.model.notification.ClientToken;
+import de.pfiva.mobile.voiceassistant.network.RetrofitClientInstance;
 import de.pfiva.mobile.voiceassistant.utilities.MobileVoiceAssistantUtilities;
+import de.pfiva.mobile.voiceassistant.web.NLUDataService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FirebaseInstanceService extends FirebaseInstanceIdService {
 
@@ -31,22 +31,29 @@ public class FirebaseInstanceService extends FirebaseInstanceIdService {
     }
 
     private void sendRegistrationToServer(String refreshedToken) {
-        ClientToken clientToken = new ClientToken();
-        clientToken.setUrl(Constants.DATA_INGESTION_BASE_URL
-                + Constants.DATA_INGESTION_CLIENT_TOKEN_ENDPOINT);
+        if(refreshedToken != null && !refreshedToken.trim().isEmpty()) {
+            ClientToken clientToken = new ClientToken();
+            clientToken.setClientName(MobileVoiceAssistantUtilities.getMacAddress());
+            clientToken.setToken(refreshedToken);
+            Log.i(TAG, "Sending token for client [" +
+                    clientToken.getClientName() + "], as [" +
+                    clientToken.getToken() + "]");
 
+            NLUDataService nluDataService = RetrofitClientInstance.getRetrofitInstance()
+                    .create(NLUDataService.class);
 
-        String macAddress = MobileVoiceAssistantUtilities.getMacAddress();
+            Call<Void> saveClientTokenCall = nluDataService.saveClientToken(clientToken);
+            saveClientTokenCall.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> call, Response<Void> response) {
+                    Log.i(TAG, "Client token saved successfully.");
+                }
 
-        Map<String, String> parameters = new HashMap<>();
-        parameters.put("clientName", MobileVoiceAssistantUtilities.getMacAddress());
-        parameters.put("token", refreshedToken);
-
-        Log.i(TAG, "Forwarding clientName [" + macAddress + "]," +
-                " and token [" + refreshedToken + "].");
-
-        clientToken.setParameters(parameters);
-
-        new ClientTokenRegistrationTask().execute(clientToken);
+                @Override
+                public void onFailure(Call<Void> call, Throwable t) {
+                    Log.i(TAG, "Error while saving client token.");
+                }
+            });
+        }
     }
 }
