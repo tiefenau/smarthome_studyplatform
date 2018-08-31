@@ -8,4 +8,15 @@
     <string name="feedback_query_title">Query</string>
     <string name="feedback_title">Feedback</string>
     <string name="feedback_submit">Submit</string>
+    <string name="pfiva_user_query_title">User Query :</string>
+    <string name="feedback_available">Feedback Available</string>
+    <string name="feedback_not_available">Feedback Not Available</string>
+    <string name="hotword_title">Hotword :</string>
+    <string name="timestamp_title">Timestamp :</string>
+    <string name="intent_title">Intent :</string>
+    <string name="empty_string">---</string>
+    <string name="detailed_user_query">Query Details</string>
+    <string name="not_available">Not Available</string>
+    <string name="user_response_title">User Response :</string>
+    <string name="detailedAct_feedback_query_title">Query :</string>
 </resources>
