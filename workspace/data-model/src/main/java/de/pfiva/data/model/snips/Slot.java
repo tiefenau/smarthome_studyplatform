@@ -1,7 +1,11 @@
 package de.pfiva.data.model.snips;
 
-public class Slot {
+import java.io.Serializable;
 
+public class Slot implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private Range range;
 	private String rawValue;
 	private Value value;

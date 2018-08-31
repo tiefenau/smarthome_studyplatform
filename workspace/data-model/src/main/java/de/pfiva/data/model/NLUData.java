@@ -1,9 +1,13 @@
 package de.pfiva.data.model;
 
+import java.io.Serializable;
+
 import de.pfiva.data.model.snips.SnipsOutput;
 
-public class NLUData {
+public class NLUData implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private SnipsOutput snipsOutput;
 	private Feedback feedback;
 	

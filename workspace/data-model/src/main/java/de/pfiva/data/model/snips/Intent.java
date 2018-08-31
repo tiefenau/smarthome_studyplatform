@@ -1,9 +1,12 @@
 package de.pfiva.data.model.snips;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Intent {
+public class Intent implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private int intentId;
 	private String intentName;
 	private BigDecimal probability;

@@ -1,7 +1,11 @@
 package de.pfiva.data.model.snips;
 
-public class Value {
+import java.io.Serializable;
 
+public class Value implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String kind;
 	private String value;
 	private String grain;

@@ -1,7 +1,11 @@
 package de.pfiva.data.model;
 
-public class Feedback {
+import java.io.Serializable;
 
+public class Feedback implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String feedbackQuery;
 	private String userResponse;

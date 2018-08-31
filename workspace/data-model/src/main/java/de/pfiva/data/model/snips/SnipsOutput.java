@@ -1,9 +1,12 @@
 package de.pfiva.data.model.snips;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SnipsOutput {
+public class SnipsOutput implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String id;
 	private String input;
 	private Intent intent;
