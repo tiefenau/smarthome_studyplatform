@@ -16,9 +16,17 @@ public class DataIngestionProperties {
 	private boolean feedbackAfterIntentClassification;
 	
 	private String firebaseUrl;
-	private String firebaseServerKey;
-	private String clientName;
+	private String mobileFirebaseServerKey;
+	private String mobileClientName;
+	private String wearClientName;
+	private String wearFirebaseServerKey;
+	
+	private NotificationClient notificationClient;
 
+	public enum NotificationClient {
+		MOBILE, WEAR;
+	}
+	
 	public boolean isSnipsWatch() {
 		return snipsWatch;
 	}
@@ -67,19 +75,43 @@ public class DataIngestionProperties {
 		this.firebaseUrl = firebaseUrl;
 	}
 
-	public String getFirebaseServerKey() {
-		return firebaseServerKey;
+	public String getMobileFirebaseServerKey() {
+		return mobileFirebaseServerKey;
 	}
 
-	public void setFirebaseServerKey(String firebaseServerKey) {
-		this.firebaseServerKey = firebaseServerKey;
+	public void setMobileFirebaseServerKey(String mobileFirebaseServerKey) {
+		this.mobileFirebaseServerKey = mobileFirebaseServerKey;
 	}
 
-	public String getClientName() {
-		return clientName;
+	public String getMobileClientName() {
+		return mobileClientName;
 	}
 
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
+	public void setMobileClientName(String mobileClientName) {
+		this.mobileClientName = mobileClientName;
+	}
+
+	public String getWearFirebaseServerKey() {
+		return wearFirebaseServerKey;
+	}
+
+	public void setWearFirebaseServerKey(String wearFirebaseServerKey) {
+		this.wearFirebaseServerKey = wearFirebaseServerKey;
+	}
+
+	public String getWearClientName() {
+		return wearClientName;
+	}
+
+	public void setWearClientName(String wearClientName) {
+		this.wearClientName = wearClientName;
+	}
+	
+	public NotificationClient getNotificationClient() {
+		return notificationClient;
+	}
+
+	public void setNotificationClient(NotificationClient notificationClient) {
+		this.notificationClient = notificationClient;
 	}
 }

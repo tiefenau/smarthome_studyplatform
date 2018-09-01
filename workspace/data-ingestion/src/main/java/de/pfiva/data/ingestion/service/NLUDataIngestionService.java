@@ -45,7 +45,7 @@ public class NLUDataIngestionService {
 	}
 	
 	public void extractUserQuery(String userQuery) {
-		// User query is plain English sentence.
+		// User query is plain sentence of some language.
 		// This sentence might contain trigger word, which we need to separate out.
 		// Once the real query is extracted out, intent classification should be done to populate NLU instance.
 		UserQueryTuple queryTuple = queryResolverService.resolveUserQuery(userQuery);

@@ -18,6 +18,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.pfiva.data.ingestion.DataIngestionProperties;
+import de.pfiva.data.ingestion.DataIngestionProperties.NotificationClient;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.IntentNames;
 import de.pfiva.data.model.FeedbackType;
@@ -87,7 +88,15 @@ public class FeedbackService {
 			String> feeback, int feedbackId) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		String firebaseServerKey = "key=" + properties.getFirebaseServerKey();
+		String firebaseServerKey;
+		String clientName;
+		if(properties.getNotificationClient() == NotificationClient.MOBILE) {
+			firebaseServerKey = "key=" + properties.getMobileFirebaseServerKey();
+			clientName = properties.getMobileClientName();
+		} else {
+			firebaseServerKey = "key=" + properties.getWearFirebaseServerKey();
+			clientName = properties.getWearClientName();
+		}
 		headers.set(HttpHeaders.AUTHORIZATION, firebaseServerKey);
 		
 		RequestModel requestModel = new RequestModel();
@@ -96,7 +105,7 @@ public class FeedbackService {
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());
 		requestModel.setData(data);
-		requestModel.setTo(getClientToken());
+		requestModel.setTo(getClientToken(clientName));
 		
 		String requestBody = null;
 		try {
@@ -115,8 +124,8 @@ public class FeedbackService {
 		return CompletableFuture.completedFuture(response.getBody());
 	}
 
-	private String getClientToken() {
-		return dbService.getClientToken(properties.getClientName());
+	private String getClientToken(String clientName) {
+		return dbService.getClientToken(clientName);
 	}
 
 	private String parseIntentToUserReadableString(String intentName) {
