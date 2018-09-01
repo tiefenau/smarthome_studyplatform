@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "861697896369",
+    "firebase_url": "https://pfiva-firebase-wearassistant.firebaseio.com",
+    "project_id": "pfiva-firebase-wearassistant",
+    "storage_bucket": "pfiva-firebase-wearassistant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861697896369:android:1938d7dc03b197f5",
+        "android_client_info": {
+          "package_name": "de.pfiva.wear.voiceassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861697896369-esfti10fn3gjvp11ovj6h9mtn3rkevah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_iZUfzSDxTazpz_OpO-kmSXPXvqMUBNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
