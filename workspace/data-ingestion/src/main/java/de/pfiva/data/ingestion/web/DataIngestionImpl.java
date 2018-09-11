@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,7 @@ import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.notification.ClientToken;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "data/ingestion")
 public class DataIngestionImpl implements IDataIngestion {

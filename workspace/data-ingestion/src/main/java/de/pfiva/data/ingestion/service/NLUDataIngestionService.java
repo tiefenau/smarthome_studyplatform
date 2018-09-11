@@ -94,7 +94,7 @@ public class NLUDataIngestionService {
 				if(data.getSnipsOutput().getIntent() != null) {
 					int intentId = data.getSnipsOutput().getIntent().getIntentId();
 					if(intentId != 0) {
-						logger.info("Fetching slots for intent [" + intentId + "].");
+						logger.debug("Fetching slots for intent [" + intentId + "].");
 						List<Slot> slots = dbService.getSlotsForIntent(intentId);
 						if(slots != null && !slots.isEmpty()) {
 							data.getSnipsOutput().setSlots(slots);
