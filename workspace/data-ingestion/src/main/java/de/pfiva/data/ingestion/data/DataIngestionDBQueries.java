@@ -43,4 +43,6 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_CLIENT_TOKEN = "SELECT client_token from clients_tbl"
 			+ " where client_name = ?";
+	
+	public static final String GET_USERS = "SELECT * from user_tbl";
 }

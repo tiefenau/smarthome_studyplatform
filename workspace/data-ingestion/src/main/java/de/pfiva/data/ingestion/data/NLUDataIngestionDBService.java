@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
@@ -210,5 +211,19 @@ public class NLUDataIngestionDBService {
 	public int saveFeedbackResponse(int id, String userResponse, String timestamp) {
 		return jdbcTemplate.update(DataIngestionDBQueries.INSERT_FEEDBACK_RESPONSE,
 				userResponse, timestamp, id);
+	}
+
+	public List<User> getUsers() {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_USERS, new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				User user = new User();
+				user.setId(rs.getInt("user_id"));
+				user.setUsername(rs.getString("username"));
+				user.setDeviceId(rs.getString("device_id"));
+				return user;
+			}
+		});
 	}
 }

@@ -16,6 +16,7 @@ import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
 
@@ -121,6 +122,12 @@ public class NLUDataIngestionService {
 		} else {
 			return false;
 		}
+	}
+
+	public List<User> getUsers() {
+		List<User> users = dbService.getUsers();
+		logger.info("Users fetched from db " + users);
+		return users;
 	}
 	
 	// On receiving data, check for completion, if data
