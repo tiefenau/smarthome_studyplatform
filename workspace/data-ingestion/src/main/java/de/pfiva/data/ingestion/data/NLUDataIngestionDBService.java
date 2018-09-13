@@ -20,6 +20,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
+import de.pfiva.data.model.Message;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
@@ -225,5 +226,49 @@ public class NLUDataIngestionDBService {
 				return user;
 			}
 		});
+	}
+
+	public boolean saveMessageToDB(Message message) {
+		// 1. Insert into messages_tbl
+		// 2. Insert into message_users_tbl
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con
+						.prepareStatement(DataIngestionDBQueries.INSERT_MESSAGES_TBL,
+								new String[] {"message_id"});
+
+				ps.setString(1, message.getMessageText());
+				ps.setString(2, message.getMessageStatus().toString());
+				ps.setString(3, message.getDeliveryDateTime());
+				return ps;
+			}
+		}, keyHolder);
+		
+		final int messageId = keyHolder.getKey().intValue();
+		logger.info("Inserted record in messages_tbl with row id [" + messageId + "]");
+		
+		int[] rows = jdbcTemplate.batchUpdate(DataIngestionDBQueries.INSERT_MESSAGE_USERS_TBL, new BatchPreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				User user = message.getUsers().get(i);
+				ps.setInt(1, messageId);
+				ps.setInt(2, user.getId());
+			}
+			
+			@Override
+			public int getBatchSize() {
+				return message.getUsers().size();
+			}
+		});
+		
+		if(rows.length > 0) {
+			logger.info("Inserted records in message_users_tbl.");
+			return true;
+		}
+		return false;
 	}
 }

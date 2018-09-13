@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 import de.pfiva.data.model.Feedback;
+import de.pfiva.data.model.Message;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
@@ -24,4 +25,6 @@ public interface IDataIngestion {
 	public ResponseEntity<Boolean> saveFeedbackResponse(Feedback feedback);
 	
 	public List<User> getUsers();
+	
+	public void sendMessage(Message message);
 }

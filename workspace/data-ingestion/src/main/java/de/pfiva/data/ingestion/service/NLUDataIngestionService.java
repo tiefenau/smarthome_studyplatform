@@ -15,6 +15,8 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 import de.pfiva.data.model.Feedback;
+import de.pfiva.data.model.Message;
+import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
@@ -128,6 +130,31 @@ public class NLUDataIngestionService {
 		List<User> users = dbService.getUsers();
 		logger.info("Users fetched from db " + users);
 		return users;
+	}
+
+	public void sendMessage(Message message) {
+		// 1. Save message to db
+		// 2. Based on delivery date either send message or schedule a message to be sent later
+		if(message != null) {
+			// Delivery date would either be Now or an actual timestamp
+			String deliveryDate = message.getDeliveryDateTime();
+			if(deliveryDate != null && !deliveryDate.trim().isEmpty()) {
+				if(deliveryDate.equalsIgnoreCase("now")) {
+					logger.info("Message is scheduled to be delivered now.");
+					message.setMessageStatus(MessageStatus.DELIVERED);
+					
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+					message.setDeliveryDateTime(LocalDateTime.now().format(formatter));
+				} else {
+					logger.info("Message is scheduled to be delivered later.");
+					message.setMessageStatus(MessageStatus.PENDING);
+				}
+			}
+			boolean status = dbService.saveMessageToDB(message);
+			if(status) {
+				
+			}
+		}
 	}
 	
 	// On receiving data, check for completion, if data

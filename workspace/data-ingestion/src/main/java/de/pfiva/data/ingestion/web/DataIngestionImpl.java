@@ -21,6 +21,7 @@ import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
+import de.pfiva.data.model.Message;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
@@ -117,5 +118,14 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public List<User> getUsers() {
 		return dataIngestionService.getUsers();
+	}
+
+	@Override
+	@RequestMapping(value = "/send-message", method = RequestMethod.POST)
+	public void sendMessage(@RequestBody Message message) {
+		if(message != null) {
+			logger.info("New message received [" + message + "]");
+			dataIngestionService.sendMessage(message);
+		}
 	}
 }

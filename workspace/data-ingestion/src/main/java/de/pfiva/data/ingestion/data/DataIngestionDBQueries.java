@@ -19,6 +19,11 @@ public interface DataIngestionDBQueries {
 			+ " feedback_timestamp = ?"
 			+ " WHERE feedback_id = ?";
 	
+	public static final String INSERT_MESSAGES_TBL = "INSERT INTO messages_tbl(message_text,"
+			+ " status, delivery_date) VALUES(?,?,?)";
+	
+	public static final String INSERT_MESSAGE_USERS_TBL = "INSERT INTO message_users_tbl(message_id, user_id) VALUES(?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	
