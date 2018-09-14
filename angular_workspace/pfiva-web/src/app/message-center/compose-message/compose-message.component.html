@@ -1,0 +1,66 @@
+<div>
+  <form (ngSubmit)="onSubmit()" #messageData="ngForm">
+    <div class="card">
+        <h5 class="card-header">Compose Message</h5>
+      <div class="card-body">
+          <div class="form-group row">
+            <label for="messageText" class="col-sm-2 col-form-label">Message Text</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"
+                  id="messageText" name="messageText"
+                  placeholder="Enter message" required ngModel>
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="deliveryDateTime" class="col-sm-2 col-form-label">Delivery Date</label>
+            <div class="col-sm-2">
+              <select id="deliveryDateTime" name="deliveryDateTime" 
+                class="btn btn-secondary dropdown-toggle" 
+                [(ngModel)]="deliveryDateTime">
+                <option value="Send Now">Send Now</option>
+                <option value="Send Later">Send Later</option>
+              </select>
+            </div>
+            <!--<div class="col-sm-2">
+              <div class="dropdown" appDropdown>
+                <button class="btn btn-secondary dropdown-toggle" type="button"
+                  id="deliveryDateTime" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="true">
+                  Send Now <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="deliveryDateTime">
+                  <li><a>Send Later</a></li>
+                </ul>
+              </div>
+            </div>-->
+
+            <div class="col-sm-3" *ngIf="deliveryDateTime == 'Send Later'">
+              <input type="date" class="form-control" id="deliveryDate" name="deliveryDate" required ngModel>
+            </div>
+            <div class="col-sm-2" *ngIf="deliveryDateTime == 'Send Later'">
+              <input type="time" class="form-control" id="delvieryTime" name="delvieryTime" required ngModel>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="users" class="col-sm-2 col-form-label">Users</label>
+            <div class="col-sm-10">
+              <select multiple class="form-control" id="users" name="users" required ngModel>
+                <option *ngFor="let user of users">{{user.username}}</option>
+              </select>
+              <small id="users" class="form-text text-muted">Atleast one user has to be selected.</small>
+            </div>
+          </div>
+
+      </div>
+      <div class="card-footer">
+        <div class="col-md-12 text-right">
+          <button type="submit"
+            class="btn btn-success"
+            [disabled]="!messageData.valid">{{ deliveryDateTime == 'Send Later' ? 'Schedule Message' : 'Send Message' }}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,61 @@
+<div class="mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.snipsOutput.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="input">
+      <th mat-header-cell *matHeaderCellDef mat-header>User Query</th>
+      <td mat-cell *matCellDef="let row">{{row.snipsOutput.input}}</td>
+    </ng-container>
+
+    <!-- Hotword Column -->
+    <ng-container matColumnDef="hotword">
+      <th mat-header-cell *matHeaderCellDef mat-header>Hotword</th>
+      <td mat-cell *matCellDef="let row">{{row.snipsOutput.hotword}}</td>
+    </ng-container>
+
+    <!-- Intent Column -->
+    <ng-container matColumnDef="intent">
+      <th mat-header-cell *matHeaderCellDef mat-header>Intent</th>
+      <td mat-cell *matCellDef="let row">{{row.snipsOutput.intent.intentName}}</td>
+    </ng-container>
+
+    <!-- Timestamp Column -->
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef mat-header>Timestamp</th>
+      <td mat-cell *matCellDef="let row">{{row.snipsOutput.timestamp}}</td>
+    </ng-container>
+
+    <!-- Feedback Query Column -->
+    <ng-container matColumnDef="feedbackQuery">
+      <th mat-header-cell *matHeaderCellDef mat-header>Feedback Query</th>
+      <td mat-cell *matCellDef="let row">{{row.feedback.feedbackQuery}}</td>
+    </ng-container>
+
+    <!-- Feedback User Response Column -->
+    <ng-container matColumnDef="feedbackUserResponse">
+      <th mat-header-cell *matHeaderCellDef mat-header>User Response</th>
+      <td mat-cell *matCellDef="let row">{{row.feedback.userResponse}}</td>
+    </ng-container>
+
+    <!-- Feedback Timestamp Column -->
+    <ng-container matColumnDef="feedbackTimestamp">
+      <th mat-header-cell *matHeaderCellDef mat-header>Feedback Timestamp</th>
+      <td mat-cell *matCellDef="let row">{{row.feedback.timestamp}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[10, 50, 100, 250]">
+  </mat-paginator>
+</div>
