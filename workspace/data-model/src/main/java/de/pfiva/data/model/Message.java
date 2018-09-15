@@ -14,7 +14,7 @@ public class Message  implements Serializable {
 	private List<User> users;
 	
 	public enum MessageStatus {
-		DELIVERED, PENDING
+		DELIVERED, PENDING, CANCELLED
 	}
 	
 	public int getId() {
