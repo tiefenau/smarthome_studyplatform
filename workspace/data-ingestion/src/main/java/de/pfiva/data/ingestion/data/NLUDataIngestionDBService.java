@@ -21,7 +21,9 @@ import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.model.Message;
+import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
 import de.pfiva.data.model.snips.Slot;
@@ -228,7 +230,7 @@ public class NLUDataIngestionDBService {
 		});
 	}
 
-	public boolean saveMessageToDB(Message message) {
+	public Tuple<Integer, Boolean> saveMessageToDB(Message message) {
 		// 1. Insert into messages_tbl
 		// 2. Insert into message_users_tbl
 		KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -266,9 +268,44 @@ public class NLUDataIngestionDBService {
 		});
 		
 		if(rows.length > 0) {
-			logger.info("Inserted records in message_users_tbl.");
-			return true;
+			logger.info("Inserted [" + rows.length + "]records in message_users_tbl.");
+			return new Tuple<>(messageId, true);
 		}
-		return false;
+		return new Tuple<>(messageId, false);
+	}
+
+	public void updateMessageStatus(int messageId, MessageStatus status) {
+		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_MESSAGE_STATUS, status.toString(), messageId);
+		logger.info("Message status for message id [" + messageId + "] updated to [" + status + "]");
+	}
+
+	public List<Message> getMessages() {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_MESSAGES, new RowMapper<Message>() {
+
+			@Override
+			public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Message message = new Message();
+				message.setId(rs.getInt("message_id"));
+				message.setMessageText(rs.getString("message_text"));
+				message.setMessageStatus(MessageStatus.valueOf(rs.getString("status")));
+				message.setDeliveryDateTime(rs.getString("delivery_date"));
+				return message;
+			}
+			
+		});
+	}
+
+	public List<User> getUsersByMessageId(int messageId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_USERS_BY_MESSAGE_ID, 
+				new Object[] {messageId}, new RowMapper<User>() {
+
+					@Override
+					public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+						User user = new User();
+						user.setId(rs.getInt("user_id"));
+						user.setUsername(rs.getString("username"));
+						return user;
+					}
+				});
 	}
 }

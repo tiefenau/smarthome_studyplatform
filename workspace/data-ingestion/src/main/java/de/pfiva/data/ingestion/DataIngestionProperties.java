@@ -22,6 +22,8 @@ public class DataIngestionProperties {
 	private String wearFirebaseServerKey;
 	
 	private NotificationClient notificationClient;
+	
+	private String defaultFeedbackQuery;
 
 	public enum NotificationClient {
 		MOBILE, WEAR;
@@ -113,5 +115,13 @@ public class DataIngestionProperties {
 
 	public void setNotificationClient(NotificationClient notificationClient) {
 		this.notificationClient = notificationClient;
+	}
+
+	public String getDefaultFeedbackQuery() {
+		return defaultFeedbackQuery;
+	}
+
+	public void setDefaultFeedbackQuery(String defaultFeedbackQuery) {
+		this.defaultFeedbackQuery = defaultFeedbackQuery;
 	}
 }

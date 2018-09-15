@@ -1,12 +1,22 @@
 package de.pfiva.data.ingestion.service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
@@ -14,9 +24,11 @@ import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
+import de.pfiva.data.ingestion.task.MessageTask;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
 import de.pfiva.data.model.Message.MessageStatus;
+import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
@@ -36,7 +48,10 @@ public class NLUDataIngestionService {
 	@Autowired private DataIngestionProperties properties;
 	@Autowired private SnipsNLUService nluService;
 	@Autowired private FeedbackService feedbackService;
+	@Autowired private TaskScheduler taskScheduler;
+	@Autowired private FirebaseService firebaseService;
 	
+	private Map<Integer, ScheduledFuture<?>> messageTasks = new HashMap<>();
 //	private NLUOutput nluOutput;
 	
 	public void extractInboundFileData(InputFile inputFile) {
@@ -149,12 +164,75 @@ public class NLUDataIngestionService {
 					logger.info("Message is scheduled to be delivered later.");
 					message.setMessageStatus(MessageStatus.PENDING);
 				}
-			}
-			boolean status = dbService.saveMessageToDB(message);
-			if(status) {
 				
+				//Tuple<Integer, Boolean> status = dbService.saveMessageToDB(message);
+				boolean status = true;
+				if(status) {//status.getY()
+					//message.setId(status.getX());
+					processMessageForDelivery(message);
+				}
 			}
 		}
+	}
+	
+	private void processMessageForDelivery(Message message) {
+		DateFormat formatter = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
+		Date date = null;
+		try {
+			date = formatter.parse(message.getDeliveryDateTime());
+		} catch (ParseException e) {
+			
+		}
+		
+		logger.info("Message scheduled to be delivered to [" + message.getUsers().size()
+				+ "] users.");
+		for(User user : message.getUsers()) {
+			scheduleMessage(message.getId(), message.getMessageText(), 
+					date, user);
+		}
+	}
+
+	@Async
+	private void scheduleMessage(int id, String messageText, Date date, User user) {
+		ScheduledFuture<?> schedule = taskScheduler.schedule(
+				new MessageTask(firebaseService, dbService, id, messageText, user), date);
+		
+		messageTasks.put(id, schedule);
+	}
+	
+	public void cancelScheduledMessage(int messageId) {
+		if(!messageTasks.isEmpty()) {
+			ScheduledFuture<?> scheduledTask = messageTasks.get(messageId);
+			if(scheduledTask != null) {
+				scheduledTask.cancel(true);
+				
+				if(scheduledTask.isCancelled()) {
+					logger.info("Cancelled scheduled task for message id [" + messageId + "]");
+					messageTasks.remove(messageId);
+					
+					dbService.updateMessageStatus(messageId, MessageStatus.CANCELLED);
+				}
+			}
+		}
+	}
+
+	public List<MessageResponseData> getMessageResponseData() {
+		// 1. Fetch messages from db
+		// 2. Fetch all users for a message from db
+		// 3. Fetch response from users
+		List<MessageResponseData> response = new LinkedList<>();
+		
+		List<Message> messages = dbService.getMessages();
+		for(Message message : messages) {
+			List<User> users = dbService.getUsersByMessageId(message.getId());
+			message.setUsers(users);
+			
+			MessageResponseData messageResponseData = new MessageResponseData();
+			messageResponseData.setMessage(message);
+			response.add(messageResponseData);
+		}
+		
+		return response;
 	}
 	
 	// On receiving data, check for completion, if data

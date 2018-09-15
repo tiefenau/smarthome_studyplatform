@@ -50,4 +50,13 @@ public interface DataIngestionDBQueries {
 			+ " where client_name = ?";
 	
 	public static final String GET_USERS = "SELECT * from user_tbl";
+	
+	public static final String GET_MESSAGES = "SELECT * from messages_tbl";
+	
+	public static final String GET_USERS_BY_MESSAGE_ID = "SELECT u.user_id, u.username"
+			+ " from user_tbl as u JOIN message_users_tbl as m"
+			+ " ON u.user_id = m.user_id where m.message_id = ?";
+	
+	// Update queries ------------------------------------------------------------------------------
+	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 }

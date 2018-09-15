@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,7 @@ import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
+import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
@@ -127,5 +129,17 @@ public class DataIngestionImpl implements IDataIngestion {
 			logger.info("New message received [" + message + "]");
 			dataIngestionService.sendMessage(message);
 		}
+	}
+
+	@Override
+	@RequestMapping(value = "/cancel-message/{messageId}", method = RequestMethod.PUT)
+	public void cancelScheduledMessage(@PathVariable int messageId) {
+		dataIngestionService.cancelScheduledMessage(messageId);
+	}
+
+	@Override
+	@RequestMapping(value = "/messages-data", method = RequestMethod.GET)
+	public List<MessageResponseData> getMessageResponseData() {
+		return dataIngestionService.getMessageResponseData();
 	}
 }

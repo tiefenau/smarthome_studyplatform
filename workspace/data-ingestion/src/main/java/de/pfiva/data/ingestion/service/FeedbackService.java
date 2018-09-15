@@ -23,20 +23,20 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.IntentNames;
 import de.pfiva.data.model.FeedbackType;
 import de.pfiva.data.model.Tuple;
-import de.pfiva.data.model.notification.Data;
+import de.pfiva.data.model.notification.FeedbackData;
 import de.pfiva.data.model.notification.RequestModel;
 import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
 public class FeedbackService {
 
-	private static Logger logger = LoggerFactory.getLogger(FeedbackService.class);
-	private static final String DEFAULT_FEEDBACK_QUERY = "What did you ask about?";
-	
 	@Autowired RestTemplate restTemplate;
 	@Autowired DataIngestionProperties properties;
 	@Autowired NLUDataIngestionDBService dbService;
 	@Autowired ObjectMapper objectMapper;
+	@Autowired FirebaseService firebaseService;
+	
+	private static Logger logger = LoggerFactory.getLogger(FeedbackService.class);
 	
 	public void sendFeedback(SnipsOutput snipsOutput, int queryId) {
 		// 1. Generate Feedback
@@ -74,7 +74,7 @@ public class FeedbackService {
 							String>(FeedbackType.INTENT_CLASSIFIED, feedbackQuery);
 				} else {
 					feedback = new Tuple<FeedbackType,
-							String>(FeedbackType.GENERAL, DEFAULT_FEEDBACK_QUERY);
+							String>(FeedbackType.GENERAL, properties.getDefaultFeedbackQuery());
 				}
 			}
 			logger.info("Feedback generated of type [" + feedback.getX() + "],"
@@ -83,45 +83,52 @@ public class FeedbackService {
 		return feedback;
 	}
 	
-	@Async
-	private CompletableFuture<String> postFeedbackToFirebase(Tuple<FeedbackType,
+//	@Async
+	private void postFeedbackToFirebase(Tuple<FeedbackType,
 			String> feeback, int feedbackId) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		String firebaseServerKey;
-		String clientName;
-		if(properties.getNotificationClient() == NotificationClient.MOBILE) {
-			firebaseServerKey = "key=" + properties.getMobileFirebaseServerKey();
-			clientName = properties.getMobileClientName();
-		} else {
-			firebaseServerKey = "key=" + properties.getWearFirebaseServerKey();
-			clientName = properties.getWearClientName();
-		}
-		headers.set(HttpHeaders.AUTHORIZATION, firebaseServerKey);
 		
-		RequestModel requestModel = new RequestModel();
-		Data data = new Data();
+		FeedbackData data = new FeedbackData();
 		data.setFeedbackId(feedbackId);
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());
-		requestModel.setData(data);
-		requestModel.setTo(getClientToken(clientName));
+		firebaseService.sendRequestToFirebaseServer(data, properties.getMobileClientName());
 		
-		String requestBody = null;
-		try {
-			requestBody = objectMapper.writeValueAsString(requestModel);
-		} catch (JsonProcessingException e) {
-			logger.error("Error while forming request body for firebase");
-		}
-		logger.info("Request body for firebase [" + requestBody + "]");
-				
-		HttpEntity<?> requestEntity = new HttpEntity<Object>(requestBody, headers);
-		
-		ResponseEntity<String> response = restTemplate.exchange(properties.getFirebaseUrl(),
-				HttpMethod.POST, requestEntity, String.class);
-		logger.info("Response from firebase server [" + response.getBody() + "]");
-		
-		return CompletableFuture.completedFuture(response.getBody());
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.setContentType(MediaType.APPLICATION_JSON);
+//		String firebaseServerKey;
+//		String clientName;
+//		if(properties.getNotificationClient() == NotificationClient.MOBILE) {
+//			firebaseServerKey = "key=" + properties.getMobileFirebaseServerKey();
+//			clientName = properties.getMobileClientName();
+//		} else {
+//			firebaseServerKey = "key=" + properties.getWearFirebaseServerKey();
+//			clientName = properties.getWearClientName();
+//		}
+//		headers.set(HttpHeaders.AUTHORIZATION, firebaseServerKey);
+//		
+//		RequestModel requestModel = new RequestModel();
+//		FeedbackData data = new FeedbackData();
+//		data.setFeedbackId(feedbackId);
+//		data.setFeedbackType(feeback.getX());
+//		data.setText(feeback.getY());
+//		requestModel.setData(data);
+//		requestModel.setTo(getClientToken(clientName));
+//		
+//		String requestBody = null;
+//		try {
+//			requestBody = objectMapper.writeValueAsString(requestModel);
+//		} catch (JsonProcessingException e) {
+//			logger.error("Error while forming request body for firebase");
+//		}
+//		logger.info("Request body for firebase [" + requestBody + "]");
+//				
+//		HttpEntity<?> requestEntity = new HttpEntity<Object>(requestBody, headers);
+//		
+//		ResponseEntity<String> response = restTemplate.exchange(properties.getFirebaseUrl(),
+//				HttpMethod.POST, requestEntity, String.class);
+//		logger.info("Response from firebase server [" + response.getBody() + "]");
+//		
+//		return CompletableFuture.completedFuture(response.getBody());
 	}
 
 	private String getClientToken(String clientName) {

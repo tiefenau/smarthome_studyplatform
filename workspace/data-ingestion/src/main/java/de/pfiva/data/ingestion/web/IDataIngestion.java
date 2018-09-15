@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
+import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
@@ -27,4 +28,8 @@ public interface IDataIngestion {
 	public List<User> getUsers();
 	
 	public void sendMessage(Message message);
+	
+	public void cancelScheduledMessage(int messageId);
+	
+	public List<MessageResponseData> getMessageResponseData();
 }
