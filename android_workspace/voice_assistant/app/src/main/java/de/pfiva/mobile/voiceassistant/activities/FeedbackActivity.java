@@ -16,7 +16,7 @@ import java.util.Date;
 
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.FeedbackType;
-import de.pfiva.data.model.notification.Data;
+import de.pfiva.data.model.notification.FeedbackData;
 import de.pfiva.mobile.voiceassistant.Constants;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.network.RetrofitClientInstance;
@@ -36,7 +36,7 @@ public class FeedbackActivity extends AppCompatActivity {
     private EditText feedbackInput;
     private Button feedbackSubmit;
 
-    private Data feedbackData;
+    private FeedbackData feedbackData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,7 +83,7 @@ public class FeedbackActivity extends AppCompatActivity {
         final Intent intent = getIntent();
 
         if(intent.hasExtra(Constants.FEEDBACK_DATA_KEY)) {
-            feedbackData = (Data) intent.getSerializableExtra(Constants.FEEDBACK_DATA_KEY);
+            feedbackData = (FeedbackData) intent.getSerializableExtra(Constants.FEEDBACK_DATA_KEY);
             if(feedbackData != null) {
                 userFeedbackQuery.setText(feedbackData.getText());
                 if(feedbackData.getFeedbackType() == FeedbackType.GENERAL) {

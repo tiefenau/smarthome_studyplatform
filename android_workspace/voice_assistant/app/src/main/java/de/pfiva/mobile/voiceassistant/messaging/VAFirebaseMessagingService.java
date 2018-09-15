@@ -16,7 +16,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.util.Map;
 
 import de.pfiva.data.model.FeedbackType;
-import de.pfiva.data.model.notification.Data;
+import de.pfiva.data.model.notification.FeedbackData;
 import de.pfiva.mobile.voiceassistant.Constants;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.activities.FeedbackActivity;
@@ -38,7 +38,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
             Map<String, String> data = remoteMessage.getData();
             Log.i(TAG, "Message data payload: " + data);
 
-            Data feedbackData = new Data();
+            FeedbackData feedbackData = new FeedbackData();
             feedbackData.setFeedbackId(Integer.valueOf(data.get("feedbackId")));
             feedbackData.setFeedbackType(FeedbackType.valueOf(data.get("feedbackType")));
             feedbackData.setText(data.get("text"));
@@ -52,7 +52,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         //}
     }
 
-    private void sendNotification(Data feedbackData) {
+    private void sendNotification(FeedbackData feedbackData) {
         Intent intent = new Intent(this, FeedbackActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(Constants.FEEDBACK_DATA_KEY, feedbackData);
