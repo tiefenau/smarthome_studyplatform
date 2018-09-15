@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { NluDataTableDataSource } from './nlu-data-table-datasource';
 import { PfivaDataService } from '../services/pfiva-data.service';
+import { NLUData } from '../data-model/NLUData';
 
 @Component({
   selector: 'app-nlu-data-table',
@@ -12,15 +13,21 @@ export class NluDataTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: NluDataTableDataSource;
-
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'input', 'hotword', 'intent', 'timestamp', 'feedbackQuery', 'feedbackUserResponse', 'feedbackTimestamp'];
+  displayedColumns = ['id', 'input', 'hotword', 'intent',
+   'timestamp', 'feedbackQuery', 'feedbackUserResponse', 'feedbackTimestamp'];
 
   constructor(private pfivaDataService: PfivaDataService) {
     
   }
 
   ngOnInit() {
-    this.dataSource = new NluDataTableDataSource(this.paginator, this.sort, this.pfivaDataService);
+    this.pfivaDataService.getNLUData().subscribe(
+      (nluData: NLUData[]) => {
+        this.dataSource = new NluDataTableDataSource(this.paginator,
+           this.sort, nluData);
+      },
+      (error) => console.log(error)
+    );
+    //this.dataSource = new NluDataTableDataSource(this.paginator, this.sort, this.pfivaDataService);
   }
 }

@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+}
+
+.mat-header-cell {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}

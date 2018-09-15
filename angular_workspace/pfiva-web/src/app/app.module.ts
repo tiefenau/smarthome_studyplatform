@@ -17,6 +17,7 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { PfivaDataService } from './services/pfiva-data.service';
+import { MessageService } from './message-center/message.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { PfivaDataService } from './services/pfiva-data.service';
     MatSortModule,
     BrowserAnimationsModule
   ],
-  providers: [PfivaDataService],
+  providers: [PfivaDataService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

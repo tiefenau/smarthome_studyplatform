@@ -11,13 +11,10 @@ import { PfivaDataService } from '../services/pfiva-data.service';
  * (including sorting, pagination, and filtering).
  */
 export class NluDataTableDataSource extends DataSource<NLUData> {
-  //data: NluDataTableItem[] = EXAMPLE_DATA;
-  data: NLUData[] = [];
 
   constructor(private paginator: MatPaginator, 
-    private sort: MatSort, private pfivaDataService: PfivaDataService) {
+    private sort: MatSort, private data: NLUData[]) {
       super();
-      this.fetchNLUData();
   }
 
   /**
@@ -48,13 +45,13 @@ export class NluDataTableDataSource extends DataSource<NLUData> {
    */
   disconnect() {}
 
-  private fetchNLUData() {
+  /*private fetchNLUData() {
     this.pfivaDataService.getNLUData()
     .subscribe(
       (nluData: NLUData[]) => this.data = nluData,
       (error) => console.log(error)
     );
-  }
+  }*/
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,

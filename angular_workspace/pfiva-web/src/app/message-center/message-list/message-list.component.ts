@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatPaginator } from '@angular/material';
+import { MessageDataTableDataSource } from './message-data-table-datasource';
+import { MessageService } from '../message.service';
+import { MessageData } from '../../data-model/MessageData';
 
 @Component({
   selector: 'app-message-list',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageListComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MessageDataTableDataSource;
+  displayedColumns = ['id', 'messageText', 'deliveryDate', 'status', 'action'];
+  
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() {
+    this.messageService.getMessages().subscribe(
+      (messageData: MessageData[]) => {
+        this.dataSource = new MessageDataTableDataSource(this.paginator,
+           this.sort, messageData);
+      },
+      (error) => console.log(error)
+    );
   }
 
 }
