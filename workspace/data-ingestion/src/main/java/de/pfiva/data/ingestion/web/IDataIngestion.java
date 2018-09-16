@@ -29,7 +29,7 @@ public interface IDataIngestion {
 	
 	public void sendMessage(Message message);
 	
-	public void cancelScheduledMessage(int messageId);
+	public boolean cancelScheduledMessage(int messageId);
 	
 	public List<MessageResponseData> getMessageResponseData();
 }

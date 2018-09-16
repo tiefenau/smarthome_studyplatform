@@ -35,4 +35,15 @@ export class MessageService {
             }
         ));
     }
+
+    cancelScheduledMessage(messageId: number) {
+        let url: string = Constants.PFIVA_BASE_URL 
+            + Constants.PFIVA_CANCEL_MESSAGE + messageId;
+        return this.http.put(url, null).pipe(map(
+            (response: Response) => {
+                const data = response.json()
+                return data;
+            }
+        ));
+    }
 }

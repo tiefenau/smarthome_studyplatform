@@ -133,8 +133,8 @@ public class DataIngestionImpl implements IDataIngestion {
 
 	@Override
 	@RequestMapping(value = "/cancel-message/{messageId}", method = RequestMethod.PUT)
-	public void cancelScheduledMessage(@PathVariable int messageId) {
-		dataIngestionService.cancelScheduledMessage(messageId);
+	public boolean cancelScheduledMessage(@PathVariable int messageId) {
+		return dataIngestionService.cancelScheduledMessage(messageId);
 	}
 
 	@Override

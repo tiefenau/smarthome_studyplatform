@@ -30,6 +30,7 @@ import de.pfiva.data.model.Message;
 import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
@@ -165,10 +166,10 @@ public class NLUDataIngestionService {
 					message.setMessageStatus(MessageStatus.PENDING);
 				}
 				
-				//Tuple<Integer, Boolean> status = dbService.saveMessageToDB(message);
-				boolean status = true;
-				if(status) {//status.getY()
-					//message.setId(status.getX());
+				Tuple<Integer, Boolean> status = dbService.saveMessageToDB(message);
+//				boolean status = true;
+				if(status.getY()) {
+					message.setId(status.getX());
 					processMessageForDelivery(message);
 				}
 			}
@@ -200,7 +201,7 @@ public class NLUDataIngestionService {
 		messageTasks.put(id, schedule);
 	}
 	
-	public void cancelScheduledMessage(int messageId) {
+	public boolean cancelScheduledMessage(int messageId) {
 		if(!messageTasks.isEmpty()) {
 			ScheduledFuture<?> scheduledTask = messageTasks.get(messageId);
 			if(scheduledTask != null) {
@@ -211,9 +212,11 @@ public class NLUDataIngestionService {
 					messageTasks.remove(messageId);
 					
 					dbService.updateMessageStatus(messageId, MessageStatus.CANCELLED);
+					return true;
 				}
 			}
 		}
+		return false;
 	}
 
 	public List<MessageResponseData> getMessageResponseData() {
@@ -231,7 +234,7 @@ public class NLUDataIngestionService {
 			messageResponseData.setMessage(message);
 			response.add(messageResponseData);
 		}
-		
+		logger.info("Fetched message response data");
 		return response;
 	}
 	

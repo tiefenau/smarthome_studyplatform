@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatSort, MatPaginator } from '@angular/material';
 import { MessageDataTableDataSource } from './message-data-table-datasource';
 import { MessageService } from '../message.service';
@@ -16,7 +16,8 @@ export class MessageListComponent implements OnInit {
   dataSource: MessageDataTableDataSource;
   displayedColumns = ['id', 'messageText', 'deliveryDate', 'status', 'action'];
   
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService,
+    private changeDetectorRefs: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.messageService.getMessages().subscribe(
@@ -26,6 +27,23 @@ export class MessageListComponent implements OnInit {
       },
       (error) => console.log(error)
     );
+  }
+
+  cancelScheduledMessage(messageId: number) {
+    this.messageService.cancelScheduledMessage(messageId).subscribe(
+        (status: boolean) => {
+          if(status) {
+            this.messageService.getMessages().subscribe(
+              (messageData: MessageData[]) => {
+                this.dataSource = new MessageDataTableDataSource(this.paginator,
+                   this.sort, messageData);
+                   this.changeDetectorRefs.detectChanges();
+              },
+              (error) => console.log(error)
+            );
+          }
+        }
+      );
   }
 
 }
