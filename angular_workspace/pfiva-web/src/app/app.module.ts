@@ -21,6 +21,7 @@ import { MessageService } from './message-center/message.service';
 import { ConfigurationMainComponent } from './configuration-main/configuration-main.component';
 import { GeneralConfigurationComponent } from './configuration-main/general-configuration/general-configuration.component';
 import { UserConfigurationComponent } from './configuration-main/user-configuration/user-configuration.component';
+import { ConfigurationService } from './configuration-main/configuration.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,11 @@ import { UserConfigurationComponent } from './configuration-main/user-configurat
     MatSortModule,
     BrowserAnimationsModule
   ],
-  providers: [PfivaDataService, MessageService],
+  providers: [
+    PfivaDataService, 
+    MessageService, 
+    ConfigurationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

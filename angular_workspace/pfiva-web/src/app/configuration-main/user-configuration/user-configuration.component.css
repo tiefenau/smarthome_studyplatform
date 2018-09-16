@@ -1,0 +1,13 @@
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-header-cell {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}

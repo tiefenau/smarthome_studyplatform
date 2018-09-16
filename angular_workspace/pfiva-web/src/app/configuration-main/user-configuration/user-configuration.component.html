@@ -1,3 +1,62 @@
-<p>
-  user-configuration works!
-</p>
+<div>
+  <form (ngSubmit)="onSubmit()" #userData="ngForm">
+    <div class="form-group row">
+      <label for="username" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="username" 
+          name="username" required ngModel>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="deviceId" class="col-sm-2 col-form-label">Device ID</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="deviceId" 
+        name="deviceId" required ngModel>
+        <small id="users" class="form-text text-muted text-left">
+        Device ID needs to be unique per user.
+        </small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 text-right">
+        <button type="submit" class="btn btn-success"
+          [disabled]="!userData.valid">Add User</button>
+      </div>
+    </div>
+  </form>
+</div>
+<hr>
+
+<div class="mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-header>No</th>
+      <td mat-cell style="text-align:left" *matCellDef="let index = index">{{index+1}}</td>
+    </ng-container>
+      
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef mat-header>Username</th>
+      <td mat-cell style="text-align:left" *matCellDef="let row">{{row.username}}</td>
+    </ng-container>
+      
+    <!-- Device ID Column -->
+    <ng-container matColumnDef="deviceId">
+      <th mat-header-cell *matHeaderCellDef mat-header>Device ID</th>
+      <td mat-cell style="text-align:left" *matCellDef="let row">{{row.deviceId}}</td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+      
+  <mat-paginator #paginator
+    [length]="dataSource?.data?.length" 
+    [pageIndex]="0"
+    [pageSize]="5"
+    showFirstLastButtons>
+  </mat-paginator>
+</div>
