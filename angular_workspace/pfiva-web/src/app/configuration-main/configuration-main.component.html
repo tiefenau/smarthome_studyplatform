@@ -1,0 +1,23 @@
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/configuration/general">General</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/configuration/user">User</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link active" (click)="navigateConfiguration('general')">General</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateConfiguration('user')">User</a>
+      </li>-->
+    </ul>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
+    <!--<app-general-configuration *ngIf="activeConfig === 'general'"></app-general-configuration>
+    <app-user-configuration *ngIf="activeConfig === 'user'"></app-user-configuration>-->
+  </div>
+</div>

@@ -18,6 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { PfivaDataService } from './services/pfiva-data.service';
 import { MessageService } from './message-center/message.service';
+import { ConfigurationMainComponent } from './configuration-main/configuration-main.component';
+import { GeneralConfigurationComponent } from './configuration-main/general-configuration/general-configuration.component';
+import { UserConfigurationComponent } from './configuration-main/user-configuration/user-configuration.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MessageService } from './message-center/message.service';
     MessageListComponent,
     PageNotFoundComponent,
     DropdownDirective,
-    NluDataTableComponent
+    NluDataTableComponent,
+    ConfigurationMainComponent,
+    GeneralConfigurationComponent,
+    UserConfigurationComponent
   ],
   imports: [
     BrowserModule,
