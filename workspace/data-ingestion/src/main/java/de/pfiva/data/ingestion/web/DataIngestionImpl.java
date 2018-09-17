@@ -142,4 +142,19 @@ public class DataIngestionImpl implements IDataIngestion {
 	public List<MessageResponseData> getMessageResponseData() {
 		return dataIngestionService.getMessageResponseData();
 	}
+
+	@Override
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	public boolean addNewUser(@RequestBody User user) {
+		if(user != null) {
+			return dataIngestionService.addNewUser(user);
+		}
+		return false;
+	}
+
+	@Override
+	@RequestMapping(value = "/user/{userId}", method = RequestMethod.DELETE)
+	public boolean deleteUser(@PathVariable int userId) {
+		return dataIngestionService.deleteUser(userId);
+	}
 }

@@ -237,6 +237,14 @@ public class NLUDataIngestionService {
 		logger.info("Fetched message response data");
 		return response;
 	}
+
+	public boolean addNewUser(User user) {
+		return dbService.addNewUser(user);
+	}
+
+	public boolean deleteUser(int userId) {
+		return dbService.deleteUser(userId);
+	}
 	
 	// On receiving data, check for completion, if data
 	// is complete push to database.

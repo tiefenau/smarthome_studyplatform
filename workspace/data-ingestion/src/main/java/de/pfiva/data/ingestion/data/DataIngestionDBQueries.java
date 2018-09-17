@@ -24,6 +24,8 @@ public interface DataIngestionDBQueries {
 	
 	public static final String INSERT_MESSAGE_USERS_TBL = "INSERT INTO message_users_tbl(message_id, user_id) VALUES(?,?)";
 	
+	public static final String INSERT_USER_TBL = "INSERT INTO user_tbl(username, device_id) VALUES (?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	
@@ -59,4 +61,7 @@ public interface DataIngestionDBQueries {
 	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
+
+	// Delete queries ------------------------------------------------------------------------------
+	public static final String DELETE_USER = "DELETE from user_tbl where user_id = ?";
 }

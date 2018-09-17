@@ -27,6 +27,10 @@ public interface IDataIngestion {
 	
 	public List<User> getUsers();
 	
+	public boolean addNewUser(User user);
+	
+	public boolean deleteUser(int userId);
+	
 	public void sendMessage(Message message);
 	
 	public boolean cancelScheduledMessage(int messageId);

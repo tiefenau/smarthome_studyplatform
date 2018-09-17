@@ -308,4 +308,23 @@ public class NLUDataIngestionDBService {
 					}
 				});
 	}
+
+	public boolean addNewUser(User user) {
+		int status = jdbcTemplate.update(DataIngestionDBQueries.INSERT_USER_TBL,
+				user.getUsername(), user.getDeviceId());
+		if(status > 0) {
+			logger.info("New user [" + user.getUsername() + "] added");
+			return true;
+		}
+		return false;
+	}
+
+	public boolean deleteUser(int userId) {
+		int status = jdbcTemplate.update(DataIngestionDBQueries.DELETE_USER, userId);
+		if(status > 0) {
+			logger.info("User with id [" + userId + "] deleted");
+			return true;
+		}
+		return false;
+	}
 }

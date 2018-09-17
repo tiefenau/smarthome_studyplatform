@@ -13,7 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FormsModule } from '@angular/forms';
 import { NluDataTableComponent } from './nlu-data-table/nlu-data-table.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { PfivaDataService } from './services/pfiva-data.service';
@@ -46,6 +46,7 @@ import { ConfigurationService } from './configuration-main/configuration.service
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [

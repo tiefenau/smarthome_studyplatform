@@ -48,6 +48,15 @@
       <th mat-header-cell *matHeaderCellDef mat-header>Device ID</th>
       <td mat-cell style="text-align:left" *matCellDef="let row">{{row.deviceId}}</td>
     </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-header>Action</th>
+      <td mat-cell style="text-align:left" *matCellDef="let row">
+        <button class="deleteButton" (click)="onDelete(row.id)">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
     
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
