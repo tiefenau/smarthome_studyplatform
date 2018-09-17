@@ -1,3 +1,54 @@
-<p>
-  general-configuration works!
-</p>
+<div>
+<form (ngSubmit)="onSubmit()" #configData="ngForm">
+  <div class="form-group row">
+    <label for="instantFeedback" style="text-align:left" 
+      class="col-sm-3 col-form-label">Instant Feedback</label>
+    <div class="col-sm-4" style="text-align:left">
+      <label class="switch">
+        <input type="checkbox" name="instantFeedback">
+          <span class="slider round"></span>
+        </label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="queriesHotword" style="text-align:left" 
+      class="col-sm-3 col-form-label">Queries without Hotword</label>
+    <div class="col-sm-4" style="text-align:left">
+      <label class="switch">
+      <input type="checkbox" (click)="toggleQueriesHotword()" name="queriesHotword">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="defaultFeedbackQuery" style="text-align:left" 
+      class="col-sm-3 col-form-label">Default Feedback Query</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="defaultFeedbackQuery" 
+        name="defaultFeedbackQuery" [disabled]="!isFeedbackQuery">
+    </div>
+    <div class="col-sm-3 text-left">
+        <button type="button" class="btn btn-primary" 
+          (click)="toggleFeedbackQuery()">
+          {{isFeedbackQuery == true ? 'Save' : 'Edit'}}
+        </button>  
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="serverKey" style="text-align:left" 
+      class="col-sm-3 col-form-label">Server Key</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="serverKey" 
+        name="serverKey" [disabled]="!isServerKey">
+    </div>
+    <div class="col-sm-3 text-left">
+      <button type="button" class="btn btn-primary" (click)="toggleServerKey()">
+        {{isServerKey == true ? 'Save' : 'Edit'}}
+      </button>  
+    </div>
+  </div>
+</form>
+</div>
