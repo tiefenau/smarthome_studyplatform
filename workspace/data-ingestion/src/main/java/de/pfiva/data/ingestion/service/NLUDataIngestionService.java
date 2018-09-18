@@ -30,6 +30,7 @@ import de.pfiva.data.model.Message;
 import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
@@ -244,6 +245,16 @@ public class NLUDataIngestionService {
 
 	public boolean deleteUser(int userId) {
 		return dbService.deleteUser(userId);
+	}
+
+	public List<PfivaConfigData> getConfigurationValues() {
+		return dbService.getConfigurationValues();
+	}
+
+	public void saveConfigValue(PfivaConfigData configData) {
+		if(configData != null) {
+			dbService.saveConfigValue(configData);
+		}
 	}
 	
 	// On receiving data, check for completion, if data

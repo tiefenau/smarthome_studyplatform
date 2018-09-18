@@ -25,6 +25,7 @@ import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
 import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
 
@@ -156,5 +157,17 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/user/{userId}", method = RequestMethod.DELETE)
 	public boolean deleteUser(@PathVariable int userId) {
 		return dataIngestionService.deleteUser(userId);
+	}
+
+	@Override
+	@RequestMapping(value = "/config-data", method = RequestMethod.GET)
+	public List<PfivaConfigData> getConfigurationValues() {
+		return dataIngestionService.getConfigurationValues();
+	}
+
+	@Override
+	@RequestMapping(value = "/config-data", method = RequestMethod.POST)
+	public void saveConfigValue(@RequestBody PfivaConfigData configData) {
+		dataIngestionService.saveConfigValue(configData);
 	}
 }

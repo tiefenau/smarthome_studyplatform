@@ -7,4 +7,5 @@ export class Constants {
     public static readonly PFIVA_MESSAGES: string = "/messages-data";
     public static readonly PFIVA_SEND_MESSAGE: string = "/send-message";
     public static readonly PFIVA_CANCEL_MESSAGE: string = "/cancel-message";
+    public static readonly PFIVA_CONFIG_DATA: string = "/config-data";
 }

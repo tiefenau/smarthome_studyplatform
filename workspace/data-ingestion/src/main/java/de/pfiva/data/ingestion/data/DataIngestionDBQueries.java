@@ -59,8 +59,13 @@ public interface DataIngestionDBQueries {
 			+ " from user_tbl as u JOIN message_users_tbl as m"
 			+ " ON u.user_id = m.user_id where m.message_id = ?";
 	
+	public static final String GET_CONFIG_DATA = "SELECT * from configuration_tbl";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
+	
+	public static final String UPDATE_CONFIG_VALUE = "UPDATE configuration_tbl SET"
+			+ " config_value = ? where config_key = ?";
 
 	// Delete queries ------------------------------------------------------------------------------
 	public static final String DELETE_USER = "DELETE from user_tbl where user_id = ?";

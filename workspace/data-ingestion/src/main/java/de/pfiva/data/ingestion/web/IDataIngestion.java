@@ -8,6 +8,7 @@ import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
 import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
 
@@ -36,4 +37,8 @@ public interface IDataIngestion {
 	public boolean cancelScheduledMessage(int messageId);
 	
 	public List<MessageResponseData> getMessageResponseData();
+	
+	public List<PfivaConfigData> getConfigurationValues();
+	
+	public void saveConfigValue(PfivaConfigData configData);
 }

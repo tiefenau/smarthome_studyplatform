@@ -5,13 +5,14 @@
       class="col-sm-3 col-form-label">Instant Feedback</label>
     <div class="col-sm-4" style="text-align:left">
       <label class="switch">
-        <input type="checkbox" name="instantFeedback">
+        <input type="checkbox" name="instantFeedback" [checked]="isInstantFeedback"
+          (click)="toggleInstantFeedback()" #instantFeedbackInput>
           <span class="slider round"></span>
         </label>
     </div>
   </div>
 
-  <div class="form-group row">
+  <!--<div class="form-group row">
     <label for="queriesHotword" style="text-align:left" 
       class="col-sm-3 col-form-label">Queries without Hotword</label>
     <div class="col-sm-4" style="text-align:left">
@@ -20,14 +21,15 @@
         <span class="slider round"></span>
       </label>
     </div>
-  </div>
+  </div>-->
 
   <div class="form-group row">
     <label for="defaultFeedbackQuery" style="text-align:left" 
       class="col-sm-3 col-form-label">Default Feedback Query</label>
     <div class="col-sm-4">
       <input type="text" class="form-control" id="defaultFeedbackQuery" 
-        name="defaultFeedbackQuery" [disabled]="!isFeedbackQuery">
+        name="defaultFeedbackQuery" [disabled]="!isFeedbackQuery" 
+        value="{{defaultFeedbackQuery}}" #defaultFeedbackQueryInput>
     </div>
     <div class="col-sm-3 text-left">
         <button type="button" class="btn btn-primary" 
@@ -42,7 +44,8 @@
       class="col-sm-3 col-form-label">Server Key</label>
     <div class="col-sm-4">
       <input type="text" class="form-control" id="serverKey" 
-        name="serverKey" [disabled]="!isServerKey">
+        name="serverKey" [disabled]="!isServerKey" 
+        value="{{firebaseServerKey}}" #serverKeyInput>
     </div>
     <div class="col-sm-3 text-left">
       <button type="button" class="btn btn-primary" (click)="toggleServerKey()">

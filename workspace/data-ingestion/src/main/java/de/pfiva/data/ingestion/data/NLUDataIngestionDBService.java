@@ -23,6 +23,7 @@ import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.model.Message;
 import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
@@ -326,5 +327,26 @@ public class NLUDataIngestionDBService {
 			return true;
 		}
 		return false;
+	}
+
+	public List<PfivaConfigData> getConfigurationValues() {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_CONFIG_DATA, new RowMapper<PfivaConfigData>() {
+
+			@Override
+			public PfivaConfigData mapRow(ResultSet rs, int rowNum) throws SQLException {
+				PfivaConfigData data = new PfivaConfigData();
+				data.setId(rs.getInt("config_id"));
+				data.setKey(rs.getString("config_key"));
+				data.setValue(rs.getString("config_value"));
+				return data;
+			}
+		});
+	}
+
+	public void saveConfigValue(PfivaConfigData configData) {
+		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_CONFIG_VALUE, 
+				configData.getValue(), configData.getKey());
+		logger.info("Updated config key [" + configData.getKey()
+			+ "], with value [" + configData.getValue() + "]");
 	}
 }
