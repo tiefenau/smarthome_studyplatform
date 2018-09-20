@@ -1,0 +1,14 @@
+<div *ngIf="router.url == '/surveys'">
+  <div class="card">
+      <div class="card-header">
+          <div class="col-md-12 text-right">
+              <button type="button" class="btn btn-primary" 
+                  (click)="navigateToComposeSurvey()">Compose Survey</button>
+          </div>
+      </div>
+      <div class="card-body">
+          <app-survey-list></app-survey-list>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

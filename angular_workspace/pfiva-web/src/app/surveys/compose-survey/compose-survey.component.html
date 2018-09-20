@@ -1,0 +1,120 @@
+<div>
+  <form (ngSubmit)="onSubmit()" #surveyData="ngForm">
+    <div class="card">
+        <h5 class="card-header">Compose Survey</h5>
+      <div class="card-body">
+          <div class="form-group row">
+            <label for="surveyName" class="col-sm-2 col-form-label">Survey Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"
+                  id="surveyName" name="surveyName" required ngModel>
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="deliveryDateTime" class="col-sm-2 col-form-label">Delivery Date</label>
+            <div class="col-sm-2">
+              <select id="deliveryDateTime" name="deliveryDateTime" 
+                class="btn btn-secondary dropdown-toggle" 
+                [(ngModel)]="deliveryDateTime">
+                <option value="Send Now">Send Now</option>
+                <option value="Send Later">Send Later</option>
+              </select>
+            </div>
+            
+            <div class="col-sm-3" *ngIf="deliveryDateTime == 'Send Later'">
+              <input type="date" class="form-control" id="deliveryDate" name="deliveryDate" required ngModel>
+            </div>
+            <div class="col-sm-2" *ngIf="deliveryDateTime == 'Send Later'">
+              <input type="time" class="form-control" id="delvieryTime" name="delvieryTime" required ngModel>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="users" class="col-sm-2 col-form-label">Users</label>
+            <div class="col-sm-10">
+              <select multiple class="form-control" id="users" name="users" required ngModel>
+                <option *ngFor="let user of users">{{user.username}}</option>
+              </select>
+              <small id="users" class="form-text text-muted">Atleast one user has to be selected.</small>
+            </div>
+          </div>
+
+          <hr>
+          <!-- Questions container-->
+          <div class="row">
+            <div class="col-sm-6 border">
+              <div class="form group row px-4 pt-4 pb-2">
+                <div class="form-group">
+                  <label for="surveyQuestion">Question</label>
+                  <input type="text" class="form-control" style="width:500px;" 
+                    id="surveyQuestion" 
+                    placeholder="Enter your question" 
+                    (change)="onQuestionInputChange()" #questionInput>
+                </div>
+                <div class="form-group">
+                  <label for="surveyQuestionType">Question Type</label>
+                  <select class="form-control" id="surveyQuestionType" 
+                    name="surveyQuestionType" [(ngModel)]="surveyQuestionType" 
+                    (change)="onQuestionTypeChange()">
+                    <option value="Text">Text</option>
+                    <option value="Multiple Choice">Multiple Choice</option>
+                    <option value="Checkboxes">Checkboxes</option>
+                  </select>
+                </div>
+              </div>
+              <hr>
+              <div class="form group row px-4 pt-2 pb-4">
+                <table *ngIf="surveyQuestionType != 'Text'" #optionsTable>
+                  <tr *ngFor="let row of rowCount">
+                    <td *ngIf="surveyQuestionType === 'Multiple Choice'">
+                      <input type="radio" disabled>
+                    </td>
+                    <td *ngIf="surveyQuestionType === 'Checkboxes'">
+                        <input type="checkbox" disabled>
+                    </td>
+                    <td class="px-4">
+                      <input type="text" class="form-control" style="width: 400px;" 
+                        placeholder="Enter an answer choice">
+                    </td>
+                    <td>
+                      <button class="addOptionButton" (click)="addNewOptionRow()">
+                        <img src="/assets/plus-2x.png" alt="icon name">
+                      </button>
+                    </td>
+                    <td *ngIf="rowCount.length > 1">
+                      <button class="addOptionButton" (click)="deleteNewOptionRow(row)">
+                        <img src="/assets/minus-2x.png" alt="icon name">
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="form group row pb-4">
+                <div class="col"></div>
+                <div class="col">
+                    <button type="button" 
+                      class="btn btn-primary"
+                      (click)="addQuestion()">Add Question</button>
+                </div>
+              </div>
+            </div>
+            <!-- Questions View container -->
+            <div class="col-sm-6 border bg-light">
+              sda
+            </div>
+            
+          </div>
+          <!-- Questions container-->
+
+      </div>
+      <div class="card-footer">
+        <div class="col-md-12 text-right">
+          <button type="submit"
+            class="btn btn-success"
+            [disabled]="!surveyData.valid">{{ deliveryDateTime == 'Send Later' ? 'Schedule Survey' : 'Send Survey' }}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

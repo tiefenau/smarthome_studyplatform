@@ -13,7 +13,7 @@ export class MessageCenterComponent implements OnInit {
   constructor(private router: Router, 
     private route: ActivatedRoute, 
     private location: PlatformLocation) {
-      location.onPopState(() => { this.isComposeMessage = false;});
+      this.location.onPopState(() => { this.isComposeMessage = false;});
     }
 
   ngOnInit() {

@@ -22,6 +22,10 @@ import { ConfigurationMainComponent } from './configuration-main/configuration-m
 import { GeneralConfigurationComponent } from './configuration-main/general-configuration/general-configuration.component';
 import { UserConfigurationComponent } from './configuration-main/user-configuration/user-configuration.component';
 import { ConfigurationService } from './configuration-main/configuration.service';
+import { SurveysComponent } from './surveys/surveys.component';
+import { SurveyListComponent } from './surveys/survey-list/survey-list.component';
+import { ComposeSurveyComponent } from './surveys/compose-survey/compose-survey.component';
+import { SurveyService } from './surveys/survey.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { ConfigurationService } from './configuration-main/configuration.service
     NluDataTableComponent,
     ConfigurationMainComponent,
     GeneralConfigurationComponent,
-    UserConfigurationComponent
+    UserConfigurationComponent,
+    SurveysComponent,
+    SurveyListComponent,
+    ComposeSurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,8 @@ import { ConfigurationService } from './configuration-main/configuration.service
   providers: [
     PfivaDataService, 
     MessageService, 
-    ConfigurationService
+    ConfigurationService,
+    SurveyService
   ],
   bootstrap: [AppComponent]
 })
