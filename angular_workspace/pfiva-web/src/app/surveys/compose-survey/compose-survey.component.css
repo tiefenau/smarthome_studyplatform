@@ -10,3 +10,22 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
 .addOptionButton :hover {
     cursor: pointer;
 }
+
+.deleteQuestionButton {
+    background-color: #f8f9fa;
+    border-style: none;
+    border-width: 0px;
+}
+.deleteQuestionButton :hover {
+    cursor: pointer;
+}
+
+.questionError {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+}

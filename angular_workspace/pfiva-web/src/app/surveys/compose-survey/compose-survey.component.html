@@ -44,13 +44,15 @@
           <!-- Questions container-->
           <div class="row">
             <div class="col-sm-6 border">
+              <div class="questionError" *ngIf="!questionTemplateValid">
+                {{error}}
+              </div>
               <div class="form group row px-4 pt-4 pb-2">
                 <div class="form-group">
                   <label for="surveyQuestion">Question</label>
                   <input type="text" class="form-control" style="width:500px;" 
                     id="surveyQuestion" 
-                    placeholder="Enter your question" 
-                    (change)="onQuestionInputChange()" #questionInput>
+                    placeholder="Enter your question" #questionInput>
                 </div>
                 <div class="form-group">
                   <label for="surveyQuestionType">Question Type</label>
@@ -79,12 +81,12 @@
                     </td>
                     <td>
                       <button class="addOptionButton" (click)="addNewOptionRow()">
-                        <img src="/assets/plus-2x.png" alt="icon name">
+                        <img src="/assets/plus-2x.png" alt="add option">
                       </button>
                     </td>
                     <td *ngIf="rowCount.length > 1">
                       <button class="addOptionButton" (click)="deleteNewOptionRow(row)">
-                        <img src="/assets/minus-2x.png" alt="icon name">
+                        <img src="/assets/minus-2x.png" alt="delete option">
                       </button>
                     </td>
                   </tr>
@@ -100,8 +102,34 @@
               </div>
             </div>
             <!-- Questions View container -->
-            <div class="col-sm-6 border bg-light">
-              sda
+            <div class="col-sm-6 border">
+              <div class="border bg-light p-2 m-2" *ngFor="let entry of questions">
+                <div class="row">
+                  <div class="col">
+                    <span class="font-weight-bold">Q: </span>{{entry.question}}
+                  </div>
+                  <div class="col text-right">
+                    <button class="deleteQuestionButton" (click)="deleteQuestion(entry)">
+                      <img src="/assets/trash-2x.png" alt="delete question">
+                    </button>
+                  </div>
+                </div>
+                <div *ngFor="let option of entry.options">
+                  <table>
+                    <tr class="px-4 pt-2">
+                      <td *ngIf="entry.questionType === 'Multiple Choice'">
+                        <input type="radio" disabled>
+                      </td>
+                      <td *ngIf="entry.questionType === 'Checkboxes'">
+                        <input type="checkbox" disabled>
+                      </td>
+                      <td class="px-3">
+                        {{option}}
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
             
           </div>
@@ -110,9 +138,10 @@
       </div>
       <div class="card-footer">
         <div class="col-md-12 text-right">
+          <span class="mr-5">Atleast one question needs to be added to a survey.</span>
           <button type="submit"
             class="btn btn-success"
-            [disabled]="!surveyData.valid">{{ deliveryDateTime == 'Send Later' ? 'Schedule Survey' : 'Send Survey' }}</button>
+            [disabled]="questions.length==0 || !surveyData.valid">{{ deliveryDateTime == 'Send Later' ? 'Schedule Survey' : 'Send Survey' }}</button>
         </div>
       </div>
     </div>
