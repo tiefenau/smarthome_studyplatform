@@ -29,6 +29,10 @@ import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
+import de.pfiva.data.model.survey.Option;
+import de.pfiva.data.model.survey.Question;
+import de.pfiva.data.model.survey.Survey;
+import de.pfiva.data.model.survey.Survey.SurveyStatus;
 
 @Service
 public class NLUDataIngestionDBService {
@@ -348,5 +352,113 @@ public class NLUDataIngestionDBService {
 				configData.getValue(), configData.getKey());
 		logger.info("Updated config key [" + configData.getKey()
 			+ "], with value [" + configData.getValue() + "]");
+	}
+
+	public Tuple<Integer, Boolean> saveSurveyToDB(Survey survey) {
+		// 1. Insert into survey_tbl
+		// 2. Insert into survey_users_tbl
+		// 3. Insert into question_tbl
+		// 4. Insert into option_tbl
+		
+		Tuple<Integer, Boolean> status = insertIntoSurveyTable(survey);
+		insertIntoQuestionOptionTable(survey, status);
+		return status;
+	}
+
+	private void insertIntoQuestionOptionTable(Survey survey, Tuple<Integer, Boolean> status) {
+		// If insertion in survey table is successful
+		if(status.getY()) {
+			for(Question question : survey.getQuestions()) {
+				KeyHolder keyHolder = new GeneratedKeyHolder();
+				jdbcTemplate.update(new PreparedStatementCreator() {
+					
+					@Override
+					public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+						PreparedStatement ps = con
+								.prepareStatement(DataIngestionDBQueries.INSERT_QUESTION_TBL,
+										new String[] {"question_id"});
+						
+						ps.setString(1, question.getQuestion());
+						ps.setString(2, question.getQuestionType());
+						ps.setInt(3, status.getX()); // status.getX() is surveyId
+						return ps;
+					}
+				}, keyHolder);
+				
+				final int questionId = keyHolder.getKey().intValue();
+				logger.info("Inserted record in question_tbl with row id [" + questionId + "]");
+				
+				if(!question.getQuestionType().equals("Text")) {
+					int[] rows = jdbcTemplate.batchUpdate(DataIngestionDBQueries.INSERT_OPTIONS_TBL,
+							new BatchPreparedStatementSetter() {
+
+						@Override
+						public void setValues(PreparedStatement ps, int i) throws SQLException {
+							Option option = question.getOptions().get(i);
+							ps.setString(1, option.getValue());
+							ps.setInt(2, questionId);
+						}
+
+						@Override
+						public int getBatchSize() {
+							return question.getOptions().size();
+						}
+					});
+					
+					if(rows.length > 0) {
+						logger.info("Inserted [" + rows.length + "] records in"
+								+ " options_tbl for question id [" + questionId + "].");
+					}
+				}
+			}			
+		}
+	}
+
+	private Tuple<Integer, Boolean> insertIntoSurveyTable(Survey survey) {
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con
+						.prepareStatement(DataIngestionDBQueries.INSERT_SURVEY_TBL,
+								new String[] {"survey_id"});
+
+				ps.setString(1, survey.getSurveyName());
+				ps.setString(2, survey.getSurveyStatus().toString());
+				ps.setString(3, survey.getDeliveryDateTime());
+				return ps;
+			}
+		}, keyHolder);
+
+		final int surveyId = keyHolder.getKey().intValue();
+		logger.info("Inserted record in survey_tbl with row id [" + surveyId + "]");
+
+		int[] rows = jdbcTemplate.batchUpdate(DataIngestionDBQueries.INSERT_SURVEY_USERS_TBL,
+				new BatchPreparedStatementSetter() {
+
+			@Override
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				User user = survey.getUsers().get(i);
+				ps.setInt(1, surveyId);
+				ps.setInt(2, user.getId());
+			}
+
+			@Override
+			public int getBatchSize() {
+				return survey.getUsers().size();
+			}
+		});
+
+		if(rows.length > 0) {
+			logger.info("Inserted [" + rows.length + "] records in survey_users_tbl.");
+			return new Tuple<>(surveyId, true);
+		}
+		return new Tuple<>(surveyId, false);
+	}
+	
+	public void updateSurveyStatus(int surveyId, SurveyStatus status) {
+		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_SURVEY_STATUS, status.toString(), surveyId);
+		logger.info("Survey status for survey id [" + surveyId + "] updated to [" + status + "]");
 	}
 }

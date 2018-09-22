@@ -25,6 +25,7 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 import de.pfiva.data.ingestion.task.MessageTask;
+import de.pfiva.data.ingestion.task.SurveyTask;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.Message;
 import de.pfiva.data.model.Message.MessageStatus;
@@ -35,6 +36,8 @@ import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
+import de.pfiva.data.model.survey.Survey;
+import de.pfiva.data.model.survey.Survey.SurveyStatus;
 
 @Service
 public class NLUDataIngestionService {
@@ -54,6 +57,7 @@ public class NLUDataIngestionService {
 	@Autowired private FirebaseService firebaseService;
 	
 	private Map<Integer, ScheduledFuture<?>> messageTasks = new HashMap<>();
+	private Map<Integer, ScheduledFuture<?>> surveyTasks = new HashMap<>();
 //	private NLUOutput nluOutput;
 	
 	public void extractInboundFileData(InputFile inputFile) {
@@ -255,6 +259,76 @@ public class NLUDataIngestionService {
 		if(configData != null) {
 			dbService.saveConfigValue(configData);
 		}
+	}
+
+	public void sendSurvey(Survey survey) {
+		// 1. Save survey to db
+		// 2. Based on delivery date either send survey or schedule a survey to be sent later
+		if(survey != null) {
+			// Delivery date would either be Now or an actual timestamp
+			String deliveryDate = survey.getDeliveryDateTime();
+			if(deliveryDate != null && !deliveryDate.trim().isEmpty()) {
+				if(deliveryDate.equalsIgnoreCase("now")) {
+					logger.info("Survey is scheduled to be delivered now.");
+					survey.setSurveyStatus(SurveyStatus.DELIVERED);
+
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+					survey.setDeliveryDateTime(LocalDateTime.now().format(formatter));
+				} else {
+					logger.info("Survey is scheduled to be delivered later.");
+					survey.setSurveyStatus(SurveyStatus.PENDING);
+				}
+
+				Tuple<Integer, Boolean> status = dbService.saveSurveyToDB(survey);
+				//boolean status = true;
+				if(status.getY()) {
+					survey.setId(status.getX());
+					processSurveyForDelivery(survey);
+				}
+			}
+		}
+	}
+	
+	private void processSurveyForDelivery(Survey survey) {
+		DateFormat formatter = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
+		Date date = null;
+		try {
+			date = formatter.parse(survey.getDeliveryDateTime());
+		} catch (ParseException e) {
+			
+		}
+		
+		logger.info("Survey scheduled to be delivered to [" + survey.getUsers().size()
+				+ "] users.");
+		for(User user : survey.getUsers()) {
+			scheduleSurvey(survey, date, user);
+		}
+	}
+
+	@Async
+	private void scheduleSurvey(Survey survey, Date date, User user) {
+		ScheduledFuture<?> schedule = taskScheduler.schedule(
+				new SurveyTask(firebaseService, dbService, survey, user), date);
+		
+		surveyTasks.put(survey.getId(), schedule);
+	}
+	
+	public boolean cancelScheduledSurvey(int surveyId) {
+		if(!surveyTasks.isEmpty()) {
+			ScheduledFuture<?> scheduledTask = surveyTasks.get(surveyId);
+			if(scheduledTask != null) {
+				scheduledTask.cancel(true);
+				
+				if(scheduledTask.isCancelled()) {
+					logger.info("Cancelled scheduled task for survey id [" + surveyId + "]");
+					surveyTasks.remove(surveyId);
+					
+					dbService.updateSurveyStatus(surveyId, SurveyStatus.CANCELLED);
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 	// On receiving data, check for completion, if data

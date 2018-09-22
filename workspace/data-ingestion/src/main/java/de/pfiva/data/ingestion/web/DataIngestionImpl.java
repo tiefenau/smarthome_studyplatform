@@ -28,6 +28,7 @@ import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
+import de.pfiva.data.model.survey.Survey;
 
 @CrossOrigin
 @RestController
@@ -169,5 +170,20 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/config-data", method = RequestMethod.POST)
 	public void saveConfigValue(@RequestBody PfivaConfigData configData) {
 		dataIngestionService.saveConfigValue(configData);
+	}
+
+	@Override
+	@RequestMapping(value = "/send-survey", method = RequestMethod.POST)
+	public void sendSurvey(@RequestBody Survey survey) {
+		if(survey != null) {
+			logger.info("New survey received [" + survey + "]");
+			dataIngestionService.sendSurvey(survey);
+		}
+	}
+
+	@Override
+	@RequestMapping(value = "/cancel-survey/{surveyId}", method = RequestMethod.PUT)
+	public boolean cancelScheduledSurvey(@PathVariable int surveyId) {
+		return dataIngestionService.cancelScheduledSurvey(surveyId);
 	}
 }

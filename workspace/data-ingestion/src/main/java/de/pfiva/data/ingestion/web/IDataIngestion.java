@@ -11,6 +11,7 @@ import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
+import de.pfiva.data.model.survey.Survey;
 
 public interface IDataIngestion {
 
@@ -41,4 +42,8 @@ public interface IDataIngestion {
 	public List<PfivaConfigData> getConfigurationValues();
 	
 	public void saveConfigValue(PfivaConfigData configData);
+	
+	public void sendSurvey(Survey survey);
+	
+	public boolean cancelScheduledSurvey(int surveyId);
 }

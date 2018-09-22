@@ -26,6 +26,15 @@ public interface DataIngestionDBQueries {
 	
 	public static final String INSERT_USER_TBL = "INSERT INTO user_tbl(username, device_id) VALUES (?,?)";
 	
+	public static final String INSERT_SURVEY_TBL = "INSERT INTO survey_tbl(survey_name,"
+			+ " status, delivery_date) VALUES(?,?,?)";
+	
+	public static final String INSERT_SURVEY_USERS_TBL = "INSERT INTO survey_users_tbl(survey_id, user_id) VALUES(?,?)";
+	
+	public static final String INSERT_QUESTION_TBL = "INSERT INTO questions_tbl(question, question_type, survey_id) VALUES(?,?,?)";
+	
+	public static final String INSERT_OPTIONS_TBL = "INSERT INTO options_tbl(value, question_id) VALUES(?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	
@@ -66,6 +75,8 @@ public interface DataIngestionDBQueries {
 	
 	public static final String UPDATE_CONFIG_VALUE = "UPDATE configuration_tbl SET"
 			+ " config_value = ? where config_key = ?";
+	
+	public static final String UPDATE_SURVEY_STATUS = "UPDATE survey_tbl SET status = ? where survey_id = ?";
 
 	// Delete queries ------------------------------------------------------------------------------
 	public static final String DELETE_USER = "DELETE from user_tbl where user_id = ?";
