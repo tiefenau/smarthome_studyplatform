@@ -7,7 +7,8 @@
             <label for="surveyName" class="col-sm-2 col-form-label">Survey Name</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control"
-                  id="surveyName" name="surveyName" required ngModel>
+                  id="surveyName" name="surveyName" 
+                  required ngModel #surveyName>
               </div>
           </div>
 
@@ -80,12 +81,14 @@
                         placeholder="Enter an answer choice">
                     </td>
                     <td>
-                      <button class="addOptionButton" (click)="addNewOptionRow()">
+                      <button type="button" class="addOptionButton" 
+                        (click)="addNewOptionRow()">
                         <img src="/assets/plus-2x.png" alt="add option">
                       </button>
                     </td>
                     <td *ngIf="rowCount.length > 1">
-                      <button class="addOptionButton" (click)="deleteNewOptionRow(row)">
+                      <button type="button" class="addOptionButton" 
+                        (click)="deleteNewOptionRow(row)">
                         <img src="/assets/minus-2x.png" alt="delete option">
                       </button>
                     </td>
@@ -105,10 +108,10 @@
             <div class="col-sm-6 border">
               <div class="border bg-light p-2 m-2" *ngFor="let entry of questions">
                 <div class="row">
-                  <div class="col">
+                  <div class="col-sm-8">
                     <span class="font-weight-bold">Q: </span>{{entry.question}}
                   </div>
-                  <div class="col text-right">
+                  <div class="col-sm-4 text-right">
                     <button class="deleteQuestionButton" (click)="deleteQuestion(entry)">
                       <img src="/assets/trash-2x.png" alt="delete question">
                     </button>
@@ -124,7 +127,7 @@
                         <input type="checkbox" disabled>
                       </td>
                       <td class="px-3">
-                        {{option}}
+                        {{option.value}}
                       </td>
                     </tr>
                   </table>

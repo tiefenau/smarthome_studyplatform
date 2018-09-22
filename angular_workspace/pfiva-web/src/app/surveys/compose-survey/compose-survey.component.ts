@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { User } from '../../data-model/User';
 import { SurveyService } from '../survey.service';
-import { SurveyQuestion } from '../../data-model/SurveyQuestion';
+import { NgForm } from '@angular/forms';
+import { Survey } from '../../data-model/survey/Survey';
+import { Question } from '../../data-model/survey/Question';
+import { Option } from '../../data-model/survey/Option';
 
 @Component({
   selector: 'app-compose-survey',
@@ -16,10 +19,11 @@ export class ComposeSurveyComponent implements OnInit {
   error: string = '';
   rowCount: number[] = [];
   users: User[];
-  questions: SurveyQuestion[] = [];
+  questions: Question[] = [];
 
   @ViewChild('questionInput') questionInput: ElementRef;
   @ViewChild('optionsTable') optionsTable: ElementRef;
+  @ViewChild('surveyData') composeSurveyForm: NgForm;
   
   constructor(private surveyService: SurveyService) { }
 
@@ -30,6 +34,45 @@ export class ComposeSurveyComponent implements OnInit {
   }
 
   onSubmit() {
+    let survey = new Survey();
+    survey.SurveyName = this.composeSurveyForm.form.value.surveyName;
+    let deliveryDateValue = this.composeSurveyForm.form.value.deliveryDateTime;
+    if(deliveryDateValue == 'Send Now') {
+      survey.DeliveryDateTime = 'Now';
+    } else {
+      // TODO - formate date using pipe
+      let date: string = this.composeSurveyForm.form.value.deliveryDate 
+      + " " + this.composeSurveyForm.form.value.delvieryTime + ":00.000";
+      survey.DeliveryDateTime = date;
+    }
+    let usersArray: string[] = this.composeSurveyForm.form.value.users;
+    let intendedUsers: User[] = [];
+    for(let element of usersArray) {
+      for(let user of this.users) {
+        let userObject = Object.assign(new User(), user);
+        if(userObject.Username === element) {
+          let newuser = new User();
+          newuser.Id = userObject.Id;
+          newuser.Username = userObject.Username;
+          newuser.DeviceId = userObject.DeviceId;
+          intendedUsers.push(newuser);
+        }
+      }
+    }
+    survey.Users = intendedUsers;
+    survey.Questions = this.questions;
+    
+    this.surveyService.sendSurvey(survey);
+
+    // Reset form
+    this.composeSurveyForm.reset();
+    this.composeSurveyForm.form.patchValue({ 'deliveryDateTime':'Send Now' });
+    this.questions = [];
+    this.composeSurveyForm.form.patchValue({ 'surveyQuestionType':'Text' });
+    this.questionInput.nativeElement.value = '';
+    this.error = '';
+    this.questionTemplateValid = true;
+    this.rowCount = [1];
   }
 
   onQuestionTypeChange() {
@@ -50,24 +93,26 @@ export class ComposeSurveyComponent implements OnInit {
   }
 
   addQuestion() {
-    let surveyQuestion = new SurveyQuestion();
-    surveyQuestion.Question = this.questionInput.nativeElement.value;
-    surveyQuestion.QuestionType = this.surveyQuestionType;
+    let question = new Question();
+    question.Question = this.questionInput.nativeElement.value;
+    question.QuestionType = this.surveyQuestionType;
     
     if(this.surveyQuestionType !== 'Text') {
-      let options: string[] = [];
+      let options: Option[] = [];
       let tableRows:HTMLCollection[] =  this.optionsTable.nativeElement.rows;
       for(var _i = 0; _i < tableRows.length; _i++) {
-        options.push(this.optionsTable.nativeElement.rows
-          .item(_i).children.item(1).children.item(0).value);
+        let option = new Option();
+        option.Value = this.optionsTable.nativeElement.rows
+        .item(_i).children.item(1).children.item(0).value; 
+        options.push(option);
       }
-      surveyQuestion.Options = options;
+      question.Options = options;
     }
     
     // Before pushing in array validate if question contents are valid
-    this.questionTemplateValid = this.validateQuestionContent(surveyQuestion);
+    this.questionTemplateValid = this.validateQuestionContent(question);
     if(this.questionTemplateValid) {
-      this.questions.push(surveyQuestion);
+      this.questions.push(question);
       // reset fields
       this.questionInput.nativeElement.value = '';
       this.surveyQuestionType = 'Text';
@@ -75,18 +120,19 @@ export class ComposeSurveyComponent implements OnInit {
     }
   }
 
-  validateQuestionContent(surveyQuestion: SurveyQuestion) {
-    if(surveyQuestion.Question.length == 0) {
+  validateQuestionContent(question: Question) {
+    if(question.Question.length == 0) {
       this.error = 'Question cannot be empty.';
       return false;
     }
-    if(surveyQuestion.QuestionType === '') {
+    if(question.QuestionType == null) {
       this.error = 'Question Type cannot be empty.';
       return false;
     }
-    if(surveyQuestion.QuestionType !== 'Text') {
-      for(let entry in surveyQuestion.Options) {
-        if(surveyQuestion.Options[entry] === '') {
+    if(question.QuestionType !== 'Text') {
+      for(let entry of question.Options) {
+        let option = Object.assign(new Option(), entry);
+        if(option.Value === '') {
           this.error = 'Option cannot be empty. Remove empty option.';
           return false;
         }
@@ -95,7 +141,7 @@ export class ComposeSurveyComponent implements OnInit {
     return true;
   }
 
-  deleteQuestion(entry: SurveyQuestion) {
+  deleteQuestion(entry: Question) {
     var index = this.questions.indexOf(entry);
     this.questions.splice(index, 1);
   }
