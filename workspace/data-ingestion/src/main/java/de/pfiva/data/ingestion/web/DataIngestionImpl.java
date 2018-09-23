@@ -186,4 +186,10 @@ public class DataIngestionImpl implements IDataIngestion {
 	public boolean cancelScheduledSurvey(@PathVariable int surveyId) {
 		return dataIngestionService.cancelScheduledSurvey(surveyId);
 	}
+
+	@Override
+	@RequestMapping(value = "/surveys", method = RequestMethod.GET)
+	public List<Survey> getSurveys() {
+		return dataIngestionService.getSurveys();
+	}
 }

@@ -46,4 +46,6 @@ public interface IDataIngestion {
 	public void sendSurvey(Survey survey);
 	
 	public boolean cancelScheduledSurvey(int surveyId);
+	
+	public List<Survey> getSurveys();
 }

@@ -461,4 +461,62 @@ public class NLUDataIngestionDBService {
 		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_SURVEY_STATUS, status.toString(), surveyId);
 		logger.info("Survey status for survey id [" + surveyId + "] updated to [" + status + "]");
 	}
+	
+	public List<Survey> getSurveys() {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEYS, new RowMapper<Survey>() {
+
+			@Override
+			public Survey mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Survey survey = new Survey();
+				survey.setId(rs.getInt("survey_id"));
+				survey.setSurveyName(rs.getString("survey_name"));
+				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
+				survey.setDeliveryDateTime(rs.getString("delivery_date"));
+				return survey;
+			}
+		});
+	}
+	
+	public List<User> getUsersBySurveyId(int surveyId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_USERS_BY_SURVEY_ID, 
+				new Object[] {surveyId}, new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				User user = new User();
+				user.setId(rs.getInt("user_id"));
+				user.setUsername(rs.getString("username"));
+				return user;
+			}
+		});
+	}
+
+	public List<Question> getQuestionsBySurveyId(int surveyId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_QUESTIONS_BY_SURVEY_ID, 
+				new Object[] {surveyId}, new RowMapper<Question>() {
+
+			@Override
+			public Question mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Question question = new Question();
+				question.setId(rs.getInt("question_id"));
+				question.setQuestion(rs.getString("question"));
+				question.setQuestionType(rs.getString("question_type"));
+				return question;
+			}
+		});
+	}
+
+	public List<Option> getOptionsForQuestion(int questionId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_OPTIONS_PER_QUESTION, 
+				new Object[] {questionId}, new RowMapper<Option>() {
+
+			@Override
+			public Option mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Option option = new Option();
+				option.setId(rs.getInt("option_id"));
+				option.setValue(rs.getString("value"));
+				return option;
+			}
+		});
+	}
 }

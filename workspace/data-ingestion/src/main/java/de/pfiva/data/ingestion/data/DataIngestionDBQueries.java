@@ -70,6 +70,18 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_CONFIG_DATA = "SELECT * from configuration_tbl";
 	
+	public static final String GET_USERS_BY_SURVEY_ID = "SELECT u.user_id, u.username"
+			+ " from user_tbl as u JOIN survey_users_tbl as s"
+			+ " ON u.user_id = s.user_id where s.survey_id = ?";
+	
+	public static final String GET_SURVEYS = "SELECT * from survey_tbl";
+	
+	public static final String GET_QUESTIONS_BY_SURVEY_ID = "SELECT question_id,"
+			+ " question, question_type from questions_tbl where survey_id = ?";
+	
+	public static final String GET_OPTIONS_PER_QUESTION = "SELECT option_id,"
+			+ " value from options_tbl where question_id = ?";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 	

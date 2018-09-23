@@ -36,6 +36,8 @@ import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
+import de.pfiva.data.model.survey.Option;
+import de.pfiva.data.model.survey.Question;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.Survey.SurveyStatus;
 
@@ -329,6 +331,27 @@ public class NLUDataIngestionService {
 			}
 		}
 		return false;
+	}
+
+	public List<Survey> getSurveys() {
+		// 1. Get survey data
+		// 2. Get users per survey
+		// 3. Get questions data per survey
+		
+		List<Survey> surveys = dbService.getSurveys();
+		for(Survey survey : surveys) {
+			List<User> users = dbService.getUsersBySurveyId(survey.getId());
+			survey.setUsers(users);
+			
+			List<Question> questions = dbService.getQuestionsBySurveyId(survey.getId());
+			survey.setQuestions(questions);
+			
+			for(Question question : questions) {
+				List<Option> options = dbService.getOptionsForQuestion(question.getId());
+				question.setOptions(options);
+			}
+		}
+		return surveys;
 	}
 	
 	// On receiving data, check for completion, if data
