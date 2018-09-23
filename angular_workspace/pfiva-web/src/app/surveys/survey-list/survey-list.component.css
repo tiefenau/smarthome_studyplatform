@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+}
+
+.mat-header-cell {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.deleteButton {
+    border-color: transparent;
+    border-style: none;
+    border-width: 0px;
+}
+
+.deleteButton :hover {
+    cursor: pointer;
+}

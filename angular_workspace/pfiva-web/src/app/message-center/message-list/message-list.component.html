@@ -28,7 +28,7 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef mat-header>Action</th>
             <td mat-cell *matCellDef="let row">
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-danger btn-sm"
                 [disabled]="row.message.messageStatus != 'PENDING'" 
                 (click)="cancelScheduledMessage(row.message.id)">Cancel</button>
             </td>
