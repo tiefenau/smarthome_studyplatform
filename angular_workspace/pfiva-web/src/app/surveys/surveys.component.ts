@@ -14,7 +14,7 @@ export class SurveysComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private location: PlatformLocation) { 
-      location.onPopState(() => { this.isComposeSurvey = false;});
+      this.location.onPopState(() => { this.isComposeSurvey = false;});
     }
 
   ngOnInit() {

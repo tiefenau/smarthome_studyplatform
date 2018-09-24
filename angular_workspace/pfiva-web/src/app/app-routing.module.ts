@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { ConfigurationMainComponent } from "./configuration-main/configuration-main.component";
 import { SurveysComponent } from "./surveys/surveys.component";
 import { ComposeSurveyComponent } from "./surveys/compose-survey/compose-survey.component";
+import { SurveyDetailComponent } from "./surveys/survey-detail/survey-detail.component";
 
 const appRoutes: Routes = [
     //{ path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
         { path: 'compose-message', component: ComposeMessageComponent }
     ] },
     { path: 'surveys', component: SurveysComponent, children: [
-        { path: 'compose-survey', component: ComposeSurveyComponent }
+        { path: 'compose-survey', component: ComposeSurveyComponent },
+        { path: ':surveyId', component: SurveyDetailComponent }
     ] },
     { path: 'configuration', component: ConfigurationMainComponent },
     { path: 'not-found', component: PageNotFoundComponent  },

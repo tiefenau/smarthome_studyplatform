@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-sm-8">
+          <span class="mr-3">
+            <a routerLink="/surveys">
+              <img src="/assets/arrow-thick-left-2x.png" alt="back">
+            </a>
+          </span>
+          {{surveyResponseData?.survey?.surveyName}}
+        </div>
+      </div>
+      
+    </div>
+    <div class="card-body">
+      <!--<h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+      <div class="row">
+        <div class="col-sm-3">
+          <ul class="list-group">
+            <li class="list-group-item active-head">Users</li>
+            <li class="list-group-item" *ngFor="let user of surveyResponseData?.survey?.users">
+              {{user.username}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-12">
+          <ul class="list-group">
+            <li class="list-group-item active-head">Questions</li>
+            <li class="list-group-item" 
+              *ngFor="let question of surveyResponseData?.survey?.questions">
+              <div class="row">
+                <div class="col">
+                  <span class="font-weight-bold mr-2">Q:</span>{{question.question}}
+                </div>  
+              </div>
+              <div class="row mt-2 mx-4" *ngIf="question.questionType !== 'Text'">
+                <div class="col">
+                  <div class="row" *ngFor="let option of question.options">
+                    <div class="col" *ngIf="question.questionType !== 'Multiple Choice'">
+                      <input type="radio" class="mr-2" disabled>{{option?.value}}
+                    </div>
+                    <div class="col" *ngIf="question.questionType !== 'Checkboxes'">
+                      <input type="checkbox" class="mr-2" disabled>{{option?.value}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material';
 import { SurveyService } from '../survey.service';
 import { SurveyDataSource } from './survey-datasource';
@@ -16,7 +17,9 @@ export class SurveyListComponent implements OnInit {
   displayedColumns = ['id', 'surveyName', 'deliveryDate', 'status', 'action'];
   
   constructor(private surveyService: SurveyService,
-    private changeDetectorRefs: ChangeDetectorRef) { }
+    private changeDetectorRefs: ChangeDetectorRef,
+    private router: Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit() {
     this.surveyService.getSurveys().subscribe(
@@ -28,7 +31,7 @@ export class SurveyListComponent implements OnInit {
   }
 
   showSurveyDetails(surveyId: number) {
-    console.log(surveyId);
+    this.router.navigate([surveyId], {relativeTo:this.route});
   }
 
   cancelScheduledSurvey(surveyId: number) {
