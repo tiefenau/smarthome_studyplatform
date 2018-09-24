@@ -27,6 +27,7 @@ import { SurveyListComponent } from './surveys/survey-list/survey-list.component
 import { ComposeSurveyComponent } from './surveys/compose-survey/compose-survey.component';
 import { SurveyService } from './surveys/survey.service';
 import { SurveyDetailComponent } from './surveys/survey-detail/survey-detail.component';
+import { MessageDetailComponent } from './message-center/message-detail/message-detail.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SurveyDetailComponent } from './surveys/survey-detail/survey-detail.com
     SurveysComponent,
     SurveyListComponent,
     ComposeSurveyComponent,
-    SurveyDetailComponent
+    SurveyDetailComponent,
+    MessageDetailComponent
   ],
   imports: [
     BrowserModule,

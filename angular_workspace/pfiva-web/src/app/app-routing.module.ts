@@ -8,12 +8,14 @@ import { ConfigurationMainComponent } from "./configuration-main/configuration-m
 import { SurveysComponent } from "./surveys/surveys.component";
 import { ComposeSurveyComponent } from "./surveys/compose-survey/compose-survey.component";
 import { SurveyDetailComponent } from "./surveys/survey-detail/survey-detail.component";
+import { MessageDetailComponent } from "./message-center/message-detail/message-detail.component";
 
 const appRoutes: Routes = [
     //{ path: '', redirectTo: '/main', pathMatch: 'full' },
     { path: '', component: MainComponent  },
     { path: 'message-center', component: MessageCenterComponent, children: [
-        { path: 'compose-message', component: ComposeMessageComponent }
+        { path: 'compose-message', component: ComposeMessageComponent },
+        { path: ':messageId', component: MessageDetailComponent }
     ] },
     { path: 'surveys', component: SurveysComponent, children: [
         { path: 'compose-survey', component: ComposeSurveyComponent },

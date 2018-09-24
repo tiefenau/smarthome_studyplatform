@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-sm-8">
+        <span class="mr-3">
+          <a routerLink="/message-center">
+            <img src="/assets/arrow-thick-left-2x.png" alt="back">
+          </a>
+        </span>
+      </div>
+    </div>
+    
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{messageResponseData?.message?.messageText}}</h5>
+
+    <div class="row mt-3">
+      <div class="col-sm-12">
+        <ul class="list-group">
+          <li class="list-group-item active-head">Responses</li>
+          <li class="list-group-item" 
+            *ngFor="let response of messageResponseData?.responses">
+            <div class="row">
+              <div class="col-sm-2">
+                <span class="mr-2">{{response?.user?.username}}</span>
+              </div>
+              <div class="col-1">
+                <span>:</span>
+              </div>
+              <div class="col">
+                {{response?.value}}
+              </div>  
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

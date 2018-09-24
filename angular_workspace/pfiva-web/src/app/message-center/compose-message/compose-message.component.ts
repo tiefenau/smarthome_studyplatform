@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from '../../data-model/User';
 import { MessageService } from '../message.service';
-import { Message } from '../../data-model/Message';
+import { Message } from '../../data-model/message/Message';
 
 @Component({
   selector: 'app-compose-message',

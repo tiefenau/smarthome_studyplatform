@@ -2,7 +2,7 @@ import { Http, Response } from "@angular/http";
 import { Injectable } from "@angular/core";
 import { Constants } from "../shared/constants";
 import { map } from 'rxjs/operators';
-import { Message } from "../data-model/Message";
+import { Message } from "../data-model/message/Message";
 
 @Injectable()
 export class MessageService {
@@ -28,6 +28,17 @@ export class MessageService {
 
     getMessages() {
         let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_MESSAGES;
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data;
+            }
+        ));
+    }
+
+    getCompleteMessageData(messageId: number) {
+        let url: string = Constants.PFIVA_BASE_URL 
+            + Constants.PFIVA_MESSAGES + "/" + messageId;
         return this.http.get(url).pipe(map(
             (response: Response) => {
                 const data = response.json();
