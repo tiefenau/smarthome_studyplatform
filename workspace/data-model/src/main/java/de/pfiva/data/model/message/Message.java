@@ -1,9 +1,11 @@
-package de.pfiva.data.model;
+package de.pfiva.data.model.message;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class Message  implements Serializable {
+import de.pfiva.data.model.User;
+
+public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
