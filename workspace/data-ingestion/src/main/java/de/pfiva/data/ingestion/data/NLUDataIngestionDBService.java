@@ -11,9 +11,11 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -516,6 +518,22 @@ public class NLUDataIngestionDBService {
 				option.setId(rs.getInt("option_id"));
 				option.setValue(rs.getString("value"));
 				return option;
+			}
+		});
+	}
+
+	public Survey getSurveyById(int surveyId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY,
+				new Object[] {surveyId}, new ResultSetExtractor<Survey>() {
+
+			@Override
+			public Survey extractData(ResultSet rs) throws SQLException, DataAccessException {
+				Survey survey = new Survey();
+				survey.setId(rs.getInt("survey_id"));
+				survey.setSurveyName(rs.getString("survey_name"));
+				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
+				survey.setDeliveryDateTime(rs.getString("delivery_date"));
+				return survey;
 			}
 		});
 	}

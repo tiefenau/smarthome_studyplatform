@@ -39,6 +39,7 @@ import de.pfiva.data.model.snips.SnipsOutput;
 import de.pfiva.data.model.survey.Option;
 import de.pfiva.data.model.survey.Question;
 import de.pfiva.data.model.survey.Survey;
+import de.pfiva.data.model.survey.SurveyResponseData;
 import de.pfiva.data.model.survey.Survey.SurveyStatus;
 
 @Service
@@ -334,24 +335,32 @@ public class NLUDataIngestionService {
 	}
 
 	public List<Survey> getSurveys() {
+		return dbService.getSurveys();
+	}
+	
+	public SurveyResponseData getCompleteSurveyData(int surveyId) {
+		SurveyResponseData data = new SurveyResponseData();
+		data.setSurvey(getSurveyData(surveyId));
+		return data;
+	}
+	
+	private Survey getSurveyData(int surveyId) {
 		// 1. Get survey data
 		// 2. Get users per survey
 		// 3. Get questions data per survey
+		Survey survey = dbService.getSurveyById(surveyId);
 		
-		List<Survey> surveys = dbService.getSurveys();
-		for(Survey survey : surveys) {
-			List<User> users = dbService.getUsersBySurveyId(survey.getId());
-			survey.setUsers(users);
-			
-			List<Question> questions = dbService.getQuestionsBySurveyId(survey.getId());
-			survey.setQuestions(questions);
-			
-			for(Question question : questions) {
-				List<Option> options = dbService.getOptionsForQuestion(question.getId());
-				question.setOptions(options);
-			}
+		List<User> users = dbService.getUsersBySurveyId(survey.getId());
+		survey.setUsers(users);
+
+		List<Question> questions = dbService.getQuestionsBySurveyId(survey.getId());
+		
+		for(Question question : questions) {
+			List<Option> options = dbService.getOptionsForQuestion(question.getId());
+			question.setOptions(options);
 		}
-		return surveys;
+		survey.setQuestions(questions);
+		return survey;
 	}
 	
 	// On receiving data, check for completion, if data

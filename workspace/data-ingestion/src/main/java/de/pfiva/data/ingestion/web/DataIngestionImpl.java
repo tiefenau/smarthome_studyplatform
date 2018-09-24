@@ -29,6 +29,7 @@ import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
+import de.pfiva.data.model.survey.SurveyResponseData;
 
 @CrossOrigin
 @RestController
@@ -191,5 +192,11 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/surveys", method = RequestMethod.GET)
 	public List<Survey> getSurveys() {
 		return dataIngestionService.getSurveys();
+	}
+
+	@Override
+	@RequestMapping(value = "/surveys/{surveyId}", method = RequestMethod.GET)
+	public SurveyResponseData getCompleteSurveyData(@PathVariable int surveyId) {
+		return dataIngestionService.getCompleteSurveyData(surveyId);
 	}
 }

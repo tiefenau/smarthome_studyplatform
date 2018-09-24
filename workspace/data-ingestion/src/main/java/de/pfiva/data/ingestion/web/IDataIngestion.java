@@ -12,6 +12,7 @@ import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
+import de.pfiva.data.model.survey.SurveyResponseData;
 
 public interface IDataIngestion {
 
@@ -48,4 +49,6 @@ public interface IDataIngestion {
 	public boolean cancelScheduledSurvey(int surveyId);
 	
 	public List<Survey> getSurveys();
+	
+	public SurveyResponseData getCompleteSurveyData(int surveyId);
 }

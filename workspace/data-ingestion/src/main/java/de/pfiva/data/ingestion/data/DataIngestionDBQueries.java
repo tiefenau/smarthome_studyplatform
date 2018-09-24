@@ -76,6 +76,8 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_SURVEYS = "SELECT * from survey_tbl";
 	
+	public static final String GET_SURVEY = "SELECT * from survey_tbl where survey_id = ?";
+	
 	public static final String GET_QUESTIONS_BY_SURVEY_ID = "SELECT question_id,"
 			+ " question, question_type from questions_tbl where survey_id = ?";
 	
