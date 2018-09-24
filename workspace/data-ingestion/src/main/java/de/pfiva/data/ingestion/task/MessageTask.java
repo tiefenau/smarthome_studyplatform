@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.service.FirebaseService;
 import de.pfiva.data.model.User;
-import de.pfiva.data.model.Message.MessageStatus;
+import de.pfiva.data.model.message.Message.MessageStatus;
 import de.pfiva.data.model.notification.MessageData;
 
 public class MessageTask implements Runnable {

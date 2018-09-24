@@ -22,12 +22,13 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Service;
 
 import de.pfiva.data.ingestion.Constants;
-import de.pfiva.data.model.Message;
-import de.pfiva.data.model.Message.MessageStatus;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
+import de.pfiva.data.model.message.Message;
+import de.pfiva.data.model.message.Message.MessageStatus;
+import de.pfiva.data.model.message.Response;
 import de.pfiva.data.model.snips.Intent;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
@@ -299,6 +300,40 @@ public class NLUDataIngestionDBService {
 				return message;
 			}
 			
+		});
+	}
+	
+	public Message getMessage(int messageId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_MESSAGE,
+				new Object[] {messageId}, new ResultSetExtractor<Message>() {
+
+			@Override
+			public Message extractData(ResultSet rs) throws SQLException, DataAccessException {
+				Message message = new Message();
+				message.setId(rs.getInt("message_id"));
+				message.setMessageText(rs.getString("message_text"));
+				message.setMessageStatus(MessageStatus.valueOf(rs.getString("status")));
+				message.setDeliveryDateTime(rs.getString("delivery_date"));
+				return message;
+			}
+		});
+	}
+	
+	public List<Response> getMessageResponses(int messageId) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_MESSAGE_RESPONSES,
+				new Object[] {messageId}, new RowMapper<Response>() {
+
+			@Override
+			public Response mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Response response = new Response();
+				response.setId(rs.getInt("response_id"));
+				response.setValue(rs.getString("value"));
+				User user = new User();
+				user.setId(rs.getInt("user_id"));
+				user.setUsername(rs.getString("username"));
+				response.setUser(user);
+				return response;
+			}
 		});
 	}
 

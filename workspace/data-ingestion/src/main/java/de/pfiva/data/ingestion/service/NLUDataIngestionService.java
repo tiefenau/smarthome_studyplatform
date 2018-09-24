@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
@@ -27,20 +26,21 @@ import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
 import de.pfiva.data.ingestion.task.MessageTask;
 import de.pfiva.data.ingestion.task.SurveyTask;
 import de.pfiva.data.model.Feedback;
-import de.pfiva.data.model.Message;
-import de.pfiva.data.model.Message.MessageStatus;
-import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
+import de.pfiva.data.model.message.Message;
+import de.pfiva.data.model.message.Message.MessageStatus;
+import de.pfiva.data.model.message.MessageResponseData;
+import de.pfiva.data.model.message.Response;
 import de.pfiva.data.model.snips.Slot;
 import de.pfiva.data.model.snips.SnipsOutput;
 import de.pfiva.data.model.survey.Option;
 import de.pfiva.data.model.survey.Question;
 import de.pfiva.data.model.survey.Survey;
-import de.pfiva.data.model.survey.SurveyResponseData;
 import de.pfiva.data.model.survey.Survey.SurveyStatus;
+import de.pfiva.data.model.survey.SurveyResponseData;
 
 @Service
 public class NLUDataIngestionService {
@@ -227,22 +227,32 @@ public class NLUDataIngestionService {
 		return false;
 	}
 
-	public List<MessageResponseData> getMessageResponseData() {
+	public List<Message> getMessages() {
 		// 1. Fetch messages from db
 		// 2. Fetch all users for a message from db
 		// 3. Fetch response from users
-		List<MessageResponseData> response = new LinkedList<>();
-		
 		List<Message> messages = dbService.getMessages();
 		for(Message message : messages) {
 			List<User> users = dbService.getUsersByMessageId(message.getId());
 			message.setUsers(users);
-			
-			MessageResponseData messageResponseData = new MessageResponseData();
-			messageResponseData.setMessage(message);
-			response.add(messageResponseData);
 		}
-		logger.info("Fetched message response data");
+		return messages;
+	}
+	
+	public MessageResponseData getCompleteMessageData(int messageId) {
+		// 1. Fetch message from db by messageId
+		// 2. Fetch all users for a message from db
+		// 3. Fetch response from users
+		MessageResponseData response = new MessageResponseData();
+		Message message = dbService.getMessage(messageId);
+		
+		List<User> users = dbService.getUsersByMessageId(messageId);
+		message.setUsers(users);
+		
+		response.setMessage(message);
+		
+		List<Response> responses = dbService.getMessageResponses(messageId);
+		response.setResponses(responses);
 		return response;
 	}
 

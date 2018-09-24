@@ -64,6 +64,12 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_MESSAGES = "SELECT * from messages_tbl";
 	
+	public static final String GET_MESSAGE = "SELECT * from messages_tbl where message_id = ?";
+	
+	public static final String GET_MESSAGE_RESPONSES = "select r.response_id, r.value, u.user_id,"
+			+ " u.username from message_response_tbl as r JOIN user_tbl as u"
+			+ " ON r.user_id = u.user_id where r.message_id = ?";
+	
 	public static final String GET_USERS_BY_MESSAGE_ID = "SELECT u.user_id, u.username"
 			+ " from user_tbl as u JOIN message_users_tbl as m"
 			+ " ON u.user_id = m.user_id where m.message_id = ?";

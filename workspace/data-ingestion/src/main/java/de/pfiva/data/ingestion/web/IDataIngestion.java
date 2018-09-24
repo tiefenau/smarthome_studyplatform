@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 import de.pfiva.data.model.Feedback;
-import de.pfiva.data.model.Message;
-import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
+import de.pfiva.data.model.message.Message;
+import de.pfiva.data.model.message.MessageResponseData;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.SurveyResponseData;
@@ -38,7 +38,9 @@ public interface IDataIngestion {
 	
 	public boolean cancelScheduledMessage(int messageId);
 	
-	public List<MessageResponseData> getMessageResponseData();
+	public List<Message> getMessages();
+	
+	public MessageResponseData getCompleteMessageData(int messageId);
 	
 	public List<PfivaConfigData> getConfigurationValues();
 	

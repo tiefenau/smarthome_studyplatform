@@ -22,11 +22,11 @@ import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
-import de.pfiva.data.model.Message;
-import de.pfiva.data.model.MessageResponseData;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
+import de.pfiva.data.model.message.Message;
+import de.pfiva.data.model.message.MessageResponseData;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.SurveyResponseData;
@@ -141,9 +141,16 @@ public class DataIngestionImpl implements IDataIngestion {
 	}
 
 	@Override
-	@RequestMapping(value = "/messages-data", method = RequestMethod.GET)
-	public List<MessageResponseData> getMessageResponseData() {
-		return dataIngestionService.getMessageResponseData();
+	@RequestMapping(value = "/messages", method = RequestMethod.GET)
+	public List<Message> getMessages() {
+		return dataIngestionService.getMessages();
+	}
+	
+	@Override
+	@RequestMapping(value = "/messages/{messageId}", method = RequestMethod.GET)
+	public MessageResponseData getCompleteMessageData(
+			@PathVariable int messageId) {
+		return dataIngestionService.getCompleteMessageData(messageId);
 	}
 
 	@Override
