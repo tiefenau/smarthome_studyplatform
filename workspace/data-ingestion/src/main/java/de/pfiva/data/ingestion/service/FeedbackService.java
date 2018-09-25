@@ -14,6 +14,7 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.IntentNames;
 import de.pfiva.data.model.FeedbackType;
 import de.pfiva.data.model.Tuple;
+import de.pfiva.data.model.notification.Data.DataType;
 import de.pfiva.data.model.notification.FeedbackData;
 import de.pfiva.data.model.snips.SnipsOutput;
 
@@ -80,6 +81,7 @@ public class FeedbackService {
 			String> feeback, int feedbackId) {
 		
 		FeedbackData data = new FeedbackData();
+		data.setDatatype(DataType.FEEDBACK);
 		data.setFeedbackId(feedbackId);
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());

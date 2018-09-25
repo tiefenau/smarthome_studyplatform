@@ -7,6 +7,7 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.service.FirebaseService;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message.MessageStatus;
+import de.pfiva.data.model.notification.Data.DataType;
 import de.pfiva.data.model.notification.MessageData;
 
 public class MessageTask implements Runnable {
@@ -31,8 +32,10 @@ public class MessageTask implements Runnable {
 	@Override
 	public void run() {
 		MessageData data = new MessageData();
+		data.setDatatype(DataType.MESSAGE);
 		data.setMessageId(this.id);
 		data.setMessageText(this.messageText);
+		data.setUserId(this.user.getId());
 		logger.info("Sending message with id [" + this.id + "] to [" + user.getUsername() + "]");
 		this.firebaseService.sendRequestToFirebaseServer(data, this.user.getDeviceId());
 		

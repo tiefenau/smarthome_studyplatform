@@ -79,40 +79,48 @@ public class NLUDataIngestionService {
 		// Once the real query is extracted out, intent classification should be done to populate NLU instance.
 		UserQueryTuple queryTuple = queryResolverService.resolveUserQuery(userQuery);
 		
-		if(queryTuple != null) {
-			
-			// Capture queries with / without hotword
-			if(Boolean.valueOf(configProperties
-					.getConfigValues()
-					.get("pfiva_capture_queries_without_hotword"))) {
+		if(queryTuple != null) {	
+			// Do intent classification only if query is present
+			if(queryTuple.getQuery() != null) {
+				SnipsOutput snipsOutput = nluService.classifyIntents(queryTuple.getQuery());
+
+				if(snipsOutput == null) {
+					// Cannot classify intents, therefore just save user query
+					snipsOutput = new SnipsOutput();
+					snipsOutput.setInput(queryTuple.getQuery());
+				}
+
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+				snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
 				
-				// Do intent classification only if query is present
-				if(queryTuple.getQuery() != null) {
-					SnipsOutput snipsOutput = nluService.classifyIntents(queryTuple.getQuery());
-					
-					if(snipsOutput == null) {
-						// Cannot classify intents, therefore just save user query
-						snipsOutput = new SnipsOutput();
-						snipsOutput.setInput(queryTuple.getQuery());
-					}
-					
-					if(queryTuple.getHotword() != null) {
-						snipsOutput.setHotword(queryTuple.getHotword());						
-					}
-					
-					DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
-					snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
-					
+				
+				if(queryTuple.getHotword() != null) {
+					snipsOutput.setHotword(queryTuple.getHotword());
 					// Push data to db layer
 					int queryId = dbService.ingestDataToDB(snipsOutput);
-					
-					
+
+
 					// Send notification
 					if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
 						feedbackService.sendFeedback(snipsOutput, queryId);						
 					}
-				}				
-			}
+				} else {
+					// Capture queries with / without hotword
+					if(Boolean.valueOf(configProperties
+							.getConfigValues()
+							.get("pfiva_capture_queries_without_hotword"))) {
+						
+						// Push data to db layer
+						int queryId = dbService.ingestDataToDB(snipsOutput);
+
+
+						// Send notification
+						if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
+							feedbackService.sendFeedback(snipsOutput, queryId);						
+						}
+					}
+				}
+			}				
 		}
 	}
 
