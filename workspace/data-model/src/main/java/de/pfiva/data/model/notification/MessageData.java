@@ -8,6 +8,7 @@ public class MessageData extends Data implements Serializable {
 	
 	private int messageId;
 	private String messageText;
+	private int userId;
 	
 	public int getMessageId() {
 		return messageId;
@@ -21,8 +22,14 @@ public class MessageData extends Data implements Serializable {
 	public void setMessageText(String messageText) {
 		this.messageText = messageText;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	@Override
 	public String toString() {
-		return "MessageData [messageId=" + messageId + ", messageText=" + messageText + "]";
+		return "MessageData [messageId=" + messageId + ", messageText=" + messageText + ", userId=" + userId + "]";
 	}
 }
