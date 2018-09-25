@@ -572,4 +572,9 @@ public class NLUDataIngestionDBService {
 			}
 		});
 	}
+
+	public int saveMessageResponse(int messageId, Response response) {
+		return jdbcTemplate.update(DataIngestionDBQueries.INSERT_MESSAGE_RESPONSE, 
+				response.getValue(), messageId, response.getUser().getId());
+	}
 }

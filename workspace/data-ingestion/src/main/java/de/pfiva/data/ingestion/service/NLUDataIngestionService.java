@@ -390,6 +390,20 @@ public class NLUDataIngestionService {
 		survey.setQuestions(questions);
 		return survey;
 	}
+
+	public boolean saveMessageResponse(int messageId, Response response) {
+		int rowsAffected = 0;
+		if(response != null) {
+			rowsAffected = dbService.saveMessageResponse(messageId, response);			
+		}
+		if(rowsAffected == 1) {
+			logger.info("Saved user response [" + response.getValue() + 
+					"] for message id [" + messageId + "]");
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	// On receiving data, check for completion, if data
 	// is complete push to database.

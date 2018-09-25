@@ -35,6 +35,9 @@ public interface DataIngestionDBQueries {
 	
 	public static final String INSERT_OPTIONS_TBL = "INSERT INTO options_tbl(value, question_id) VALUES(?,?)";
 	
+	public static final String INSERT_MESSAGE_RESPONSE = "INSERT INTO message_response_tbl(value,"
+			+ " message_id, user_id) VALUES(?,?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	

@@ -10,6 +10,7 @@ import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
 import de.pfiva.data.model.message.MessageResponseData;
+import de.pfiva.data.model.message.Response;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.SurveyResponseData;
@@ -41,6 +42,8 @@ public interface IDataIngestion {
 	public List<Message> getMessages();
 	
 	public MessageResponseData getCompleteMessageData(int messageId);
+	
+	public boolean saveMessageResponse(int messageId, Response response);
 	
 	public List<PfivaConfigData> getConfigurationValues();
 	

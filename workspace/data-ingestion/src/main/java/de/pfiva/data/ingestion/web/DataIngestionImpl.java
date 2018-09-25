@@ -27,6 +27,7 @@ import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
 import de.pfiva.data.model.message.MessageResponseData;
+import de.pfiva.data.model.message.Response;
 import de.pfiva.data.model.notification.ClientToken;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.SurveyResponseData;
@@ -205,5 +206,12 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/surveys/{surveyId}", method = RequestMethod.GET)
 	public SurveyResponseData getCompleteSurveyData(@PathVariable int surveyId) {
 		return dataIngestionService.getCompleteSurveyData(surveyId);
+	}
+
+	@Override
+	@RequestMapping(value = "/message-response/{messageId}", method = RequestMethod.POST)
+	public boolean saveMessageResponse(@PathVariable int messageId,
+			@RequestBody Response response) {
+		return dataIngestionService.saveMessageResponse(messageId, response);
 	}
 }
