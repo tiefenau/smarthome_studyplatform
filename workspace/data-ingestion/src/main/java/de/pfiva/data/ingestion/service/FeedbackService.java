@@ -1,30 +1,20 @@
 package de.pfiva.data.ingestion.service;
 
-import java.util.concurrent.CompletableFuture;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import de.pfiva.data.ingestion.ConfigProperties;
 import de.pfiva.data.ingestion.DataIngestionProperties;
-import de.pfiva.data.ingestion.DataIngestionProperties.NotificationClient;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.IntentNames;
 import de.pfiva.data.model.FeedbackType;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.notification.FeedbackData;
-import de.pfiva.data.model.notification.RequestModel;
 import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
@@ -32,6 +22,7 @@ public class FeedbackService {
 
 	@Autowired RestTemplate restTemplate;
 	@Autowired DataIngestionProperties properties;
+	@Autowired ConfigProperties configProperties;
 	@Autowired NLUDataIngestionDBService dbService;
 	@Autowired ObjectMapper objectMapper;
 	@Autowired FirebaseService firebaseService;
@@ -74,7 +65,8 @@ public class FeedbackService {
 							String>(FeedbackType.INTENT_CLASSIFIED, feedbackQuery);
 				} else {
 					feedback = new Tuple<FeedbackType,
-							String>(FeedbackType.GENERAL, properties.getDefaultFeedbackQuery());
+							String>(FeedbackType.GENERAL, 
+									configProperties.getConfigValues().get("pfiva_default_feedback_query"));
 				}
 			}
 			logger.info("Feedback generated of type [" + feedback.getX() + "],"

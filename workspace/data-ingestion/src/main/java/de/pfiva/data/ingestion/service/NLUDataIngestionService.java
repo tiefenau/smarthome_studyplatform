@@ -18,6 +18,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import de.pfiva.data.ingestion.ConfigProperties;
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
@@ -54,6 +55,7 @@ public class NLUDataIngestionService {
 	@Autowired private FileExtractorService fileExtractor;
 	@Autowired private QueryResolverService queryResolverService;
 	@Autowired private DataIngestionProperties properties;
+	@Autowired private ConfigProperties configProperties;
 	@Autowired private SnipsNLUService nluService;
 	@Autowired private FeedbackService feedbackService;
 	@Autowired private TaskScheduler taskScheduler;
@@ -79,31 +81,37 @@ public class NLUDataIngestionService {
 		
 		if(queryTuple != null) {
 			
-			// Do intent classification only if query is present
-			if(queryTuple.getQuery() != null) {
-				SnipsOutput snipsOutput = nluService.classifyIntents(queryTuple.getQuery());
+			// Capture queries with / without hotword
+			if(Boolean.valueOf(configProperties
+					.getConfigValues()
+					.get("pfiva_capture_queries_without_hotword"))) {
 				
-				if(snipsOutput == null) {
-					// Cannot classify intents, therefore just save user query
-					snipsOutput = new SnipsOutput();
-					snipsOutput.setInput(queryTuple.getQuery());
-				}
-				
-				if(queryTuple.getHotword() != null) {
-					snipsOutput.setHotword(queryTuple.getHotword());						
-				}
-				
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
-				snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
-				
-				// Push data to db layer
-				int queryId = dbService.ingestDataToDB(snipsOutput);
-				
-
-				// Send notification
-				if(properties.isFeedbackAfterIntentClassification()) {
-					feedbackService.sendFeedback(snipsOutput, queryId);						
-				}
+				// Do intent classification only if query is present
+				if(queryTuple.getQuery() != null) {
+					SnipsOutput snipsOutput = nluService.classifyIntents(queryTuple.getQuery());
+					
+					if(snipsOutput == null) {
+						// Cannot classify intents, therefore just save user query
+						snipsOutput = new SnipsOutput();
+						snipsOutput.setInput(queryTuple.getQuery());
+					}
+					
+					if(queryTuple.getHotword() != null) {
+						snipsOutput.setHotword(queryTuple.getHotword());						
+					}
+					
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+					snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
+					
+					// Push data to db layer
+					int queryId = dbService.ingestDataToDB(snipsOutput);
+					
+					
+					// Send notification
+					if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
+						feedbackService.sendFeedback(snipsOutput, queryId);						
+					}
+				}				
 			}
 		}
 	}
@@ -271,6 +279,8 @@ public class NLUDataIngestionService {
 	public void saveConfigValue(PfivaConfigData configData) {
 		if(configData != null) {
 			dbService.saveConfigValue(configData);
+			
+			configProperties.getConfigValues().put(configData.getKey(), configData.getValue());
 		}
 	}
 
