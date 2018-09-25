@@ -12,4 +12,7 @@ public interface Constants {
 
     public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
     public static final String YES_RESPONSE = "Yes";
+
+    public static final String MESSAGE_DATA_KEY = "messageData";
+    public static final String MESSAGE_RESPONSE_ENDPOINT = "message-response/{messageId}";
 }

@@ -16,19 +16,22 @@
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.FeedbackActivity" />
-        <activity android:name=".activities.DetailedActivity" android:label="@string/detailed_user_query" />
+        <activity
+            android:name=".activities.DetailedActivity"
+            android:label="@string/detailed_user_query" />
+
+        <activity android:name=".activities.MessageActivity" />
 
         <service android:name=".messaging.FirebaseInstanceService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service
             android:name=".messaging.VAFirebaseMessagingService"
             android:enabled="true"

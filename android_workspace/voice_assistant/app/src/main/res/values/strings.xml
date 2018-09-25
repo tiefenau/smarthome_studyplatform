@@ -7,7 +7,7 @@
     <string name="feedback_query_default">User Feedback Query</string>
     <string name="feedback_query_title">Query</string>
     <string name="feedback_title">Feedback</string>
-    <string name="feedback_submit">Submit</string>
+    <string name="submit">Submit</string>
     <string name="pfiva_user_query_title">User Query :</string>
     <string name="feedback_available">Feedback Available</string>
     <string name="feedback_not_available">Feedback Not Available</string>
@@ -19,4 +19,7 @@
     <string name="not_available">Not Available</string>
     <string name="user_response_title">User Response :</string>
     <string name="detailedAct_feedback_query_title">Query :</string>
+    <string name="message_title">Message :</string>
+    <string name="default_message">Default Message</string>
+    <string name="response">Response</string>
 </resources>

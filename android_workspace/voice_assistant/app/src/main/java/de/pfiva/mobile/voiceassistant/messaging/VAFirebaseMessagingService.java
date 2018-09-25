@@ -16,10 +16,13 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.util.Map;
 
 import de.pfiva.data.model.FeedbackType;
+import de.pfiva.data.model.notification.Data;
 import de.pfiva.data.model.notification.FeedbackData;
+import de.pfiva.data.model.notification.MessageData;
 import de.pfiva.mobile.voiceassistant.Constants;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.activities.FeedbackActivity;
+import de.pfiva.mobile.voiceassistant.activities.MessageActivity;
 
 public class VAFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -36,14 +39,31 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         Log.i(TAG, "From: " + remoteMessage.getFrom());
         if(remoteMessage.getData().size() > 0) {
             Map<String, String> data = remoteMessage.getData();
-            Log.i(TAG, "Message data payload: " + data);
+            Log.i(TAG, "Data payload: " + data);
 
-            FeedbackData feedbackData = new FeedbackData();
-            feedbackData.setFeedbackId(Integer.valueOf(data.get("feedbackId")));
-            feedbackData.setFeedbackType(FeedbackType.valueOf(data.get("feedbackType")));
-            feedbackData.setText(data.get("text"));
+            Data.DataType datatype = Data.DataType.valueOf(data.get("datatype"));
+            if(datatype == Data.DataType.FEEDBACK) {
+                FeedbackData feedbackData = new FeedbackData();
+                feedbackData.setFeedbackId(Integer.valueOf(data.get("feedbackId")));
+                feedbackData.setFeedbackType(FeedbackType.valueOf(data.get("feedbackType")));
+                feedbackData.setText(data.get("text"));
 
-            sendNotification(feedbackData);
+                Intent intent = processFeedbackData(feedbackData);
+                sendNotification(intent, feedbackData.getText());
+            } else if(datatype == Data.DataType.MESSAGE) {
+                MessageData messageData = new MessageData();
+                messageData.setMessageId(Integer.valueOf(data.get("messageId")));
+                messageData.setMessageText(data.get("messageText"));
+                messageData.setUserId(Integer.valueOf(data.get("userId")));
+
+                Intent intent = processMessageData(messageData);
+                sendNotification(intent, messageData.getMessageText());
+            } else {
+
+            }
+
+
+            //sendNotification(feedbackData);
         }
 
         //if(remoteMessage.getNotification() != null) {
@@ -52,12 +72,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         //}
     }
 
-    private void sendNotification(FeedbackData feedbackData) {
-        Intent intent = new Intent(this, FeedbackActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra(Constants.FEEDBACK_DATA_KEY, feedbackData);
-        //intent.putExtra(Intent.EXTRA_TEXT, messageBody);
-
+    private void sendNotification(Intent intent, String contextText) {
         PendingIntent pendingIntent = PendingIntent
                 .getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
@@ -66,7 +81,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
         notificationBuilder.setSmallIcon(R.drawable.ic_stat_name);
         notificationBuilder.setContentTitle("PFIVA");
-        notificationBuilder.setContentText(feedbackData.getText());
+        notificationBuilder.setContentText(contextText);
         notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
         notificationBuilder.setAutoCancel(true);
         notificationBuilder.setSound(defaultSoundUri);
@@ -82,5 +97,19 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         }
 
         notificationManager.notify(0, notificationBuilder.build());
+    }
+
+    private Intent processFeedbackData(FeedbackData feedbackData) {
+        Intent intent = new Intent(this, FeedbackActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra(Constants.FEEDBACK_DATA_KEY, feedbackData);
+        return intent;
+    }
+
+    private Intent processMessageData(MessageData messageData) {
+        Intent intent = new Intent(this, MessageActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra(Constants.MESSAGE_DATA_KEY, messageData);
+        return intent;
     }
 }
