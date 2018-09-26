@@ -10,19 +10,24 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.io.IOException;
 import java.util.Map;
 
 import de.pfiva.data.model.FeedbackType;
 import de.pfiva.data.model.notification.Data;
 import de.pfiva.data.model.notification.FeedbackData;
 import de.pfiva.data.model.notification.MessageData;
+import de.pfiva.data.model.notification.SurveyData;
+import de.pfiva.data.model.survey.Survey;
 import de.pfiva.mobile.voiceassistant.Constants;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.activities.FeedbackActivity;
 import de.pfiva.mobile.voiceassistant.activities.MessageActivity;
+import de.pfiva.mobile.voiceassistant.activities.SurveyActivity;
 
 public class VAFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -58,18 +63,28 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
 
                 Intent intent = processMessageData(messageData);
                 sendNotification(intent, messageData.getMessageText());
+            } else if(datatype == Data.DataType.SURVEY) {
+                SurveyData surveyData = new SurveyData();
+                surveyData.setSurvey(extractSurveyData(data.get("survey")));
+
+                Intent intent = processSurveyData(surveyData);
+                sendNotification(intent, surveyData.getSurvey().getSurveyName());
             } else {
-
+                Log.e(TAG, "Data not supported");
             }
+        }
+    }
 
-
-            //sendNotification(feedbackData);
+    private Survey extractSurveyData(String surveyJSONString) {
+        ObjectMapper mapper = new ObjectMapper();
+        Survey survey = null;
+        try {
+            survey = mapper.readValue(surveyJSONString, Survey.class);
+        } catch (IOException e) {
+            Log.e(TAG, "Error parsing survey", e);
         }
 
-        //if(remoteMessage.getNotification() != null) {
-          //  Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
-           // sendNotification(remoteMessage.getNotification().getBody());
-        //}
+        return survey;
     }
 
     private void sendNotification(Intent intent, String contextText) {
@@ -110,6 +125,13 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         Intent intent = new Intent(this, MessageActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(Constants.MESSAGE_DATA_KEY, messageData);
+        return intent;
+    }
+
+    private Intent processSurveyData(SurveyData surveyData) {
+        Intent intent = new Intent(this, SurveyActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra(Constants.SURVEY_DATA_KEY, surveyData);
         return intent;
     }
 }

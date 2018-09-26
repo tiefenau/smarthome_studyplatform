@@ -15,4 +15,6 @@ public interface Constants {
 
     public static final String MESSAGE_DATA_KEY = "messageData";
     public static final String MESSAGE_RESPONSE_ENDPOINT = "message-response/{messageId}";
+
+    public static final String SURVEY_DATA_KEY = "surveyData";
 }
