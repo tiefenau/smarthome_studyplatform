@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.service.FirebaseService;
 import de.pfiva.data.model.User;
+import de.pfiva.data.model.notification.Data.DataType;
 import de.pfiva.data.model.notification.SurveyData;
 import de.pfiva.data.model.survey.Survey;
 import de.pfiva.data.model.survey.Survey.SurveyStatus;
@@ -32,6 +33,7 @@ public class SurveyTask implements Runnable {
 	@Override
 	public void run() {
 		SurveyData data = new SurveyData();
+		data.setDatatype(DataType.SURVEY);
 		data.setSurvey(this.survey);
 		logger.info("Sending survey [" + this.survey.getSurveyName() + "] to [" + user.getUsername() + "]");
 		this.firebaseService.sendRequestToFirebaseServer(data, this.user.getDeviceId());
