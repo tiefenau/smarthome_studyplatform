@@ -9,17 +9,17 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "data.ingestion")
 public class DataIngestionProperties {
 
-	private boolean snipsWatch;
-	private String hotword;
+	private boolean snipsWatch; //TODO - remove
+	private String hotword; //TODO - remove
 	private String databaseName;
 	private String databaseUrl;
-	private boolean feedbackAfterIntentClassification;
+	private boolean feedbackAfterIntentClassification; //TODO - remove
 	
 	private String firebaseUrl;
-	private String mobileFirebaseServerKey;
-	private String mobileClientName;
-	private String wearClientName;
-	private String wearFirebaseServerKey;
+	private String mobileFirebaseServerKey; //TODO - remove
+	private String mobileClientName; //TODO - remove
+	private String wearClientName; //TODO - remove
+	private String wearFirebaseServerKey; //TODO - remove
 	
 	private NotificationClient notificationClient;
 	

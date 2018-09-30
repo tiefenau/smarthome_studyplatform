@@ -65,6 +65,7 @@ public class NLUDataIngestionService {
 	private Map<Integer, ScheduledFuture<?>> surveyTasks = new HashMap<>();
 //	private NLUOutput nluOutput;
 	
+	// TODO - remove
 	public void extractInboundFileData(InputFile inputFile) {
 		SnipsOutput snipsOutput = fileExtractor.extractInboundFileData(inputFile);
 		if(snipsOutput != null) {
@@ -73,7 +74,7 @@ public class NLUDataIngestionService {
 		}
 	}
 	
-	public void extractUserQuery(String userQuery) {
+	public void extractUserQuery(String userQuery, String username) {
 		// User query is plain sentence of some language.
 		// This sentence might contain trigger word, which we need to separate out.
 		// Once the real query is extracted out, intent classification should be done to populate NLU instance.
@@ -102,7 +103,7 @@ public class NLUDataIngestionService {
 
 					// Send notification
 					if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
-						feedbackService.sendFeedback(snipsOutput, queryId);						
+						feedbackService.sendFeedback(snipsOutput, queryId, username);						
 					}
 				} else {
 					// Capture queries with / without hotword
@@ -116,7 +117,7 @@ public class NLUDataIngestionService {
 
 						// Send notification
 						if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
-							feedbackService.sendFeedback(snipsOutput, queryId);						
+							feedbackService.sendFeedback(snipsOutput, queryId, username);						
 						}
 					}
 				}

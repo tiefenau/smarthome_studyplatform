@@ -44,6 +44,7 @@ public class DataIngestionImpl implements IDataIngestion {
 	
 	@Override
 	@RequestMapping(value = "/file", method = RequestMethod.POST)
+	// TODO - remove
 	public void captureFileGeneration(@RequestBody String requestBody) {
 		
 		InputFile inputFile = null;
@@ -53,7 +54,6 @@ public class DataIngestionImpl implements IDataIngestion {
 				inputFile = parseFileGenerationRequestBody(requestBody);
 			} catch (UnsupportedEncodingException e) {
 				logger.info("Error while parsing input file details", e);
-//			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 			
 			if(inputFile != null) {
@@ -61,7 +61,6 @@ public class DataIngestionImpl implements IDataIngestion {
 			}			
 		}
 		
-//		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 	
 	private InputFile parseFileGenerationRequestBody(String requestBody) throws UnsupportedEncodingException {
@@ -73,6 +72,7 @@ public class DataIngestionImpl implements IDataIngestion {
 	}
 
 	@Override
+	//TODO - remove
 	@RequestMapping(value = "/snips-watch", method = RequestMethod.PUT)
 	public void activateSnipsWatch(@RequestParam("snipsWatch") boolean snipsWatch) {
 		properties.setSnipsWatch(snipsWatch);
@@ -84,8 +84,9 @@ public class DataIngestionImpl implements IDataIngestion {
 		try {
 			Map<String, String> responseMap = DataIngestionUtils.parseResponseBody(requestBody);
 			String userQuery = responseMap.get("userQuery");
+			String username = responseMap.get("username");
 			if(userQuery != null && !userQuery.isEmpty()) {
-				dataIngestionService.extractUserQuery(userQuery);
+				dataIngestionService.extractUserQuery(userQuery, username);
 			}
 		} catch (UnsupportedEncodingException e) {
 			logger.info("Error while parsing input file details", e);

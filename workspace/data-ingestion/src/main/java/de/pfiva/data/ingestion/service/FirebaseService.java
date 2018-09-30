@@ -31,7 +31,7 @@ public class FirebaseService {
 	
 	private static Logger logger = LoggerFactory.getLogger(FirebaseService.class);
 
-	public void sendRequestToFirebaseServer(Data data, String clientToken) {
+	public void sendRequestToFirebaseServer(Data data, String clientName) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		String firebaseServerKey = "key=" + configProperties.getConfigValues().get("pfiva_firebase_server_key");
@@ -39,7 +39,7 @@ public class FirebaseService {
 		
 		RequestModel requestModel = new RequestModel();
 		requestModel.setData(data);
-		requestModel.setTo(getClientToken(clientToken));
+		requestModel.setTo(getClientToken(clientName));
 		
 		String requestBody = null;
 		try {

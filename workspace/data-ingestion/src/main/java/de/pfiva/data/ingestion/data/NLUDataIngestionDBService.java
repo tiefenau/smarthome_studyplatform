@@ -651,4 +651,8 @@ public class NLUDataIngestionDBService {
 		
 		return new LinkedList<>(responseMap.values());
 	}
+
+	public String getDeviceId(String username) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_DEVICE_ID, String.class, username);
+	}
 }

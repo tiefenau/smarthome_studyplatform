@@ -30,14 +30,15 @@ public class FeedbackService {
 	
 	private static Logger logger = LoggerFactory.getLogger(FeedbackService.class);
 	
-	public void sendFeedback(SnipsOutput snipsOutput, int queryId) {
+	public void sendFeedback(SnipsOutput snipsOutput, int queryId, String username) {
 		// 1. Generate Feedback
 		// 2. Push feedback to db
 		// 3. Send Feedback
-		
-		Tuple<FeedbackType, String> feeback = generateFeedbackQuery(snipsOutput);
-		int feedbackId = pushFeedbackToDB(feeback, queryId);
-		postFeedbackToFirebase(feeback, feedbackId);
+		if(username != null && !username.isEmpty()) {
+			Tuple<FeedbackType, String> feeback = generateFeedbackQuery(snipsOutput);
+			int feedbackId = pushFeedbackToDB(feeback, queryId);
+			postFeedbackToFirebase(feeback, feedbackId, username);			
+		}
 	}
 	
 	private int pushFeedbackToDB(Tuple<FeedbackType, String> feeback, int queryId) {
@@ -77,14 +78,24 @@ public class FeedbackService {
 	}
 	
 	private void postFeedbackToFirebase(Tuple<FeedbackType,
-			String> feeback, int feedbackId) {
+			String> feeback, int feedbackId, String username) {
 		
 		FeedbackData data = new FeedbackData();
 		data.setDatatype(DataType.FEEDBACK);
 		data.setFeedbackId(feedbackId);
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());
-		firebaseService.sendRequestToFirebaseServer(data, properties.getMobileClientName());		
+		
+		String clientName = getDeviceId(username);
+		if(clientName == null || clientName.isEmpty()) {
+			logger.error("User does not have any registered device.");
+			throw new IllegalArgumentException("Invalid user.");
+		}
+		firebaseService.sendRequestToFirebaseServer(data, clientName);		
+	}
+	
+	private String getDeviceId(String username) {
+		return dbService.getDeviceId(username);
 	}
 
 	private String parseIntentToUserReadableString(String intentName) {

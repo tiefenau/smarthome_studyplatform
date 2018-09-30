@@ -103,6 +103,8 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_SURVEY_QUES_VALUES = "select value from survey_response_tbl where question_id = ?";
 	
+	public static final String GET_DEVICE_ID = "SELECT device_id from user_tbl where username = ?";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 	
