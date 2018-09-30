@@ -13,9 +13,6 @@
       
     </div>
     <div class="card-body">
-      <!--<h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>-->
       <div class="row">
         <div class="col-sm-3">
           <ul class="list-group">
@@ -41,12 +38,29 @@
               <div class="row mt-2 mx-4" *ngIf="question.questionType !== 'Text'">
                 <div class="col">
                   <div class="row" *ngFor="let option of question.options">
-                    <div class="col" *ngIf="question.questionType !== 'Multiple Choice'">
+                    <div class="col" *ngIf="question.questionType === 'Multiple Choice'">
                       <input type="radio" class="mr-2" disabled>{{option?.value}}
                     </div>
-                    <div class="col" *ngIf="question.questionType !== 'Checkboxes'">
+                    <div class="col" *ngIf="question.questionType === 'Checkboxes'">
                       <input type="checkbox" class="mr-2" disabled>{{option?.value}}
                     </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div *ngFor="let response of surveyResponseData?.responses">
+                <div class="row" *ngIf="question.id === response.questionId">
+                  <div class="col-sm-2">
+                    <span class="mr-2">{{response?.user?.username}}</span>
+                  </div>
+                  <div class="col-1">
+                    <span>:</span>
+                  </div>
+                  <div class="col">
+                    <span *ngFor="let value of response?.values; last as isLast">
+                      {{value}}
+                      <span *ngIf="!isLast">,</span>
+                    </span>
                   </div>
                 </div>
               </div>
