@@ -57,7 +57,7 @@ public class SurveyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
-        
+
         final Intent intent = getIntent();
         if(intent.hasExtra(Constants.SURVEY_DATA_KEY)) {
             SurveyData data = (SurveyData) intent.getSerializableExtra(Constants.SURVEY_DATA_KEY);
