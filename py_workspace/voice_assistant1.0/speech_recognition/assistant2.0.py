@@ -12,9 +12,9 @@ logger = logging.getLogger(__name__)
 r = sr.Recognizer()
 m = sr.Microphone()
 
-def forward_query_to_data_ingestion(userQuery):
+def forward_query_to_data_ingestion(userQuery, user):
     try:
-        response = requests.post('http://127.0.0.1:9001/data/ingestion/user-query', data={'userQuery': userQuery})
+        response = requests.post('http://127.0.0.1:9001/data/ingestion/user-query', data={'userQuery': userQuery, 'username': user})
         logger.info('Request forwarded to data ingestion with user query [' + userQuery + ']')
     except requests.ConnectionError as e:
         logger.error('Error forwarding request to data-ingestion pipeline {0}'. format(e))
@@ -32,7 +32,7 @@ def parseLanguageForSpeech(speechLanguage):
 		logger.error('Language not supported')
 		exit()
 
-def main(speechLanguage, api):
+def main(speechLanguage, api, user):
 	try:
 		logger.info('Initiating speech recognition.')
 		with m as source: r.adjust_for_ambient_noise(source)
@@ -65,7 +65,7 @@ def main(speechLanguage, api):
 
 				logger.info('Speech to text recognition done.')
 				logger.info('Speech-to-text translation : ' + value)
-				forward_query_to_data_ingestion(format(value).encode("utf-8"))
+				forward_query_to_data_ingestion(format(value).encode("utf-8"), user)
 			except sr.UnknownValueError:
 				logger.error('Unable to catch user speech.')
 			except sr.RequestError as e:
@@ -78,7 +78,9 @@ if __name__ == '__main__':
 	parser = ArgumentParser()
 	parser.add_argument("-l", "--language", dest="language", help="Specify language for voice assistant", required=True)
 	parser.add_argument("-a", "--api", dest="api", help="Specify API for voice assistant", required=True)
+	parser.add_argument("-u", "--user", dest="user", help="Specify user for voice assistant", required=True)
 	args = parser.parse_args()
-	logger.info('Argument ' + str(args.language))
-	logger.info('Argument ' + str(args.api))
-	main(args.language, args.api)
+	logger.info('Language : ' + str(args.language))
+	logger.info('API : ' + str(args.api))
+	logger.info('User : ' + str(args.user))
+	main(args.language, args.api, args.user)
