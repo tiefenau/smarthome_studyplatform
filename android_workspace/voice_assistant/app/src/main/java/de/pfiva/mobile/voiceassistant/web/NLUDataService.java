@@ -27,4 +27,8 @@ public interface NLUDataService {
     @POST(Constants.MESSAGE_RESPONSE_ENDPOINT)
     public Call<Boolean> saveMessageResponse(@Path("messageId") int messageId,
                                              @Body Response response);
+
+    @POST(Constants.SURVEY_RESPONSE_ENDPOINT)
+    public Call<Boolean> saveSurveyResponse(@Path("surveyId") int surveyId,
+                                            @Body List<de.pfiva.data.model.survey.Response> response);
 }

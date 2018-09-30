@@ -66,6 +66,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
             } else if(datatype == Data.DataType.SURVEY) {
                 SurveyData surveyData = new SurveyData();
                 surveyData.setSurvey(extractSurveyData(data.get("survey")));
+                surveyData.setUserId(Integer.valueOf(data.get("userId")));
 
                 Intent intent = processSurveyData(surveyData);
                 sendNotification(intent, surveyData.getSurvey().getSurveyName());

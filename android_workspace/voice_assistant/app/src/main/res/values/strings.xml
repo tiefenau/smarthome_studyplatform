@@ -28,4 +28,9 @@
     <string name="pfiva_survey">PFIVA Survey</string>
     <string name="default_question_number">1</string>
     <string name="response_title">Response</string>
+    <string name="survey_confirmation">
+        Thank you for taking the time to complete this survey.
+        We truly value the information you have provided.
+        Your responses will contribute to our analyses of privacy concerns in intelligent voice assistants.
+    </string>
 </resources>

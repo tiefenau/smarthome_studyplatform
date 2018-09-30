@@ -87,6 +87,20 @@
 
     </LinearLayout>
 
+    <!-- Confirmation container -->
+    <LinearLayout
+        android:id="@+id/confirmation_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_confirmation"
+            />
+    </LinearLayout>
+
     <!-- Buttons container -->
     <RelativeLayout
         android:id="@+id/buttons_container"
@@ -98,6 +112,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_survey"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/submit_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
 
