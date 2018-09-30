@@ -9,6 +9,7 @@ public class SurveyData extends Data implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Survey survey;
+	private int userId;
 	
 	public Survey getSurvey() {
 		return survey;
@@ -16,8 +17,14 @@ public class SurveyData extends Data implements Serializable {
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	@Override
 	public String toString() {
-		return "SurveyData [survey=" + survey + "]";
+		return "SurveyData [survey=" + survey + ", userId=" + userId + "]";
 	}
 }
