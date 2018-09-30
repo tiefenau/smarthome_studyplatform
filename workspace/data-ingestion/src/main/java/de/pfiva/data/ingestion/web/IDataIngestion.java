@@ -56,4 +56,6 @@ public interface IDataIngestion {
 	public List<Survey> getSurveys();
 	
 	public SurveyResponseData getCompleteSurveyData(int surveyId);
+	
+	public boolean saveSurveyResponse(int surveyId, List<de.pfiva.data.model.survey.Response> responses);
 }

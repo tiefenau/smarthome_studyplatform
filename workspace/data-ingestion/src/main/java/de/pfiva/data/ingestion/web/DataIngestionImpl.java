@@ -214,4 +214,11 @@ public class DataIngestionImpl implements IDataIngestion {
 			@RequestBody Response response) {
 		return dataIngestionService.saveMessageResponse(messageId, response);
 	}
+
+	@Override
+	@RequestMapping(value = "/survey-response/{surveyId}", method = RequestMethod.POST)
+	public boolean saveSurveyResponse(@PathVariable int surveyId,
+			@RequestBody List<de.pfiva.data.model.survey.Response> responses) {
+		return dataIngestionService.saveSurveyResponse(surveyId, responses);
+	}
 }

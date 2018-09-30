@@ -35,6 +35,7 @@ public class SurveyTask implements Runnable {
 		SurveyData data = new SurveyData();
 		data.setDatatype(DataType.SURVEY);
 		data.setSurvey(this.survey);
+		data.setUserId(this.user.getId());
 		logger.info("Sending survey [" + this.survey.getSurveyName() + "] to [" + user.getUsername() + "]");
 		this.firebaseService.sendRequestToFirebaseServer(data, this.user.getDeviceId());
 		

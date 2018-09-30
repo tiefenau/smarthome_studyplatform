@@ -346,6 +346,7 @@ public class NLUDataIngestionDBService {
 						User user = new User();
 						user.setId(rs.getInt("user_id"));
 						user.setUsername(rs.getString("username"));
+						user.setDeviceId(rs.getString("device_id"));
 						return user;
 					}
 				});
@@ -523,6 +524,7 @@ public class NLUDataIngestionDBService {
 				User user = new User();
 				user.setId(rs.getInt("user_id"));
 				user.setUsername(rs.getString("username"));
+				user.setDeviceId(rs.getString("device_id"));
 				return user;
 			}
 		});
@@ -576,5 +578,32 @@ public class NLUDataIngestionDBService {
 	public int saveMessageResponse(int messageId, Response response) {
 		return jdbcTemplate.update(DataIngestionDBQueries.INSERT_MESSAGE_RESPONSE, 
 				response.getValue(), messageId, response.getUser().getId());
+	}
+
+	public boolean saveSurveyResponse(int surveyId,
+			List<de.pfiva.data.model.survey.Response> responses) {
+		
+		for(de.pfiva.data.model.survey.Response response : responses) {
+			List<String> values = response.getValues();
+			jdbcTemplate.batchUpdate(DataIngestionDBQueries.INSERT_SURVEY_RESPONSE_TBL,
+					new BatchPreparedStatementSetter() {
+
+				@Override
+				public void setValues(PreparedStatement ps, int i) throws SQLException {
+					ps.setString(1, values.get(i));
+					ps.setInt(2, response.getQuestionId());
+					ps.setInt(3, surveyId);
+					ps.setInt(4, response.getUser().getId());
+				}
+
+				@Override
+				public int getBatchSize() {
+					return values.size();
+				}
+			});
+		}
+		
+		logger.info("Saved user response for survey id [" + surveyId + "]");
+		return true;
 	}
 }

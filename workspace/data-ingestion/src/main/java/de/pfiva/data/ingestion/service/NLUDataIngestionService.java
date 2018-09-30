@@ -313,8 +313,10 @@ public class NLUDataIngestionService {
 				Tuple<Integer, Boolean> status = dbService.saveSurveyToDB(survey);
 				//boolean status = true;
 				if(status.getY()) {
-					survey.setId(status.getX());
-					processSurveyForDelivery(survey);
+					//survey.setId(status.getX());
+					// Get updated data for survey from db
+					Survey surveyData = getSurveyData(status.getX());
+					processSurveyForDelivery(surveyData);
 				}
 			}
 		}
@@ -403,6 +405,12 @@ public class NLUDataIngestionService {
 		} else {
 			return false;
 		}
+	}
+
+	public boolean saveSurveyResponse(int surveyId, 
+			List<de.pfiva.data.model.survey.Response> responses) {
+		
+		return dbService.saveSurveyResponse(surveyId, responses);
 	}
 	
 	// On receiving data, check for completion, if data

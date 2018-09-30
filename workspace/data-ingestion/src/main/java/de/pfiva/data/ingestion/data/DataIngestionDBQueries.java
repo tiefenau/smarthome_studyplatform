@@ -38,6 +38,9 @@ public interface DataIngestionDBQueries {
 	public static final String INSERT_MESSAGE_RESPONSE = "INSERT INTO message_response_tbl(value,"
 			+ " message_id, user_id) VALUES(?,?,?)";
 	
+	public static final String INSERT_SURVEY_RESPONSE_TBL = "INSERT INTO survey_response_tbl(value, question_id,"
+			+ " survey_id, user_id) VALUES(?,?,?,?)";
+	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
 	
@@ -73,13 +76,13 @@ public interface DataIngestionDBQueries {
 			+ " u.username from message_response_tbl as r JOIN user_tbl as u"
 			+ " ON r.user_id = u.user_id where r.message_id = ?";
 	
-	public static final String GET_USERS_BY_MESSAGE_ID = "SELECT u.user_id, u.username"
+	public static final String GET_USERS_BY_MESSAGE_ID = "SELECT u.user_id, u.username, u.device_id"
 			+ " from user_tbl as u JOIN message_users_tbl as m"
 			+ " ON u.user_id = m.user_id where m.message_id = ?";
 	
 	public static final String GET_CONFIG_DATA = "SELECT * from configuration_tbl";
 	
-	public static final String GET_USERS_BY_SURVEY_ID = "SELECT u.user_id, u.username"
+	public static final String GET_USERS_BY_SURVEY_ID = "SELECT u.user_id, u.username, u.device_id"
 			+ " from user_tbl as u JOIN survey_users_tbl as s"
 			+ " ON u.user_id = s.user_id where s.survey_id = ?";
 	
