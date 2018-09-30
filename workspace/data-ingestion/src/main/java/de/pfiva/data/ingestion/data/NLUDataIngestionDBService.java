@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -605,5 +608,47 @@ public class NLUDataIngestionDBService {
 		
 		logger.info("Saved user response for survey id [" + surveyId + "]");
 		return true;
+	}
+
+	public List<de.pfiva.data.model.survey.Response> getSurveyResponse(int surveyId) {
+		// TODO - This implementation is quite bad, can be improved.
+		// Data model should be refactored.
+		Map<Integer, de.pfiva.data.model.survey.Response> responseMap = 
+				new HashMap<>();
+		
+		List<de.pfiva.data.model.survey.Response> responses = 
+				jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY_RESPONSES_BY_ID,
+						new Object[] {surveyId}, new RowMapper<de.pfiva.data.model.survey.Response>() {
+
+					@Override
+					public de.pfiva.data.model.survey.Response mapRow(ResultSet rs, int rowNum) throws SQLException {
+						de.pfiva.data.model.survey.Response response = new de.pfiva.data.model.survey.Response();
+						response.setId(rs.getInt("response_id"));
+						response.setQuestionId(rs.getInt("question_id"));
+						User user = new User();
+						user.setId(rs.getInt("user_id"));
+						user.setUsername(rs.getString("username"));
+						user.setDeviceId(rs.getString("device_id"));
+						response.setUser(user);
+						return response;
+					}
+				});
+		
+		for(de.pfiva.data.model.survey.Response response : responses) {
+			List<String> values = jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY_QUES_VALUES,
+					new Object[] {response.getQuestionId()}, new RowMapper<String>() {
+
+				@Override
+				public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getString("value");
+				}
+			});
+
+			response.setValues(values);
+			
+			responseMap.put(response.getQuestionId(), response);
+		}
+		
+		return new LinkedList<>(responseMap.values());
 	}
 }

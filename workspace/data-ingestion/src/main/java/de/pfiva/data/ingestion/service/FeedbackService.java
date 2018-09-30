@@ -76,7 +76,6 @@ public class FeedbackService {
 		return feedback;
 	}
 	
-//	@Async
 	private void postFeedbackToFirebase(Tuple<FeedbackType,
 			String> feeback, int feedbackId) {
 		
@@ -85,48 +84,7 @@ public class FeedbackService {
 		data.setFeedbackId(feedbackId);
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());
-		firebaseService.sendRequestToFirebaseServer(data, properties.getMobileClientName());
-		
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setContentType(MediaType.APPLICATION_JSON);
-//		String firebaseServerKey;
-//		String clientName;
-//		if(properties.getNotificationClient() == NotificationClient.MOBILE) {
-//			firebaseServerKey = "key=" + properties.getMobileFirebaseServerKey();
-//			clientName = properties.getMobileClientName();
-//		} else {
-//			firebaseServerKey = "key=" + properties.getWearFirebaseServerKey();
-//			clientName = properties.getWearClientName();
-//		}
-//		headers.set(HttpHeaders.AUTHORIZATION, firebaseServerKey);
-//		
-//		RequestModel requestModel = new RequestModel();
-//		FeedbackData data = new FeedbackData();
-//		data.setFeedbackId(feedbackId);
-//		data.setFeedbackType(feeback.getX());
-//		data.setText(feeback.getY());
-//		requestModel.setData(data);
-//		requestModel.setTo(getClientToken(clientName));
-//		
-//		String requestBody = null;
-//		try {
-//			requestBody = objectMapper.writeValueAsString(requestModel);
-//		} catch (JsonProcessingException e) {
-//			logger.error("Error while forming request body for firebase");
-//		}
-//		logger.info("Request body for firebase [" + requestBody + "]");
-//				
-//		HttpEntity<?> requestEntity = new HttpEntity<Object>(requestBody, headers);
-//		
-//		ResponseEntity<String> response = restTemplate.exchange(properties.getFirebaseUrl(),
-//				HttpMethod.POST, requestEntity, String.class);
-//		logger.info("Response from firebase server [" + response.getBody() + "]");
-//		
-//		return CompletableFuture.completedFuture(response.getBody());
-	}
-
-	private String getClientToken(String clientName) {
-		return dbService.getClientToken(clientName);
+		firebaseService.sendRequestToFirebaseServer(data, properties.getMobileClientName());		
 	}
 
 	private String parseIntentToUserReadableString(String intentName) {

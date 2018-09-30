@@ -96,6 +96,13 @@ public interface DataIngestionDBQueries {
 	public static final String GET_OPTIONS_PER_QUESTION = "SELECT option_id,"
 			+ " value from options_tbl where question_id = ?";
 	
+	public static final String GET_SURVEY_RESPONSES_BY_ID = "select s.response_id, s.question_id,"
+			+ " u.user_id, u.username, u.device_id from survey_response_tbl as s"
+			+ " INNER JOIN user_tbl as u"
+			+ " ON s.user_id = u.user_id AND s.survey_id = ?";
+	
+	public static final String GET_SURVEY_QUES_VALUES = "select value from survey_response_tbl where question_id = ?";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 	

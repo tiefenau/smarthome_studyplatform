@@ -371,9 +371,14 @@ public class NLUDataIngestionService {
 	public SurveyResponseData getCompleteSurveyData(int surveyId) {
 		SurveyResponseData data = new SurveyResponseData();
 		data.setSurvey(getSurveyData(surveyId));
+		data.setResponses(getSurveyResponse(surveyId));
 		return data;
 	}
 	
+	private List<de.pfiva.data.model.survey.Response> getSurveyResponse(int surveyId) {
+		return dbService.getSurveyResponse(surveyId);
+	}
+
 	private Survey getSurveyData(int surveyId) {
 		// 1. Get survey data
 		// 2. Get users per survey
