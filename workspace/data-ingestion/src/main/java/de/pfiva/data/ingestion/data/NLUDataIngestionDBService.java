@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -27,6 +28,7 @@ import org.springframework.stereotype.Service;
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
+import de.pfiva.data.model.Topic;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
@@ -395,13 +397,13 @@ public class NLUDataIngestionDBService {
 			+ "], with value [" + configData.getValue() + "]");
 	}
 
-	public Tuple<Integer, Boolean> saveSurveyToDB(Survey survey) {
+	public Tuple<Integer, Boolean> saveSurveyToDB(Survey survey, int topicId) {
 		// 1. Insert into survey_tbl
 		// 2. Insert into survey_users_tbl
 		// 3. Insert into question_tbl
 		// 4. Insert into option_tbl
 		
-		Tuple<Integer, Boolean> status = insertIntoSurveyTable(survey);
+		Tuple<Integer, Boolean> status = insertIntoSurveyTable(survey, topicId);
 		insertIntoQuestionOptionTable(survey, status);
 		return status;
 	}
@@ -455,7 +457,7 @@ public class NLUDataIngestionDBService {
 		}
 	}
 
-	private Tuple<Integer, Boolean> insertIntoSurveyTable(Survey survey) {
+	private Tuple<Integer, Boolean> insertIntoSurveyTable(Survey survey, int topicId) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -468,6 +470,7 @@ public class NLUDataIngestionDBService {
 				ps.setString(1, survey.getSurveyName());
 				ps.setString(2, survey.getSurveyStatus().toString());
 				ps.setString(3, survey.getDeliveryDateTime());
+				ps.setInt(4, topicId);
 				return ps;
 			}
 		}, keyHolder);
@@ -513,6 +516,24 @@ public class NLUDataIngestionDBService {
 				survey.setSurveyName(rs.getString("survey_name"));
 				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
 				survey.setDeliveryDateTime(rs.getString("delivery_date"));
+				survey.setTopic(rs.getString("topic_name"));
+				return survey;
+			}
+		});
+	}
+	
+	public List<Survey> getSurveysByTopic(String topic) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEYS_BY_TOPIC,
+				new Object[] {topic}, new RowMapper<Survey>() {
+
+			@Override
+			public Survey mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Survey survey = new Survey();
+				survey.setId(rs.getInt("survey_id"));
+				survey.setSurveyName(rs.getString("survey_name"));
+				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
+				survey.setDeliveryDateTime(rs.getString("delivery_date"));
+				survey.setTopic(rs.getString("topic_name"));
 				return survey;
 			}
 		});
@@ -573,6 +594,7 @@ public class NLUDataIngestionDBService {
 				survey.setSurveyName(rs.getString("survey_name"));
 				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
 				survey.setDeliveryDateTime(rs.getString("delivery_date"));
+				survey.setTopic(rs.getString("topic_name"));
 				return survey;
 			}
 		});
@@ -654,5 +676,63 @@ public class NLUDataIngestionDBService {
 
 	public String getDeviceId(String username) {
 		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_DEVICE_ID, String.class, username);
+	}
+
+	public int getTopicId(String topic) {
+		int topicId = 0;
+		try {
+			topicId = jdbcTemplate
+					.queryForObject(DataIngestionDBQueries.GET_TOPIC_ID, Integer.class, topic);	
+		} catch(EmptyResultDataAccessException e) {
+			logger.error("Topic does not exists");
+			return topicId;
+		}
+		return topicId;
+	}
+
+	public void updateTopicModificationDate(int topicId, String date) {
+		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_MODIFIACTION_DATE_FOR_TOPIC, date, topicId);
+		
+	}
+
+	public int createNewTopic(String topic, String date) {
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		jdbcTemplate.update(new PreparedStatementCreator() {
+
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con
+						.prepareStatement(DataIngestionDBQueries.INSERT_INTO_TOPIC_TBL,
+								new String[] {"topic_id"});
+
+				ps.setString(1, topic);
+				ps.setString(2, date);
+				ps.setString(3, date);
+				
+				return ps;
+			}
+		}, keyHolder);
+
+		return keyHolder.getKey().intValue();
+	}
+
+	public List<Topic> getTopics() {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_TOPICS, new RowMapper<Topic>() {
+
+			@Override
+			public Topic mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Topic topic = new Topic();
+				topic.setId(rs.getInt("topic_id"));
+				topic.setTopicname(rs.getString("topic_name"));
+				topic.setCreationDate(rs.getString("creation_date"));
+				topic.setModificationDate(rs.getString("modification_date"));
+				return topic;
+			}
+		});
+	}
+
+	public int getSurveyCount(int topicId) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_SURVEY_COUNT_BY_TOPIC_ID,
+				Integer.class, topicId);
 	}
 }

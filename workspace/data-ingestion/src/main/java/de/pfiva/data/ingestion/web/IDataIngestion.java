@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
+import de.pfiva.data.model.Topic;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
 import de.pfiva.data.model.message.MessageResponseData;
@@ -53,9 +54,11 @@ public interface IDataIngestion {
 	
 	public boolean cancelScheduledSurvey(int surveyId);
 	
-	public List<Survey> getSurveys();
+	public List<Survey> getSurveys(String topic);
 	
 	public SurveyResponseData getCompleteSurveyData(int surveyId);
 	
 	public boolean saveSurveyResponse(int surveyId, List<de.pfiva.data.model.survey.Response> responses);
+	
+	public List<Topic> getTopics();
 }

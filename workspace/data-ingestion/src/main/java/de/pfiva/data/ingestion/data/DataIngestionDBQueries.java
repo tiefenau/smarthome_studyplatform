@@ -27,7 +27,7 @@ public interface DataIngestionDBQueries {
 	public static final String INSERT_USER_TBL = "INSERT INTO user_tbl(username, device_id) VALUES (?,?)";
 	
 	public static final String INSERT_SURVEY_TBL = "INSERT INTO survey_tbl(survey_name,"
-			+ " status, delivery_date) VALUES(?,?,?)";
+			+ " status, delivery_date, topic_id) VALUES(?,?,?,?)";
 	
 	public static final String INSERT_SURVEY_USERS_TBL = "INSERT INTO survey_users_tbl(survey_id, user_id) VALUES(?,?)";
 	
@@ -40,6 +40,9 @@ public interface DataIngestionDBQueries {
 	
 	public static final String INSERT_SURVEY_RESPONSE_TBL = "INSERT INTO survey_response_tbl(value, question_id,"
 			+ " survey_id, user_id) VALUES(?,?,?,?)";
+	
+	public static final String INSERT_INTO_TOPIC_TBL = "INSERT INTO topic_tbl(topic_name, creation_date,"
+			+ " modification_date) VALUES(?,?,?)";
 	
 	// Client table queries ------------------------------------------------------------------------
 	public static final String FETCH_CLIENT_NAMES = "SELECT client_name from clients_tbl";
@@ -86,9 +89,22 @@ public interface DataIngestionDBQueries {
 			+ " from user_tbl as u JOIN survey_users_tbl as s"
 			+ " ON u.user_id = s.user_id where s.survey_id = ?";
 	
-	public static final String GET_SURVEYS = "SELECT * from survey_tbl";
+	//public static final String GET_SURVEYS = "SELECT * from survey_tbl";
 	
-	public static final String GET_SURVEY = "SELECT * from survey_tbl where survey_id = ?";
+	//public static final String GET_SURVEY = "SELECT * from survey_tbl where survey_id = ?";
+	
+	public static final String GET_SURVEYS = "SELECT s.survey_id, s.survey_name,"
+			+ " s.status, s.delivery_date, t.topic_name from survey_tbl as s"
+			+ " INNER JOIN topic_tbl as t ON s.topic_id = t.topic_id";
+	
+	public static final String GET_SURVEY = "SELECT s.survey_id, s.survey_name,"
+			+ " s.status, s.delivery_date, t.topic_name from survey_tbl as s"
+			+ " INNER JOIN topic_tbl as t ON s.topic_id = t.topic_id AND survey_id = ?";
+	
+	public static final String GET_SURVEYS_BY_TOPIC = "select s.survey_id, s.survey_name, s.status, s.delivery_date,"
+			+ " t.topic_name from survey_tbl as s INNER JOIN topic_tbl as t"
+			+ " ON s.topic_id = t.topic_id AND s.topic_id ="
+			+ " (SELECT topic_id from topic_tbl where topic_name = ?)";
 	
 	public static final String GET_QUESTIONS_BY_SURVEY_ID = "SELECT question_id,"
 			+ " question, question_type from questions_tbl where survey_id = ?";
@@ -105,6 +121,13 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_DEVICE_ID = "SELECT device_id from user_tbl where username = ?";
 	
+	public static final String GET_TOPIC_ID = "SELECT topic_id from topic_tbl where topic_name = ?";
+	
+	public static final String GET_TOPICS = "SELECT * from topic_tbl";
+	
+	public static final String GET_SURVEY_COUNT_BY_TOPIC_ID = "select count(survey_id)"
+			+ " from survey_tbl where topic_id = ?";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 	
@@ -112,6 +135,9 @@ public interface DataIngestionDBQueries {
 			+ " config_value = ? where config_key = ?";
 	
 	public static final String UPDATE_SURVEY_STATUS = "UPDATE survey_tbl SET status = ? where survey_id = ?";
+	
+	public static final String UPDATE_MODIFIACTION_DATE_FOR_TOPIC = "UPDATE topic_tbl"
+			+ " SET modification_date = ? where topic_id = ?";
 
 	// Delete queries ------------------------------------------------------------------------------
 	public static final String DELETE_USER = "DELETE from user_tbl where user_id = ?";

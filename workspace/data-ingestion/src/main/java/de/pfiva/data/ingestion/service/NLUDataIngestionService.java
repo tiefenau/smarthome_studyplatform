@@ -29,6 +29,7 @@ import de.pfiva.data.ingestion.task.SurveyTask;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
+import de.pfiva.data.model.Topic;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
@@ -297,6 +298,9 @@ public class NLUDataIngestionService {
 		// 1. Save survey to db
 		// 2. Based on delivery date either send survey or schedule a survey to be sent later
 		if(survey != null) {
+			// First check if topic exists, it not then create new other wise update date
+			int topicId = createTopicIfNotExists(survey.getTopic());
+			
 			// Delivery date would either be Now or an actual timestamp
 			String deliveryDate = survey.getDeliveryDateTime();
 			if(deliveryDate != null && !deliveryDate.trim().isEmpty()) {
@@ -311,7 +315,7 @@ public class NLUDataIngestionService {
 					survey.setSurveyStatus(SurveyStatus.PENDING);
 				}
 
-				Tuple<Integer, Boolean> status = dbService.saveSurveyToDB(survey);
+				Tuple<Integer, Boolean> status = dbService.saveSurveyToDB(survey, topicId);
 				//boolean status = true;
 				if(status.getY()) {
 					//survey.setId(status.getX());
@@ -323,6 +327,23 @@ public class NLUDataIngestionService {
 		}
 	}
 	
+	private int createTopicIfNotExists(String topic) {
+		int topicId = 0;
+		if(topic != null && !topic.isEmpty()) {
+			topicId = dbService.getTopicId(topic);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
+			String date = LocalDateTime.now().format(formatter);
+			if(topicId != 0) {
+				logger.info("Topic [" + topic + "] exists.");
+				dbService.updateTopicModificationDate(topicId, date);
+			} else {
+				logger.info("Topic [" + topic + "] does not exists.");
+				topicId = dbService.createNewTopic(topic, date);
+			}
+		}
+		return topicId;
+	}
+
 	private void processSurveyForDelivery(Survey survey) {
 		DateFormat formatter = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
 		Date date = null;
@@ -367,6 +388,10 @@ public class NLUDataIngestionService {
 
 	public List<Survey> getSurveys() {
 		return dbService.getSurveys();
+	}
+	
+	public List<Survey> getSurveysByTopic(String topic) {
+		return dbService.getSurveysByTopic(topic);
 	}
 	
 	public SurveyResponseData getCompleteSurveyData(int surveyId) {
@@ -418,7 +443,20 @@ public class NLUDataIngestionService {
 		
 		return dbService.saveSurveyResponse(surveyId, responses);
 	}
-	
+
+	public List<Topic> getTopics() {
+		// 1. Get topic data from topic_tbl
+		// 2. Fetch survey count
+		// 3. Fetch message count
+		
+		List<Topic> topics = dbService.getTopics();
+		for(Topic topic : topics) {
+			int surveyCount = dbService.getSurveyCount(topic.getId());
+			topic.setSurveyCount(surveyCount);
+		}
+		return topics;
+	}
+
 	// On receiving data, check for completion, if data
 	// is complete push to database.
 	/*private void ingestData(InboundQueryData inboundFileData) {

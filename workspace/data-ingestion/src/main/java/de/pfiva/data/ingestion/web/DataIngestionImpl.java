@@ -24,6 +24,7 @@ import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
 import de.pfiva.data.model.PfivaConfigData;
+import de.pfiva.data.model.Topic;
 import de.pfiva.data.model.User;
 import de.pfiva.data.model.message.Message;
 import de.pfiva.data.model.message.MessageResponseData;
@@ -199,8 +200,12 @@ public class DataIngestionImpl implements IDataIngestion {
 
 	@Override
 	@RequestMapping(value = "/surveys", method = RequestMethod.GET)
-	public List<Survey> getSurveys() {
-		return dataIngestionService.getSurveys();
+	public List<Survey> getSurveys(@RequestParam(name="topic", required=false) String topic) {
+		if(topic == null || topic.isEmpty()) {
+			return dataIngestionService.getSurveys();
+		} else {
+			return dataIngestionService.getSurveysByTopic(topic);
+		}
 	}
 
 	@Override
@@ -221,5 +226,11 @@ public class DataIngestionImpl implements IDataIngestion {
 	public boolean saveSurveyResponse(@PathVariable int surveyId,
 			@RequestBody List<de.pfiva.data.model.survey.Response> responses) {
 		return dataIngestionService.saveSurveyResponse(surveyId, responses);
+	}
+
+	@Override
+	@RequestMapping(value = "/topics", method = RequestMethod.GET)
+	public List<Topic> getTopics() {
+		return dataIngestionService.getTopics();
 	}
 }
