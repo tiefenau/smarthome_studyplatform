@@ -61,4 +61,6 @@ public interface IDataIngestion {
 	public boolean saveSurveyResponse(int surveyId, List<de.pfiva.data.model.survey.Response> responses);
 	
 	public List<Topic> getTopics();
+	
+	public List<String> getTopicNames();
 }

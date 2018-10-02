@@ -735,4 +735,8 @@ public class NLUDataIngestionDBService {
 		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_SURVEY_COUNT_BY_TOPIC_ID,
 				Integer.class, topicId);
 	}
+
+	public List<String> getTopicNames() {
+		return jdbcTemplate.queryForList(DataIngestionDBQueries.GET_TOPIC_NAMES, String.class);
+	}
 }

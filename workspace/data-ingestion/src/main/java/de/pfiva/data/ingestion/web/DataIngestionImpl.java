@@ -233,4 +233,10 @@ public class DataIngestionImpl implements IDataIngestion {
 	public List<Topic> getTopics() {
 		return dataIngestionService.getTopics();
 	}
+	
+	@Override
+	@RequestMapping(value = "/topics-name", method = RequestMethod.GET)
+	public List<String> getTopicNames() {
+		return dataIngestionService.getTopicNames();
+	}
 }

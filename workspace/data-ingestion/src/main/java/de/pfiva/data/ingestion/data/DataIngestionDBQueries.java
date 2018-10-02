@@ -128,6 +128,8 @@ public interface DataIngestionDBQueries {
 	public static final String GET_SURVEY_COUNT_BY_TOPIC_ID = "select count(survey_id)"
 			+ " from survey_tbl where topic_id = ?";
 	
+	public static final String GET_TOPIC_NAMES = "SELECT topic_name from topic_tbl";
+	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";
 	

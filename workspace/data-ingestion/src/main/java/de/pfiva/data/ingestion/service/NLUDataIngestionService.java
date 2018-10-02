@@ -457,6 +457,10 @@ public class NLUDataIngestionService {
 		return topics;
 	}
 
+	public List<String> getTopicNames() {
+		return dbService.getTopicNames();
+	}
+
 	// On receiving data, check for completion, if data
 	// is complete push to database.
 	/*private void ingestData(InboundQueryData inboundFileData) {
