@@ -13,6 +13,7 @@ public class Survey implements Serializable {
 	private String surveyName;
 	private String deliveryDateTime;
 	private SurveyStatus surveyStatus;
+	private String topic;
 	
 	private List<User> users;
 	private List<Question> questions;
@@ -68,9 +69,18 @@ public class Survey implements Serializable {
 	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
 	}
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
 	@Override
 	public String toString() {
 		return "Survey [id=" + id + ", surveyName=" + surveyName + ", deliveryDateTime=" + deliveryDateTime
-				+ ", surveyStatus=" + surveyStatus + ", users=" + users + ", questions=" + questions + "]";
+				+ ", surveyStatus=" + surveyStatus + ", topic=" + topic + ", users=" + users + ", questions="
+				+ questions + "]";
 	}
 }
