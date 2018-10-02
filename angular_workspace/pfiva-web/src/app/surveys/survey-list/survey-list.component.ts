@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material';
 import { SurveyService } from '../survey.service';
@@ -14,7 +14,8 @@ export class SurveyListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: SurveyDataSource;
-  displayedColumns = ['id', 'surveyName', 'deliveryDate', 'status', 'action'];
+  @Input() topic: string;
+  displayedColumns = ['id', 'surveyName', 'deliveryDate', 'topic', 'status', 'action'];
   
   constructor(private surveyService: SurveyService,
     private changeDetectorRefs: ChangeDetectorRef,
@@ -22,12 +23,22 @@ export class SurveyListComponent implements OnInit {
     private route: ActivatedRoute,) { }
 
   ngOnInit() {
-    this.surveyService.getSurveys().subscribe(
-      (surveys: Survey[]) => {
-        this.dataSource = new SurveyDataSource(this.paginator, surveys);
-      },
-      (error) => console.log(error)
-    );
+    if(this.topic === undefined) {
+      this.surveyService.getSurveys().subscribe(
+        (surveys: Survey[]) => {
+          this.dataSource = new SurveyDataSource(this.paginator, surveys);
+        },
+        (error) => console.log(error)
+      );
+    } else {
+      this.surveyService.getSurveysByTopic(this.topic).subscribe(
+        (surveys: Survey[]) => {
+          this.dataSource = new SurveyDataSource(this.paginator, surveys);
+        },
+        (error) => console.log(error)
+      );
+    }
+    
   }
 
   showSurveyDetails(surveyId: number) {

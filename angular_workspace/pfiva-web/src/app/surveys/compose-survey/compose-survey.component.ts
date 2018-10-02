@@ -36,6 +36,7 @@ export class ComposeSurveyComponent implements OnInit {
   onSubmit() {
     let survey = new Survey();
     survey.SurveyName = this.composeSurveyForm.form.value.surveyName;
+    survey.Topic = this.composeSurveyForm.form.value.topic;
     let deliveryDateValue = this.composeSurveyForm.form.value.deliveryDateTime;
     if(deliveryDateValue == 'Send Now') {
       survey.DeliveryDateTime = 'Now';

@@ -1,0 +1,34 @@
+<h5 class="mb-3">Topics</h5>
+<div class="card mb-3" *ngFor="let topic of topics">
+    <div class="card-body">
+        <div class="topic-item">
+            <div class="topic-main-heading">
+                <div class="topic-title">
+                    <span>{{topic?.topicname}}</span>
+                </div>
+                <div class="topic-subtitle">
+                    <ul>
+                        <li>Created : {{topic?.creationDate}}</li>
+                        <li class="mx-1 mr-1">|</li>
+                        <li>Modified : {{topic?.modificationDate}}</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="metadata">
+                <li>
+                    <div>
+                        <a routerLink="/surveys"
+                        [queryParams]="{topic:topic.topicname}" 
+                        class="survey-count">
+                                {{topic?.surveyCount}}
+                        </a>
+                            <!--<span class="survey-count">
+                                {{topic?.surveyCount}}
+                            </span>-->
+                        Surveys
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

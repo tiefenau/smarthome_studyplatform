@@ -35,6 +35,8 @@ export class GeneralConfigurationComponent implements OnInit {
             this.defaultFeedbackQuery = confidData.Value;
           } else if(confidData.Key === 'pfiva_firebase_server_key') {
             this.firebaseServerKey = confidData.Value;
+          } else if(confidData.Key === 'pfiva_capture_queries_without_hotword') {
+
           } else {
             console.log('Invalid key for configuration data.')
           }

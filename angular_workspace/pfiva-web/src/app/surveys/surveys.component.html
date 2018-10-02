@@ -1,4 +1,4 @@
-<div *ngIf="router.url == '/surveys'">
+<div *ngIf="router.url === '/surveys' || router.url === queryPath">
   <div class="card">
       <div class="card-header">
           <div class="col-md-12 text-right">
@@ -7,7 +7,7 @@
           </div>
       </div>
       <div class="card-body">
-          <app-survey-list></app-survey-list>
+          <app-survey-list [topic]="queryParam"></app-survey-list>
       </div>
   </div>
 </div>

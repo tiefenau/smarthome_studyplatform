@@ -10,6 +10,8 @@ import { PlatformLocation } from '@angular/common';
 export class SurveysComponent implements OnInit {
 
   isComposeSurvey = false;
+  queryPath: string;
+  queryParam: string;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -18,6 +20,10 @@ export class SurveysComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.queryParam = params['topic'];
+      this.queryPath = '/surveys?topic=' + encodeURI(params['topic']);
+    });
     this.isComposeSurvey = false;
   }
 

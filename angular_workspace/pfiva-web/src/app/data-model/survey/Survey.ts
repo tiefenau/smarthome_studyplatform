@@ -6,6 +6,7 @@ export class Survey {
 	private surveyName: string;
 	private deliveryDateTime: string;
 	private surveyStatus: string;
+	private topic: string;
 
 	private users: User[];
 	private questions: Question[];
@@ -45,5 +46,11 @@ export class Survey {
 	}
 	public set Questions(value: Question[]) {
 		this.questions = value;
+	}
+	public get Topic(): string {
+		return this.topic;
+	}
+	public set Topic(value: string) {
+		this.topic = value;
 	}
 }

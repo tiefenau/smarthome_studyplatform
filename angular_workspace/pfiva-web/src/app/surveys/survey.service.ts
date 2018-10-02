@@ -49,6 +49,17 @@ export class SurveyService {
         ));
     }
 
+    getSurveysByTopic(topic: string) {
+        let url: string = Constants.PFIVA_BASE_URL 
+            + Constants.PFIVA_GET_SURVEYS + '?topic=' + topic;
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data;
+            }
+        ));
+    }
+
     getCompleteSurveyData(surveyId: number) {
         let url: string = Constants.PFIVA_BASE_URL 
             + Constants.PFIVA_GET_SURVEYS + "/" + surveyId;

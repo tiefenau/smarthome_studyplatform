@@ -28,6 +28,8 @@ import { ComposeSurveyComponent } from './surveys/compose-survey/compose-survey.
 import { SurveyService } from './surveys/survey.service';
 import { SurveyDetailComponent } from './surveys/survey-detail/survey-detail.component';
 import { MessageDetailComponent } from './message-center/message-detail/message-detail.component';
+import { TopicsComponent } from './topics/topics.component';
+import { TopicService } from './topics/topic.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { MessageDetailComponent } from './message-center/message-detail/message-
     SurveyListComponent,
     ComposeSurveyComponent,
     SurveyDetailComponent,
-    MessageDetailComponent
+    MessageDetailComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { MessageDetailComponent } from './message-center/message-detail/message-
     PfivaDataService, 
     MessageService, 
     ConfigurationService,
-    SurveyService
+    SurveyService,
+    TopicService
   ],
   bootstrap: [AppComponent]
 })

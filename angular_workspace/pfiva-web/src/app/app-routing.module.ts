@@ -9,10 +9,12 @@ import { SurveysComponent } from "./surveys/surveys.component";
 import { ComposeSurveyComponent } from "./surveys/compose-survey/compose-survey.component";
 import { SurveyDetailComponent } from "./surveys/survey-detail/survey-detail.component";
 import { MessageDetailComponent } from "./message-center/message-detail/message-detail.component";
+import { NluDataTableComponent } from "./nlu-data-table/nlu-data-table.component";
 
 const appRoutes: Routes = [
     //{ path: '', redirectTo: '/main', pathMatch: 'full' },
-    { path: '', component: MainComponent  },
+    { path: '', component: MainComponent },
+    { path: 'query', component: NluDataTableComponent },
     { path: 'message-center', component: MessageCenterComponent, children: [
         { path: 'compose-message', component: ComposeMessageComponent },
         { path: ':messageId', component: MessageDetailComponent }
