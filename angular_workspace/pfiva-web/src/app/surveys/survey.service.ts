@@ -21,6 +21,16 @@ export class SurveyService {
         ));
     }
 
+    getTopicNames() {
+        let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_GET_TOPIC_NAMES;
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data;
+            }
+        ));
+    }
+
     sendSurvey(survey: Survey) {
         let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_SEND_SURVEY;
         this.http.post(url, survey).subscribe(

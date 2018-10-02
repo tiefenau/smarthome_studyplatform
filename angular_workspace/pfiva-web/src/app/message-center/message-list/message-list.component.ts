@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSort, MatPaginator } from '@angular/material';
 import { MessageDataTableDataSource } from './message-data-table-datasource';
@@ -13,6 +13,7 @@ import { Message } from '../../data-model/message/Message';
 export class MessageListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @Input() topic: string;
   dataSource: MessageDataTableDataSource;
   displayedColumns = ['id', 'messageText', 'deliveryDate', 'status', 'action'];
   

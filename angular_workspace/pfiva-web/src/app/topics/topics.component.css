@@ -28,7 +28,7 @@
 .metadata li {
     display: inherit;
     align-items: center;
-    border-right: 1px solid #D0D2D3;
+    border-left: 1px solid #D0D2D3;
 }
 
 .metadata div {

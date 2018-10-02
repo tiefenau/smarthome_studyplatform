@@ -20,6 +20,7 @@ export class ComposeSurveyComponent implements OnInit {
   rowCount: number[] = [];
   users: User[];
   questions: Question[] = [];
+  topics: string[];
 
   @ViewChild('questionInput') questionInput: ElementRef;
   @ViewChild('optionsTable') optionsTable: ElementRef;
@@ -31,12 +32,18 @@ export class ComposeSurveyComponent implements OnInit {
     this.rowCount = [1];
     this.questions = [];
     this.fetchUsers();
+    this.fetchTopicNames();
   }
 
   onSubmit() {
     let survey = new Survey();
     survey.SurveyName = this.composeSurveyForm.form.value.surveyName;
-    survey.Topic = this.composeSurveyForm.form.value.topic;
+    let topicValue = this.composeSurveyForm.form.value.topic;
+    if(topicValue === 'Other') {
+      survey.Topic = this.composeSurveyForm.form.value.newtopicInput;
+    } else {
+      survey.Topic = this.composeSurveyForm.form.value.topic;
+    }
     let deliveryDateValue = this.composeSurveyForm.form.value.deliveryDateTime;
     if(deliveryDateValue == 'Send Now') {
       survey.DeliveryDateTime = 'Now';
@@ -70,6 +77,7 @@ export class ComposeSurveyComponent implements OnInit {
     this.composeSurveyForm.form.patchValue({ 'deliveryDateTime':'Send Now' });
     this.questions = [];
     this.composeSurveyForm.form.patchValue({ 'surveyQuestionType':'Text' });
+    this.composeSurveyForm.form.patchValue({ 'topic': this.topics[0] });
     this.questionInput.nativeElement.value = '';
     this.error = '';
     this.questionTemplateValid = true;
@@ -153,6 +161,13 @@ export class ComposeSurveyComponent implements OnInit {
         (users: User[]) => this.users = users,
         (error) => console.log(error)
       );
+  }
+
+  private fetchTopicNames() {
+    this.surveyService.getTopicNames().subscribe(
+      (data: string[]) => this.topics = data,
+      (error) => console.log(error)
+    );
   }
 
 }

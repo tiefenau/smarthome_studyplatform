@@ -1,11 +1,4 @@
-<!--<div *ngIf="router.url == '/message-center'">
-    <div class="col-md-12 text-right">
-        <button type="button" class="btn btn-primary" (click)="navigateToComposeMessage()">Compose Message</button>
-    </div>
-    <app-message-list></app-message-list>
-</div>-->
-
-<div *ngIf="router.url == '/message-center'">
+<div *ngIf="router.url == '/message-center' || router.url === queryPath">
     <div class="card">
         <div class="card-header">
             <div class="col-md-12 text-right">
@@ -14,7 +7,7 @@
             </div>
         </div>
         <div class="card-body">
-            <app-message-list></app-message-list>
+            <app-message-list [topic]="queryParam"></app-message-list>
         </div>
     </div>
 </div>

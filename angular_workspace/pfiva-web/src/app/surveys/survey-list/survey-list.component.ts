@@ -49,13 +49,24 @@ export class SurveyListComponent implements OnInit {
     this.surveyService.cancelScheduledSurvey(surveyId).subscribe(
         (status: boolean) => {
           if(status) {
-            this.surveyService.getSurveys().subscribe(
-              (surveys: Survey[]) => {
-                this.dataSource = new SurveyDataSource(this.paginator, surveys);
-                   this.changeDetectorRefs.detectChanges();
-              },
-              (error) => console.log(error)
-            );
+            if(this.topic === undefined) {
+              this.surveyService.getSurveys().subscribe(
+                (surveys: Survey[]) => {
+                  this.dataSource = new SurveyDataSource(this.paginator, surveys);
+                     this.changeDetectorRefs.detectChanges();
+                },
+                (error) => console.log(error)
+              );
+            } else {
+              this.surveyService.getSurveysByTopic(this.topic).subscribe(
+                (surveys: Survey[]) => {
+                  this.dataSource = new SurveyDataSource(this.paginator, surveys);
+                  this.changeDetectorRefs.detectChanges();
+                },
+                (error) => console.log(error)
+              );
+            }
+            
           }
         }
       );

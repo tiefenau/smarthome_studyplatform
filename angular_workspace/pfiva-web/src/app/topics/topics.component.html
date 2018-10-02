@@ -28,6 +28,19 @@
                         Surveys
                     </div>
                 </li>
+                <li>
+                    <div>
+                        <a routerLink="/message-center"
+                        [queryParams]="{topic:topic.topicname}" 
+                        class="survey-count">
+                                {{topic?.messageCount}}
+                        </a>
+                            <!--<span class="survey-count">
+                                {{topic?.surveyCount}}
+                            </span>-->
+                        Messages
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
