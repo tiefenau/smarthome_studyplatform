@@ -7,6 +7,7 @@ export class Message {
 	private deliveryDateTime: string;
 	private messageStatus: string;
 	private users: User[];
+	private topic: string;
 
 	public get Id(): number {
 		return this.id;
@@ -37,5 +38,11 @@ export class Message {
 	}
 	public set Users(value: User[]) {
 		this.users = value;
+	}
+	public get Topic(): string {
+		return this.topic;
+	}
+	public set Topic(value: string) {
+		this.topic = value;
 	}
 }

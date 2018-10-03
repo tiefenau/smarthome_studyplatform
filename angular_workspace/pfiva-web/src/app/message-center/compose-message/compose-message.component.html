@@ -13,6 +13,30 @@
           </div>
 
           <div class="form-group row">
+            <label for="topic" class="col-sm-2 col-form-label">Topic</label>
+            <div class="col-sm-2">
+              <select id="topic" name="topic" 
+                class="btn btn-secondary dropdown-toggle" 
+                [(ngModel)]="topic" required>
+                <option [value]="topic"
+                  *ngFor="let topic of topics; let i = index">{{topic}}</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="col-sm-6" *ngIf="topic === 'Other'">
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="newtopicInput">Topic Name :</label>
+                </div>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" 
+                    id="newtopicInput" name="newtopicInput" required ngModel>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
             <label for="deliveryDateTime" class="col-sm-2 col-form-label">Delivery Date</label>
             <div class="col-sm-2">
               <select id="deliveryDateTime" name="deliveryDateTime" 

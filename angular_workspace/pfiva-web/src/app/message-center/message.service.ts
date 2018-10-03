@@ -19,6 +19,16 @@ export class MessageService {
         ));
     }
 
+    getTopicNames() {
+        let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_GET_TOPIC_NAMES;
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data;
+            }
+        ));
+    }
+
     sendUserMessage(message: Message) {
         let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_SEND_MESSAGE;
         this.http.post(url, message).subscribe(
@@ -28,6 +38,17 @@ export class MessageService {
 
     getMessages() {
         let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_MESSAGES;
+        return this.http.get(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data;
+            }
+        ));
+    }
+
+    getMessagesByTopic(topic: string) {
+        let url: string = Constants.PFIVA_BASE_URL 
+            + Constants.PFIVA_MESSAGES + '?topic=' + topic;
         return this.http.get(url).pipe(map(
             (response: Response) => {
                 const data = response.json();

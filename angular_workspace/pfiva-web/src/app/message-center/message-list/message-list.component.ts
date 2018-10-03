@@ -15,7 +15,7 @@ export class MessageListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @Input() topic: string;
   dataSource: MessageDataTableDataSource;
-  displayedColumns = ['id', 'messageText', 'deliveryDate', 'status', 'action'];
+  displayedColumns = ['id', 'messageText', 'deliveryDate', 'topic', 'status', 'action'];
   
   constructor(private messageService: MessageService,
     private changeDetectorRefs: ChangeDetectorRef,
@@ -23,25 +23,44 @@ export class MessageListComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.messageService.getMessages().subscribe(
-      (messages: Message[]) => {
-        this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
-      },
-      (error) => console.log(error)
-    );
+    if(this.topic === undefined) {
+      this.messageService.getMessages().subscribe(
+        (messages: Message[]) => {
+          this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
+        },
+        (error) => console.log(error)
+      );
+    } else {
+      this.messageService.getMessagesByTopic(this.topic).subscribe(
+        (messages: Message[]) => {
+          this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
+        },
+        (error) => console.log(error)
+      );
+    }
   }
 
   cancelScheduledMessage(messageId: number) {
     this.messageService.cancelScheduledMessage(messageId).subscribe(
         (status: boolean) => {
           if(status) {
-            this.messageService.getMessages().subscribe(
-              (messages: Message[]) => {
-                this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
-                   this.changeDetectorRefs.detectChanges();
-              },
-              (error) => console.log(error)
-            );
+            if(this.topic === undefined) {
+              this.messageService.getMessages().subscribe(
+                (messages: Message[]) => {
+                  this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
+                     this.changeDetectorRefs.detectChanges();
+                },
+                (error) => console.log(error)
+              );
+            } else {
+              this.messageService.getMessagesByTopic(this.topic).subscribe(
+                (messages: Message[]) => {
+                  this.dataSource = new MessageDataTableDataSource(this.paginator, messages);
+                  this.changeDetectorRefs.detectChanges();
+                },
+                (error) => console.log(error)
+              );
+            }
           }
         }
       );

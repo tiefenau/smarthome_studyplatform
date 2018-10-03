@@ -47,3 +47,12 @@
     font-size: 18px;
     font-weight: 300;
 }
+
+.deleteTopicButton {
+    background-color: transparent;
+    border-style: none;
+    border-width: 0px;
+}
+.deleteTopicButton :hover {
+    cursor: pointer;
+}

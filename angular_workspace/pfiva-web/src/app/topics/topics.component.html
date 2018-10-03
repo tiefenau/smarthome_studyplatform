@@ -22,9 +22,6 @@
                         class="survey-count">
                                 {{topic?.surveyCount}}
                         </a>
-                            <!--<span class="survey-count">
-                                {{topic?.surveyCount}}
-                            </span>-->
                         Surveys
                     </div>
                 </li>
@@ -35,10 +32,15 @@
                         class="survey-count">
                                 {{topic?.messageCount}}
                         </a>
-                            <!--<span class="survey-count">
-                                {{topic?.surveyCount}}
-                            </span>-->
                         Messages
+                    </div>
+                </li>
+                <li>
+                    <div class="survey-count">
+                        <button class="deleteTopicButton" 
+                            (click)="deleteTopic(topic)">
+                            <img src="/assets/trash-3x.png" alt="delete question">
+                        </button>
                     </div>
                 </li>
             </ul>

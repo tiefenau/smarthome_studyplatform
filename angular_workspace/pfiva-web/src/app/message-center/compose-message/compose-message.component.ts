@@ -14,6 +14,7 @@ export class ComposeMessageComponent implements OnInit {
   @ViewChild('messageData') composeMessageForm: NgForm;
   deliveryDateTime = 'Send Now';
   users: User[];
+  topics: string[];
 
   constructor(private messageService: MessageService) { 
     
@@ -21,6 +22,7 @@ export class ComposeMessageComponent implements OnInit {
 
   ngOnInit() {
     this.fetchUsers();
+    this.fetchTopicNames();
   }
 
   onSubmit() {
@@ -28,6 +30,7 @@ export class ComposeMessageComponent implements OnInit {
 
     this.composeMessageForm.reset();
     this.composeMessageForm.form.patchValue({ 'deliveryDateTime':'Send Now' });
+    this.composeMessageForm.form.patchValue({ 'topic': this.topics[0] });
   }
 
   private fetchUsers() {
@@ -38,9 +41,22 @@ export class ComposeMessageComponent implements OnInit {
       );
   }
 
+  private fetchTopicNames() {
+    this.messageService.getTopicNames().subscribe(
+      (data: string[]) => this.topics = data,
+      (error) => console.log(error)
+    );
+  }
+
   private processMessage() {
     let message = new Message();
     message.MessageText = this.composeMessageForm.form.value.messageText;
+    let topicValue = this.composeMessageForm.form.value.topic;
+    if(topicValue === 'Other') {
+      message.Topic = this.composeMessageForm.form.value.newtopicInput;
+    } else {
+      message.Topic = this.composeMessageForm.form.value.topic;
+    }
     let deliveryDateValue = this.composeMessageForm.form.value.deliveryDateTime;
     if(deliveryDateValue == 'Send Now') {
       message.DeliveryDateTime = 'Now';
