@@ -13,6 +13,7 @@ public class Message implements Serializable {
 	private String messageText;
 	private String deliveryDateTime;
 	private MessageStatus messageStatus;
+	private String topic;
 	private List<User> users;
 	
 	public enum MessageStatus {
@@ -43,6 +44,12 @@ public class Message implements Serializable {
 	public void setMessageStatus(MessageStatus messageStatus) {
 		this.messageStatus = messageStatus;
 	}
+	public String getTopic() {
+		return topic;
+	}
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
 	public List<User> getUsers() {
 		return users;
 	}
@@ -52,6 +59,6 @@ public class Message implements Serializable {
 	@Override
 	public String toString() {
 		return "Message [id=" + id + ", messageText=" + messageText + ", deliveryDateTime=" + deliveryDateTime
-				+ ", messageStatus=" + messageStatus + ", users=" + users + "]";
+				+ ", messageStatus=" + messageStatus + ", topic=" + topic + ", users=" + users + "]";
 	}
 }

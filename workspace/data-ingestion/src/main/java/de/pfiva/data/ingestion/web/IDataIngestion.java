@@ -40,7 +40,7 @@ public interface IDataIngestion {
 	
 	public boolean cancelScheduledMessage(int messageId);
 	
-	public List<Message> getMessages();
+	public List<Message> getMessages(String topic);
 	
 	public MessageResponseData getCompleteMessageData(int messageId);
 	

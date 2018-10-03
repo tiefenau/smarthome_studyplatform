@@ -243,7 +243,7 @@ public class NLUDataIngestionDBService {
 		});
 	}
 
-	public Tuple<Integer, Boolean> saveMessageToDB(Message message) {
+	public Tuple<Integer, Boolean> saveMessageToDB(Message message, int topicId) {
 		// 1. Insert into messages_tbl
 		// 2. Insert into message_users_tbl
 		KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -258,6 +258,7 @@ public class NLUDataIngestionDBService {
 				ps.setString(1, message.getMessageText());
 				ps.setString(2, message.getMessageStatus().toString());
 				ps.setString(3, message.getDeliveryDateTime());
+				ps.setInt(4, topicId);
 				return ps;
 			}
 		}, keyHolder);
@@ -302,6 +303,7 @@ public class NLUDataIngestionDBService {
 				message.setMessageText(rs.getString("message_text"));
 				message.setMessageStatus(MessageStatus.valueOf(rs.getString("status")));
 				message.setDeliveryDateTime(rs.getString("delivery_date"));
+				message.setTopic(rs.getString("topic_name"));
 				return message;
 			}
 			
@@ -319,6 +321,24 @@ public class NLUDataIngestionDBService {
 				message.setMessageText(rs.getString("message_text"));
 				message.setMessageStatus(MessageStatus.valueOf(rs.getString("status")));
 				message.setDeliveryDateTime(rs.getString("delivery_date"));
+				message.setTopic(rs.getString("topic_name"));
+				return message;
+			}
+		});
+	}
+	
+	public List<Message> getMessagesByTopic(String topic) {
+		return jdbcTemplate.query(DataIngestionDBQueries.GET_MESSAGES_BY_TOPIC,
+				new Object[] {topic}, new RowMapper<Message>() {
+
+			@Override
+			public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Message message = new Message();
+				message.setId(rs.getInt("message_id"));
+				message.setMessageText(rs.getString("message_text"));
+				message.setMessageStatus(MessageStatus.valueOf(rs.getString("status")));
+				message.setDeliveryDateTime(rs.getString("delivery_date"));
+				message.setTopic(rs.getString("topic_name"));
 				return message;
 			}
 		});
@@ -735,7 +755,12 @@ public class NLUDataIngestionDBService {
 		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_SURVEY_COUNT_BY_TOPIC_ID,
 				Integer.class, topicId);
 	}
-
+	
+	public int getMessageCount(int topicId) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_MESSAGE_COUNT_BY_TOPIC_ID,
+				Integer.class, topicId);
+	}
+	
 	public List<String> getTopicNames() {
 		return jdbcTemplate.queryForList(DataIngestionDBQueries.GET_TOPIC_NAMES, String.class);
 	}

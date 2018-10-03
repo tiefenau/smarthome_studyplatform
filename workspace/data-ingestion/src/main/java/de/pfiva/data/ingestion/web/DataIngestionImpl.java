@@ -145,8 +145,12 @@ public class DataIngestionImpl implements IDataIngestion {
 
 	@Override
 	@RequestMapping(value = "/messages", method = RequestMethod.GET)
-	public List<Message> getMessages() {
-		return dataIngestionService.getMessages();
+	public List<Message> getMessages(@RequestParam(name="topic", required=false) String topic) {
+		if(topic == null || topic.isEmpty()) {
+			return dataIngestionService.getMessages();
+		} else {
+			return dataIngestionService.getMessagesByTopic(topic);
+		}
 	}
 	
 	@Override

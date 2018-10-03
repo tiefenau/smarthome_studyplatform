@@ -178,6 +178,8 @@ public class NLUDataIngestionService {
 		// 1. Save message to db
 		// 2. Based on delivery date either send message or schedule a message to be sent later
 		if(message != null) {
+			int topicId = createTopicIfNotExists(message.getTopic());
+			
 			// Delivery date would either be Now or an actual timestamp
 			String deliveryDate = message.getDeliveryDateTime();
 			if(deliveryDate != null && !deliveryDate.trim().isEmpty()) {
@@ -192,7 +194,7 @@ public class NLUDataIngestionService {
 					message.setMessageStatus(MessageStatus.PENDING);
 				}
 				
-				Tuple<Integer, Boolean> status = dbService.saveMessageToDB(message);
+				Tuple<Integer, Boolean> status = dbService.saveMessageToDB(message, topicId);
 //				boolean status = true;
 				if(status.getY()) {
 					message.setId(status.getX());
@@ -250,6 +252,15 @@ public class NLUDataIngestionService {
 		// 2. Fetch all users for a message from db
 		// 3. Fetch response from users
 		List<Message> messages = dbService.getMessages();
+		for(Message message : messages) {
+			List<User> users = dbService.getUsersByMessageId(message.getId());
+			message.setUsers(users);
+		}
+		return messages;
+	}
+	
+	public List<Message> getMessagesByTopic(String topic) {
+		List<Message> messages = dbService.getMessagesByTopic(topic);
 		for(Message message : messages) {
 			List<User> users = dbService.getUsersByMessageId(message.getId());
 			message.setUsers(users);
@@ -453,6 +464,9 @@ public class NLUDataIngestionService {
 		for(Topic topic : topics) {
 			int surveyCount = dbService.getSurveyCount(topic.getId());
 			topic.setSurveyCount(surveyCount);
+			
+			int messageCount = dbService.getMessageCount(topic.getId());
+			topic.setMessageCount(messageCount);
 		}
 		return topics;
 	}
