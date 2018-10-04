@@ -22,6 +22,17 @@ export class TopicService {
         ));
     }
 
+    deleteTopicWithAssociatedData(topicId: number) {
+        let url: string = Constants.PFIVA_BASE_URL
+             + Constants.PFIVA_GET_TOPICS + '/' + topicId;
+        return this.http.delete(url).pipe(map(
+            (response: Response) => {
+                const data = response.json();
+                return data
+            }
+        ));
+    }
+
     /*getTopics() {
         let promise = new Promise((resolve, reject) => {
             let url: string = Constants.PFIVA_BASE_URL + Constants.PFIVA_GET_TOPICS;

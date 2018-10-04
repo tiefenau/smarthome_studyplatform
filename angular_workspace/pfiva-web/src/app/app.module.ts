@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,6 +29,8 @@ import { SurveyDetailComponent } from './surveys/survey-detail/survey-detail.com
 import { MessageDetailComponent } from './message-center/message-detail/message-detail.component';
 import { TopicsComponent } from './topics/topics.component';
 import { TopicService } from './topics/topic.service';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { TopicDeleteModalComponent } from './topics/topic-delete-modal/topic-delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { TopicService } from './topics/topic.service';
     ComposeSurveyComponent,
     SurveyDetailComponent,
     MessageDetailComponent,
+    TopicDeleteModalComponent,
     TopicsComponent
   ],
   imports: [
@@ -61,7 +63,8 @@ import { TopicService } from './topics/topic.service';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModalModule
   ],
   providers: [
     PfivaDataService, 
@@ -70,6 +73,7 @@ import { TopicService } from './topics/topic.service';
     SurveyService,
     TopicService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [TopicDeleteModalComponent]
 })
 export class AppModule { }
