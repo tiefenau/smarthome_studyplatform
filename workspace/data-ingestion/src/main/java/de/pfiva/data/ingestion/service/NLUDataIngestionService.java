@@ -475,6 +475,17 @@ public class NLUDataIngestionService {
 		return dbService.getTopicNames();
 	}
 
+	public boolean deleteTopicWithAssociatedData(int topicId) {
+		// 1. Delete surveys from survey_tbl
+		// 2. Delete messages from messages_tbl
+		// 3. Delete topic from topic_tbl
+		
+		boolean status = dbService.deleteSurveys(topicId);
+		status = dbService.deleteMessages(topicId);
+		status = dbService.deleteTopic(topicId);
+		return status;
+	}
+
 	// On receiving data, check for completion, if data
 	// is complete push to database.
 	/*private void ingestData(InboundQueryData inboundFileData) {

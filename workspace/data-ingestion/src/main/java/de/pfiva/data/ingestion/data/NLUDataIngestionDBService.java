@@ -764,4 +764,33 @@ public class NLUDataIngestionDBService {
 	public List<String> getTopicNames() {
 		return jdbcTemplate.queryForList(DataIngestionDBQueries.GET_TOPIC_NAMES, String.class);
 	}
+
+	public boolean deleteSurveys(int topicId) {
+		// TODO delete from survey_users_tbl, survey_response_tbl, questions_tbl, options_tbl
+		int rows = jdbcTemplate.update(DataIngestionDBQueries.DELETE_SURVEYS, topicId);
+		if(rows > 0) {
+			logger.info("Deleted surveys with topic id [" + topicId + "]");
+			return true;
+		}
+		return false;
+	}
+
+	public boolean deleteMessages(int topicId) {
+		// TODO delete from message_response_tbl, message_users_tbl
+		int rows = jdbcTemplate.update(DataIngestionDBQueries.DELETE_MESSAGES, topicId);
+		if(rows > 0) {
+			logger.info("Deleted messages with topic id [" + topicId + "]");
+			return true;
+		}
+		return false;
+	}
+
+	public boolean deleteTopic(int topicId) {
+		int rows = jdbcTemplate.update(DataIngestionDBQueries.DELETE_TOPIC, topicId);
+		if(rows > 0) {
+			logger.info("Deleted topic with id [" + topicId + "]");
+			return true;
+		}
+		return false;
+	}
 }

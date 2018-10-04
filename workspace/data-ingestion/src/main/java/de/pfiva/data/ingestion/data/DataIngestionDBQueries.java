@@ -155,4 +155,10 @@ public interface DataIngestionDBQueries {
 
 	// Delete queries ------------------------------------------------------------------------------
 	public static final String DELETE_USER = "DELETE from user_tbl where user_id = ?";
+	
+	public static final String DELETE_SURVEYS = "DELETE from survey_tbl where topic_id = ?";
+	
+	public static final String DELETE_MESSAGES = "DELETE from messages_tbl where topic_id = ?";
+	
+	public static final String DELETE_TOPIC = "DELETE from topic_tbl where topic_id = ?";
 }

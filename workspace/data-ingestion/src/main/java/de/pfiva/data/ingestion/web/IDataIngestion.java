@@ -63,4 +63,6 @@ public interface IDataIngestion {
 	public List<Topic> getTopics();
 	
 	public List<String> getTopicNames();
+	
+	public boolean deleteTopicWithAssociatedData(int topicId);
 }

@@ -174,7 +174,7 @@ public class DataIngestionImpl implements IDataIngestion {
 	public boolean deleteUser(@PathVariable int userId) {
 		return dataIngestionService.deleteUser(userId);
 	}
-
+	
 	@Override
 	@RequestMapping(value = "/config-data", method = RequestMethod.GET)
 	public List<PfivaConfigData> getConfigurationValues() {
@@ -242,5 +242,11 @@ public class DataIngestionImpl implements IDataIngestion {
 	@RequestMapping(value = "/topics-name", method = RequestMethod.GET)
 	public List<String> getTopicNames() {
 		return dataIngestionService.getTopicNames();
+	}
+	
+	@Override
+	@RequestMapping(value = "/topics/{topicId}", method = RequestMethod.DELETE)
+	public boolean deleteTopicWithAssociatedData(@PathVariable int topicId) {
+		return dataIngestionService.deleteTopicWithAssociatedData(topicId);
 	}
 }
