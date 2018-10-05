@@ -123,15 +123,35 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
 
-        <TextView
-            android:id="@+id/question_number"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:paddingBottom="20dp"
-            android:text="@string/default_question_number" />
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/question_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/default_question_number" />
+
+            <TextView
+                android:id="@+id/questions_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="/" />
+
+            <TextView
+                android:id="@+id/total_questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/default_question_number" />
+        </LinearLayout>
+
 
         <ImageButton
             android:id="@+id/next_question"

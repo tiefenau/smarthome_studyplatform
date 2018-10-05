@@ -24,6 +24,7 @@ import de.pfiva.data.model.notification.SurveyData;
 import de.pfiva.data.model.survey.Option;
 import de.pfiva.data.model.survey.Question;
 import de.pfiva.data.model.survey.Response;
+import de.pfiva.data.model.survey.Survey;
 import de.pfiva.mobile.voiceassistant.Constants;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.network.RetrofitClientInstance;
@@ -45,6 +46,8 @@ public class SurveyActivity extends AppCompatActivity {
     private LinearLayout checkboxOptionContainer;
     private LinearLayout confirmationContainer;
     private TextView questionNumber;
+    private TextView totalQuestions;
+    private TextView questionsSeparator;
     private TextView surveyQuestion;
 
     private SurveyData surveyData;
@@ -96,6 +99,12 @@ public class SurveyActivity extends AppCompatActivity {
 
         questionNumber = (TextView) findViewById(R.id.question_number);
         questionNumber.setVisibility(View.GONE);
+
+        questionsSeparator = (TextView) findViewById(R.id.questions_separator);
+        questionsSeparator.setVisibility(View.GONE);
+
+        totalQuestions = (TextView) findViewById(R.id.total_questions);
+        totalQuestions.setVisibility(View.GONE);
 
         previousQuestion = (ImageButton) findViewById(R.id.previous_question);
         previousQuestion.setVisibility(View.GONE);
@@ -179,6 +188,10 @@ public class SurveyActivity extends AppCompatActivity {
             questionNumber.setVisibility(View.VISIBLE);
             questionNumber.setText(String.valueOf(questionCounter + 1));
 
+            questionsSeparator.setVisibility(View.VISIBLE);
+            totalQuestions.setVisibility(View.VISIBLE);
+            totalQuestions.setText(String.valueOf(questionsSize));
+
             surveyQuestion.setVisibility(View.VISIBLE);
             final Question question = questions.get(questionCounter);
             surveyQuestion.setText(question.getQuestion());
@@ -251,6 +264,8 @@ public class SurveyActivity extends AppCompatActivity {
 
         startSurveyButton.setVisibility(View.GONE);
         questionNumber.setVisibility(View.GONE);
+        questionsSeparator.setVisibility(View.GONE);
+        totalQuestions.setVisibility(View.GONE);
         nextQuestion.setVisibility(View.GONE);
         previousQuestion.setVisibility(View.GONE);
 
