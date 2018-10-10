@@ -14,7 +14,7 @@ export class NluDataTableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource: NluDataTableDataSource;
   displayedColumns = ['id', 'input', 'hotword', 'intent',
-   'timestamp', 'feedbackQuery', 'feedbackUserResponse', 'feedbackTimestamp'];
+   'timestamp', 'user', 'feedbackUserResponse'];
 
   constructor(private pfivaDataService: PfivaDataService) {
     

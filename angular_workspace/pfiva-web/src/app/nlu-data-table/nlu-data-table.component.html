@@ -8,7 +8,7 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="input">
-      <th mat-header-cell *matHeaderCellDef mat-header>User Query</th>
+      <th mat-header-cell *matHeaderCellDef mat-header>Query</th>
       <td mat-cell *matCellDef="let row">{{row.snipsOutput.input}}</td>
     </ng-container>
 
@@ -34,6 +34,12 @@
     <ng-container matColumnDef="feedbackQuery">
       <th mat-header-cell *matHeaderCellDef mat-header>Feedback Query</th>
       <td mat-cell *matCellDef="let row">{{row.feedback.feedbackQuery}}</td>
+    </ng-container>
+
+    <!-- User -->
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef mat-header>User</th>
+      <td mat-cell *matCellDef="let row">{{row.user.username}}</td>
     </ng-container>
 
     <!-- Feedback User Response Column -->
