@@ -71,7 +71,7 @@ public class NLUDataIngestionService {
 		SnipsOutput snipsOutput = fileExtractor.extractInboundFileData(inputFile);
 		if(snipsOutput != null) {
 			snipsOutput.setHotword(properties.getHotword());
-			dbService.ingestDataToDB(snipsOutput);
+			dbService.ingestDataToDB(snipsOutput, 0);
 		}
 	}
 	
@@ -95,11 +95,13 @@ public class NLUDataIngestionService {
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_TIME_FORMAT);
 				snipsOutput.setTimestamp(LocalDateTime.now().format(formatter));
 				
+				int userId = getUserId(username);
 				
 				if(queryTuple.getHotword() != null) {
 					snipsOutput.setHotword(queryTuple.getHotword());
 					// Push data to db layer
-					int queryId = dbService.ingestDataToDB(snipsOutput);
+					
+					int queryId = dbService.ingestDataToDB(snipsOutput, userId);
 
 
 					// Send notification
@@ -113,7 +115,7 @@ public class NLUDataIngestionService {
 							.get("pfiva_capture_queries_without_hotword"))) {
 						
 						// Push data to db layer
-						int queryId = dbService.ingestDataToDB(snipsOutput);
+						int queryId = dbService.ingestDataToDB(snipsOutput, userId);
 
 
 						// Send notification
@@ -125,15 +127,41 @@ public class NLUDataIngestionService {
 			}				
 		}
 	}
+	
+	private int getUserId(String username) {
+		int userId = 0;
+		if(username != null && !username.isEmpty()) {
+			userId = dbService.getUserId(username);			
+		}
+		return userId;
+	}
 
 	public void saveClientRegistrationToken(String clientName, String token) {
 		dbService.saveClientRegistrationTokenToDB(clientName, token);
 	}
 
 	public List<NLUData> getCompleteNLUData() {
-		List<NLUData> nluData = dbService.getQueryIntentFeedbackData();
+		List<NLUData> nluData = dbService.getQueryIntentFeedbackData(0);
 		
 		// NLUData is incomplete without slots. Therefore fetch slots from slots table
+		fetchSlotsData(nluData);
+		
+		logger.info("Total user queries fetched [" + nluData.size() + "].");
+		return nluData;
+	}
+	
+	public List<NLUData> getCompleteNLUDataByUser(String deviceId) {
+		int userId = dbService.getUserByDeviceId(deviceId);
+		List<NLUData> nluData = dbService.getQueryIntentFeedbackData(userId);
+		
+		// NLUData is incomplete without slots. Therefore fetch slots from slots table
+		fetchSlotsData(nluData);
+		
+		logger.info("Total user queries fetched [" + nluData.size() + "].");
+		return nluData;
+	}
+	
+	private void fetchSlotsData(List<NLUData> nluData) {
 		for(NLUData data : nluData) {
 			if(data.getSnipsOutput() != null) {
 				if(data.getSnipsOutput().getIntent() != null) {
@@ -148,9 +176,6 @@ public class NLUDataIngestionService {
 				}
 			}
 		}
-		
-		logger.info("Total user queries fetched [" + nluData.size() + "].");
-		return nluData;
 	}
 
 	public boolean saveFeedbackResponse(Feedback feedback) {

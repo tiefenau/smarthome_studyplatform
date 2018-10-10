@@ -4,7 +4,7 @@ public interface DataIngestionDBQueries {
 
 	// Insert queries ------------------------------------------------------------------------------
 	public static final String INSERT_QUERY_TBL = "INSERT INTO query_tbl(user_query,"
-			+ " hotword, query_timestamp, file_location) VALUES(?,?,?,?)";
+			+ " hotword, query_timestamp, file_location, user_id) VALUES(?,?,?,?,?)";
 	
 	public static final String INSERT_INTENT_TBL = "INSERT INTO intent_tbl(intent_name,"
 			+ " query_id) VALUES(?,?)";
@@ -57,11 +57,24 @@ public interface DataIngestionDBQueries {
 	// Get queries ---------------------------------------------------------------------------------
 	public static final String GET_QUERY_INTENT_FEEDBACK_DATA = "SELECT q.query_id, q.user_query,"
 			+ " q.hotword, q.query_timestamp, q.file_location, i.intent_id, i.intent_name,"
-			+ " f.feedback_id, f.feedback_query, f.user_response, f.feedback_timestamp"
+			+ " f.feedback_id, f.feedback_query, f.user_response, f.feedback_timestamp,"
+			+ " u.user_id, u.username, u.device_id"
 			+ " from query_tbl as q LEFT OUTER JOIN intent_tbl as i"
 			+ " ON q.query_id = i.query_id"
 			+ " LEFT OUTER JOIN feedback_tbl as f"
-			+ " ON q.query_id = f.query_id";
+			+ " ON q.query_id = f.query_id"
+			+ " INNER JOIN user_tbl u ON q.user_id = u.user_id";
+	
+	public static final String GET_QUERY_INTENT_FEEDBACK_DATA_BY_USER = "SELECT q.query_id, q.user_query,"
+			+ " q.hotword, q.query_timestamp, q.file_location, i.intent_id, i.intent_name,"
+			+ " f.feedback_id, f.feedback_query, f.user_response, f.feedback_timestamp,"
+			+ " u.user_id, u.username, u.device_id"
+			+ " from query_tbl as q LEFT OUTER JOIN intent_tbl as i"
+			+ " ON q.query_id = i.query_id"
+			+ " LEFT OUTER JOIN feedback_tbl as f"
+			+ " ON q.query_id = f.query_id"
+			+ " INNER JOIN user_tbl u"
+			+ " ON q.user_id = u.user_id AND u.user_id = ?";
 
 	public static final String GET_SLOTS_BY_INTENT_ID = "select slot_name, slot_value"
 			+ " from slots_tbl where intent_id = ?";
@@ -141,6 +154,10 @@ public interface DataIngestionDBQueries {
 			+ " from messages_tbl where topic_id = ?";
 	
 	public static final String GET_TOPIC_NAMES = "SELECT topic_name from topic_tbl";
+	
+	public static final String GET_USERID_BY_USERNAME = "SELECT user_id from user_tbl where username = ?";
+	
+	public static final String GET_USERID_BY_DEVICEID = "SELECT user_id from user_tbl where device_id = ?";
 	
 	// Update queries ------------------------------------------------------------------------------
 	public static final String UPDATE_MESSAGE_STATUS = "UPDATE messages_tbl SET status = ? where message_id = ?";

@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
+import de.pfiva.data.model.User;
 import de.pfiva.data.model.snips.Intent;
 import de.pfiva.data.model.snips.SnipsOutput;
 
@@ -40,6 +41,13 @@ public class NLUDataRowMapper implements RowMapper<NLUData> {
 		feedback.setTimestamp(getTimestampInString(rs.getTimestamp("feedback_timestamp")));
 		
 		nluData.setFeedback(feedback);
+		
+		User user = new User();
+		user.setId(rs.getInt("user_id"));
+		user.setUsername(rs.getString("username"));
+		user.setDeviceId(rs.getString("device_id"));
+		
+		nluData.setUser(user);
 		
 		return nluData;
 	}

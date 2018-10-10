@@ -49,14 +49,14 @@ public class NLUDataIngestionDBService {
 	
 	@Autowired JdbcTemplate jdbcTemplate;
 	
-	public int ingestDataToDB(SnipsOutput snipsOutput) {
+	public int ingestDataToDB(SnipsOutput snipsOutput, int userId) {
 		if(snipsOutput == null) {
 			logger.info("Nothing to push in database.");
 			return 0;
 		}
 		
 		// Insert in query_tbl
-		int queryTableRowId = insertIntoQueryTable(snipsOutput);
+		int queryTableRowId = insertIntoQueryTable(snipsOutput, userId);
 		
 		
 		// Insert in intent_tbl
@@ -73,7 +73,7 @@ public class NLUDataIngestionDBService {
 		return queryTableRowId;
 	}
 
-	private int insertIntoQueryTable(SnipsOutput snipsOutput) {
+	private int insertIntoQueryTable(SnipsOutput snipsOutput, int userId) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			
@@ -93,6 +93,7 @@ public class NLUDataIngestionDBService {
 					
 				}
 				ps.setString(4, completeFileLocation);
+				ps.setInt(5, userId);
 				
 				return ps;
 			}
@@ -179,9 +180,15 @@ public class NLUDataIngestionDBService {
 		}
 	}
 
-	public List<NLUData> getQueryIntentFeedbackData() {
-		logger.info("Fetching Query, Intent, Feedback data");
-		return jdbcTemplate.query(DataIngestionDBQueries.GET_QUERY_INTENT_FEEDBACK_DATA, new NLUDataRowMapper());
+	public List<NLUData> getQueryIntentFeedbackData(int userId) {
+		if(userId == 0) {
+			logger.info("Fetching all queries, intent, feedback data");
+			return jdbcTemplate.query(DataIngestionDBQueries.GET_QUERY_INTENT_FEEDBACK_DATA, new NLUDataRowMapper());
+		} else {
+			logger.info("Fetching all queries, intent, feedback data for user id [" + userId + "]");
+			return jdbcTemplate.query(DataIngestionDBQueries.GET_QUERY_INTENT_FEEDBACK_DATA_BY_USER,
+					new Object[] {userId}, new NLUDataRowMapper());
+		}
 	}
 
 	public List<Slot> getSlotsForIntent(int intentId) {
@@ -792,5 +799,15 @@ public class NLUDataIngestionDBService {
 			return true;
 		}
 		return false;
+	}
+
+	public int getUserId(String username) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_USERID_BY_USERNAME,
+				Integer.class, username);
+	}
+	
+	public int getUserByDeviceId(String deviceId) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_USERID_BY_DEVICEID,
+				Integer.class, deviceId);
 	}
 }

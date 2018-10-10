@@ -26,7 +26,7 @@ public interface IDataIngestion {
 	
 	public void saveClientRegistrationToken(ClientToken clientToken);
 	
-	public List<NLUData> getCompleteNLUData();
+	public List<NLUData> getCompleteNLUData(String deviceId);
 	
 	public ResponseEntity<Boolean> saveFeedbackResponse(Feedback feedback);
 	

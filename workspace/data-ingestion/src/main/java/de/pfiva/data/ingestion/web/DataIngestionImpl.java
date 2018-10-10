@@ -108,8 +108,13 @@ public class DataIngestionImpl implements IDataIngestion {
 	
 	@Override
 	@RequestMapping(value = "/nlu-data", method = RequestMethod.GET)
-	public List<NLUData> getCompleteNLUData() {
-		return dataIngestionService.getCompleteNLUData();
+	public List<NLUData> getCompleteNLUData(@RequestParam(name="deviceId",
+		required=false) String deviceId) {
+		if(deviceId == null || deviceId.isEmpty()) {
+			return dataIngestionService.getCompleteNLUData();
+		} else {
+			return dataIngestionService.getCompleteNLUDataByUser(deviceId);
+		}
 	}
 
 	@Override
