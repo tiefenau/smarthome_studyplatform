@@ -23,7 +23,18 @@
     <string name="default_message">Default Message</string>
     <string name="response">Response</string>
     <string name="instructions_title">Instructions</string>
-    <string name="instructions">Here goes instructions for PFIVA.</string>
+    <string name="start_instructions">
+        This survey is being conducted to analyze privacy concerns in intelligent voice assistants.
+    </string>
+    <string name="middle_instructions">
+        The questions could be of type :\n
+        &#8226; Text \n
+        &#8226; Single Choice \n
+        &#8226; Multiple Choice \n
+    </string>
+    <string name="end_instructions">
+        By starting the survey you allow us to store your responses for study purpose.
+    </string>
     <string name="start_survey">Start</string>
     <string name="pfiva_survey">PFIVA Survey</string>
     <string name="default_question_number">1</string>
@@ -31,6 +42,6 @@
     <string name="survey_confirmation">
         Thank you for taking the time to complete this survey.
         We truly value the information you have provided.
-        Your responses will contribute to our analyses of privacy concerns in intelligent voice assistants.
+        Your responses will contribute to our analysis of privacy concerns in intelligent voice assistants.
     </string>
 </resources>

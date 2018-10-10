@@ -12,11 +12,12 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface NLUDataService {
 
     @GET(Constants.DATA_INGESTION_NLU_DATA_ENDPOINT)
-    public Call<List<NLUData>> getNLUData();
+    public Call<List<NLUData>> getNLUData(@Query("deviceId") String deviceId);
 
     @POST(Constants.FEEDBACK_RESPONSE_ENDPOINT)
     public Call<Boolean> saveFeedbackResponse(@Body Feedback feedback);

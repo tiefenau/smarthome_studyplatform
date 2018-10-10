@@ -22,6 +22,7 @@ import de.pfiva.data.model.NLUData;
 import de.pfiva.mobile.voiceassistant.R;
 import de.pfiva.mobile.voiceassistant.adapters.NLUAdapter;
 import de.pfiva.mobile.voiceassistant.network.RetrofitClientInstance;
+import de.pfiva.mobile.voiceassistant.utilities.MobileVoiceAssistantUtilities;
 import de.pfiva.mobile.voiceassistant.web.NLUDataService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         NLUDataService nluDataService = RetrofitClientInstance
                 .getRetrofitInstance().create(NLUDataService.class);
 
-        Call<List<NLUData>> nluCall = nluDataService.getNLUData();
+        String deviceId = MobileVoiceAssistantUtilities.getMacAddress();
+        Call<List<NLUData>> nluCall = nluDataService.getNLUData(deviceId);
         nluCall.enqueue(new Callback<List<NLUData>>() {
             @Override
             public void onResponse(Call<List<NLUData>> call, Response<List<NLUData>> response) {
