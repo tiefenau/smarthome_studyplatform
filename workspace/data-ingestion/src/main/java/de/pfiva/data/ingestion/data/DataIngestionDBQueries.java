@@ -63,7 +63,8 @@ public interface DataIngestionDBQueries {
 			+ " ON q.query_id = i.query_id"
 			+ " LEFT OUTER JOIN feedback_tbl as f"
 			+ " ON q.query_id = f.query_id"
-			+ " INNER JOIN user_tbl u ON q.user_id = u.user_id";
+			+ " INNER JOIN user_tbl u ON q.user_id = u.user_id"
+			+ " ORDER BY q.query_id";
 	
 	public static final String GET_QUERY_INTENT_FEEDBACK_DATA_BY_USER = "SELECT q.query_id, q.user_query,"
 			+ " q.hotword, q.query_timestamp, q.file_location, i.intent_id, i.intent_name,"
@@ -74,7 +75,8 @@ public interface DataIngestionDBQueries {
 			+ " LEFT OUTER JOIN feedback_tbl as f"
 			+ " ON q.query_id = f.query_id"
 			+ " INNER JOIN user_tbl u"
-			+ " ON q.user_id = u.user_id AND u.user_id = ?";
+			+ " ON q.user_id = u.user_id AND u.user_id = ?"
+			+ " ORDER BY q.query_id";
 
 	public static final String GET_SLOTS_BY_INTENT_ID = "select slot_name, slot_value"
 			+ " from slots_tbl where intent_id = ?";
