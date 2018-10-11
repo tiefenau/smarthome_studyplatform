@@ -75,7 +75,6 @@ export class NluDataTableDataSource extends DataSource<NLUData> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'id': return compare(+a.snipsOutput.id, +b.snipsOutput.id, isAsc);
-        case 'user': return compare(a.user.Username, b.user.Username, isAsc);
         default: return 0;
       }
     });
