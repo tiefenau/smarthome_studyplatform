@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Sort data received in reverse order so that the most recent query is first
         if(dataList != null && !dataList.isEmpty()) {
-            final DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+            final DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Collections.sort(dataList, new Comparator<NLUData>() {
                 @Override
                 public int compare(NLUData o1, NLUData o2) {
