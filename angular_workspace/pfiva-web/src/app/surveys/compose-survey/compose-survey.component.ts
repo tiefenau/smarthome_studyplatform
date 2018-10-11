@@ -50,7 +50,7 @@ export class ComposeSurveyComponent implements OnInit {
     } else {
       // TODO - formate date using pipe
       let date: string = this.composeSurveyForm.form.value.deliveryDate 
-      + " " + this.composeSurveyForm.form.value.delvieryTime + ":00.000";
+      + " " + this.composeSurveyForm.form.value.delvieryTime + ":00";
       survey.DeliveryDateTime = date;
     }
     let usersArray: string[] = this.composeSurveyForm.form.value.users;

@@ -63,7 +63,7 @@ export class ComposeMessageComponent implements OnInit {
     } else {
       // TODO - formate date using pipe
       let date: string = this.composeMessageForm.form.value.deliveryDate 
-      + " " + this.composeMessageForm.form.value.delvieryTime + ":00.000";
+      + " " + this.composeMessageForm.form.value.delvieryTime + ":00";
       message.DeliveryDateTime = date;
     }
     let usersArray: string[] = this.composeMessageForm.form.value.users;
