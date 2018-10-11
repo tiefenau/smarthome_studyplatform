@@ -14,7 +14,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.web.client.RestTemplate;
-import org.sqlite.SQLiteDataSource;
+
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 @Configuration
 @EnableAsync
@@ -30,9 +31,12 @@ public class DataIngestionConfiguration {
 	
 	@Bean
 	public DataSource dataSource() {
-		SQLiteDataSource dataSource = new SQLiteDataSource();
+		MysqlDataSource dataSource = new MysqlDataSource();
+		//SQLiteDataSource dataSource = new SQLiteDataSource();
 		dataSource.setDatabaseName(properties.getDatabaseName());
 		dataSource.setUrl(properties.getDatabaseUrl());
+		dataSource.setUser(properties.getDbUser());
+		dataSource.setPassword(properties.getDbPassword());
 		return dataSource;
 	}
 	

@@ -14,12 +14,10 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -318,11 +316,11 @@ public class NLUDataIngestionDBService {
 	}
 	
 	public Message getMessage(int messageId) {
-		return jdbcTemplate.query(DataIngestionDBQueries.GET_MESSAGE,
-				new Object[] {messageId}, new ResultSetExtractor<Message>() {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_MESSAGE,
+				new Object[] {messageId}, new RowMapper<Message>() {
 
 			@Override
-			public Message extractData(ResultSet rs) throws SQLException, DataAccessException {
+			public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Message message = new Message();
 				message.setId(rs.getInt("message_id"));
 				message.setMessageText(rs.getString("message_text"));
@@ -611,20 +609,20 @@ public class NLUDataIngestionDBService {
 	}
 
 	public Survey getSurveyById(int surveyId) {
-		return jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY,
-				new Object[] {surveyId}, new ResultSetExtractor<Survey>() {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_SURVEY,
+				new Object[] {surveyId}, new RowMapper<Survey>() {
 
-			@Override
-			public Survey extractData(ResultSet rs) throws SQLException, DataAccessException {
-				Survey survey = new Survey();
-				survey.setId(rs.getInt("survey_id"));
-				survey.setSurveyName(rs.getString("survey_name"));
-				survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
-				survey.setDeliveryDateTime(rs.getString("delivery_date"));
-				survey.setTopic(rs.getString("topic_name"));
-				return survey;
-			}
-		});
+					@Override
+					public Survey mapRow(ResultSet rs, int rowNum) throws SQLException {
+						Survey survey = new Survey();
+						survey.setId(rs.getInt("survey_id"));
+						survey.setSurveyName(rs.getString("survey_name"));
+						survey.setSurveyStatus(SurveyStatus.valueOf(rs.getString("status")));
+						survey.setDeliveryDateTime(rs.getString("delivery_date"));
+						survey.setTopic(rs.getString("topic_name"));
+						return survey;
+					}
+				});
 	}
 
 	public int saveMessageResponse(int messageId, Response response) {
@@ -773,7 +771,8 @@ public class NLUDataIngestionDBService {
 	}
 
 	public boolean deleteSurveys(int topicId) {
-		// TODO delete from survey_users_tbl, survey_response_tbl, questions_tbl, options_tbl
+		// This is taken care by database on delete cascade constraint 
+		// delete from survey_users_tbl, survey_response_tbl, questions_tbl, options_tbl
 		int rows = jdbcTemplate.update(DataIngestionDBQueries.DELETE_SURVEYS, topicId);
 		if(rows > 0) {
 			logger.info("Deleted surveys with topic id [" + topicId + "]");
@@ -783,7 +782,8 @@ public class NLUDataIngestionDBService {
 	}
 
 	public boolean deleteMessages(int topicId) {
-		// TODO delete from message_response_tbl, message_users_tbl
+		// This is taken care by database on delete cascade constraint
+		// delete from message_response_tbl, message_users_tbl
 		int rows = jdbcTemplate.update(DataIngestionDBQueries.DELETE_MESSAGES, topicId);
 		if(rows > 0) {
 			logger.info("Deleted messages with topic id [" + topicId + "]");

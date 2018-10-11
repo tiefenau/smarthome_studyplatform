@@ -18,10 +18,6 @@ import de.pfiva.data.model.survey.SurveyResponseData;
 
 public interface IDataIngestion {
 
-	public void captureFileGeneration(String requestBody);
-	
-	public void activateSnipsWatch(boolean snipsWatch);
-	
 	public void captureUserQuery(String requestBody);
 	
 	public void saveClientRegistrationToken(ClientToken clientToken);

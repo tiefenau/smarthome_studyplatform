@@ -20,6 +20,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.model.snips.SnipsOutput;
 
 @Service
@@ -27,8 +28,7 @@ public class SnipsNLUService {
 
 	private static final Logger logger = LoggerFactory.getLogger(SnipsNLUService.class);
 	
-	private static final String NLU_ENGINE_URL = "http://127.0.0.1:5000";
-	
+	@Autowired DataIngestionProperties properties;
 	@Autowired RestTemplate restTemplate;
 	
 	public SnipsOutput classifyIntents(String query) {
@@ -40,7 +40,7 @@ public class SnipsNLUService {
 	}
 	
 	private ResponseEntity<String> executeNLUEngine(String query) {
-		String url = NLU_ENGINE_URL + "/intents";
+		String url = properties.getSnipsNluEngineUrl() + "/intents";
 		logger.info("Sending request to url :" + url 
 				+ ", with user query [" + query + "].");
 		
@@ -56,7 +56,7 @@ public class SnipsNLUService {
 			response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
 			logger.info("Response from server\n" + response.getBody());
 		} catch(RestClientException e) {
-			logger.error("Error fetching data from NLU Engine at " + NLU_ENGINE_URL);
+			logger.error("Error fetching data from NLU Engine at " + properties.getSnipsNluEngineUrl());
 		}
 		
 		return response;

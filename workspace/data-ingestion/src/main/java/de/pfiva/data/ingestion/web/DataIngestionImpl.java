@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.DataIngestionUtils;
-import de.pfiva.data.ingestion.model.InputFile;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
@@ -41,44 +39,7 @@ public class DataIngestionImpl implements IDataIngestion {
 	private static Logger logger = LoggerFactory.getLogger(DataIngestionImpl.class);
 	
 	@Autowired private NLUDataIngestionService dataIngestionService;
-	@Autowired private DataIngestionProperties properties;
 	
-	@Override
-	@RequestMapping(value = "/file", method = RequestMethod.POST)
-	// TODO - remove
-	public void captureFileGeneration(@RequestBody String requestBody) {
-		
-		InputFile inputFile = null;
-		//Begin file parsing only if snips watch is enabled
-		if(properties.isSnipsWatch()) {
-			try {
-				inputFile = parseFileGenerationRequestBody(requestBody);
-			} catch (UnsupportedEncodingException e) {
-				logger.info("Error while parsing input file details", e);
-			}
-			
-			if(inputFile != null) {
-				dataIngestionService.extractInboundFileData(inputFile);
-			}			
-		}
-		
-	}
-	
-	private InputFile parseFileGenerationRequestBody(String requestBody) throws UnsupportedEncodingException {
-		Map<String, String> responseMap = DataIngestionUtils.parseResponseBody(requestBody);
-		InputFile inputFile = new InputFile();
-		inputFile.setFilename(responseMap.get("filename"));
-		inputFile.setFilePath(responseMap.get("filePath"));
-		return inputFile;
-	}
-
-	@Override
-	//TODO - remove
-	@RequestMapping(value = "/snips-watch", method = RequestMethod.PUT)
-	public void activateSnipsWatch(@RequestParam("snipsWatch") boolean snipsWatch) {
-		properties.setSnipsWatch(snipsWatch);
-	}
-
 	@Override
 	@RequestMapping(value = "/user-query", method = RequestMethod.POST)
 	public void captureUserQuery(@RequestBody String requestBody) {
@@ -100,10 +61,13 @@ public class DataIngestionImpl implements IDataIngestion {
 	public void saveClientRegistrationToken(@RequestBody ClientToken clientToken) {
 		String clientName = clientToken.getClientName();
 		String token = clientToken.getToken();
-		if(token != null && !token.isEmpty()) {
-			logger.info("Token received for [" + clientName + "] as [" + token + "].");
-			dataIngestionService.saveClientRegistrationToken(clientName, token);
+		if((clientName == null || clientName.isEmpty()) ||
+				(token == null || token.isEmpty())) {
+			throw new IllegalArgumentException("Clientname or token for a client cannot be empty");
 		}
+		
+		logger.info("Token received for [" + clientName + "] as [" + token + "].");
+		dataIngestionService.saveClientRegistrationToken(clientName, token);
 	}
 	
 	@Override
