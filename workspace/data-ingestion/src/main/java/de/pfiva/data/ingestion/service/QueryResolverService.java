@@ -49,7 +49,7 @@ public class QueryResolverService {
 	}
 	
 	enum Hotwords {
-		OK_GOOGLE("Ok Google"),
+		OK_GOOGLE("OK Google"),
 		SIRI("Siri"),
 		ALEXA("Alexa");
 		
