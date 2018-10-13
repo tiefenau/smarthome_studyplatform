@@ -28,4 +28,9 @@ public interface Constants {
 	public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	
 	public static final String INPUT_FILE_TIME_FORMAT = "yyyy-MM-dd'T'HH_mm_ss.SSSSSSSSS";
+	
+	public static final String PFIVA_INSTANT_FEEDBACK = "pfiva_instant_feedback";
+	public static final String PFIVA_CAPTURE_QUERIES_WITHOUT_HOTWORD = "pfiva_capture_queries_without_hotword";
+	public static final String PFIVA_DEFAULT_FEEDBACK_QUERY = "pfiva_default_feedback_query";
+	public static final String PFIVA_FIREBASE_SERVER_KEY = "pfiva_firebase_server_key";
 }

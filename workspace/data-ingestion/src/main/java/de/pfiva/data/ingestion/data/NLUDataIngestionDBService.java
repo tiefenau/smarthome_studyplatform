@@ -414,6 +414,21 @@ public class NLUDataIngestionDBService {
 			}
 		});
 	}
+	
+	public PfivaConfigData getConfigurationValue(String key) {
+		return jdbcTemplate.queryForObject(DataIngestionDBQueries.GET_CONFIG_DATA_BY_KEY,
+				new RowMapper<PfivaConfigData>() {
+
+			@Override
+			public PfivaConfigData mapRow(ResultSet rs, int rowNum) throws SQLException {
+				PfivaConfigData data = new PfivaConfigData();
+				data.setId(rs.getInt("config_id"));
+				data.setKey(rs.getString("config_key"));
+				data.setValue(rs.getString("config_value"));
+				return data;
+			}
+		}, key);
+	}
 
 	public void saveConfigValue(PfivaConfigData configData) {
 		jdbcTemplate.update(DataIngestionDBQueries.UPDATE_CONFIG_VALUE, 

@@ -14,9 +14,10 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.pfiva.data.ingestion.ConfigProperties;
+import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.notification.Data;
 import de.pfiva.data.model.notification.RequestModel;
 
@@ -24,7 +25,6 @@ import de.pfiva.data.model.notification.RequestModel;
 public class FirebaseService {
 	
 	@Autowired DataIngestionProperties properties;
-	@Autowired ConfigProperties configProperties;
 	@Autowired ObjectMapper objectMapper;
 	@Autowired RestTemplate restTemplate;
 	@Autowired NLUDataIngestionDBService dbService;
@@ -34,7 +34,9 @@ public class FirebaseService {
 	public void sendRequestToFirebaseServer(Data data, String clientName) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		String firebaseServerKey = "key=" + configProperties.getConfigValues().get("pfiva_firebase_server_key");
+		PfivaConfigData configData = dbService
+				.getConfigurationValue(Constants.PFIVA_FIREBASE_SERVER_KEY);
+		String firebaseServerKey = "key=" + configData.getValue();
 		headers.set(HttpHeaders.AUTHORIZATION, firebaseServerKey);
 		
 		RequestModel requestModel = new RequestModel();

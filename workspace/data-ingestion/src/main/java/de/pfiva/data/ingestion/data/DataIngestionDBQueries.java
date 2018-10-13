@@ -109,6 +109,8 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_CONFIG_DATA = "SELECT * from configuration_tbl";
 	
+	public static final String GET_CONFIG_DATA_BY_KEY = "SELECT * from configuration_tbl where config_key = ?";
+	
 	public static final String GET_USERS_BY_SURVEY_ID = "SELECT u.user_id, u.username, u.device_id"
 			+ " from user_tbl as u JOIN survey_users_tbl as s"
 			+ " ON u.user_id = s.user_id where s.survey_id = ?";

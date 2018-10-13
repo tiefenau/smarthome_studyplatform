@@ -18,7 +18,6 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import de.pfiva.data.ingestion.ConfigProperties;
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.service.QueryResolverService.UserQueryTuple;
@@ -49,7 +48,6 @@ public class NLUDataIngestionService {
 	
 	@Autowired private NLUDataIngestionDBService dbService;
 	@Autowired private QueryResolverService queryResolverService;
-	@Autowired private ConfigProperties configProperties;
 	@Autowired private SnipsNLUService nluService;
 	@Autowired private FeedbackService feedbackService;
 	@Autowired private TaskScheduler taskScheduler;
@@ -88,21 +86,25 @@ public class NLUDataIngestionService {
 
 
 					// Send notification
-					if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
+					PfivaConfigData configurationValue = dbService
+							.getConfigurationValue(Constants.PFIVA_INSTANT_FEEDBACK);
+					if(Boolean.valueOf(configurationValue.getValue())) {
 						feedbackService.sendFeedback(snipsOutput, queryId, username);						
 					}
 				} else {
 					// Capture queries with / without hotword
-					if(Boolean.valueOf(configProperties
-							.getConfigValues()
-							.get("pfiva_capture_queries_without_hotword"))) {
+					PfivaConfigData configurationValue = dbService
+							.getConfigurationValue(Constants.PFIVA_CAPTURE_QUERIES_WITHOUT_HOTWORD);
+					if(Boolean.valueOf(configurationValue.getValue())) {
 						
 						// Push data to db layer
 						int queryId = dbService.ingestDataToDB(snipsOutput, userId);
 
 
 						// Send notification
-						if(Boolean.valueOf(configProperties.getConfigValues().get("pfiva_instant_feedback"))) {
+						PfivaConfigData configData = dbService
+								.getConfigurationValue(Constants.PFIVA_INSTANT_FEEDBACK);
+						if(Boolean.valueOf(configData.getValue())) {
 							feedbackService.sendFeedback(snipsOutput, queryId, username);						
 						}
 					}
@@ -307,8 +309,6 @@ public class NLUDataIngestionService {
 	public void saveConfigValue(PfivaConfigData configData) {
 		if(configData != null) {
 			dbService.saveConfigValue(configData);
-			
-			configProperties.getConfigValues().put(configData.getKey(), configData.getValue());
 		}
 	}
 

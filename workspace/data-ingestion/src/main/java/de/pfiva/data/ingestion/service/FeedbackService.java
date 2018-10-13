@@ -8,11 +8,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.pfiva.data.ingestion.ConfigProperties;
+import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.DataIngestionProperties;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.ingestion.model.IntentNames;
 import de.pfiva.data.model.FeedbackType;
+import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.Tuple;
 import de.pfiva.data.model.notification.Data.DataType;
 import de.pfiva.data.model.notification.FeedbackData;
@@ -23,7 +24,6 @@ public class FeedbackService {
 
 	@Autowired RestTemplate restTemplate;
 	@Autowired DataIngestionProperties properties;
-	@Autowired ConfigProperties configProperties;
 	@Autowired NLUDataIngestionDBService dbService;
 	@Autowired ObjectMapper objectMapper;
 	@Autowired FirebaseService firebaseService;
@@ -66,9 +66,10 @@ public class FeedbackService {
 					feedback = new Tuple<FeedbackType, 
 							String>(FeedbackType.INTENT_CLASSIFIED, feedbackQuery);
 				} else {
+					PfivaConfigData configData = dbService
+							.getConfigurationValue(Constants.PFIVA_DEFAULT_FEEDBACK_QUERY);
 					feedback = new Tuple<FeedbackType,
-							String>(FeedbackType.GENERAL, 
-									configProperties.getConfigValues().get("pfiva_default_feedback_query"));
+							String>(FeedbackType.GENERAL, configData.getValue());
 				}
 			}
 			logger.info("Feedback generated of type [" + feedback.getX() + "],"
