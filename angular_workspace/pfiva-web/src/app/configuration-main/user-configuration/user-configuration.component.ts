@@ -45,7 +45,8 @@ export class UserConfigurationComponent implements OnInit {
   private addNewUser() {
     let user = new User();
     user.Username = this.addUserForm.form.value.username;
-    user.DeviceId = this.addUserForm.form.value.deviceId;
+    let value:string = this.addUserForm.form.value.deviceId;
+    user.DeviceId = value.toUpperCase();
     this.configurationService.addNewUser(user).subscribe(
       (status: boolean) => {
         if(status) {
