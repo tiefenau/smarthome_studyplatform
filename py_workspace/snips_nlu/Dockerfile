@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6.6
 COPY . /app
 WORKDIR /app
 #RUN curl -f -L https://static.rust-lang.org/rustup.sh -O

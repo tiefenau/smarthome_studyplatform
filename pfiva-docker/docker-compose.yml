@@ -30,3 +30,8 @@ services:
       - pfiva-service
     ports:
       - "4200:4200"
+  
+  pfiva-nlu-service:
+    image: snips-nlu-app:latest
+    ports:
+      - "5000:5000"
