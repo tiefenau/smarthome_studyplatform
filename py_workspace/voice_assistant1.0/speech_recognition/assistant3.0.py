@@ -14,20 +14,13 @@ logger = logging.getLogger(__name__)
 r = sr.Recognizer()
 m = sr.Microphone()
 
-def forwardRequestToPfivaSpeechClient(fileName, api, language, user):
+def forwardRequestToPfivaSpeechClient(speechClientAddress, fileName, api, language, user):
 	try:
-		requests.post('http://192.168.1.205:9002/pfiva/speech-to-text', data={"fileName": fileName, "api": api, "language": language, "user": user})
+		url = 'http://' + speechClientAddress + '/pfiva/speech-to-text'
+		requests.post(url, data={"fileName": fileName, "api": api, "language": language, "user": user})
 		logger.info('Request forwarded to pfiva speech-to-text client')
-	except:
+	except requests.ConnectionError as e:
 		logger.error('Error forwarding request to pfiva speech-to-text client {0}'. format(e))
-
-
-def forward_query_to_data_ingestion(userQuery, user):
-    try:
-        response = requests.post('http://10.148.246.190:9001/data/ingestion/user-query', data={'userQuery': userQuery, 'username': user})
-        logger.info('Request forwarded to data ingestion with user query [' + userQuery + ']')
-    except requests.ConnectionError as e:
-        logger.error('Error forwarding request to data-ingestion pipeline {0}'. format(e))
 
 
 def parseLanguageForSpeech(speechLanguage):
@@ -46,8 +39,19 @@ def parseLanguageForSpeech(speechLanguage):
 		exit()
 
 
-def main(speechLanguage, api, user):
+def main(speechLanguage, api, user, speechClientAddress):
 	try:
+		audioDirectoryPath = '/Users/rahullao/audioDumps'
+		try:
+			if not os.path.exists(audioDirectoryPath):
+				os.mkdir(audioDirectoryPath)
+				logger.info('Audio directory does not exists, created')
+			else:
+				logger.info('Audio directory already exists')
+		except OSError:
+			logger.info('Error creating directory ' + path)
+			exit()
+
 		logger.info('Initiating speech recognition.')
 		with m as source: r.adjust_for_ambient_noise(source)
 		logger.info('Setting minimum energy threshold to [' + format(r.energy_threshold) + ']')
@@ -61,7 +65,7 @@ def main(speechLanguage, api, user):
 
 				currentDateTime = datetime.datetime.now().strftime("%Y-%m-%dT%H_%M_%S")
 				try:
-					path = 'audioDumps/' + currentDateTime
+					path = audioDirectoryPath + '/' + currentDateTime
 					logger.info('Creating directory : ' + path) 
 					os.mkdir(path)
 				except OSError:
@@ -80,18 +84,20 @@ def main(speechLanguage, api, user):
 				outputWavFile.close()
 				logger.info('Audio data written to a wav file')
 
-				forwardRequestToPfivaSpeechClient(currentDateTime+".raw", api, parseLanguageForSpeech(speechLanguage), user)
+				forwardRequestToPfivaSpeechClient(speechClientAddress, currentDateTime, api, parseLanguageForSpeech(speechLanguage), user)
 	except KeyboardInterrupt:
 		pass
 
 
 if __name__ == '__main__':
 	parser = ArgumentParser()
-	parser.add_argument("-l", "--language", dest="language", help="Specify language for voice assistant", required=True)
-	parser.add_argument("-a", "--api", dest="api", help="Specify API for voice assistant", required=True)
-	parser.add_argument("-u", "--user", dest="user", help="Specify user for voice assistant", required=True)
+	parser.add_argument("--language", dest="language", help="Specify language for voice assistant", required=False, default="english")
+	parser.add_argument("--api", dest="api", help="Specify API for voice assistant", required=False, default="GoogleCloudSpeech")
+	parser.add_argument("--user", dest="user", help="Specify user for voice assistant", required=True)
+	parser.add_argument("--speechClient", dest="speechClientAddress", help="Specify address for speech client", required=True)
 	args = parser.parse_args()
 	logger.info('Language : ' + str(args.language))
 	logger.info('API : ' + str(args.api))
 	logger.info('User : ' + str(args.user))
-	main(args.language, args.api, args.user)
+	logger.info('Speech Client Address : ' + str(args.speechClientAddress))
+	main(args.language, args.api, args.user, args.speechClientAddress)

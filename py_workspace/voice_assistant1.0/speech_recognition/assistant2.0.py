@@ -20,6 +20,8 @@ def forward_query_to_data_ingestion(userQuery, user):
         logger.error('Error forwarding request to data-ingestion pipeline {0}'. format(e))
 
 def parseLanguageForSpeech(speechLanguage):
+	speechLanguage = speechLanguage.lower();
+
 	if speechLanguage == 'english':
 		return 'en-US'
 	elif speechLanguage == 'german':
