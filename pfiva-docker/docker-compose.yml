@@ -9,7 +9,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "./data:/var/lib/mysql:rw"
+      - "/Users/rahullao/data:/var/lib/mysql:rw"
+      - "./resources/init.sql:/docker-entrypoint-initdb.d/init.sql"
   
   pfiva-service:
     image: pfiva-data-ingestion:latest
@@ -35,3 +36,8 @@ services:
     image: snips-nlu-app:latest
     ports:
       - "5000:5000"
+
+  pfiva-speech-service:
+    image: pfiva-speech-client:latest
+    ports:
+      - "9002:9002"
