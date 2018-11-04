@@ -11,12 +11,14 @@ export class GeneralConfigurationComponent implements OnInit {
   isFeedbackQuery: boolean = false;
   isServerKey: boolean = false;
   isInstantFeedback: boolean = false;
+  isQueriesWithoutHotword: boolean = false;
   defaultFeedbackQuery: string = "";
   firebaseServerKey: string = "";
 
   @ViewChild('defaultFeedbackQueryInput') defaultFeedbackQueryInput: ElementRef;
   @ViewChild('serverKeyInput') serverKeyInput: ElementRef;
-  @ViewChild('instantFeedbackInput') instantFeedbackInput: ElementRef; 
+  @ViewChild('instantFeedbackInput') instantFeedbackInput: ElementRef;
+  @ViewChild('queriesWithoutHotword') queriesWithoutHotword: ElementRef; 
 
   constructor(private configurationService: ConfigurationService) { }
 
@@ -36,7 +38,7 @@ export class GeneralConfigurationComponent implements OnInit {
           } else if(confidData.Key === 'pfiva_firebase_server_key') {
             this.firebaseServerKey = confidData.Value;
           } else if(confidData.Key === 'pfiva_capture_queries_without_hotword') {
-
+            this.isQueriesWithoutHotword = this.convertToBoolean(confidData.Value);
           } else {
             console.log('Invalid key for configuration data.')
           }
@@ -55,7 +57,8 @@ export class GeneralConfigurationComponent implements OnInit {
   }
 
   toggleQueriesHotword() {
-    
+    this.configurationService.saveConfigData('pfiva_capture_queries_without_hotword', 
+      this.queriesWithoutHotword.nativeElement.checked);
   }
 
   toggleFeedbackQuery() {
