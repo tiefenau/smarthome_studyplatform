@@ -92,7 +92,7 @@ public class NLUDataIngestionService {
 						feedbackService.sendFeedback(snipsOutput, queryId, username);						
 					}
 				} else {
-					// Capture queries with / without hotword
+					// Capture queries without hotword
 					PfivaConfigData configurationValue = dbService
 							.getConfigurationValue(Constants.PFIVA_CAPTURE_QUERIES_WITHOUT_HOTWORD);
 					if(Boolean.valueOf(configurationValue.getValue())) {
