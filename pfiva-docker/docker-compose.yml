@@ -37,7 +37,7 @@ services:
     ports:
       - "5000:5000"
 
-  pfiva-speech-service:
-    image: pfiva-speech-client:latest
-    ports:
-      - "9002:9002"
+#  pfiva-speech-service:
+#    image: pfiva-speech-client:latest
+#    ports:
+#      - "9002:9002"
