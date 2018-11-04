@@ -1,22 +1,20 @@
 package de.pfiva.speech.text.client.service;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.protobuf.ByteString;
 
 @Service
@@ -24,16 +22,11 @@ public class GoogleCloudService {
 
 	private static Logger logger = LoggerFactory.getLogger(GoogleCloudService.class);
 	
-	public String getSpeechToText(String fileName, String language) {
+	public String getSpeechToText(MultipartFile file, String language) {
 		String outputText = null;
 		try (SpeechClient speechClient = SpeechClient.create()) {
 
-			// The path to the audio file to transcribe
-			String filePath = "/Users/rahullao/audioDumps/" + fileName + "/" + fileName + ".raw";
-
-			// Reads the audio file into memory
-			Path path = Paths.get(filePath);
-			byte[] data = Files.readAllBytes(path);
+			byte[] data = file.getBytes();
 			ByteString audioBytes = ByteString.copyFrom(data);
 
 			// Builds the sync recognize request
@@ -58,7 +51,7 @@ public class GoogleCloudService {
 				outputText = alternative.getTranscript();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error reading audio raw file", e);
 		}
 		
 		return outputText;
