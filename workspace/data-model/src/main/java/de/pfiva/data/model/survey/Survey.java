@@ -19,7 +19,7 @@ public class Survey implements Serializable {
 	private List<Question> questions;
 	
 	public enum SurveyStatus {
-		DELIVERED, PENDING, CANCELLED
+		DELIVERED, PENDING, CANCELLED, FAILED
 	}
 
 	public int getId() {
