@@ -14,10 +14,13 @@ logger = logging.getLogger(__name__)
 r = sr.Recognizer()
 m = sr.Microphone()
 
-def forwardRequestToPfivaSpeechClient(speechClientAddress, fileName, api, language, user):
+def forwardRequestToPfivaSpeechClient(speechClientAddress, audioRawFilename, api, language, user):
 	try:
 		url = 'http://' + speechClientAddress + '/pfiva/speech-to-text'
-		requests.post(url, data={"fileName": fileName, "api": api, "language": language, "user": user})
+		with open(audioRawFilename, 'rb') as f:
+			files = {'file' : f}
+			requests.post(url, files=files, data={"api": api, "language": language, "user": user})
+		#requests.post(url, data={"fileName": fileName, "api": api, "language": language, "user": user})
 		logger.info('Request forwarded to pfiva speech-to-text client')
 	except requests.ConnectionError as e:
 		logger.error('Error forwarding request to pfiva speech-to-text client {0}'. format(e))
@@ -49,7 +52,7 @@ def main(speechLanguage, api, user, speechClientAddress):
 			else:
 				logger.info('Audio directory already exists')
 		except OSError:
-			logger.info('Error creating directory ' + path)
+			logger.info('Error creating directory ' + audioDirectoryPath)
 			exit()
 
 		logger.info('Initiating speech recognition.')
@@ -84,7 +87,8 @@ def main(speechLanguage, api, user, speechClientAddress):
 				outputWavFile.close()
 				logger.info('Audio data written to a wav file')
 
-				forwardRequestToPfivaSpeechClient(speechClientAddress, currentDateTime, api, parseLanguageForSpeech(speechLanguage), user)
+				#forwardRequestToPfivaSpeechClient(speechClientAddress, currentDateTime, api, parseLanguageForSpeech(speechLanguage), user)
+				forwardRequestToPfivaSpeechClient(speechClientAddress, outputRawFilename, api, parseLanguageForSpeech(speechLanguage), user)
 	except KeyboardInterrupt:
 		pass
 

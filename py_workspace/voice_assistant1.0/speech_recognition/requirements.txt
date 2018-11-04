@@ -1,0 +1,5 @@
+wheel
+setuptools
+SpeechRecognition
+requests
+httplib2
