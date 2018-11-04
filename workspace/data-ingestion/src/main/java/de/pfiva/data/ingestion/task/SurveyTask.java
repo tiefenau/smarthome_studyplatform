@@ -37,9 +37,11 @@ public class SurveyTask implements Runnable {
 		data.setSurvey(this.survey);
 		data.setUserId(this.user.getId());
 		logger.info("Sending survey [" + this.survey.getSurveyName() + "] to [" + user.getUsername() + "]");
-		this.firebaseService.sendRequestToFirebaseServer(data, this.user.getDeviceId());
+		boolean status = this.firebaseService
+				.sendRequestToFirebaseServer(data, this.user.getDeviceId());
 		
-		this.dbService.updateSurveyStatus(survey.getId(), SurveyStatus.DELIVERED);
+		this.dbService.updateSurveyStatus(survey.getId(), status == true ? SurveyStatus.DELIVERED
+				: SurveyStatus.FAILED);
 	}
 
 }

@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import de.pfiva.data.ingestion.Constants;
 import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
@@ -52,9 +53,14 @@ public class NLUDataIngestionService {
 	@Autowired private FeedbackService feedbackService;
 	@Autowired private TaskScheduler taskScheduler;
 	@Autowired private FirebaseService firebaseService;
+	@Autowired private GoogleCloudService googleCloudService;
 	
 	private Map<Integer, ScheduledFuture<?>> messageTasks = new HashMap<>();
 	private Map<Integer, ScheduledFuture<?>> surveyTasks = new HashMap<>();
+	
+	public String getSpeechToText(MultipartFile file, String language) {
+		return googleCloudService.getSpeechToText(file, language);
+	}
 	
 	public void extractUserQuery(String userQuery, String username) {
 		// User query is plain sentence of some language.

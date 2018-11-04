@@ -37,8 +37,10 @@ public class MessageTask implements Runnable {
 		data.setMessageText(this.messageText);
 		data.setUserId(this.user.getId());
 		logger.info("Sending message with id [" + this.id + "] to [" + user.getUsername() + "]");
-		this.firebaseService.sendRequestToFirebaseServer(data, this.user.getDeviceId());
+		boolean status = this.firebaseService
+				.sendRequestToFirebaseServer(data, this.user.getDeviceId());
 		
-		this.dbService.updateMessageStatus(id, MessageStatus.DELIVERED);
+		this.dbService.updateMessageStatus(id, status == true ? MessageStatus.DELIVERED 
+				: MessageStatus.FAILED);
 	}
 }

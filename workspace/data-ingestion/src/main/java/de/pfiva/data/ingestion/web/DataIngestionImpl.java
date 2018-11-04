@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import de.pfiva.data.ingestion.DataIngestionUtils;
 import de.pfiva.data.ingestion.service.NLUDataIngestionService;
@@ -39,6 +40,23 @@ public class DataIngestionImpl implements IDataIngestion {
 	private static Logger logger = LoggerFactory.getLogger(DataIngestionImpl.class);
 	
 	@Autowired private NLUDataIngestionService dataIngestionService;
+	
+	@Override
+	@RequestMapping(value = "/speech-to-text", method = RequestMethod.POST)
+	public void getspeechToText(@RequestParam("file") MultipartFile file,
+			@RequestParam("api") String api,
+			@RequestParam("language") String language,
+			@RequestParam("user") String user) {
+		
+		logger.info("Received new request, [" + file.getOriginalFilename() + ", "
+				+ api + ", " + language + ", " + user + "]");
+		
+		String userQuery = dataIngestionService.getSpeechToText(file, language);
+		logger.info("Text captured : " + userQuery);
+		if(userQuery != null) {
+			dataIngestionService.extractUserQuery(userQuery, user);
+		}
+	}
 	
 	@Override
 	@RequestMapping(value = "/user-query", method = RequestMethod.POST)

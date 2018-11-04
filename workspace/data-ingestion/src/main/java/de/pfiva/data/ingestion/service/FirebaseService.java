@@ -1,5 +1,7 @@
 package de.pfiva.data.ingestion.service;
 
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ import de.pfiva.data.ingestion.data.NLUDataIngestionDBService;
 import de.pfiva.data.model.PfivaConfigData;
 import de.pfiva.data.model.notification.Data;
 import de.pfiva.data.model.notification.RequestModel;
+import de.pfiva.data.model.notification.firebase.FirebaseResponse;
 
 @Service
 public class FirebaseService {
@@ -31,7 +34,7 @@ public class FirebaseService {
 	
 	private static Logger logger = LoggerFactory.getLogger(FirebaseService.class);
 
-	public void sendRequestToFirebaseServer(Data data, String clientName) {
+	public boolean sendRequestToFirebaseServer(Data data, String clientName) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		PfivaConfigData configData = dbService
@@ -56,6 +59,19 @@ public class FirebaseService {
 		ResponseEntity<String> response = restTemplate.exchange(properties.getFirebaseUrl(),
 				HttpMethod.POST, requestEntity, String.class);
 		logger.info("Response from firebase server [" + response.getBody() + "]");
+		FirebaseResponse firebaseResponse = null;
+		try {
+			firebaseResponse = objectMapper
+					.readValue(response.getBody(), FirebaseResponse.class);
+		} catch (IOException e) {
+			logger.error("Error parsing firebase response", e);
+		}
+		
+		if(firebaseResponse.getSuccess() == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	private String getClientToken(String clientName) {

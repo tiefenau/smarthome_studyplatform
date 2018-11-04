@@ -3,6 +3,7 @@ package de.pfiva.data.ingestion.web;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.multipart.MultipartFile;
 
 import de.pfiva.data.model.Feedback;
 import de.pfiva.data.model.NLUData;
@@ -18,6 +19,9 @@ import de.pfiva.data.model.survey.SurveyResponseData;
 
 public interface IDataIngestion {
 
+	public void getspeechToText(MultipartFile file, String api, 
+			String language, String user);
+			
 	public void captureUserQuery(String requestBody);
 	
 	public void saveClientRegistrationToken(ClientToken clientToken);
