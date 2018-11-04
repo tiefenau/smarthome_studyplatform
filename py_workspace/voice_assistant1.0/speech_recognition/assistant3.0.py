@@ -16,7 +16,7 @@ m = sr.Microphone()
 
 def forwardRequestToPfivaSpeechClient(speechClientAddress, audioRawFilename, api, language, user):
 	try:
-		url = 'http://' + speechClientAddress + '/pfiva/speech-to-text'
+		url = 'http://' + speechClientAddress + '/data/ingestion/speech-to-text'
 		with open(audioRawFilename, 'rb') as f:
 			files = {'file' : f}
 			requests.post(url, files=files, data={"api": api, "language": language, "user": user})
