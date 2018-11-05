@@ -13,7 +13,7 @@ services:
       - "./resources/init.sql:/docker-entrypoint-initdb.d/init.sql"
   
   pfiva-service:
-    image: pfiva-data-ingestion:latest
+    image: rahullao/pfiva-data-ingestion:latest
     depends_on:
       - pfiva-mysql
     ports:
@@ -26,14 +26,14 @@ services:
       - DATABASE_PORT=3306
   
   pfiva-web:
-    image: pfiva-angular-app
+    image: rahullao/pfiva-angular-app
     depends_on:
       - pfiva-service
     ports:
       - "4200:4200"
   
   pfiva-nlu-service:
-    image: snips-nlu-app:latest
+    image: rahullao/snips-nlu-app:latest
     ports:
       - "5000:5000"
 
