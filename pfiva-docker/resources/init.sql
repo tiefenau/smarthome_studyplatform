@@ -159,6 +159,6 @@ create table survey_response_tbl
 );
 
 INSERT INTO configuration_tbl(config_key, config_value) VALUES("pfiva_instant_feedback", "true");
-INSERT INTO configuration_tbl(config_key, config_value) VALUES("pfiva_capture_queries_without_hotword", "true");
+INSERT INTO configuration_tbl(config_key, config_value) VALUES("pfiva_capture_queries_without_hotword", "false");
 INSERT INTO configuration_tbl(config_key, config_value) VALUES("pfiva_default_feedback_query", "What did you ask about?");
 INSERT INTO configuration_tbl(config_key, config_value) VALUES("pfiva_firebase_server_key", "AAAAUXl-_lA:APA91bHONSJHhu8jVhqoCEERq90_irk-Zy6eWLFPHvh4-HGDDzJIJLSE0h-ffjksvHPprgSt6xX95ZdL4jhela6vz0ZyTsO2ZF5TbVj0HTesStIw9_z5cfj5RrdzgH2LcT2WY_kSuLrZL7F5-rvQaveqSCikukn8WQ");
