@@ -14,9 +14,9 @@ logger = logging.getLogger(__name__)
 r = sr.Recognizer()
 m = sr.Microphone()
 
-def forwardRequestToPfivaSpeechClient(speechClientAddress, audioRawFilename, api, language, user):
+def forwardRequestToPfivaSpeechClient(serverAddress, audioRawFilename, api, language, user):
 	try:
-		url = 'http://' + speechClientAddress + '/data/ingestion/speech-to-text'
+		url = 'http://' + serverAddress + ':9001/data/ingestion/speech-to-text'
 		with open(audioRawFilename, 'rb') as f:
 			files = {'file' : f}
 			requests.post(url, files=files, data={"api": api, "language": language, "user": user})
@@ -42,7 +42,7 @@ def parseLanguageForSpeech(speechLanguage):
 		exit()
 
 
-def main(speechLanguage, api, user, speechClientAddress):
+def main(speechLanguage, api, user, serverAddress):
 	try:
 		audioDirectoryPath = '/Users/rahullao/audioDumps'
 		try:
@@ -87,8 +87,8 @@ def main(speechLanguage, api, user, speechClientAddress):
 				outputWavFile.close()
 				logger.info('Audio data written to a wav file')
 
-				#forwardRequestToPfivaSpeechClient(speechClientAddress, currentDateTime, api, parseLanguageForSpeech(speechLanguage), user)
-				forwardRequestToPfivaSpeechClient(speechClientAddress, outputRawFilename, api, parseLanguageForSpeech(speechLanguage), user)
+				#forwardRequestToPfivaSpeechClient(serverAddress, currentDateTime, api, parseLanguageForSpeech(speechLanguage), user)
+				forwardRequestToPfivaSpeechClient(serverAddress, outputRawFilename, api, parseLanguageForSpeech(speechLanguage), user)
 	except KeyboardInterrupt:
 		pass
 
@@ -98,10 +98,10 @@ if __name__ == '__main__':
 	parser.add_argument("--language", dest="language", help="Specify language for voice assistant", required=False, default="english")
 	parser.add_argument("--api", dest="api", help="Specify API for voice assistant", required=False, default="GoogleCloudSpeech")
 	parser.add_argument("--user", dest="user", help="Specify user for voice assistant", required=True)
-	parser.add_argument("--speechClient", dest="speechClientAddress", help="Specify address for speech client", required=True)
+	parser.add_argument("--serverAddress", dest="serverAddress", help="Specify address for PFIVA server", required=True)
 	args = parser.parse_args()
 	logger.info('Language : ' + str(args.language))
 	logger.info('API : ' + str(args.api))
 	logger.info('User : ' + str(args.user))
-	logger.info('Speech Client Address : ' + str(args.speechClientAddress))
-	main(args.language, args.api, args.user, args.speechClientAddress)
+	logger.info('PFIVA server address : ' + str(args.serverAddress))
+	main(args.language, args.api, args.user, args.serverAddress)
