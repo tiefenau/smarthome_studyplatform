@@ -21,9 +21,9 @@ def forwardRequestToPfivaSpeechClient(serverAddress, audioRawFilename, api, lang
 			files = {'file' : f}
 			requests.post(url, files=files, data={"api": api, "language": language, "user": user})
 		#requests.post(url, data={"fileName": fileName, "api": api, "language": language, "user": user})
-		logger.info('Request forwarded to pfiva speech-to-text client')
+		logger.info('Request forwarded to PFIVA server')
 	except requests.ConnectionError as e:
-		logger.error('Error forwarding request to pfiva speech-to-text client {0}'. format(e))
+		logger.error('Error forwarding request to PFIVA server {0}'. format(e))
 
 
 def parseLanguageForSpeech(speechLanguage):
