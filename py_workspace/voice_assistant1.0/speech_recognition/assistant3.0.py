@@ -5,6 +5,7 @@ from argparse import ArgumentParser
 import json
 import datetime
 import os
+import RPi.GPIO as GPIO
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -13,6 +14,10 @@ logger = logging.getLogger(__name__)
 
 r = sr.Recognizer()
 m = sr.Microphone()
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
 
 def forwardRequestToPfivaSpeechClient(serverAddress, audioRawFilename, api, language, user):
 	try:
@@ -59,9 +64,12 @@ def main(speechLanguage, api, user, serverAddress):
 		with m as source: r.adjust_for_ambient_noise(source)
 		logger.info('Setting minimum energy threshold to [' + format(r.energy_threshold) + ']')
 		while True:
+			GPIO.output(18,GPIO.HIGH)
 			logger.info('Waiting for user query')
-			with m as source: audio = r.listen(source)
+			# After 5 secs, cut off listening
+			with m as source: audio = r.listen(source, phrase_time_limit=5)
 			if audio is not None:
+				GPIO.output(18,GPIO.LOW)
 				logger.info('Audio captured, getting raw and wav data.')
 				rawData = audio.get_raw_data(convert_rate=16000, convert_width=2)
 				wavData = audio.get_wav_data(convert_rate=16000, convert_width=2)
