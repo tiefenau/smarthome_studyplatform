@@ -7,7 +7,7 @@ import datetime
 import os
 import RPi.GPIO as GPIO
 
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(filename='/home/pi/voice_assistant1.0/speech_recognition/assistant3_logs.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger(__name__)
