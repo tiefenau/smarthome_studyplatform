@@ -6,8 +6,8 @@ import json
 import datetime
 import os
 import RPi.GPIO as GPIO
-
-logging.basicConfig(filename='/home/pi/voice_assistant1.0/speech_recognition/assistant3_logs.log', level=logging.INFO,
+ 
+logging.basicConfig(filename='assistant3_logs.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ GPIO.setup(18,GPIO.OUT)
 
 def forwardRequestToPfivaSpeechClient(serverAddress, audioRawFilename, api, language, user):
 	try:
-		url = 'http://' + serverAddress + ':9001/data/ingestion/speech-to-text'
+		url = 'http://' + serverAddress + '/data/ingestion/speech-to-text'
 		with open(audioRawFilename, 'rb') as f:
 			files = {'file' : f}
 			requests.post(url, files=files, data={"api": api, "language": language, "user": user})
@@ -105,8 +105,8 @@ if __name__ == '__main__':
 	parser = ArgumentParser()
 	parser.add_argument("--language", dest="language", help="Specify language for voice assistant", required=False, default="english")
 	parser.add_argument("--api", dest="api", help="Specify API for voice assistant", required=False, default="GoogleCloudSpeech")
+	parser.add_argument("--serverAddress", dest="serverAddress", help="Specify address for PFIVA server", required=False, default="future-iot.de")
 	parser.add_argument("--user", dest="user", help="Specify user for voice assistant", required=True)
-	parser.add_argument("--serverAddress", dest="serverAddress", help="Specify address for PFIVA server", required=True)
 	args = parser.parse_args()
 	logger.info('Language : ' + str(args.language))
 	logger.info('API : ' + str(args.api))
