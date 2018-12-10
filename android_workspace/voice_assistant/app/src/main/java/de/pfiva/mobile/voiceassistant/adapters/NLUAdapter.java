@@ -82,6 +82,9 @@ public class NLUAdapter extends RecyclerView.Adapter<NLUAdapter.NLUViewHolder> {
 
     @Override
     public int getItemCount() {
+        if(nluData == null) {
+            return 0;
+        }
         return nluData.size();
     }
 }
