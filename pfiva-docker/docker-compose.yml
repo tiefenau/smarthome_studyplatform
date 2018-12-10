@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   pfiva-mysql:
@@ -16,6 +16,9 @@ services:
     image: rahullao/pfiva-data-ingestion:latest
     depends_on:
       - pfiva-mysql
+    links:
+      - "pfiva-mysql:pfiva-mysql"
+      - "pfiva-nlu-service:pfiva-nlu-service"
     ports:
       - "9001:9001"
     environment:
@@ -29,6 +32,8 @@ services:
     image: rahullao/pfiva-angular-app
     depends_on:
       - pfiva-service
+    links:
+      - "pfiva-service:pfiva-service"
     ports:
       - "4200:4200"
   
