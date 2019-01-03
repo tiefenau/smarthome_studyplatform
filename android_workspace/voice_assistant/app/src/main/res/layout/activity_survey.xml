@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <!-- Multiple Choice Options Container -->
+    <!-- Single Choice Options Container -->
     <LinearLayout
         android:id="@+id/mc_options_container"
         android:layout_width="match_parent"
@@ -88,7 +88,7 @@
         </RadioGroup>
     </LinearLayout>
 
-    <!-- Checkbox Option Container -->
+    <!-- Multiple Choice Option Container -->
     <LinearLayout
         android:id="@+id/checkbox_option_container"
         android:layout_width="match_parent"

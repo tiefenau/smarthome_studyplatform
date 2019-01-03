@@ -236,12 +236,12 @@ public class SurveyActivity extends AppCompatActivity {
                 EditText textbox = (EditText) textOptionsContainer.getChildAt(1);
                 String value = textbox.getText().toString();
                 values.add(value);
-            } else if (question.getQuestionType().equals("Multiple Choice")) {
+            } else if (question.getQuestionType().equals("Single Choice")) {
                 int selectedId = radiogroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) findViewById(selectedId);
                 String value = radioButton.getText().toString();
                 values.add(value);
-            } else if (question.getQuestionType().equals("Checkboxes")) {
+            } else if (question.getQuestionType().equals("Multiple Choice")) {
                 final int childCount = checkboxOptionContainer.getChildCount();
                 for(int i = 0; i < childCount; i++) {
                     CheckBox checkBox = (CheckBox) checkboxOptionContainer.getChildAt(i);
@@ -278,7 +278,7 @@ public class SurveyActivity extends AppCompatActivity {
             textOptionsContainer.setVisibility(View.VISIBLE);
             mcOptionsContainer.setVisibility(View.GONE);
             checkboxOptionContainer.setVisibility(View.GONE);
-        } else if(questionType.equals("Multiple Choice")) {
+        } else if(questionType.equals("Single Choice")) {
             mcOptionsContainer.setVisibility(View.VISIBLE);
             textOptionsContainer.setVisibility(View.GONE);
             checkboxOptionContainer.setVisibility(View.GONE);
@@ -289,7 +289,7 @@ public class SurveyActivity extends AppCompatActivity {
                     radiogroup.addView(radioButton);
                 }
             }
-        } else if(questionType.equals("Checkboxes")) {
+        } else if(questionType.equals("Multiple Choice")) {
             checkboxOptionContainer.setVisibility(View.VISIBLE);
             textOptionsContainer.setVisibility(View.GONE);
             mcOptionsContainer.setVisibility(View.GONE);
