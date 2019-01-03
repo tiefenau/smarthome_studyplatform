@@ -675,8 +675,6 @@ public class NLUDataIngestionDBService {
 	public List<de.pfiva.data.model.survey.Response> getSurveyResponse(int surveyId) {
 		// TODO - This implementation is quite bad, can be improved.
 		// Data model should be refactored.
-		Map<Integer, de.pfiva.data.model.survey.Response> responseMap = 
-				new HashMap<>();
 		
 		List<de.pfiva.data.model.survey.Response> responses = 
 				jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY_RESPONSES_BY_ID,
@@ -698,7 +696,7 @@ public class NLUDataIngestionDBService {
 		
 		for(de.pfiva.data.model.survey.Response response : responses) {
 			List<String> values = jdbcTemplate.query(DataIngestionDBQueries.GET_SURVEY_QUES_VALUES,
-					new Object[] {response.getQuestionId()}, new RowMapper<String>() {
+					new Object[] {response.getQuestionId(), response.getUser().getId()}, new RowMapper<String>() {
 
 				@Override
 				public String mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -707,11 +705,9 @@ public class NLUDataIngestionDBService {
 			});
 
 			response.setValues(values);
-			
-			responseMap.put(response.getQuestionId(), response);
 		}
 		
-		return new LinkedList<>(responseMap.values());
+		return responses;
 	}
 
 	public String getDeviceId(String username) {

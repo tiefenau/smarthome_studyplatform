@@ -7,8 +7,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 
 import org.slf4j.Logger;
@@ -424,8 +426,13 @@ public class NLUDataIngestionService {
 		return data;
 	}
 	
-	private List<de.pfiva.data.model.survey.Response> getSurveyResponse(int surveyId) {
-		return dbService.getSurveyResponse(surveyId);
+	private Set<de.pfiva.data.model.survey.Response> getSurveyResponse(int surveyId) {
+		List<de.pfiva.data.model.survey.Response> responses = dbService.getSurveyResponse(surveyId);
+		
+		// Remove duplicate responses
+		Set<de.pfiva.data.model.survey.Response> responseSet = new HashSet<>(responses);
+		
+		return responseSet;
 	}
 
 	private Survey getSurveyData(int surveyId) {

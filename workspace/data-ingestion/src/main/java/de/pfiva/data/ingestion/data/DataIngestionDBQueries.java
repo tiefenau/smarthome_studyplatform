@@ -143,7 +143,8 @@ public interface DataIngestionDBQueries {
 			+ " INNER JOIN user_tbl as u"
 			+ " ON s.user_id = u.user_id AND s.survey_id = ?";
 	
-	public static final String GET_SURVEY_QUES_VALUES = "select value from survey_response_tbl where question_id = ?";
+	public static final String GET_SURVEY_QUES_VALUES = "select value from survey_response_tbl where"
+			+ " question_id = ? and user_id = ?";
 	
 	public static final String GET_DEVICE_ID = "SELECT device_id from user_tbl where username = ?";
 	
