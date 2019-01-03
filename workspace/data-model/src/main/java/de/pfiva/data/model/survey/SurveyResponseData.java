@@ -1,11 +1,11 @@
 package de.pfiva.data.model.survey;
 
-import java.util.List;
+import java.util.Set;
 
 public class SurveyResponseData {
 
 	private Survey survey;
-	private List<Response> responses;
+	private Set<Response> responses;
 
 	public Survey getSurvey() {
 		return survey;
@@ -15,11 +15,11 @@ public class SurveyResponseData {
 		this.survey = survey;
 	}
 
-	public List<Response> getResponses() {
+	public Set<Response> getResponses() {
 		return responses;
 	}
 
-	public void setResponses(List<Response> responses) {
+	public void setResponses(Set<Response> responses) {
 		this.responses = responses;
 	}
 

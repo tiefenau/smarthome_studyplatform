@@ -38,6 +38,34 @@ public class Response implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + questionId;
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Response other = (Response) obj;
+		if (questionId != other.questionId)
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		return "Response [id=" + id + ", questionId=" + questionId + ", values=" + values + ", user=" + user + "]";
