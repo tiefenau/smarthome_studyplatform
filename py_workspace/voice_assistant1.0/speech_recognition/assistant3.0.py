@@ -5,9 +5,10 @@ from argparse import ArgumentParser
 import json
 import datetime
 import os
-import RPi.GPIO as GPIO
+import ASUS.GPIO as GPIO
+#import RPi.GPIO as GPIO
  
-logging.basicConfig(filename='assistant3_logs.log', level=logging.INFO,
+logging.basicConfig(filename='/home/tinkerboard/assistant3_logs.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger(__name__)
@@ -15,9 +16,10 @@ logger = logging.getLogger(__name__)
 r = sr.Recognizer()
 m = sr.Microphone()
 
-GPIO.setmode(GPIO.BCM)
+BLUE = 164
+GPIO.setmode(GPIO.ASUS)
 GPIO.setwarnings(False)
-GPIO.setup(18,GPIO.OUT)
+GPIO.setup(BLUE,GPIO.OUT)
 
 def forwardRequestToPfivaSpeechClient(serverAddress, audioRawFilename, api, language, user):
 	try:
@@ -47,29 +49,43 @@ def parseLanguageForSpeech(speechLanguage):
 		exit()
 
 
-def main(speechLanguage, api, user, serverAddress):
+def createAudioDumpsDirectory():
+	audioDumpsPath = '/home/tinkerboard/audioDumps'
 	try:
-		audioDirectoryPath = '/Users/rahullao/audioDumps'
+		if not os.path.exists(audioDumpsPath):
+			os.mkdir(audioDumpsPath)
+			logger.info('audioDumps directory does not exists, created')
+		else:
+			logger.info('audioDumps directory already exists')
+	except OSError as e:
+		logger.info('Error creating directory ' + audioDumpsPath + ' ; error received {0} '.format(e))
+		exit()
+
+
+def main(speechLanguage, api, user, serverAddress):
+	createAudioDumpsDirectory()
+	try:
+		audioDirectoryPath = '/home/tinkerboard/audioDumps/' + user
 		try:
 			if not os.path.exists(audioDirectoryPath):
 				os.mkdir(audioDirectoryPath)
-				logger.info('Audio directory does not exists, created')
+				logger.info('user directory does not exists, created')
 			else:
-				logger.info('Audio directory already exists')
-		except OSError:
-			logger.info('Error creating directory ' + audioDirectoryPath)
+				logger.info('user directory already exists')
+		except OSError as e:
+			logger.info('Error creating directory ' + audioDirectoryPath + ' ; error received {0} '.format(e))
 			exit()
 
 		logger.info('Initiating speech recognition.')
 		with m as source: r.adjust_for_ambient_noise(source)
 		logger.info('Setting minimum energy threshold to [' + format(r.energy_threshold) + ']')
 		while True:
-			GPIO.output(18,GPIO.HIGH)
+			GPIO.output(BLUE,GPIO.HIGH)
 			logger.info('Waiting for user query')
 			# After 5 secs, cut off listening
 			with m as source: audio = r.listen(source, phrase_time_limit=5)
 			if audio is not None:
-				GPIO.output(18,GPIO.LOW)
+				GPIO.output(BLUE,GPIO.LOW)
 				logger.info('Audio captured, getting raw and wav data.')
 				rawData = audio.get_raw_data(convert_rate=16000, convert_width=2)
 				wavData = audio.get_wav_data(convert_rate=16000, convert_width=2)
