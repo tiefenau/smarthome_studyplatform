@@ -38,10 +38,10 @@
               <div class="row mt-2 mx-4" *ngIf="question.questionType !== 'Text'">
                 <div class="col">
                   <div class="row" *ngFor="let option of question.options">
-                    <div class="col" *ngIf="question.questionType === 'Multiple Choice'">
+                    <div class="col" *ngIf="question.questionType === 'Single Choice'">
                       <input type="radio" class="mr-2" disabled>{{option?.value}}
                     </div>
-                    <div class="col" *ngIf="question.questionType === 'Checkboxes'">
+                    <div class="col" *ngIf="question.questionType === 'Multiple Choice'">
                       <input type="checkbox" class="mr-2" disabled>{{option?.value}}
                     </div>
                   </div>

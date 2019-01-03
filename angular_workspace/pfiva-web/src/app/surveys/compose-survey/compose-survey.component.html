@@ -91,8 +91,8 @@
                     name="surveyQuestionType" [(ngModel)]="surveyQuestionType" 
                     (change)="onQuestionTypeChange()">
                     <option value="Text">Text</option>
+                    <option value="Single Choice">Single Choice</option>
                     <option value="Multiple Choice">Multiple Choice</option>
-                    <option value="Checkboxes">Checkboxes</option>
                   </select>
                 </div>
               </div>
@@ -100,10 +100,10 @@
               <div class="form group row px-4 pt-2 pb-4">
                 <table *ngIf="surveyQuestionType != 'Text'" #optionsTable>
                   <tr *ngFor="let row of rowCount">
-                    <td *ngIf="surveyQuestionType === 'Multiple Choice'">
+                    <td *ngIf="surveyQuestionType === 'Single Choice'">
                       <input type="radio" disabled>
                     </td>
-                    <td *ngIf="surveyQuestionType === 'Checkboxes'">
+                    <td *ngIf="surveyQuestionType === 'Multiple Choice'">
                         <input type="checkbox" disabled>
                     </td>
                     <td class="px-4">
@@ -150,10 +150,10 @@
                 <div *ngFor="let option of entry.options">
                   <table>
                     <tr class="px-4 pt-2">
-                      <td *ngIf="entry.questionType === 'Multiple Choice'">
+                      <td *ngIf="entry.questionType === 'Single Choice'">
                         <input type="radio" disabled>
                       </td>
-                      <td *ngIf="entry.questionType === 'Checkboxes'">
+                      <td *ngIf="entry.questionType === 'Multiple Choice'">
                         <input type="checkbox" disabled>
                       </td>
                       <td class="px-3">
