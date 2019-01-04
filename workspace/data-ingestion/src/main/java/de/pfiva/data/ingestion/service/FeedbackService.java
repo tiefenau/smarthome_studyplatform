@@ -37,7 +37,7 @@ public class FeedbackService {
 		if(username != null && !username.isEmpty()) {
 			Tuple<FeedbackType, String> feeback = generateFeedbackQuery(snipsOutput);
 			int feedbackId = pushFeedbackToDB(feeback, queryId);
-			postFeedbackToFirebase(feeback, feedbackId, username);			
+			postFeedbackToFirebase(feeback, feedbackId, snipsOutput.getInput(), username);			
 		}
 	}
 	
@@ -79,13 +79,14 @@ public class FeedbackService {
 	}
 	
 	private void postFeedbackToFirebase(Tuple<FeedbackType,
-			String> feeback, int feedbackId, String username) {
+			String> feeback, int feedbackId, String userQuery, String username) {
 		
 		FeedbackData data = new FeedbackData();
 		data.setDatatype(DataType.FEEDBACK);
 		data.setFeedbackId(feedbackId);
 		data.setFeedbackType(feeback.getX());
 		data.setText(feeback.getY());
+		data.setUserQuery(userQuery);
 		
 		String clientName = getDeviceId(username);
 		if(clientName == null || clientName.isEmpty()) {

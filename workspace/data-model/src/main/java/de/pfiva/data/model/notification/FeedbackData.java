@@ -10,6 +10,7 @@ implements Serializable  {
 	private static final long serialVersionUID = 1L;
 
 	private String text;
+	private String userQuery;
 	private int feedbackId;
 	private FeedbackType feedbackType;
 
@@ -31,8 +32,15 @@ implements Serializable  {
 	public void setFeedbackType(FeedbackType feedbackType) {
 		this.feedbackType = feedbackType;
 	}
+	public String getUserQuery() {
+		return userQuery;
+	}
+	public void setUserQuery(String userQuery) {
+		this.userQuery = userQuery;
+	}
 	@Override
 	public String toString() {
-		return "Data [text=" + text + ", feedbackId=" + feedbackId + ", feedbackType=" + feedbackType + "]";
+		return "FeedbackData [text=" + text + ", userQuery=" + userQuery + ", feedbackId=" + feedbackId
+				+ ", feedbackType=" + feedbackType + "]";
 	}
 }
