@@ -1,3526 +1,2380 @@
 {
   "entities": {
-    "conditionName": {
-      "automatically_extensible": true,
+    "Date-Time": {
+      "automatically_extensible": false,
       "data": [
         {
           "synonyms": [],
-          "value": "blizzard"
+          "value": "Time"
         },
         {
           "synonyms": [],
-          "value": "cloud"
-        },
-        {
-          "synonyms": [],
-          "value": "cloudy"
-        },
-        {
-          "synonyms": [],
-          "value": "depression"
-        },
-        {
-          "synonyms": [],
-          "value": "fog"
-        },
-        {
-          "synonyms": [],
-          "value": "foggy"
-        },
-        {
-          "synonyms": [],
-          "value": "hail"
-        },
-        {
-          "synonyms": [],
-          "value": "hailing"
-        },
-        {
-          "synonyms": [],
-          "value": "humid"
-        },
-        {
-          "synonyms": [],
-          "value": "humidity"
-        },
-        {
-          "synonyms": [],
-          "value": "overcast"
-        },
-        {
-          "synonyms": [],
-          "value": "rain"
-        },
-        {
-          "synonyms": [],
-          "value": "rainfall"
-        },
-        {
-          "synonyms": [],
-          "value": "raining"
-        },
-        {
-          "synonyms": [],
-          "value": "rainy"
-        },
-        {
-          "synonyms": [],
-          "value": "snow"
-        },
-        {
-          "synonyms": [],
-          "value": "snowfall"
-        },
-        {
-          "synonyms": [],
-          "value": "snowing"
-        },
-        {
-          "synonyms": [],
-          "value": "snowstorm"
-        },
-        {
-          "synonyms": [],
-          "value": "snowy"
-        },
-        {
-          "synonyms": [],
-          "value": "storm"
-        },
-        {
-          "synonyms": [],
-          "value": "stormy"
-        },
-        {
-          "synonyms": [],
-          "value": "sun"
-        },
-        {
-          "synonyms": [],
-          "value": "sunny"
-        },
-        {
-          "synonyms": [],
-          "value": "wind"
-        },
-        {
-          "synonyms": [],
-          "value": "windy"
+          "value": "Date"
         }
       ],
+      "use_synonyms": true
+    },
+    "article": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "category": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "ccy": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            " AFN"
+          ],
+          "value": "Afghani"
+        },
+        {
+          "synonyms": [
+            " EUR"
+          ],
+          "value": "Euro"
+        },
+        {
+          "synonyms": [
+            " ALL"
+          ],
+          "value": "Lek"
+        },
+        {
+          "synonyms": [
+            " DZD"
+          ],
+          "value": "Algerian Dinar"
+        },
+        {
+          "synonyms": [
+            " USD"
+          ],
+          "value": "US Dollar"
+        },
+        {
+          "synonyms": [
+            " AOA"
+          ],
+          "value": "Kwanza"
+        },
+        {
+          "synonyms": [
+            " XCD"
+          ],
+          "value": "East Caribbean Dollar"
+        },
+        {
+          "synonyms": [
+            " ARS"
+          ],
+          "value": "Argentine Peso"
+        },
+        {
+          "synonyms": [
+            " AMD"
+          ],
+          "value": "Armenian Dram"
+        },
+        {
+          "synonyms": [
+            " AWG"
+          ],
+          "value": "Aruban Florin"
+        },
+        {
+          "synonyms": [
+            " AUD"
+          ],
+          "value": "Australian Dollar"
+        },
+        {
+          "synonyms": [
+            " AZN"
+          ],
+          "value": "Azerbaijan Manat"
+        },
+        {
+          "synonyms": [
+            " BSD"
+          ],
+          "value": "Bahamian Dollar"
+        },
+        {
+          "synonyms": [
+            " BHD"
+          ],
+          "value": "Bahraini Dinar"
+        },
+        {
+          "synonyms": [
+            " BDT"
+          ],
+          "value": "Taka"
+        },
+        {
+          "synonyms": [
+            " BBD"
+          ],
+          "value": "Barbados Dollar"
+        },
+        {
+          "synonyms": [
+            " BYN"
+          ],
+          "value": "Belarusian Ruble"
+        },
+        {
+          "synonyms": [
+            " BZD"
+          ],
+          "value": "Belize Dollar"
+        },
+        {
+          "synonyms": [
+            " XOF"
+          ],
+          "value": "CFA Franc BCEAO"
+        },
+        {
+          "synonyms": [
+            " BMD"
+          ],
+          "value": "Bermudian Dollar"
+        },
+        {
+          "synonyms": [
+            " INR"
+          ],
+          "value": "Indian Rupee"
+        },
+        {
+          "synonyms": [
+            " BTN"
+          ],
+          "value": "Ngultrum"
+        },
+        {
+          "synonyms": [
+            " BOB"
+          ],
+          "value": "Boliviano"
+        },
+        {
+          "synonyms": [
+            " BOV"
+          ],
+          "value": "Mvdol"
+        },
+        {
+          "synonyms": [
+            " BAM"
+          ],
+          "value": "Convertible Mark"
+        },
+        {
+          "synonyms": [
+            " BWP"
+          ],
+          "value": "Pula"
+        },
+        {
+          "synonyms": [
+            " NOK"
+          ],
+          "value": "Norwegian Krone"
+        },
+        {
+          "synonyms": [
+            " BRL"
+          ],
+          "value": "Brazilian Real"
+        },
+        {
+          "synonyms": [
+            " BND"
+          ],
+          "value": "Brunei Dollar"
+        },
+        {
+          "synonyms": [
+            " BGN"
+          ],
+          "value": "Bulgarian Lev"
+        },
+        {
+          "synonyms": [
+            " BIF"
+          ],
+          "value": "Burundi Franc"
+        },
+        {
+          "synonyms": [
+            " CVE"
+          ],
+          "value": "Cabo Verde Escudo"
+        },
+        {
+          "synonyms": [
+            " KHR"
+          ],
+          "value": "Riel"
+        },
+        {
+          "synonyms": [
+            " XAF"
+          ],
+          "value": "CFA Franc BEAC"
+        },
+        {
+          "synonyms": [
+            " CAD"
+          ],
+          "value": "Canadian Dollar"
+        },
+        {
+          "synonyms": [
+            " KYD"
+          ],
+          "value": "Cayman Islands Dollar"
+        },
+        {
+          "synonyms": [
+            " CLP"
+          ],
+          "value": "Chilean Peso"
+        },
+        {
+          "synonyms": [
+            " CLF"
+          ],
+          "value": "Unidad de Fomento"
+        },
+        {
+          "synonyms": [
+            " CNY"
+          ],
+          "value": "Yuan Renminbi"
+        },
+        {
+          "synonyms": [
+            " COP"
+          ],
+          "value": "Colombian Peso"
+        },
+        {
+          "synonyms": [
+            " COU"
+          ],
+          "value": "Unidad de Valor Real"
+        },
+        {
+          "synonyms": [
+            " KMF"
+          ],
+          "value": "Comorian Franc"
+        },
+        {
+          "synonyms": [
+            " CDF"
+          ],
+          "value": "Congolese Franc"
+        },
+        {
+          "synonyms": [
+            " NZD"
+          ],
+          "value": "New Zealand Dollar"
+        },
+        {
+          "synonyms": [
+            " CRC"
+          ],
+          "value": "Costa Rican Colon"
+        },
+        {
+          "synonyms": [
+            " HRK"
+          ],
+          "value": "Kuna"
+        },
+        {
+          "synonyms": [
+            " CUP"
+          ],
+          "value": "Cuban Peso"
+        },
+        {
+          "synonyms": [
+            " CUC"
+          ],
+          "value": "Peso Convertible"
+        },
+        {
+          "synonyms": [
+            " ANG"
+          ],
+          "value": "Netherlands Antillean Guilder"
+        },
+        {
+          "synonyms": [
+            " CZK"
+          ],
+          "value": "Czech Koruna"
+        },
+        {
+          "synonyms": [
+            " DKK"
+          ],
+          "value": "Danish Krone"
+        },
+        {
+          "synonyms": [
+            " DJF"
+          ],
+          "value": "Djibouti Franc"
+        },
+        {
+          "synonyms": [
+            " DOP"
+          ],
+          "value": "Dominican Peso"
+        },
+        {
+          "synonyms": [
+            " EGP"
+          ],
+          "value": "Egyptian Pound"
+        },
+        {
+          "synonyms": [
+            " SVC"
+          ],
+          "value": "El Salvador Colon"
+        },
+        {
+          "synonyms": [
+            " ERN"
+          ],
+          "value": "Nakfa"
+        },
+        {
+          "synonyms": [
+            " ETB"
+          ],
+          "value": "Ethiopian Birr"
+        },
+        {
+          "synonyms": [
+            " FKP"
+          ],
+          "value": "Falkland Islands Pound"
+        },
+        {
+          "synonyms": [
+            " FJD"
+          ],
+          "value": "Fiji Dollar"
+        },
+        {
+          "synonyms": [
+            " XPF"
+          ],
+          "value": "CFP Franc"
+        },
+        {
+          "synonyms": [
+            " GMD"
+          ],
+          "value": "Dalasi"
+        },
+        {
+          "synonyms": [
+            " GEL"
+          ],
+          "value": "Lari"
+        },
+        {
+          "synonyms": [
+            " GHS"
+          ],
+          "value": "Ghana Cedi"
+        },
+        {
+          "synonyms": [
+            " GIP"
+          ],
+          "value": "Gibraltar Pound"
+        },
+        {
+          "synonyms": [
+            " GTQ"
+          ],
+          "value": "Quetzal"
+        },
+        {
+          "synonyms": [
+            " GBP"
+          ],
+          "value": "Pound Sterling"
+        },
+        {
+          "synonyms": [
+            " GNF"
+          ],
+          "value": "Guinean Franc"
+        },
+        {
+          "synonyms": [
+            " GYD"
+          ],
+          "value": "Guyana Dollar"
+        },
+        {
+          "synonyms": [
+            " HTG"
+          ],
+          "value": "Gourde"
+        },
+        {
+          "synonyms": [
+            " HNL"
+          ],
+          "value": "Lempira"
+        },
+        {
+          "synonyms": [
+            " HKD"
+          ],
+          "value": "Hong Kong Dollar"
+        },
+        {
+          "synonyms": [
+            " HUF"
+          ],
+          "value": "Forint"
+        },
+        {
+          "synonyms": [
+            " ISK"
+          ],
+          "value": "Iceland Krona"
+        },
+        {
+          "synonyms": [
+            " IDR"
+          ],
+          "value": "Rupiah"
+        },
+        {
+          "synonyms": [
+            " XDR"
+          ],
+          "value": "SDR (Special Drawing Right)"
+        },
+        {
+          "synonyms": [
+            " IRR"
+          ],
+          "value": "Iranian Rial"
+        },
+        {
+          "synonyms": [
+            " IQD"
+          ],
+          "value": "Iraqi Dinar"
+        },
+        {
+          "synonyms": [
+            " ILS"
+          ],
+          "value": "New Israeli Sheqel"
+        },
+        {
+          "synonyms": [
+            " JMD"
+          ],
+          "value": "Jamaican Dollar"
+        },
+        {
+          "synonyms": [
+            " JPY"
+          ],
+          "value": "Yen"
+        },
+        {
+          "synonyms": [
+            " JOD"
+          ],
+          "value": "Jordanian Dinar"
+        },
+        {
+          "synonyms": [
+            " KZT"
+          ],
+          "value": "Tenge"
+        },
+        {
+          "synonyms": [
+            " KES"
+          ],
+          "value": "Kenyan Shilling"
+        },
+        {
+          "synonyms": [
+            " KPW"
+          ],
+          "value": "North Korean Won"
+        },
+        {
+          "synonyms": [
+            " KRW"
+          ],
+          "value": "Won"
+        },
+        {
+          "synonyms": [
+            " KWD"
+          ],
+          "value": "Kuwaiti Dinar"
+        },
+        {
+          "synonyms": [
+            " KGS"
+          ],
+          "value": "Som"
+        },
+        {
+          "synonyms": [
+            " LAK"
+          ],
+          "value": "Lao Kip"
+        },
+        {
+          "synonyms": [
+            " LBP"
+          ],
+          "value": "Lebanese Pound"
+        },
+        {
+          "synonyms": [
+            " LSL"
+          ],
+          "value": "Loti"
+        },
+        {
+          "synonyms": [
+            " ZAR"
+          ],
+          "value": "Rand"
+        },
+        {
+          "synonyms": [
+            " LRD"
+          ],
+          "value": "Liberian Dollar"
+        },
+        {
+          "synonyms": [
+            " LYD"
+          ],
+          "value": "Libyan Dinar"
+        },
+        {
+          "synonyms": [
+            " CHF"
+          ],
+          "value": "Swiss Franc"
+        },
+        {
+          "synonyms": [
+            " MOP"
+          ],
+          "value": "Pataca"
+        },
+        {
+          "synonyms": [
+            " MKD"
+          ],
+          "value": "Denar"
+        },
+        {
+          "synonyms": [
+            " MGA"
+          ],
+          "value": "Malagasy Ariary"
+        },
+        {
+          "synonyms": [
+            " MWK"
+          ],
+          "value": "Malawi Kwacha"
+        },
+        {
+          "synonyms": [
+            " MYR"
+          ],
+          "value": "Malaysian Ringgit"
+        },
+        {
+          "synonyms": [
+            " MVR"
+          ],
+          "value": "Rufiyaa"
+        },
+        {
+          "synonyms": [
+            " MRU"
+          ],
+          "value": "Ouguiya"
+        },
+        {
+          "synonyms": [
+            " MUR"
+          ],
+          "value": "Mauritius Rupee"
+        },
+        {
+          "synonyms": [
+            " XUA"
+          ],
+          "value": "ADB Unit of Account"
+        },
+        {
+          "synonyms": [
+            " MXN"
+          ],
+          "value": "Mexican Peso"
+        },
+        {
+          "synonyms": [
+            " MXV"
+          ],
+          "value": "Mexican Unidad de Inversion (UDI)"
+        },
+        {
+          "synonyms": [
+            " MDL"
+          ],
+          "value": "Moldovan Leu"
+        },
+        {
+          "synonyms": [
+            " MNT"
+          ],
+          "value": "Tugrik"
+        },
+        {
+          "synonyms": [
+            " MAD"
+          ],
+          "value": "Moroccan Dirham"
+        },
+        {
+          "synonyms": [
+            " MZN"
+          ],
+          "value": "Mozambique Metical"
+        },
+        {
+          "synonyms": [
+            " MMK"
+          ],
+          "value": "Kyat"
+        },
+        {
+          "synonyms": [
+            " NAD"
+          ],
+          "value": "Namibia Dollar"
+        },
+        {
+          "synonyms": [
+            " NPR"
+          ],
+          "value": "Nepalese Rupee"
+        },
+        {
+          "synonyms": [
+            " NIO"
+          ],
+          "value": "Cordoba Oro"
+        },
+        {
+          "synonyms": [
+            " NGN"
+          ],
+          "value": "Naira"
+        },
+        {
+          "synonyms": [
+            " OMR"
+          ],
+          "value": "Rial Omani"
+        },
+        {
+          "synonyms": [
+            " PKR"
+          ],
+          "value": "Pakistan Rupee"
+        },
+        {
+          "synonyms": [
+            " PAB"
+          ],
+          "value": "Balboa"
+        },
+        {
+          "synonyms": [
+            " PGK"
+          ],
+          "value": "Kina"
+        },
+        {
+          "synonyms": [
+            " PYG"
+          ],
+          "value": "Guarani"
+        },
+        {
+          "synonyms": [
+            " PEN"
+          ],
+          "value": "Sol"
+        },
+        {
+          "synonyms": [
+            " PHP"
+          ],
+          "value": "Philippine Piso"
+        },
+        {
+          "synonyms": [
+            " PLN"
+          ],
+          "value": "Zloty"
+        },
+        {
+          "synonyms": [
+            " QAR"
+          ],
+          "value": "Qatari Rial"
+        },
+        {
+          "synonyms": [
+            " RON"
+          ],
+          "value": "Romanian Leu"
+        },
+        {
+          "synonyms": [
+            " RUB"
+          ],
+          "value": "Russian Ruble"
+        },
+        {
+          "synonyms": [
+            " RWF"
+          ],
+          "value": "Rwanda Franc"
+        },
+        {
+          "synonyms": [
+            " SHP"
+          ],
+          "value": "Saint Helena Pound"
+        },
+        {
+          "synonyms": [
+            " WST"
+          ],
+          "value": "Tala"
+        },
+        {
+          "synonyms": [
+            " STN"
+          ],
+          "value": "Dobra"
+        },
+        {
+          "synonyms": [
+            " SAR"
+          ],
+          "value": "Saudi Riyal"
+        },
+        {
+          "synonyms": [
+            " RSD"
+          ],
+          "value": "Serbian Dinar"
+        },
+        {
+          "synonyms": [
+            " SCR"
+          ],
+          "value": "Seychelles Rupee"
+        },
+        {
+          "synonyms": [
+            " SLL"
+          ],
+          "value": "Leone"
+        },
+        {
+          "synonyms": [
+            " SGD"
+          ],
+          "value": "Singapore Dollar"
+        },
+        {
+          "synonyms": [
+            " XSU"
+          ],
+          "value": "Sucre"
+        },
+        {
+          "synonyms": [
+            " SBD"
+          ],
+          "value": "Solomon Islands Dollar"
+        },
+        {
+          "synonyms": [
+            " SOS"
+          ],
+          "value": "Somali Shilling"
+        },
+        {
+          "synonyms": [
+            " SSP"
+          ],
+          "value": "South Sudanese Pound"
+        },
+        {
+          "synonyms": [
+            " LKR"
+          ],
+          "value": "Sri Lanka Rupee"
+        },
+        {
+          "synonyms": [
+            " SDG"
+          ],
+          "value": "Sudanese Pound"
+        },
+        {
+          "synonyms": [
+            " SRD"
+          ],
+          "value": "Surinam Dollar"
+        },
+        {
+          "synonyms": [
+            " SZL"
+          ],
+          "value": "Lilangeni"
+        },
+        {
+          "synonyms": [
+            " SEK"
+          ],
+          "value": "Swedish Krona"
+        },
+        {
+          "synonyms": [
+            " CHE"
+          ],
+          "value": "WIR Euro"
+        },
+        {
+          "synonyms": [
+            " CHW"
+          ],
+          "value": "WIR Franc"
+        },
+        {
+          "synonyms": [
+            " SYP"
+          ],
+          "value": "Syrian Pound"
+        },
+        {
+          "synonyms": [
+            " TWD"
+          ],
+          "value": "New Taiwan Dollar"
+        },
+        {
+          "synonyms": [
+            " TJS"
+          ],
+          "value": "Somoni"
+        },
+        {
+          "synonyms": [
+            " TZS"
+          ],
+          "value": "Tanzanian Shilling"
+        },
+        {
+          "synonyms": [
+            " THB"
+          ],
+          "value": "Baht"
+        },
+        {
+          "synonyms": [
+            " TOP"
+          ],
+          "value": "Pa\u2019anga"
+        },
+        {
+          "synonyms": [
+            " TTD"
+          ],
+          "value": "Trinidad and Tobago Dollar"
+        },
+        {
+          "synonyms": [
+            " TND"
+          ],
+          "value": "Tunisian Dinar"
+        },
+        {
+          "synonyms": [
+            " TRY"
+          ],
+          "value": "Turkish Lira"
+        },
+        {
+          "synonyms": [
+            " TMT"
+          ],
+          "value": "Turkmenistan New Manat"
+        },
+        {
+          "synonyms": [
+            " UGX"
+          ],
+          "value": "Uganda Shilling"
+        },
+        {
+          "synonyms": [
+            " UAH"
+          ],
+          "value": "Hryvnia"
+        },
+        {
+          "synonyms": [
+            " AED"
+          ],
+          "value": "UAE Dirham"
+        },
+        {
+          "synonyms": [
+            " USN"
+          ],
+          "value": "US Dollar (Next day)"
+        },
+        {
+          "synonyms": [
+            " UYU"
+          ],
+          "value": "Peso Uruguayo"
+        },
+        {
+          "synonyms": [
+            " UYI"
+          ],
+          "value": "Uruguay Peso en Unidades Indexadas (UI)"
+        },
+        {
+          "synonyms": [
+            " UZS"
+          ],
+          "value": "Uzbekistan Sum"
+        },
+        {
+          "synonyms": [
+            " VUV"
+          ],
+          "value": "Vatu"
+        },
+        {
+          "synonyms": [
+            " VEF"
+          ],
+          "value": "Bol\u00edvar"
+        },
+        {
+          "synonyms": [
+            " VND"
+          ],
+          "value": "Dong"
+        },
+        {
+          "synonyms": [
+            " YER"
+          ],
+          "value": "Yemeni Rial"
+        },
+        {
+          "synonyms": [
+            " ZMW"
+          ],
+          "value": "Zambian Kwacha"
+        },
+        {
+          "synonyms": [
+            " ZWL"
+          ],
+          "value": "Zimbabwe Dollar"
+        }
+      ],
+      "use_synonyms": true
+    },
+    "conditionName": {
+      "automatically_extensible": true,
+      "data": [],
       "use_synonyms": true
     },
     "country": {
       "automatically_extensible": true,
-      "data": [
-        {
-          "synonyms": [],
-          "value": "Qatar"
-        },
-        {
-          "synonyms": [],
-          "value": "United States of America"
-        },
-        {
-          "synonyms": [],
-          "value": "United Kingdom"
-        },
-        {
-          "synonyms": [],
-          "value": "India"
-        },
-        {
-          "synonyms": [],
-          "value": "Canada"
-        },
-        {
-          "synonyms": [],
-          "value": "People's Republic of China"
-        },
-        {
-          "synonyms": [],
-          "value": "Australia"
-        },
-        {
-          "synonyms": [],
-          "value": "Germany"
-        },
-        {
-          "synonyms": [],
-          "value": "Russia"
-        },
-        {
-          "synonyms": [],
-          "value": "United Arab Emirates"
-        },
-        {
-          "synonyms": [],
-          "value": "Singapore"
-        },
-        {
-          "synonyms": [],
-          "value": "Japan"
-        },
-        {
-          "synonyms": [],
-          "value": "North Korea"
-        },
-        {
-          "synonyms": [],
-          "value": "France"
-        },
-        {
-          "synonyms": [],
-          "value": "Israel"
-        },
-        {
-          "synonyms": [],
-          "value": "Sweden"
-        },
-        {
-          "synonyms": [],
-          "value": "Philippines"
-        },
-        {
-          "synonyms": [],
-          "value": "Saudi Arabia"
-        },
-        {
-          "synonyms": [],
-          "value": "Turkey"
-        },
-        {
-          "synonyms": [],
-          "value": "New Zealand"
-        },
-        {
-          "synonyms": [],
-          "value": "Netherlands"
-        },
-        {
-          "synonyms": [],
-          "value": "Romania"
-        },
-        {
-          "synonyms": [],
-          "value": "Bahrain"
-        },
-        {
-          "synonyms": [],
-          "value": "Taiwan"
-        },
-        {
-          "synonyms": [],
-          "value": "Spain"
-        },
-        {
-          "synonyms": [],
-          "value": "Iran"
-        },
-        {
-          "synonyms": [],
-          "value": "Italy"
-        },
-        {
-          "synonyms": [],
-          "value": "Maldives"
-        },
-        {
-          "synonyms": [],
-          "value": "Switzerland"
-        },
-        {
-          "synonyms": [],
-          "value": "Pakistan"
-        },
-        {
-          "synonyms": [],
-          "value": "Indonesia"
-        },
-        {
-          "synonyms": [],
-          "value": "Thailand"
-        },
-        {
-          "synonyms": [],
-          "value": "South Africa"
-        },
-        {
-          "synonyms": [],
-          "value": "South Korea"
-        },
-        {
-          "synonyms": [],
-          "value": "Mexico"
-        },
-        {
-          "synonyms": [],
-          "value": "Norway"
-        },
-        {
-          "synonyms": [],
-          "value": "Brazil"
-        },
-        {
-          "synonyms": [],
-          "value": "Vietnam"
-        },
-        {
-          "synonyms": [],
-          "value": "Poland"
-        },
-        {
-          "synonyms": [],
-          "value": "Iceland"
-        },
-        {
-          "synonyms": [],
-          "value": "Montenegro"
-        },
-        {
-          "synonyms": [],
-          "value": "Malta"
-        },
-        {
-          "synonyms": [],
-          "value": "Malaysia"
-        },
-        {
-          "synonyms": [],
-          "value": "Egypt"
-        },
-        {
-          "synonyms": [],
-          "value": "Kazakhstan"
-        },
-        {
-          "synonyms": [],
-          "value": "Portugal"
-        },
-        {
-          "synonyms": [],
-          "value": "Denmark"
-        },
-        {
-          "synonyms": [],
-          "value": "Oman"
-        },
-        {
-          "synonyms": [],
-          "value": "Argentina"
-        },
-        {
-          "synonyms": [],
-          "value": "Morocco"
-        },
-        {
-          "synonyms": [],
-          "value": "Greece"
-        },
-        {
-          "synonyms": [],
-          "value": "Georgia"
-        },
-        {
-          "synonyms": [],
-          "value": "Czech Republic"
-        },
-        {
-          "synonyms": [],
-          "value": "Bangladesh"
-        },
-        {
-          "synonyms": [],
-          "value": "Myanmar"
-        },
-        {
-          "synonyms": [],
-          "value": "Belgium"
-        },
-        {
-          "synonyms": [],
-          "value": "Sri Lanka"
-        },
-        {
-          "synonyms": [],
-          "value": "Mauritius"
-        },
-        {
-          "synonyms": [],
-          "value": "Afghanistan"
-        },
-        {
-          "synonyms": [],
-          "value": "Ireland"
-        },
-        {
-          "synonyms": [],
-          "value": "Luxembourg"
-        },
-        {
-          "synonyms": [],
-          "value": "Finland"
-        },
-        {
-          "synonyms": [],
-          "value": "Croatia"
-        },
-        {
-          "synonyms": [],
-          "value": "Lebanon"
-        },
-        {
-          "synonyms": [],
-          "value": "Syria"
-        },
-        {
-          "synonyms": [],
-          "value": "Cyprus"
-        },
-        {
-          "synonyms": [],
-          "value": "Ukraine"
-        },
-        {
-          "synonyms": [],
-          "value": "Nigeria"
-        },
-        {
-          "synonyms": [],
-          "value": "Republic of Macedonia"
-        },
-        {
-          "synonyms": [],
-          "value": "Latvia"
-        },
-        {
-          "synonyms": [],
-          "value": "Austria"
-        },
-        {
-          "synonyms": [],
-          "value": "Monaco"
-        },
-        {
-          "synonyms": [],
-          "value": "Serbia"
-        },
-        {
-          "synonyms": [],
-          "value": "Azerbaijan"
-        },
-        {
-          "synonyms": [],
-          "value": "Albania"
-        },
-        {
-          "synonyms": [],
-          "value": "Armenia"
-        },
-        {
-          "synonyms": [],
-          "value": "Colombia"
-        },
-        {
-          "synonyms": [],
-          "value": "Bhutan"
-        },
-        {
-          "synonyms": [],
-          "value": "Estonia"
-        },
-        {
-          "synonyms": [],
-          "value": "Venezuela"
-        },
-        {
-          "synonyms": [],
-          "value": "Nepal"
-        },
-        {
-          "synonyms": [],
-          "value": "Cambodia"
-        },
-        {
-          "synonyms": [],
-          "value": "Hungary"
-        },
-        {
-          "synonyms": [],
-          "value": "Chile"
-        },
-        {
-          "synonyms": [],
-          "value": "Bulgaria"
-        },
-        {
-          "synonyms": [],
-          "value": "Cuba"
-        },
-        {
-          "synonyms": [],
-          "value": "Ethiopia"
-        },
-        {
-          "synonyms": [],
-          "value": "Yemen"
-        },
-        {
-          "synonyms": [],
-          "value": "Belarus"
-        },
-        {
-          "synonyms": [],
-          "value": "Iraq"
-        },
-        {
-          "synonyms": [],
-          "value": "Isle of Man"
-        },
-        {
-          "synonyms": [],
-          "value": "Mongolia"
-        },
-        {
-          "synonyms": [],
-          "value": "Lithuania"
-        },
-        {
-          "synonyms": [],
-          "value": "Algeria"
-        },
-        {
-          "synonyms": [],
-          "value": "Bosnia and Herzegovina"
-        },
-        {
-          "synonyms": [],
-          "value": "Democratic Republic of the Congo"
-        },
-        {
-          "synonyms": [],
-          "value": "Jamaica"
-        },
-        {
-          "synonyms": [],
-          "value": "Jordan"
-        },
-        {
-          "synonyms": [],
-          "value": "Dominican Republic"
-        },
-        {
-          "synonyms": [],
-          "value": "Andorra"
-        },
-        {
-          "synonyms": [],
-          "value": "Slovenia"
-        },
-        {
-          "synonyms": [],
-          "value": "Kuwait"
-        },
-        {
-          "synonyms": [],
-          "value": "Vatican City"
-        },
-        {
-          "synonyms": [],
-          "value": "Costa Rica"
-        },
-        {
-          "synonyms": [],
-          "value": "Liechtenstein"
-        },
-        {
-          "synonyms": [],
-          "value": "Fiji"
-        },
-        {
-          "synonyms": [],
-          "value": "Madagascar"
-        },
-        {
-          "synonyms": [],
-          "value": "Kosovo"
-        },
-        {
-          "synonyms": [],
-          "value": "Peru"
-        },
-        {
-          "synonyms": [],
-          "value": "Belize"
-        },
-        {
-          "synonyms": [],
-          "value": "Seychelles"
-        },
-        {
-          "synonyms": [],
-          "value": "Eritrea"
-        },
-        {
-          "synonyms": [],
-          "value": "Kenya"
-        },
-        {
-          "synonyms": [],
-          "value": "Brunei"
-        },
-        {
-          "synonyms": [],
-          "value": "Nicaragua"
-        },
-        {
-          "synonyms": [],
-          "value": "Moldova"
-        },
-        {
-          "synonyms": [],
-          "value": "Haiti"
-        },
-        {
-          "synonyms": [],
-          "value": "Tanzania"
-        },
-        {
-          "synonyms": [],
-          "value": "Somalia"
-        },
-        {
-          "synonyms": [],
-          "value": "Guyana"
-        },
-        {
-          "synonyms": [],
-          "value": "Ghana"
-        },
-        {
-          "synonyms": [],
-          "value": "San Marino"
-        },
-        {
-          "synonyms": [],
-          "value": "Laos"
-        },
-        {
-          "synonyms": [],
-          "value": "Slovakia"
-        },
-        {
-          "synonyms": [],
-          "value": "Zimbabwe"
-        },
-        {
-          "synonyms": [],
-          "value": "Papua New Guinea"
-        },
-        {
-          "synonyms": [],
-          "value": "Uzbekistan"
-        },
-        {
-          "synonyms": [],
-          "value": "Libya"
-        },
-        {
-          "synonyms": [],
-          "value": "Panama"
-        },
-        {
-          "synonyms": [],
-          "value": "Trinidad and Tobago"
-        },
-        {
-          "synonyms": [],
-          "value": "Tunisia"
-        },
-        {
-          "synonyms": [],
-          "value": "Ecuador"
-        },
-        {
-          "synonyms": [],
-          "value": "Barbados"
-        },
-        {
-          "synonyms": [],
-          "value": "Sudan"
-        },
-        {
-          "synonyms": [],
-          "value": "The Bahamas"
-        },
-        {
-          "synonyms": [],
-          "value": "Palestine"
-        },
-        {
-          "synonyms": [],
-          "value": "Bolivia"
-        },
-        {
-          "synonyms": [],
-          "value": "Liberia"
-        },
-        {
-          "synonyms": [],
-          "value": "Namibia"
-        },
-        {
-          "synonyms": [],
-          "value": "Suriname"
-        },
-        {
-          "synonyms": [],
-          "value": "Cape Verde"
-        },
-        {
-          "synonyms": [],
-          "value": "Angola"
-        },
-        {
-          "synonyms": [],
-          "value": "Kyrgyzstan"
-        },
-        {
-          "synonyms": [],
-          "value": "Nauru"
-        },
-        {
-          "synonyms": [],
-          "value": "Uganda"
-        },
-        {
-          "synonyms": [],
-          "value": "Ivory Coast"
-        },
-        {
-          "synonyms": [],
-          "value": "Senegal"
-        },
-        {
-          "synonyms": [],
-          "value": "Uruguay"
-        },
-        {
-          "synonyms": [],
-          "value": "Mali"
-        },
-        {
-          "synonyms": [],
-          "value": "Turkmenistan"
-        },
-        {
-          "synonyms": [],
-          "value": "Vanuatu"
-        },
-        {
-          "synonyms": [],
-          "value": "Samoa"
-        },
-        {
-          "synonyms": [],
-          "value": "Botswana"
-        },
-        {
-          "synonyms": [],
-          "value": "Guatemala"
-        },
-        {
-          "synonyms": [],
-          "value": "Rwanda"
-        },
-        {
-          "synonyms": [],
-          "value": "Zambia"
-        },
-        {
-          "synonyms": [],
-          "value": "Tajikistan"
-        },
-        {
-          "synonyms": [],
-          "value": "Cameroon"
-        },
-        {
-          "synonyms": [],
-          "value": "El Salvador"
-        },
-        {
-          "synonyms": [],
-          "value": "Mauritania"
-        },
-        {
-          "synonyms": [],
-          "value": "East Timor"
-        },
-        {
-          "synonyms": [],
-          "value": "Marshall Islands"
-        },
-        {
-          "synonyms": [],
-          "value": "Mozambique"
-        },
-        {
-          "synonyms": [],
-          "value": "South Sudan"
-        },
-        {
-          "synonyms": [],
-          "value": "Djibouti"
-        },
-        {
-          "synonyms": [],
-          "value": "Dominica"
-        },
-        {
-          "synonyms": [],
-          "value": "Kiribati"
-        },
-        {
-          "synonyms": [],
-          "value": "Palau"
-        },
-        {
-          "synonyms": [],
-          "value": "Tonga"
-        },
-        {
-          "synonyms": [],
-          "value": "Sierra Leone"
-        },
-        {
-          "synonyms": [],
-          "value": "Burkina Faso"
-        },
-        {
-          "synonyms": [],
-          "value": "Honduras"
-        },
-        {
-          "synonyms": [],
-          "value": "Grenada"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Lucia"
-        },
-        {
-          "synonyms": [],
-          "value": "Lesotho"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Kitts and Nevis"
-        },
-        {
-          "synonyms": [],
-          "value": "Niger"
-        },
-        {
-          "synonyms": [],
-          "value": "Malawi"
-        },
-        {
-          "synonyms": [],
-          "value": "Chad"
-        },
-        {
-          "synonyms": [],
-          "value": "Swaziland"
-        },
-        {
-          "synonyms": [],
-          "value": "Paraguay"
-        },
-        {
-          "synonyms": [],
-          "value": "Equatorial Guinea"
-        },
-        {
-          "synonyms": [],
-          "value": "Guinea"
-        },
-        {
-          "synonyms": [],
-          "value": "Central African Republic"
-        },
-        {
-          "synonyms": [],
-          "value": "Transnistria"
-        },
-        {
-          "synonyms": [],
-          "value": "Tuvalu"
-        },
-        {
-          "synonyms": [],
-          "value": "Republic of the Congo"
-        },
-        {
-          "synonyms": [],
-          "value": "Solomon Islands"
-        },
-        {
-          "synonyms": [],
-          "value": "Western Sahara"
-        },
-        {
-          "synonyms": [],
-          "value": "Comoros"
-        },
-        {
-          "synonyms": [],
-          "value": "Benin"
-        },
-        {
-          "synonyms": [],
-          "value": "Gabon"
-        },
-        {
-          "synonyms": [],
-          "value": "Togo"
-        },
-        {
-          "synonyms": [],
-          "value": "Gambia"
-        },
-        {
-          "synonyms": [],
-          "value": "Federated States of Micronesia"
-        },
-        {
-          "synonyms": [],
-          "value": "Burundi"
-        },
-        {
-          "synonyms": [],
-          "value": "Antigua and Barbuda"
-        },
-        {
-          "synonyms": [],
-          "value": "Guinea-Bissau"
-        },
-        {
-          "synonyms": [],
-          "value": "Kingdom of the Netherlands"
-        },
-        {
-          "synonyms": [],
-          "value": "Somaliland"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Vincent and the Grenadines"
-        },
-        {
-          "synonyms": [],
-          "value": "Turkish Republic of Northern Cyprus"
-        },
-        {
-          "synonyms": [],
-          "value": "Sao Tom\u00e9 and Pr\u00edncipe"
-        },
-        {
-          "synonyms": [],
-          "value": "Sahrawi Arab Democratic Republic"
-        },
-        {
-          "synonyms": [],
-          "value": "Guernsey"
-        }
-      ],
+      "data": [],
       "use_synonyms": true
     },
     "geographicalPOI": {
       "automatically_extensible": true,
-      "data": [
-        {
-          "synonyms": [],
-          "value": "Mississippi River"
-        },
-        {
-          "synonyms": [],
-          "value": "Danube"
-        },
-        {
-          "synonyms": [],
-          "value": "Nile"
-        },
-        {
-          "synonyms": [],
-          "value": "Ganges"
-        },
-        {
-          "synonyms": [],
-          "value": "Euphrates"
-        },
-        {
-          "synonyms": [],
-          "value": "River Thames"
-        },
-        {
-          "synonyms": [],
-          "value": "Amazon"
-        },
-        {
-          "synonyms": [],
-          "value": "Columbia River"
-        },
-        {
-          "synonyms": [],
-          "value": "Rhine"
-        },
-        {
-          "synonyms": [],
-          "value": "Indus River"
-        },
-        {
-          "synonyms": [],
-          "value": "Yellow River"
-        },
-        {
-          "synonyms": [],
-          "value": "Yangtze"
-        },
-        {
-          "synonyms": [],
-          "value": "Colorado River"
-        },
-        {
-          "synonyms": [],
-          "value": "Rio Grande"
-        },
-        {
-          "synonyms": [],
-          "value": "Volga"
-        },
-        {
-          "synonyms": [],
-          "value": "Missouri River"
-        },
-        {
-          "synonyms": [],
-          "value": "Hudson River"
-        },
-        {
-          "synonyms": [],
-          "value": "Mekong River"
-        },
-        {
-          "synonyms": [],
-          "value": "Seine"
-        },
-        {
-          "synonyms": [],
-          "value": "Congo River"
-        },
-        {
-          "synonyms": [],
-          "value": "Tigris"
-        },
-        {
-          "synonyms": [],
-          "value": "Ohio River"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Lawrence River"
-        },
-        {
-          "synonyms": [],
-          "value": "Potomac River"
-        },
-        {
-          "synonyms": [],
-          "value": "Narmada River"
-        },
-        {
-          "synonyms": [],
-          "value": "Rubicon"
-        },
-        {
-          "synonyms": [],
-          "value": "Yamuna"
-        },
-        {
-          "synonyms": [],
-          "value": "Godavari River"
-        },
-        {
-          "synonyms": [],
-          "value": "Snake River"
-        },
-        {
-          "synonyms": [],
-          "value": "Severn"
-        },
-        {
-          "synonyms": [],
-          "value": "Jordan River"
-        },
-        {
-          "synonyms": [],
-          "value": "Kaveri River"
-        },
-        {
-          "synonyms": [],
-          "value": "Elbe"
-        },
-        {
-          "synonyms": [],
-          "value": "Amur"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Everest"
-        },
-        {
-          "synonyms": [],
-          "value": "El Capitan"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Rushmore"
-        },
-        {
-          "synonyms": [],
-          "value": "K2"
-        },
-        {
-          "synonyms": [],
-          "value": "Yellowstone Caldera"
-        },
-        {
-          "synonyms": [],
-          "value": "Pichu Pichu"
-        },
-        {
-          "synonyms": [],
-          "value": "Santorini"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Kilimanjaro"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Fuji"
-        },
-        {
-          "synonyms": [],
-          "value": "Denali"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Kailash"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Rainier"
-        },
-        {
-          "synonyms": [],
-          "value": "Mont Blanc"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Olympus"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Zion"
-        },
-        {
-          "synonyms": [],
-          "value": "Krakatau"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Whitney"
-        },
-        {
-          "synonyms": [],
-          "value": "Matterhorn"
-        },
-        {
-          "synonyms": [],
-          "value": "Kanchenjunga"
-        },
-        {
-          "synonyms": [],
-          "value": "Pinatubo"
-        },
-        {
-          "synonyms": [],
-          "value": "Devils Tower"
-        },
-        {
-          "synonyms": [],
-          "value": "Aconcagua"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Shasta"
-        },
-        {
-          "synonyms": [],
-          "value": "Mauna Kea"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Sinai"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Ararat"
-        },
-        {
-          "synonyms": [],
-          "value": "Ben Nevis"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Elbrus"
-        },
-        {
-          "synonyms": [],
-          "value": "Stone Mountain"
-        },
-        {
-          "synonyms": [],
-          "value": "Mount Athos"
-        },
-        {
-          "synonyms": [],
-          "value": "Silicon Valley"
-        },
-        {
-          "synonyms": [],
-          "value": "U.S. Route 66"
-        },
-        {
-          "synonyms": [],
-          "value": "Death Valley"
-        },
-        {
-          "synonyms": [],
-          "value": "San Francisco Bay Area"
-        },
-        {
-          "synonyms": [],
-          "value": "Yosemite National Park"
-        },
-        {
-          "synonyms": [],
-          "value": "Orange County"
-        },
-        {
-          "synonyms": [],
-          "value": "California Gold Rush"
-        },
-        {
-          "synonyms": [],
-          "value": "Lake Tahoe"
-        },
-        {
-          "synonyms": [],
-          "value": "Sierra Nevada"
-        },
-        {
-          "synonyms": [],
-          "value": "Salton Sea"
-        },
-        {
-          "synonyms": [],
-          "value": "Los Angeles County"
-        },
-        {
-          "synonyms": [],
-          "value": "Oracle Arena"
-        },
-        {
-          "synonyms": [],
-          "value": "Mojave Desert"
-        },
-        {
-          "synonyms": [],
-          "value": "San Fernando Valley"
-        },
-        {
-          "synonyms": [],
-          "value": "San Andreas Fault"
-        },
-        {
-          "synonyms": [],
-          "value": "Death Valley National Park"
-        },
-        {
-          "synonyms": [],
-          "value": "Neverland Ranch valley"
-        },
-        {
-          "synonyms": [],
-          "value": "Bixby Creek Bridge"
-        },
-        {
-          "synonyms": [],
-          "value": "Hearst Castle"
-        },
-        {
-          "synonyms": [],
-          "value": "Sequoia National Park"
-        },
-        {
-          "synonyms": [],
-          "value": "San Luis Obispo"
-        },
-        {
-          "synonyms": [],
-          "value": "San Diego County"
-        },
-        {
-          "synonyms": [],
-          "value": "University of California Irvine"
-        },
-        {
-          "synonyms": [],
-          "value": "Stanislaus County"
-        },
-        {
-          "synonyms": [],
-          "value": "San Bernardino County"
-        },
-        {
-          "synonyms": [],
-          "value": "California State University Long Beach"
-        },
-        {
-          "synonyms": [],
-          "value": "Joshua Tree National Park"
-        },
-        {
-          "synonyms": [],
-          "value": "Redwood National and State Parks"
-        },
-        {
-          "synonyms": [],
-          "value": "Yellowstone National Park"
-        },
-        {
-          "synonyms": [],
-          "value": "Lake District"
-        },
-        {
-          "synonyms": [],
-          "value": "Glacier National Park"
-        }
-      ],
+      "data": [],
       "use_synonyms": true
     },
     "locality": {
       "automatically_extensible": true,
-      "data": [
-        {
-          "synonyms": [],
-          "value": "Singapore"
-        },
-        {
-          "synonyms": [],
-          "value": "New York City"
-        },
-        {
-          "synonyms": [],
-          "value": "London"
-        },
-        {
-          "synonyms": [],
-          "value": "Dubai"
-        },
-        {
-          "synonyms": [],
-          "value": "Los Angeles"
-        },
-        {
-          "synonyms": [],
-          "value": "Washington D.C."
-        },
-        {
-          "synonyms": [],
-          "value": "Paris"
-        },
-        {
-          "synonyms": [],
-          "value": "Chicago"
-        },
-        {
-          "synonyms": [],
-          "value": "Toronto"
-        },
-        {
-          "synonyms": [],
-          "value": "Berlin"
-        },
-        {
-          "synonyms": [],
-          "value": "San Francisco"
-        },
-        {
-          "synonyms": [],
-          "value": "Manchester"
-        },
-        {
-          "synonyms": [],
-          "value": "Seattle"
-        },
-        {
-          "synonyms": [],
-          "value": "Rome"
-        },
-        {
-          "synonyms": [],
-          "value": "Mumbai"
-        },
-        {
-          "synonyms": [],
-          "value": "Phoenix"
-        },
-        {
-          "synonyms": [],
-          "value": "Vancouver"
-        },
-        {
-          "synonyms": [],
-          "value": "Vatican City"
-        },
-        {
-          "synonyms": [],
-          "value": "Boston"
-        },
-        {
-          "synonyms": [],
-          "value": "Amsterdam"
-        },
-        {
-          "synonyms": [],
-          "value": "Jerusalem"
-        },
-        {
-          "synonyms": [],
-          "value": "Barcelona"
-        },
-        {
-          "synonyms": [],
-          "value": "Portland"
-        },
-        {
-          "synonyms": [],
-          "value": "Shanghai"
-        },
-        {
-          "synonyms": [],
-          "value": "Atlanta"
-        },
-        {
-          "synonyms": [],
-          "value": "Prague"
-        },
-        {
-          "synonyms": [],
-          "value": "Melbourne"
-        },
-        {
-          "synonyms": [],
-          "value": "Moscow"
-        },
-        {
-          "synonyms": [],
-          "value": "New Orleans"
-        },
-        {
-          "synonyms": [],
-          "value": "Vienna"
-        },
-        {
-          "synonyms": [],
-          "value": "Sydney"
-        },
-        {
-          "synonyms": [],
-          "value": "Mexico City"
-        },
-        {
-          "synonyms": [],
-          "value": "Venice"
-        },
-        {
-          "synonyms": [],
-          "value": "Beijing"
-        },
-        {
-          "synonyms": [],
-          "value": "Detroit"
-        },
-        {
-          "synonyms": [],
-          "value": "Budapest"
-        },
-        {
-          "synonyms": [],
-          "value": "Houston"
-        },
-        {
-          "synonyms": [],
-          "value": "Istanbul"
-        },
-        {
-          "synonyms": [],
-          "value": "Edinburgh"
-        },
-        {
-          "synonyms": [],
-          "value": "City of London"
-        },
-        {
-          "synonyms": [],
-          "value": "Abu Dhabi"
-        },
-        {
-          "synonyms": [],
-          "value": "Mecca"
-        },
-        {
-          "synonyms": [],
-          "value": "Hamburg"
-        },
-        {
-          "synonyms": [],
-          "value": "Munich"
-        },
-        {
-          "synonyms": [],
-          "value": "Austin"
-        },
-        {
-          "synonyms": [],
-          "value": "Copenhagen"
-        },
-        {
-          "synonyms": [],
-          "value": "Delhi"
-        },
-        {
-          "synonyms": [],
-          "value": "Nashville"
-        },
-        {
-          "synonyms": [],
-          "value": "Petra"
-        },
-        {
-          "synonyms": [],
-          "value": "Denver"
-        },
-        {
-          "synonyms": [],
-          "value": "Madrid"
-        },
-        {
-          "synonyms": [],
-          "value": "Ottawa"
-        },
-        {
-          "synonyms": [],
-          "value": "Canberra"
-        },
-        {
-          "synonyms": [],
-          "value": "Stockholm"
-        },
-        {
-          "synonyms": [],
-          "value": "Athens"
-        },
-        {
-          "synonyms": [],
-          "value": "Glasgow"
-        },
-        {
-          "synonyms": [],
-          "value": "Milan"
-        },
-        {
-          "synonyms": [],
-          "value": "Florence"
-        },
-        {
-          "synonyms": [],
-          "value": "Jakarta"
-        },
-        {
-          "synonyms": [],
-          "value": "Constantinople"
-        },
-        {
-          "synonyms": [],
-          "value": "Utqia\u0121vik"
-        },
-        {
-          "synonyms": [],
-          "value": "Bangkok"
-        },
-        {
-          "synonyms": [],
-          "value": "Dallas"
-        },
-        {
-          "synonyms": [],
-          "value": "Brooklyn"
-        },
-        {
-          "synonyms": [],
-          "value": "Tel Aviv"
-        },
-        {
-          "synonyms": [],
-          "value": "Baltimore"
-        },
-        {
-          "synonyms": [],
-          "value": "Rio de Janeiro"
-        },
-        {
-          "synonyms": [],
-          "value": "Pyongyang"
-        },
-        {
-          "synonyms": [],
-          "value": "Kolkata"
-        },
-        {
-          "synonyms": [],
-          "value": "Auckland"
-        },
-        {
-          "synonyms": [],
-          "value": "Liverpool"
-        },
-        {
-          "synonyms": [],
-          "value": "Lisbon"
-        },
-        {
-          "synonyms": [],
-          "value": "Warsaw"
-        },
-        {
-          "synonyms": [],
-          "value": "Cardiff"
-        },
-        {
-          "synonyms": [],
-          "value": "Buenos Aires"
-        },
-        {
-          "synonyms": [],
-          "value": "St. Louis"
-        },
-        {
-          "synonyms": [],
-          "value": "Belfast"
-        },
-        {
-          "synonyms": [],
-          "value": "Bristol"
-        },
-        {
-          "synonyms": [],
-          "value": "Kansas City"
-        },
-        {
-          "synonyms": [],
-          "value": "Cologne"
-        },
-        {
-          "synonyms": [],
-          "value": "Kaliningrad"
-        },
-        {
-          "synonyms": [],
-          "value": "Albuquerque"
-        },
-        {
-          "synonyms": [],
-          "value": "San Jose"
-        },
-        {
-          "synonyms": [],
-          "value": "Cleveland"
-        },
-        {
-          "synonyms": [],
-          "value": "Reykjav\u00edk"
-        },
-        {
-          "synonyms": [],
-          "value": "Naples"
-        },
-        {
-          "synonyms": [],
-          "value": "Geneva"
-        },
-        {
-          "synonyms": [],
-          "value": "Louisville"
-        },
-        {
-          "synonyms": [],
-          "value": "Columbus"
-        },
-        {
-          "synonyms": [],
-          "value": "Brisbane"
-        },
-        {
-          "synonyms": [],
-          "value": "Oslo"
-        },
-        {
-          "synonyms": [],
-          "value": "The Hague"
-        },
-        {
-          "synonyms": [],
-          "value": "Cape Town"
-        },
-        {
-          "synonyms": [],
-          "value": "Orlando"
-        },
-        {
-          "synonyms": [],
-          "value": "Ar-Raqqah"
-        },
-        {
-          "synonyms": [],
-          "value": "Newcastle upon Tyne"
-        },
-        {
-          "synonyms": [],
-          "value": "Anchorage"
-        },
-        {
-          "synonyms": [],
-          "value": "Tehran"
-        },
-        {
-          "synonyms": [],
-          "value": "Salt Lake City"
-        },
-        {
-          "synonyms": [],
-          "value": "New Delhi"
-        },
-        {
-          "synonyms": [],
-          "value": "Helsinki"
-        },
-        {
-          "synonyms": [],
-          "value": "Krak\u00f3w"
-        },
-        {
-          "synonyms": [],
-          "value": "San Antonio"
-        },
-        {
-          "synonyms": [],
-          "value": "Turin"
-        },
-        {
-          "synonyms": [],
-          "value": "Mosul"
-        },
-        {
-          "synonyms": [],
-          "value": "S\u00e3o Paulo"
-        },
-        {
-          "synonyms": [],
-          "value": "Cairo"
-        },
-        {
-          "synonyms": [],
-          "value": "Jacksonville"
-        },
-        {
-          "synonyms": [],
-          "value": "Belgrade"
-        },
-        {
-          "synonyms": [],
-          "value": "Alexandria"
-        },
-        {
-          "synonyms": [],
-          "value": "Damascus"
-        },
-        {
-          "synonyms": [],
-          "value": "Johannesburg"
-        },
-        {
-          "synonyms": [],
-          "value": "Baku"
-        },
-        {
-          "synonyms": [],
-          "value": "Genoa"
-        },
-        {
-          "synonyms": [],
-          "value": "Lagos"
-        },
-        {
-          "synonyms": [],
-          "value": "Perth"
-        },
-        {
-          "synonyms": [],
-          "value": "Charleston"
-        },
-        {
-          "synonyms": [],
-          "value": "Indianapolis"
-        },
-        {
-          "synonyms": [],
-          "value": "Seville"
-        },
-        {
-          "synonyms": [],
-          "value": "Memphis"
-        },
-        {
-          "synonyms": [],
-          "value": "Valencia"
-        },
-        {
-          "synonyms": [],
-          "value": "Taipei"
-        },
-        {
-          "synonyms": [],
-          "value": "Z\u00fcrich"
-        },
-        {
-          "synonyms": [],
-          "value": "Nice"
-        },
-        {
-          "synonyms": [],
-          "value": "D\u00fcsseldorf"
-        },
-        {
-          "synonyms": [],
-          "value": "Casablanca"
-        },
-        {
-          "synonyms": [],
-          "value": "Halifax"
-        },
-        {
-          "synonyms": [],
-          "value": "Herculaneum"
-        },
-        {
-          "synonyms": [],
-          "value": "Nuremberg"
-        },
-        {
-          "synonyms": [],
-          "value": "Leeds"
-        },
-        {
-          "synonyms": [],
-          "value": "Timbuktu"
-        },
-        {
-          "synonyms": [],
-          "value": "San Juan"
-        },
-        {
-          "synonyms": [],
-          "value": "Adelaide"
-        },
-        {
-          "synonyms": [],
-          "value": "Tallinn"
-        },
-        {
-          "synonyms": [],
-          "value": "Astana"
-        },
-        {
-          "synonyms": [],
-          "value": "Compton"
-        },
-        {
-          "synonyms": [],
-          "value": "Tampa"
-        },
-        {
-          "synonyms": [],
-          "value": "Tbilisi"
-        },
-        {
-          "synonyms": [],
-          "value": "Victoria"
-        },
-        {
-          "synonyms": [],
-          "value": "Pune"
-        },
-        {
-          "synonyms": [],
-          "value": "Savannah"
-        },
-        {
-          "synonyms": [],
-          "value": "Thessaloniki"
-        },
-        {
-          "synonyms": [],
-          "value": "Palo Alto"
-        },
-        {
-          "synonyms": [],
-          "value": "Stuttgart"
-        },
-        {
-          "synonyms": [],
-          "value": "Bordeaux"
-        },
-        {
-          "synonyms": [],
-          "value": "Rosh HaAyin"
-        },
-        {
-          "synonyms": [],
-          "value": "Raleigh"
-        },
-        {
-          "synonyms": [],
-          "value": "Cambridge"
-        },
-        {
-          "synonyms": [],
-          "value": "Doha"
-        },
-        {
-          "synonyms": [],
-          "value": "Tokyo"
-        },
-        {
-          "synonyms": [],
-          "value": "Seoul"
-        },
-        {
-          "synonyms": [],
-          "value": "Bangalore"
-        },
-        {
-          "synonyms": [],
-          "value": "Dublin"
-        },
-        {
-          "synonyms": [],
-          "value": "Kabul"
-        },
-        {
-          "synonyms": [],
-          "value": "Manila"
-        },
-        {
-          "synonyms": [],
-          "value": "Kuala Lumpur"
-        },
-        {
-          "synonyms": [],
-          "value": "Nairobi"
-        },
-        {
-          "synonyms": [],
-          "value": "Kiev"
-        },
-        {
-          "synonyms": [],
-          "value": "Bucharest"
-        },
-        {
-          "synonyms": [],
-          "value": "Riyadh"
-        },
-        {
-          "synonyms": [],
-          "value": "Beirut"
-        },
-        {
-          "synonyms": [],
-          "value": "Bogota"
-        },
-        {
-          "synonyms": [],
-          "value": "Riga"
-        },
-        {
-          "synonyms": [],
-          "value": "Strasbourg"
-        },
-        {
-          "synonyms": [],
-          "value": "Baghdad"
-        },
-        {
-          "synonyms": [],
-          "value": "Wellington"
-        },
-        {
-          "synonyms": [],
-          "value": "Sarajevo"
-        },
-        {
-          "synonyms": [],
-          "value": "Hanoi"
-        },
-        {
-          "synonyms": [],
-          "value": "Bratislava"
-        },
-        {
-          "synonyms": [],
-          "value": "Sofia"
-        },
-        {
-          "synonyms": [],
-          "value": "Kathmandu"
-        },
-        {
-          "synonyms": [],
-          "value": "Lima"
-        },
-        {
-          "synonyms": [],
-          "value": "Zagreb"
-        },
-        {
-          "synonyms": [],
-          "value": "Dhaka"
-        },
-        {
-          "synonyms": [],
-          "value": "Nassau"
-        },
-        {
-          "synonyms": [],
-          "value": "Ljubljana"
-        },
-        {
-          "synonyms": [],
-          "value": "Algiers"
-        },
-        {
-          "synonyms": [],
-          "value": "Muscat"
-        },
-        {
-          "synonyms": [],
-          "value": "Nanjing"
-        },
-        {
-          "synonyms": [],
-          "value": "Havana"
-        },
-        {
-          "synonyms": [],
-          "value": "Addis Ababa"
-        },
-        {
-          "synonyms": [],
-          "value": "Vilnius"
-        },
-        {
-          "synonyms": [],
-          "value": "Skopje"
-        },
-        {
-          "synonyms": [],
-          "value": "Islamabad"
-        },
-        {
-          "synonyms": [],
-          "value": "Bras\u00edlia"
-        },
-        {
-          "synonyms": [],
-          "value": "Jaipur"
-        },
-        {
-          "synonyms": [],
-          "value": "Santiago"
-        },
-        {
-          "synonyms": [],
-          "value": "Chandigarh"
-        },
-        {
-          "synonyms": [],
-          "value": "Kinshasa"
-        },
-        {
-          "synonyms": [],
-          "value": "M\u00e1laga"
-        },
-        {
-          "synonyms": [],
-          "value": "Ulaanbaatar"
-        },
-        {
-          "synonyms": [],
-          "value": "Pretoria"
-        },
-        {
-          "synonyms": [],
-          "value": "Caracas"
-        },
-        {
-          "synonyms": [],
-          "value": "Minsk"
-        },
-        {
-          "synonyms": [],
-          "value": "Nuuk"
-        },
-        {
-          "synonyms": [],
-          "value": "Leicester"
-        },
-        {
-          "synonyms": [],
-          "value": "Bern"
-        },
-        {
-          "synonyms": [],
-          "value": "Phnom Penh"
-        },
-        {
-          "synonyms": [],
-          "value": "Persepolis"
-        },
-        {
-          "synonyms": [],
-          "value": "Podgorica"
-        },
-        {
-          "synonyms": [],
-          "value": "La Paz"
-        },
-        {
-          "synonyms": [],
-          "value": "Amman"
-        },
-        {
-          "synonyms": [],
-          "value": "Yerevan"
-        },
-        {
-          "synonyms": [],
-          "value": "Quito"
-        },
-        {
-          "synonyms": [],
-          "value": "Shimla"
-        },
-        {
-          "synonyms": [],
-          "value": "Manama"
-        },
-        {
-          "synonyms": [],
-          "value": "Panama City"
-        },
-        {
-          "synonyms": [],
-          "value": "Ankara"
-        },
-        {
-          "synonyms": [],
-          "value": "Lucknow"
-        },
-        {
-          "synonyms": [],
-          "value": "Montevideo"
-        },
-        {
-          "synonyms": [],
-          "value": "Kingston"
-        },
-        {
-          "synonyms": [],
-          "value": "Tashkent"
-        },
-        {
-          "synonyms": [],
-          "value": "Mogadishu"
-        },
-        {
-          "synonyms": [],
-          "value": "Santo Domingo"
-        },
-        {
-          "synonyms": [],
-          "value": "Lausanne"
-        },
-        {
-          "synonyms": [],
-          "value": "Nicosia"
-        },
-        {
-          "synonyms": [],
-          "value": "C\u00f3rdoba"
-        },
-        {
-          "synonyms": [],
-          "value": "Dakar"
-        },
-        {
-          "synonyms": [],
-          "value": "Tirana"
-        },
-        {
-          "synonyms": [],
-          "value": "Besan\u00e7on"
-        },
-        {
-          "synonyms": [],
-          "value": "Luxembourg"
-        },
-        {
-          "synonyms": [],
-          "value": "Brazzaville"
-        },
-        {
-          "synonyms": [],
-          "value": "Thiruvananthapuram"
-        },
-        {
-          "synonyms": [],
-          "value": "Khartoum"
-        },
-        {
-          "synonyms": [],
-          "value": "Yamoussoukro"
-        },
-        {
-          "synonyms": [],
-          "value": "Utrecht"
-        },
-        {
-          "synonyms": [],
-          "value": "Tunis"
-        },
-        {
-          "synonyms": [],
-          "value": "Kuwait City"
-        },
-        {
-          "synonyms": [],
-          "value": "Abuja"
-        },
-        {
-          "synonyms": [],
-          "value": "Harare"
-        },
-        {
-          "synonyms": [],
-          "value": "Padua"
-        },
-        {
-          "synonyms": [],
-          "value": "Chi\u0219in\u0103u"
-        },
-        {
-          "synonyms": [],
-          "value": "Peshawar"
-        },
-        {
-          "synonyms": [],
-          "value": "Windhoek"
-        },
-        {
-          "synonyms": [],
-          "value": "San Salvador"
-        },
-        {
-          "synonyms": [],
-          "value": "San Jos\u00e9"
-        },
-        {
-          "synonyms": [],
-          "value": "Luanda"
-        },
-        {
-          "synonyms": [],
-          "value": "Arequipa"
-        },
-        {
-          "synonyms": [],
-          "value": "Fukuoka"
-        },
-        {
-          "synonyms": [],
-          "value": "Maastricht"
-        },
-        {
-          "synonyms": [],
-          "value": "Vientiane"
-        },
-        {
-          "synonyms": [],
-          "value": "Kampala"
-        },
-        {
-          "synonyms": [],
-          "value": "Bhopal"
-        },
-        {
-          "synonyms": [],
-          "value": "Port Moresby"
-        },
-        {
-          "synonyms": [],
-          "value": "Guatemala City"
-        },
-        {
-          "synonyms": [],
-          "value": "Managua"
-        },
-        {
-          "synonyms": [],
-          "value": "Port of Spain"
-        },
-        {
-          "synonyms": [],
-          "value": "Belo Horizonte"
-        },
-        {
-          "synonyms": [],
-          "value": "Maputo"
-        },
-        {
-          "synonyms": [],
-          "value": "Cagliari"
-        },
-        {
-          "synonyms": [],
-          "value": "Dushanbe"
-        },
-        {
-          "synonyms": [],
-          "value": "Amaravati"
-        },
-        {
-          "synonyms": [],
-          "value": "Siem Reap"
-        },
-        {
-          "synonyms": [],
-          "value": "Patna"
-        },
-        {
-          "synonyms": [],
-          "value": "Andorra la Vella"
-        },
-        {
-          "synonyms": [],
-          "value": "Asmara"
-        },
-        {
-          "synonyms": [],
-          "value": "Port-au-Prince"
-        },
-        {
-          "synonyms": [],
-          "value": "Vaduz"
-        },
-        {
-          "synonyms": [],
-          "value": "Bamako"
-        },
-        {
-          "synonyms": [],
-          "value": "Ouagadougou"
-        },
-        {
-          "synonyms": [],
-          "value": "Putrajaya"
-        },
-        {
-          "synonyms": [],
-          "value": "Rovaniemi"
-        },
-        {
-          "synonyms": [],
-          "value": "Georgetown"
-        },
-        {
-          "synonyms": [],
-          "value": "Tegucigalpa"
-        },
-        {
-          "synonyms": [],
-          "value": "Gaborone"
-        },
-        {
-          "synonyms": [],
-          "value": "Brussels"
-        },
-        {
-          "synonyms": [],
-          "value": "Antananarivo"
-        },
-        {
-          "synonyms": [],
-          "value": "Lusaka"
-        },
-        {
-          "synonyms": [],
-          "value": "Florian\u00f3polis"
-        },
-        {
-          "synonyms": [],
-          "value": "Paramaribo"
-        },
-        {
-          "synonyms": [],
-          "value": "Asunci\u00f3n"
-        },
-        {
-          "synonyms": [],
-          "value": "Kota Kinabalu"
-        },
-        {
-          "synonyms": [],
-          "value": "St. Gallen"
-        },
-        {
-          "synonyms": [],
-          "value": "Nouakchott"
-        },
-        {
-          "synonyms": [],
-          "value": "Conakry"
-        },
-        {
-          "synonyms": [],
-          "value": "Bolzano"
-        },
-        {
-          "synonyms": [],
-          "value": "Fuzhou"
-        },
-        {
-          "synonyms": [],
-          "value": "Kigali"
-        },
-        {
-          "synonyms": [],
-          "value": "Haarlem"
-        },
-        {
-          "synonyms": [],
-          "value": "Hamilton"
-        },
-        {
-          "synonyms": [],
-          "value": "Arnhem"
-        },
-        {
-          "synonyms": [],
-          "value": "Bridgetown"
-        },
-        {
-          "synonyms": [],
-          "value": "Niamey"
-        },
-        {
-          "synonyms": [],
-          "value": "'s-Hertogenbosch"
-        },
-        {
-          "synonyms": [],
-          "value": "Santa Cruz de Tenerife"
-        },
-        {
-          "synonyms": [],
-          "value": "Smolensk"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Helier"
-        },
-        {
-          "synonyms": [],
-          "value": "Kayseri"
-        },
-        {
-          "synonyms": [],
-          "value": "Ranchi"
-        },
-        {
-          "synonyms": [],
-          "value": "Groningen"
-        },
-        {
-          "synonyms": [],
-          "value": "Hattusa"
-        },
-        {
-          "synonyms": [],
-          "value": "Yaounde"
-        },
-        {
-          "synonyms": [],
-          "value": "Apia"
-        },
-        {
-          "synonyms": [],
-          "value": "Sucre"
-        },
-        {
-          "synonyms": [],
-          "value": "Agadir"
-        },
-        {
-          "synonyms": [],
-          "value": "Willemstad"
-        },
-        {
-          "synonyms": [],
-          "value": "Stanley"
-        },
-        {
-          "synonyms": [],
-          "value": "Lilongwe"
-        },
-        {
-          "synonyms": [],
-          "value": "Neuch\u00e2tel"
-        },
-        {
-          "synonyms": [],
-          "value": "Mariehamn"
-        },
-        {
-          "synonyms": [],
-          "value": "Majuro"
-        },
-        {
-          "synonyms": [],
-          "value": "Khanbaliq"
-        },
-        {
-          "synonyms": [],
-          "value": "Praia"
-        },
-        {
-          "synonyms": [],
-          "value": "Agartala"
-        },
-        {
-          "synonyms": [],
-          "value": "Honiara"
-        },
-        {
-          "synonyms": [],
-          "value": "Oranjestad"
-        },
-        {
-          "synonyms": [],
-          "value": "Banjul"
-        },
-        {
-          "synonyms": [],
-          "value": "Sri Jayawardenepura Kotte"
-        },
-        {
-          "synonyms": [],
-          "value": "Dodoma"
-        },
-        {
-          "synonyms": [],
-          "value": "Bissau"
-        },
-        {
-          "synonyms": [],
-          "value": "Minas Tirith"
-        },
-        {
-          "synonyms": [],
-          "value": "Laayoune"
-        },
-        {
-          "synonyms": [],
-          "value": "Zwolle"
-        },
-        {
-          "synonyms": [],
-          "value": "Ouarzazate"
-        },
-        {
-          "synonyms": [],
-          "value": "Basseterre"
-        },
-        {
-          "synonyms": [],
-          "value": "Belmopan"
-        },
-        {
-          "synonyms": [],
-          "value": "Schaffhausen"
-        },
-        {
-          "synonyms": [],
-          "value": "Fribourg"
-        },
-        {
-          "synonyms": [],
-          "value": "Zug"
-        },
-        {
-          "synonyms": [],
-          "value": "St. George's"
-        },
-        {
-          "synonyms": [],
-          "value": "Chur"
-        },
-        {
-          "synonyms": [],
-          "value": "Ecbatana"
-        },
-        {
-          "synonyms": [],
-          "value": "Kisangani"
-        },
-        {
-          "synonyms": [],
-          "value": "Philipsburg"
-        },
-        {
-          "synonyms": [],
-          "value": "Leeuwarden"
-        },
-        {
-          "synonyms": [],
-          "value": "Castries"
-        },
-        {
-          "synonyms": [],
-          "value": "Roseau"
-        },
-        {
-          "synonyms": [],
-          "value": "Maseru"
-        },
-        {
-          "synonyms": [],
-          "value": "San Jos\u00e9 del Cabo"
-        },
-        {
-          "synonyms": [],
-          "value": "Sion"
-        },
-        {
-          "synonyms": [],
-          "value": "Liberia"
-        },
-        {
-          "synonyms": [],
-          "value": "X\u00e0tiva"
-        },
-        {
-          "synonyms": [],
-          "value": "Middelburg"
-        },
-        {
-          "synonyms": [],
-          "value": "Capital of the Netherlands"
-        },
-        {
-          "synonyms": [],
-          "value": "St. John's"
-        },
-        {
-          "synonyms": [],
-          "value": "Kairouan"
-        },
-        {
-          "synonyms": [],
-          "value": "Mbabane"
-        },
-        {
-          "synonyms": [],
-          "value": "Kralendijk"
-        },
-        {
-          "synonyms": [],
-          "value": "Lugdunum"
-        },
-        {
-          "synonyms": [],
-          "value": "Kingstown"
-        },
-        {
-          "synonyms": [],
-          "value": "Aarau"
-        },
-        {
-          "synonyms": [],
-          "value": "Palikir"
-        },
-        {
-          "synonyms": [],
-          "value": "Loreto"
-        },
-        {
-          "synonyms": [],
-          "value": "Gatchina"
-        },
-        {
-          "synonyms": [],
-          "value": "Assen"
-        },
-        {
-          "synonyms": [],
-          "value": "Lelystad"
-        },
-        {
-          "synonyms": [],
-          "value": "Durango"
-        },
-        {
-          "synonyms": [],
-          "value": "Mianwali City"
-        },
-        {
-          "synonyms": [],
-          "value": "St. P\u00f6lten"
-        },
-        {
-          "synonyms": [],
-          "value": "Corrientes"
-        },
-        {
-          "synonyms": [],
-          "value": "The Bottom"
-        },
-        {
-          "synonyms": [],
-          "value": "Solothurn"
-        },
-        {
-          "synonyms": [],
-          "value": "Ghardaia"
-        },
-        {
-          "synonyms": [],
-          "value": "Shumen"
-        },
-        {
-          "synonyms": [],
-          "value": "Frauenfeld"
-        },
-        {
-          "synonyms": [],
-          "value": "Schwyz"
-        },
-        {
-          "synonyms": [],
-          "value": "Wa"
-        },
-        {
-          "synonyms": [],
-          "value": "Jiankang"
-        },
-        {
-          "synonyms": [],
-          "value": "Nagaoka-ky\u014d"
-        },
-        {
-          "synonyms": [],
-          "value": "Kerma"
-        },
-        {
-          "synonyms": [],
-          "value": "Del\u00e9mont"
-        },
-        {
-          "synonyms": [],
-          "value": "Altdorf"
-        },
-        {
-          "synonyms": [],
-          "value": "Shravasti"
-        },
-        {
-          "synonyms": [],
-          "value": "Stans"
-        },
-        {
-          "synonyms": [],
-          "value": "Villajoyosa"
-        },
-        {
-          "synonyms": [],
-          "value": "Santa Rosa"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint Anne"
-        },
-        {
-          "synonyms": [],
-          "value": "Alcoi / Alcoy"
-        },
-        {
-          "synonyms": [],
-          "value": "Alzira"
-        },
-        {
-          "synonyms": [],
-          "value": "Herisau"
-        },
-        {
-          "synonyms": [],
-          "value": "B\u00fcckeburg"
-        },
-        {
-          "synonyms": [],
-          "value": "Appenzell"
-        },
-        {
-          "synonyms": [],
-          "value": "Mamuju"
-        },
-        {
-          "synonyms": [],
-          "value": "Ontinyent"
-        },
-        {
-          "synonyms": [],
-          "value": "Asuka Yamato"
-        },
-        {
-          "synonyms": [],
-          "value": "Fujiwara-ky\u014d"
-        },
-        {
-          "synonyms": [],
-          "value": "Hecatompylos"
-        },
-        {
-          "synonyms": [],
-          "value": "Fukuhara-ky\u014d"
-        },
-        {
-          "synonyms": [],
-          "value": "Lw\u00f3wek \u015al\u0105ski"
-        },
-        {
-          "synonyms": [],
-          "value": "Santa Elena"
-        },
-        {
-          "synonyms": [],
-          "value": "Santa Ana"
-        },
-        {
-          "synonyms": [],
-          "value": "Sarnen"
-        },
-        {
-          "synonyms": [],
-          "value": "Athkatla"
-        },
-        {
-          "synonyms": [],
-          "value": "Kuni-ky\u014d"
-        },
-        {
-          "synonyms": [],
-          "value": "Liestal"
-        },
-        {
-          "synonyms": [],
-          "value": "Naniwa-ky\u014d"
-        },
-        {
-          "synonyms": [],
-          "value": "Chiva"
-        },
-        {
-          "synonyms": [],
-          "value": "Tambacounda"
-        },
-        {
-          "synonyms": [],
-          "value": "Washukanni"
-        },
-        {
-          "synonyms": [],
-          "value": "Turquoise Mountain"
-        },
-        {
-          "synonyms": [],
-          "value": "Port Elizabeth Saint Vincent and the Grenadines"
-        },
-        {
-          "synonyms": [],
-          "value": "Cocentaina"
-        },
-        {
-          "synonyms": [],
-          "value": "Ciudad Col\u00f3n"
-        },
-        {
-          "synonyms": [],
-          "value": "Durjaya"
-        },
-        {
-          "synonyms": [],
-          "value": "Bouarfa"
-        },
-        {
-          "synonyms": [],
-          "value": "Lingu\u00e8re"
-        },
-        {
-          "synonyms": [],
-          "value": "San Marcos Costa Rica"
-        },
-        {
-          "synonyms": [],
-          "value": "Cirat"
-        },
-        {
-          "synonyms": [],
-          "value": "Alboc\u00e0sser"
-        },
-        {
-          "synonyms": [],
-          "value": "Yao"
-        },
-        {
-          "synonyms": [],
-          "value": "Myth Drannor"
-        },
-        {
-          "synonyms": [],
-          "value": "Parrita"
-        },
-        {
-          "synonyms": [],
-          "value": "Le Mont-Saint-Michel"
-        },
-        {
-          "synonyms": [],
-          "value": "Toulouse"
-        },
-        {
-          "synonyms": [],
-          "value": "Dunkirk"
-        },
-        {
-          "synonyms": [],
-          "value": "Carcassonne"
-        },
-        {
-          "synonyms": [],
-          "value": "Montpellier"
-        },
-        {
-          "synonyms": [],
-          "value": "Cannes"
-        },
-        {
-          "synonyms": [],
-          "value": "Nantes"
-        },
-        {
-          "synonyms": [],
-          "value": "Lille"
-        },
-        {
-          "synonyms": [],
-          "value": "Calais"
-        },
-        {
-          "synonyms": [],
-          "value": "Avignon"
-        },
-        {
-          "synonyms": [],
-          "value": "Reims"
-        },
-        {
-          "synonyms": [],
-          "value": "Rouen"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint-Tropez"
-        },
-        {
-          "synonyms": [],
-          "value": "Le Havre"
-        },
-        {
-          "synonyms": [],
-          "value": "Grenoble"
-        },
-        {
-          "synonyms": [],
-          "value": "Le Mans"
-        },
-        {
-          "synonyms": [],
-          "value": "Lourdes"
-        },
-        {
-          "synonyms": [],
-          "value": "Rennes"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint-Malo"
-        },
-        {
-          "synonyms": [],
-          "value": "Metz"
-        },
-        {
-          "synonyms": [],
-          "value": "La Rochelle"
-        },
-        {
-          "synonyms": [],
-          "value": "Aix-en-Provence"
-        },
-        {
-          "synonyms": [],
-          "value": "Antibes"
-        },
-        {
-          "synonyms": [],
-          "value": "Amiens"
-        },
-        {
-          "synonyms": [],
-          "value": "Caen"
-        },
-        {
-          "synonyms": [],
-          "value": "Tours"
-        },
-        {
-          "synonyms": [],
-          "value": "N\u00eemes"
-        },
-        {
-          "synonyms": [],
-          "value": "Orl\u00e9ans"
-        },
-        {
-          "synonyms": [],
-          "value": "Biarritz"
-        },
-        {
-          "synonyms": [],
-          "value": "Dijon"
-        },
-        {
-          "synonyms": [],
-          "value": "Toulon"
-        },
-        {
-          "synonyms": [],
-          "value": "Perpignan"
-        },
-        {
-          "synonyms": [],
-          "value": "Arles"
-        },
-        {
-          "synonyms": [],
-          "value": "Annecy"
-        },
-        {
-          "synonyms": [],
-          "value": "Colmar"
-        },
-        {
-          "synonyms": [],
-          "value": "Verdun"
-        },
-        {
-          "synonyms": [],
-          "value": "Papeete"
-        },
-        {
-          "synonyms": [],
-          "value": "Vichy"
-        },
-        {
-          "synonyms": [],
-          "value": "Brest"
-        },
-        {
-          "synonyms": [],
-          "value": "Boulogne-sur-Mer"
-        },
-        {
-          "synonyms": [],
-          "value": "Nancy"
-        },
-        {
-          "synonyms": [],
-          "value": "Clermont-Ferrand"
-        },
-        {
-          "synonyms": [],
-          "value": "Poitiers"
-        },
-        {
-          "synonyms": [],
-          "value": "Saint-\u00c9tienne"
-        },
-        {
-          "synonyms": [],
-          "value": "Los Angeles"
-        },
-        {
-          "synonyms": [],
-          "value": "Chicago"
-        },
-        {
-          "synonyms": [],
-          "value": "Houston"
-        },
-        {
-          "synonyms": [],
-          "value": "Phoenix"
-        },
-        {
-          "synonyms": [],
-          "value": "Philadelphia"
-        },
-        {
-          "synonyms": [],
-          "value": "San Antonio\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "San Diego\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Dallas"
-        },
-        {
-          "synonyms": [],
-          "value": "San Jose\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Austin\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Jacksonville"
-        },
-        {
-          "synonyms": [],
-          "value": "San Francisco\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Columbus"
-        },
-        {
-          "synonyms": [],
-          "value": "Indianapolis"
-        },
-        {
-          "synonyms": [],
-          "value": "Fort Worth\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Charlotte\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Seattle"
-        },
-        {
-          "synonyms": [],
-          "value": "Denver"
-        },
-        {
-          "synonyms": [],
-          "value": "El Paso"
-        },
-        {
-          "synonyms": [],
-          "value": "Washington"
-        },
-        {
-          "synonyms": [],
-          "value": "Boston"
-        },
-        {
-          "synonyms": [],
-          "value": "Detroit"
-        },
-        {
-          "synonyms": [],
-          "value": "Nashville"
-        },
-        {
-          "synonyms": [],
-          "value": "Memphis"
-        },
-        {
-          "synonyms": [],
-          "value": "Portland"
-        },
-        {
-          "synonyms": [],
-          "value": "Oklahoma City\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Las Vegas\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Louisville"
-        },
-        {
-          "synonyms": [],
-          "value": "Baltimore"
-        },
-        {
-          "synonyms": [],
-          "value": "Milwaukee\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Albuquerque"
-        },
-        {
-          "synonyms": [],
-          "value": "Tucson"
-        },
-        {
-          "synonyms": [],
-          "value": "Fresno"
-        },
-        {
-          "synonyms": [],
-          "value": "Sacramento"
-        },
-        {
-          "synonyms": [],
-          "value": "Mesa"
-        },
-        {
-          "synonyms": [],
-          "value": "Kansas City\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Atlanta"
-        },
-        {
-          "synonyms": [],
-          "value": "Long Beach\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Colorado Springs\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Raleigh"
-        },
-        {
-          "synonyms": [],
-          "value": "Miami"
-        },
-        {
-          "synonyms": [],
-          "value": "Virginia Beach\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Omaha"
-        },
-        {
-          "synonyms": [],
-          "value": "Oakland\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Minneapolis\u00a0"
-        },
-        {
-          "synonyms": [],
-          "value": "Tulsa"
-        },
-        {
-          "synonyms": [],
-          "value": "San Mateo"
-        },
-        {
-          "synonyms": [],
-          "value": "San Fernando"
-        },
-        {
-          "synonyms": [],
-          "value": "New York"
-        },
-        {
-          "synonyms": [],
-          "value": "New York City"
-        }
-      ],
+      "data": [],
       "use_synonyms": true
     },
     "region": {
       "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "snips/datetime": {},
+    "snips/number": {},
+    "trigger": {
+      "automatically_extensible": false,
       "data": [
         {
-          "synonyms": [],
-          "value": "California"
-        },
-        {
-          "synonyms": [],
-          "value": "Hawaii"
-        },
-        {
-          "synonyms": [],
-          "value": "Texas"
-        },
-        {
-          "synonyms": [],
-          "value": "Alaska"
-        },
-        {
-          "synonyms": [],
-          "value": "Washington"
-        },
-        {
-          "synonyms": [],
-          "value": "Florida"
-        },
-        {
-          "synonyms": [],
-          "value": "Virginia"
-        },
-        {
-          "synonyms": [],
-          "value": "Pennsylvania"
-        },
-        {
-          "synonyms": [],
-          "value": "Massachusetts"
-        },
-        {
-          "synonyms": [],
-          "value": "New York"
-        },
-        {
-          "synonyms": [],
-          "value": "Oregon"
-        },
-        {
-          "synonyms": [],
-          "value": "Georgia"
-        },
-        {
-          "synonyms": [],
-          "value": "Ohio"
-        },
-        {
-          "synonyms": [],
-          "value": "Maryland"
-        },
-        {
-          "synonyms": [],
-          "value": "Illinois"
-        },
-        {
-          "synonyms": [],
-          "value": "Minnesota"
-        },
-        {
-          "synonyms": [],
-          "value": "Arizona"
-        },
-        {
-          "synonyms": [],
-          "value": "New Jersey"
-        },
-        {
-          "synonyms": [],
-          "value": "Colorado"
-        },
-        {
-          "synonyms": [],
-          "value": "Montana"
-        },
-        {
-          "synonyms": [],
-          "value": "North Carolina"
-        },
-        {
-          "synonyms": [],
-          "value": "Kansas"
-        },
-        {
-          "synonyms": [],
-          "value": "Michigan"
-        },
-        {
-          "synonyms": [],
-          "value": "Wyoming"
-        },
-        {
-          "synonyms": [],
-          "value": "Maine"
-        },
-        {
-          "synonyms": [],
-          "value": "Alabama"
-        },
-        {
-          "synonyms": [],
-          "value": "Wisconsin"
-        },
-        {
-          "synonyms": [],
-          "value": "Connecticut"
-        },
-        {
-          "synonyms": [],
-          "value": "Tennessee"
-        },
-        {
-          "synonyms": [],
-          "value": "Kentucky"
-        },
-        {
-          "synonyms": [],
-          "value": "Louisiana"
-        },
-        {
-          "synonyms": [],
-          "value": "New Mexico"
-        },
-        {
-          "synonyms": [],
-          "value": "Utah"
-        },
-        {
-          "synonyms": [],
-          "value": "Missouri"
-        },
-        {
-          "synonyms": [],
-          "value": "Rhode Island"
-        },
-        {
-          "synonyms": [],
-          "value": "Nevada"
-        },
-        {
-          "synonyms": [],
-          "value": "Mississippi"
-        },
-        {
-          "synonyms": [],
-          "value": "West Virginia"
-        },
-        {
-          "synonyms": [],
-          "value": "Delaware"
-        },
-        {
-          "synonyms": [],
-          "value": "Vermont"
-        },
-        {
-          "synonyms": [],
-          "value": "New Hampshire"
-        },
-        {
-          "synonyms": [],
-          "value": "Oklahoma"
-        },
-        {
-          "synonyms": [],
-          "value": "Arkansas"
-        },
-        {
-          "synonyms": [],
-          "value": "South Carolina"
-        },
-        {
-          "synonyms": [],
-          "value": "Indiana"
-        },
-        {
-          "synonyms": [],
-          "value": "Iowa"
-        },
-        {
-          "synonyms": [],
-          "value": "Idaho"
-        },
-        {
-          "synonyms": [],
-          "value": "Nebraska"
-        },
-        {
-          "synonyms": [],
-          "value": "North Dakota"
-        },
-        {
-          "synonyms": [],
-          "value": "South Dakota"
+          "synonyms": [
+            "issues",
+            "trends",
+            "headlines"
+          ],
+          "value": "news"
         }
       ],
       "use_synonyms": true
-    },
-    "snips/datetime": {}
+    }
   },
   "intents": {
+    "convertCcy": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "five hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollars"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "australian dollar"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "us dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "three"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "baht"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "forty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "usd"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "gbp"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "five"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "new zealand dollar"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollar"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "new zealand dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "ten"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the price for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the price for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "thirty five"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "sgd"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "euro"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "four hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " with "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one million"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " give me"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            },
+            {
+              "text": " will i get for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "rupee"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "three hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " with "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one million"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " give me"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            },
+            {
+              "text": " will i get for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "twenty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "php"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "10"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "russian ruble"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "currency conversion from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "fifty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollars"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupee"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "two hundred and fifty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "australian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "100"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "baht"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "usd"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "sgd"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "euro"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            }
+          ]
+        }
+      ]
+    },
+    "getNews": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "whats "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "happening"
+            },
+            {
+              "text": " right now in "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "going on"
+            },
+            {
+              "text": " in the "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            },
+            {
+              "text": " right now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world governments"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "is there any "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "whats some "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "issues"
+            },
+            {
+              "text": " are happening now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " is trending now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me some "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what are the "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "headlines"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
     "searchWeatherForecast": {
       "utterances": [
         {
@@ -3551,7 +2405,7 @@
             {
               "entity": "region",
               "slot_name": "forecast_region",
-              "text": "California"
+              "text": "Bonn"
             },
             {
               "entity": "snips/datetime",
@@ -3568,7 +2422,7 @@
             {
               "entity": "region",
               "slot_name": "forecast_region",
-              "text": "Alaska"
+              "text": "Aachen"
             }
           ]
         },
@@ -3673,11 +2527,7 @@
               "text": "tomorrow"
             }
           ]
-        }
-      ]
-    },
-    "searchWeatherForecastCondition": {
-      "utterances": [
+        },
         {
           "data": [
             {
@@ -3875,6 +2725,944 @@
               "entity": "conditionName",
               "slot_name": "forecast_condition_name",
               "text": "hail"
+            }
+          ]
+        }
+      ]
+    },
+    "searchWikipedia": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "I'd like to know about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "grizzly"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I wanna hear about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "World War II"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Define "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "universe"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Give me the definition of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "infinity"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "seasons"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who was the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Neanderthal Man"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is called a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "disease"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What do you know about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "James Bond"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Can you tell me something about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "polar lights"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the meaning of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Christmas Eve"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me what a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "thunderstorm"
+            },
+            {
+              "text": " is."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How is "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "time"
+            },
+            {
+              "text": " defined?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What does "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "fear of heights"
+            },
+            {
+              "text": " mean?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Please tell me the definition of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "sustainability"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "When do we speak of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "extremism"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who were the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "neanderthals"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "mammal"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Donald Trump"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "tellTimeDate": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what is today's "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the present "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next wednesday"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next tuesday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "yesterday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "tomorrow's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "in 100 days"
+            },
+            {
+              "text": " time?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "100 hours from now"
+            },
+            {
+              "text": ", what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "60 minutes from now"
+            },
+            {
+              "text": ", what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "please let me know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I will be out for "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "6 hours"
+            },
+            {
+              "text": ", what time will I be coming back?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "40 hours from now"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "exactly 36 hours from now"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was last "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "3 weeks thursday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is next "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "2 weeks friday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next week wednesday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I was told I have a meeting in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "6 days time"
+            },
+            {
+              "text": ", what "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " is that?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "next "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "week tuesday"
+            },
+            {
+              "text": " is my sister's birthday, what day will that be?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "please call out the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "45 minues time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " be in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "5 days time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the present "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "two days time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is next week "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "thurday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what day is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today"
+            },
+            {
+              "text": "?"
             }
           ]
         }
