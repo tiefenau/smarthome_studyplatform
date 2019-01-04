@@ -1,0 +1,3673 @@
+{
+  "entities": {
+    "Date-Time": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "Time"
+        },
+        {
+          "synonyms": [],
+          "value": "Date"
+        }
+      ],
+      "use_synonyms": true
+    },
+    "article": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "category": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "ccy": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            " AFN"
+          ],
+          "value": "Afghani"
+        },
+        {
+          "synonyms": [
+            " EUR"
+          ],
+          "value": "Euro"
+        },
+        {
+          "synonyms": [
+            " ALL"
+          ],
+          "value": "Lek"
+        },
+        {
+          "synonyms": [
+            " DZD"
+          ],
+          "value": "Algerian Dinar"
+        },
+        {
+          "synonyms": [
+            " USD"
+          ],
+          "value": "US Dollar"
+        },
+        {
+          "synonyms": [
+            " AOA"
+          ],
+          "value": "Kwanza"
+        },
+        {
+          "synonyms": [
+            " XCD"
+          ],
+          "value": "East Caribbean Dollar"
+        },
+        {
+          "synonyms": [
+            " ARS"
+          ],
+          "value": "Argentine Peso"
+        },
+        {
+          "synonyms": [
+            " AMD"
+          ],
+          "value": "Armenian Dram"
+        },
+        {
+          "synonyms": [
+            " AWG"
+          ],
+          "value": "Aruban Florin"
+        },
+        {
+          "synonyms": [
+            " AUD"
+          ],
+          "value": "Australian Dollar"
+        },
+        {
+          "synonyms": [
+            " AZN"
+          ],
+          "value": "Azerbaijan Manat"
+        },
+        {
+          "synonyms": [
+            " BSD"
+          ],
+          "value": "Bahamian Dollar"
+        },
+        {
+          "synonyms": [
+            " BHD"
+          ],
+          "value": "Bahraini Dinar"
+        },
+        {
+          "synonyms": [
+            " BDT"
+          ],
+          "value": "Taka"
+        },
+        {
+          "synonyms": [
+            " BBD"
+          ],
+          "value": "Barbados Dollar"
+        },
+        {
+          "synonyms": [
+            " BYN"
+          ],
+          "value": "Belarusian Ruble"
+        },
+        {
+          "synonyms": [
+            " BZD"
+          ],
+          "value": "Belize Dollar"
+        },
+        {
+          "synonyms": [
+            " XOF"
+          ],
+          "value": "CFA Franc BCEAO"
+        },
+        {
+          "synonyms": [
+            " BMD"
+          ],
+          "value": "Bermudian Dollar"
+        },
+        {
+          "synonyms": [
+            " INR"
+          ],
+          "value": "Indian Rupee"
+        },
+        {
+          "synonyms": [
+            " BTN"
+          ],
+          "value": "Ngultrum"
+        },
+        {
+          "synonyms": [
+            " BOB"
+          ],
+          "value": "Boliviano"
+        },
+        {
+          "synonyms": [
+            " BOV"
+          ],
+          "value": "Mvdol"
+        },
+        {
+          "synonyms": [
+            " BAM"
+          ],
+          "value": "Convertible Mark"
+        },
+        {
+          "synonyms": [
+            " BWP"
+          ],
+          "value": "Pula"
+        },
+        {
+          "synonyms": [
+            " NOK"
+          ],
+          "value": "Norwegian Krone"
+        },
+        {
+          "synonyms": [
+            " BRL"
+          ],
+          "value": "Brazilian Real"
+        },
+        {
+          "synonyms": [
+            " BND"
+          ],
+          "value": "Brunei Dollar"
+        },
+        {
+          "synonyms": [
+            " BGN"
+          ],
+          "value": "Bulgarian Lev"
+        },
+        {
+          "synonyms": [
+            " BIF"
+          ],
+          "value": "Burundi Franc"
+        },
+        {
+          "synonyms": [
+            " CVE"
+          ],
+          "value": "Cabo Verde Escudo"
+        },
+        {
+          "synonyms": [
+            " KHR"
+          ],
+          "value": "Riel"
+        },
+        {
+          "synonyms": [
+            " XAF"
+          ],
+          "value": "CFA Franc BEAC"
+        },
+        {
+          "synonyms": [
+            " CAD"
+          ],
+          "value": "Canadian Dollar"
+        },
+        {
+          "synonyms": [
+            " KYD"
+          ],
+          "value": "Cayman Islands Dollar"
+        },
+        {
+          "synonyms": [
+            " CLP"
+          ],
+          "value": "Chilean Peso"
+        },
+        {
+          "synonyms": [
+            " CLF"
+          ],
+          "value": "Unidad de Fomento"
+        },
+        {
+          "synonyms": [
+            " CNY"
+          ],
+          "value": "Yuan Renminbi"
+        },
+        {
+          "synonyms": [
+            " COP"
+          ],
+          "value": "Colombian Peso"
+        },
+        {
+          "synonyms": [
+            " COU"
+          ],
+          "value": "Unidad de Valor Real"
+        },
+        {
+          "synonyms": [
+            " KMF"
+          ],
+          "value": "Comorian Franc"
+        },
+        {
+          "synonyms": [
+            " CDF"
+          ],
+          "value": "Congolese Franc"
+        },
+        {
+          "synonyms": [
+            " NZD"
+          ],
+          "value": "New Zealand Dollar"
+        },
+        {
+          "synonyms": [
+            " CRC"
+          ],
+          "value": "Costa Rican Colon"
+        },
+        {
+          "synonyms": [
+            " HRK"
+          ],
+          "value": "Kuna"
+        },
+        {
+          "synonyms": [
+            " CUP"
+          ],
+          "value": "Cuban Peso"
+        },
+        {
+          "synonyms": [
+            " CUC"
+          ],
+          "value": "Peso Convertible"
+        },
+        {
+          "synonyms": [
+            " ANG"
+          ],
+          "value": "Netherlands Antillean Guilder"
+        },
+        {
+          "synonyms": [
+            " CZK"
+          ],
+          "value": "Czech Koruna"
+        },
+        {
+          "synonyms": [
+            " DKK"
+          ],
+          "value": "Danish Krone"
+        },
+        {
+          "synonyms": [
+            " DJF"
+          ],
+          "value": "Djibouti Franc"
+        },
+        {
+          "synonyms": [
+            " DOP"
+          ],
+          "value": "Dominican Peso"
+        },
+        {
+          "synonyms": [
+            " EGP"
+          ],
+          "value": "Egyptian Pound"
+        },
+        {
+          "synonyms": [
+            " SVC"
+          ],
+          "value": "El Salvador Colon"
+        },
+        {
+          "synonyms": [
+            " ERN"
+          ],
+          "value": "Nakfa"
+        },
+        {
+          "synonyms": [
+            " ETB"
+          ],
+          "value": "Ethiopian Birr"
+        },
+        {
+          "synonyms": [
+            " FKP"
+          ],
+          "value": "Falkland Islands Pound"
+        },
+        {
+          "synonyms": [
+            " FJD"
+          ],
+          "value": "Fiji Dollar"
+        },
+        {
+          "synonyms": [
+            " XPF"
+          ],
+          "value": "CFP Franc"
+        },
+        {
+          "synonyms": [
+            " GMD"
+          ],
+          "value": "Dalasi"
+        },
+        {
+          "synonyms": [
+            " GEL"
+          ],
+          "value": "Lari"
+        },
+        {
+          "synonyms": [
+            " GHS"
+          ],
+          "value": "Ghana Cedi"
+        },
+        {
+          "synonyms": [
+            " GIP"
+          ],
+          "value": "Gibraltar Pound"
+        },
+        {
+          "synonyms": [
+            " GTQ"
+          ],
+          "value": "Quetzal"
+        },
+        {
+          "synonyms": [
+            " GBP"
+          ],
+          "value": "Pound Sterling"
+        },
+        {
+          "synonyms": [
+            " GNF"
+          ],
+          "value": "Guinean Franc"
+        },
+        {
+          "synonyms": [
+            " GYD"
+          ],
+          "value": "Guyana Dollar"
+        },
+        {
+          "synonyms": [
+            " HTG"
+          ],
+          "value": "Gourde"
+        },
+        {
+          "synonyms": [
+            " HNL"
+          ],
+          "value": "Lempira"
+        },
+        {
+          "synonyms": [
+            " HKD"
+          ],
+          "value": "Hong Kong Dollar"
+        },
+        {
+          "synonyms": [
+            " HUF"
+          ],
+          "value": "Forint"
+        },
+        {
+          "synonyms": [
+            " ISK"
+          ],
+          "value": "Iceland Krona"
+        },
+        {
+          "synonyms": [
+            " IDR"
+          ],
+          "value": "Rupiah"
+        },
+        {
+          "synonyms": [
+            " XDR"
+          ],
+          "value": "SDR (Special Drawing Right)"
+        },
+        {
+          "synonyms": [
+            " IRR"
+          ],
+          "value": "Iranian Rial"
+        },
+        {
+          "synonyms": [
+            " IQD"
+          ],
+          "value": "Iraqi Dinar"
+        },
+        {
+          "synonyms": [
+            " ILS"
+          ],
+          "value": "New Israeli Sheqel"
+        },
+        {
+          "synonyms": [
+            " JMD"
+          ],
+          "value": "Jamaican Dollar"
+        },
+        {
+          "synonyms": [
+            " JPY"
+          ],
+          "value": "Yen"
+        },
+        {
+          "synonyms": [
+            " JOD"
+          ],
+          "value": "Jordanian Dinar"
+        },
+        {
+          "synonyms": [
+            " KZT"
+          ],
+          "value": "Tenge"
+        },
+        {
+          "synonyms": [
+            " KES"
+          ],
+          "value": "Kenyan Shilling"
+        },
+        {
+          "synonyms": [
+            " KPW"
+          ],
+          "value": "North Korean Won"
+        },
+        {
+          "synonyms": [
+            " KRW"
+          ],
+          "value": "Won"
+        },
+        {
+          "synonyms": [
+            " KWD"
+          ],
+          "value": "Kuwaiti Dinar"
+        },
+        {
+          "synonyms": [
+            " KGS"
+          ],
+          "value": "Som"
+        },
+        {
+          "synonyms": [
+            " LAK"
+          ],
+          "value": "Lao Kip"
+        },
+        {
+          "synonyms": [
+            " LBP"
+          ],
+          "value": "Lebanese Pound"
+        },
+        {
+          "synonyms": [
+            " LSL"
+          ],
+          "value": "Loti"
+        },
+        {
+          "synonyms": [
+            " ZAR"
+          ],
+          "value": "Rand"
+        },
+        {
+          "synonyms": [
+            " LRD"
+          ],
+          "value": "Liberian Dollar"
+        },
+        {
+          "synonyms": [
+            " LYD"
+          ],
+          "value": "Libyan Dinar"
+        },
+        {
+          "synonyms": [
+            " CHF"
+          ],
+          "value": "Swiss Franc"
+        },
+        {
+          "synonyms": [
+            " MOP"
+          ],
+          "value": "Pataca"
+        },
+        {
+          "synonyms": [
+            " MKD"
+          ],
+          "value": "Denar"
+        },
+        {
+          "synonyms": [
+            " MGA"
+          ],
+          "value": "Malagasy Ariary"
+        },
+        {
+          "synonyms": [
+            " MWK"
+          ],
+          "value": "Malawi Kwacha"
+        },
+        {
+          "synonyms": [
+            " MYR"
+          ],
+          "value": "Malaysian Ringgit"
+        },
+        {
+          "synonyms": [
+            " MVR"
+          ],
+          "value": "Rufiyaa"
+        },
+        {
+          "synonyms": [
+            " MRU"
+          ],
+          "value": "Ouguiya"
+        },
+        {
+          "synonyms": [
+            " MUR"
+          ],
+          "value": "Mauritius Rupee"
+        },
+        {
+          "synonyms": [
+            " XUA"
+          ],
+          "value": "ADB Unit of Account"
+        },
+        {
+          "synonyms": [
+            " MXN"
+          ],
+          "value": "Mexican Peso"
+        },
+        {
+          "synonyms": [
+            " MXV"
+          ],
+          "value": "Mexican Unidad de Inversion (UDI)"
+        },
+        {
+          "synonyms": [
+            " MDL"
+          ],
+          "value": "Moldovan Leu"
+        },
+        {
+          "synonyms": [
+            " MNT"
+          ],
+          "value": "Tugrik"
+        },
+        {
+          "synonyms": [
+            " MAD"
+          ],
+          "value": "Moroccan Dirham"
+        },
+        {
+          "synonyms": [
+            " MZN"
+          ],
+          "value": "Mozambique Metical"
+        },
+        {
+          "synonyms": [
+            " MMK"
+          ],
+          "value": "Kyat"
+        },
+        {
+          "synonyms": [
+            " NAD"
+          ],
+          "value": "Namibia Dollar"
+        },
+        {
+          "synonyms": [
+            " NPR"
+          ],
+          "value": "Nepalese Rupee"
+        },
+        {
+          "synonyms": [
+            " NIO"
+          ],
+          "value": "Cordoba Oro"
+        },
+        {
+          "synonyms": [
+            " NGN"
+          ],
+          "value": "Naira"
+        },
+        {
+          "synonyms": [
+            " OMR"
+          ],
+          "value": "Rial Omani"
+        },
+        {
+          "synonyms": [
+            " PKR"
+          ],
+          "value": "Pakistan Rupee"
+        },
+        {
+          "synonyms": [
+            " PAB"
+          ],
+          "value": "Balboa"
+        },
+        {
+          "synonyms": [
+            " PGK"
+          ],
+          "value": "Kina"
+        },
+        {
+          "synonyms": [
+            " PYG"
+          ],
+          "value": "Guarani"
+        },
+        {
+          "synonyms": [
+            " PEN"
+          ],
+          "value": "Sol"
+        },
+        {
+          "synonyms": [
+            " PHP"
+          ],
+          "value": "Philippine Piso"
+        },
+        {
+          "synonyms": [
+            " PLN"
+          ],
+          "value": "Zloty"
+        },
+        {
+          "synonyms": [
+            " QAR"
+          ],
+          "value": "Qatari Rial"
+        },
+        {
+          "synonyms": [
+            " RON"
+          ],
+          "value": "Romanian Leu"
+        },
+        {
+          "synonyms": [
+            " RUB"
+          ],
+          "value": "Russian Ruble"
+        },
+        {
+          "synonyms": [
+            " RWF"
+          ],
+          "value": "Rwanda Franc"
+        },
+        {
+          "synonyms": [
+            " SHP"
+          ],
+          "value": "Saint Helena Pound"
+        },
+        {
+          "synonyms": [
+            " WST"
+          ],
+          "value": "Tala"
+        },
+        {
+          "synonyms": [
+            " STN"
+          ],
+          "value": "Dobra"
+        },
+        {
+          "synonyms": [
+            " SAR"
+          ],
+          "value": "Saudi Riyal"
+        },
+        {
+          "synonyms": [
+            " RSD"
+          ],
+          "value": "Serbian Dinar"
+        },
+        {
+          "synonyms": [
+            " SCR"
+          ],
+          "value": "Seychelles Rupee"
+        },
+        {
+          "synonyms": [
+            " SLL"
+          ],
+          "value": "Leone"
+        },
+        {
+          "synonyms": [
+            " SGD"
+          ],
+          "value": "Singapore Dollar"
+        },
+        {
+          "synonyms": [
+            " XSU"
+          ],
+          "value": "Sucre"
+        },
+        {
+          "synonyms": [
+            " SBD"
+          ],
+          "value": "Solomon Islands Dollar"
+        },
+        {
+          "synonyms": [
+            " SOS"
+          ],
+          "value": "Somali Shilling"
+        },
+        {
+          "synonyms": [
+            " SSP"
+          ],
+          "value": "South Sudanese Pound"
+        },
+        {
+          "synonyms": [
+            " LKR"
+          ],
+          "value": "Sri Lanka Rupee"
+        },
+        {
+          "synonyms": [
+            " SDG"
+          ],
+          "value": "Sudanese Pound"
+        },
+        {
+          "synonyms": [
+            " SRD"
+          ],
+          "value": "Surinam Dollar"
+        },
+        {
+          "synonyms": [
+            " SZL"
+          ],
+          "value": "Lilangeni"
+        },
+        {
+          "synonyms": [
+            " SEK"
+          ],
+          "value": "Swedish Krona"
+        },
+        {
+          "synonyms": [
+            " CHE"
+          ],
+          "value": "WIR Euro"
+        },
+        {
+          "synonyms": [
+            " CHW"
+          ],
+          "value": "WIR Franc"
+        },
+        {
+          "synonyms": [
+            " SYP"
+          ],
+          "value": "Syrian Pound"
+        },
+        {
+          "synonyms": [
+            " TWD"
+          ],
+          "value": "New Taiwan Dollar"
+        },
+        {
+          "synonyms": [
+            " TJS"
+          ],
+          "value": "Somoni"
+        },
+        {
+          "synonyms": [
+            " TZS"
+          ],
+          "value": "Tanzanian Shilling"
+        },
+        {
+          "synonyms": [
+            " THB"
+          ],
+          "value": "Baht"
+        },
+        {
+          "synonyms": [
+            " TOP"
+          ],
+          "value": "Pa\u2019anga"
+        },
+        {
+          "synonyms": [
+            " TTD"
+          ],
+          "value": "Trinidad and Tobago Dollar"
+        },
+        {
+          "synonyms": [
+            " TND"
+          ],
+          "value": "Tunisian Dinar"
+        },
+        {
+          "synonyms": [
+            " TRY"
+          ],
+          "value": "Turkish Lira"
+        },
+        {
+          "synonyms": [
+            " TMT"
+          ],
+          "value": "Turkmenistan New Manat"
+        },
+        {
+          "synonyms": [
+            " UGX"
+          ],
+          "value": "Uganda Shilling"
+        },
+        {
+          "synonyms": [
+            " UAH"
+          ],
+          "value": "Hryvnia"
+        },
+        {
+          "synonyms": [
+            " AED"
+          ],
+          "value": "UAE Dirham"
+        },
+        {
+          "synonyms": [
+            " USN"
+          ],
+          "value": "US Dollar (Next day)"
+        },
+        {
+          "synonyms": [
+            " UYU"
+          ],
+          "value": "Peso Uruguayo"
+        },
+        {
+          "synonyms": [
+            " UYI"
+          ],
+          "value": "Uruguay Peso en Unidades Indexadas (UI)"
+        },
+        {
+          "synonyms": [
+            " UZS"
+          ],
+          "value": "Uzbekistan Sum"
+        },
+        {
+          "synonyms": [
+            " VUV"
+          ],
+          "value": "Vatu"
+        },
+        {
+          "synonyms": [
+            " VEF"
+          ],
+          "value": "Bol\u00edvar"
+        },
+        {
+          "synonyms": [
+            " VND"
+          ],
+          "value": "Dong"
+        },
+        {
+          "synonyms": [
+            " YER"
+          ],
+          "value": "Yemeni Rial"
+        },
+        {
+          "synonyms": [
+            " ZMW"
+          ],
+          "value": "Zambian Kwacha"
+        },
+        {
+          "synonyms": [
+            " ZWL"
+          ],
+          "value": "Zimbabwe Dollar"
+        }
+      ],
+      "use_synonyms": true
+    },
+    "conditionName": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "country": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "geographicalPOI": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "locality": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "region": {
+      "automatically_extensible": true,
+      "data": [],
+      "use_synonyms": true
+    },
+    "snips/datetime": {},
+    "snips/number": {},
+    "trigger": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "issues",
+            "trends",
+            "headlines"
+          ],
+          "value": "news"
+        }
+      ],
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "convertCcy": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "five hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollars"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "australian dollar"
+            },
+            {
+              "text": " from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "us dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "three"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "baht"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "forty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "usd"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "gbp"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "five"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "new zealand dollar"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollar"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "new zealand dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "ten"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the price for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "australian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the price for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "thirty five"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "sgd"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "euro"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "four hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " with "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one million"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " give me"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how many "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            },
+            {
+              "text": " will i get for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "rupee"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "three hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "yen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            },
+            {
+              "text": " with "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one million"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "baht"
+            },
+            {
+              "text": " give me"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupiah"
+            },
+            {
+              "text": " will i get for "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "one hundred"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "twenty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "php"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "10"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "russian ruble"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "currency conversion from "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "pound sterling"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "malaysian ringgit"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's the exchange rate for "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "canadian dollar"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "euro"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much is "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "fifty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollars"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "rupee"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "two hundred and fifty"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "us dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "australian dollar"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "snips/number",
+              "slot_name": "amount",
+              "text": "100"
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "singapore dollars"
+            },
+            {
+              "text": " into "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "baht"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "usd"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "sgd"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "convert "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_from",
+              "text": "euro"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ccy",
+              "slot_name": "ccy_to",
+              "text": "usd"
+            }
+          ]
+        }
+      ]
+    },
+    "getNews": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "whats "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "happening"
+            },
+            {
+              "text": " right now in "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what's "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "going on"
+            },
+            {
+              "text": " in the "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            },
+            {
+              "text": " right now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "government"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the newest "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "politics"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "world governments"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "is there any "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "whats some "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "artificial intelligence"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "issues"
+            },
+            {
+              "text": " are happening now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " is trending now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me trending "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me some "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "technology"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "category",
+              "slot_name": "query_word",
+              "text": "computers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is some current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me current "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "news"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what are the "
+            },
+            {
+              "entity": "trigger",
+              "slot_name": "news_trigger",
+              "text": "headlines"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "newsDate",
+              "text": "today"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
+    "searchWeatherForecast": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Could you tell me the weather "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "for next week"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "iowa"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Give me the weather in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "Bonn"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "next week"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the weather in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "Aachen"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the weather !"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "weather "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "next weekend"
+            },
+            {
+              "entity": "locality",
+              "slot_name": "forecast_locality",
+              "text": "paris"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "weather "
+            },
+            {
+              "entity": "locality",
+              "slot_name": "forecast_locality",
+              "text": "paris"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "weather "
+            },
+            {
+              "entity": "locality",
+              "slot_name": "forecast_locality",
+              "text": "paris"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "weather "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will the weather be "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "this afternoon"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "country",
+              "slot_name": "forecast_country",
+              "text": "italy"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will the weather be in "
+            },
+            {
+              "entity": "country",
+              "slot_name": "forecast_country",
+              "text": "france"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "will there be a "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "storm"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "geographicalPOI",
+              "slot_name": "forecast_geographical_poi",
+              "text": "death valley"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "will it "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "snow"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "in three days"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "new mexico"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "will it be "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "foggy"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "country",
+              "slot_name": "forecast_country",
+              "text": "Ireland"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "will it be "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "foggy"
+            },
+            {
+              "text": " on "
+            },
+            {
+              "entity": "geographicalPOI",
+              "slot_name": "forecast_geographical_poi",
+              "text": "mount everest"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "in a week"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Will it "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "hail"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "colorado"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Will it "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "snow"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "country",
+              "slot_name": "forecast_country",
+              "text": "russia"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I'll be by the "
+            },
+            {
+              "entity": "geographicalPOI",
+              "slot_name": "forecast_geographical_poi",
+              "text": "seine"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            },
+            {
+              "text": ", will it be "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "foggy"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I'm gonna be in "
+            },
+            {
+              "entity": "region",
+              "slot_name": "forecast_region",
+              "text": "utah"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "forecast_start_datetime",
+              "text": "tomorrow"
+            },
+            {
+              "text": " will it "
+            },
+            {
+              "entity": "conditionName",
+              "slot_name": "forecast_condition_name",
+              "text": "hail"
+            }
+          ]
+        }
+      ]
+    },
+    "searchWikipedia": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "I'd like to know about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "grizzly"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I wanna hear about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "World War II"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Define "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "universe"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Give me the definition of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "infinity"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "seasons"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who was the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Neanderthal Man"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is called a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "disease"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What do you know about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "James Bond"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Can you tell me something about the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "polar lights"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the meaning of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Christmas Eve"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me what a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "thunderstorm"
+            },
+            {
+              "text": " is."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How is "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "time"
+            },
+            {
+              "text": " defined?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What does "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "fear of heights"
+            },
+            {
+              "text": " mean?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Please tell me the definition of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "sustainability"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "When do we speak of "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "extremism"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who were the "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "neanderthals"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is a "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "mammal"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me about "
+            },
+            {
+              "entity": "article",
+              "slot_name": "article_indicator",
+              "text": "Donald Trump"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "tellTimeDate": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what is today's "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the present "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next wednesday"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next tuesday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "yesterday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "tomorrow's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "in 100 days"
+            },
+            {
+              "text": " time?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "100 hours from now"
+            },
+            {
+              "text": ", what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "60 minutes from now"
+            },
+            {
+              "text": ", what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "please let me know the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I will be out for "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "6 hours"
+            },
+            {
+              "text": ", what time will I be coming back?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "40 hours from now"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "exactly 36 hours from now"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what was last "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "3 weeks thursday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is next "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "2 weeks friday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "next week wednesday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I was told I have a meeting in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "6 days time"
+            },
+            {
+              "text": ", what "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " is that?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "next "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "week tuesday"
+            },
+            {
+              "text": " is my sister's birthday, what day will that be?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "please call out the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "45 minues time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " be in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "5 days time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can I know the present "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what will be the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "two days time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is next week "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "thurday's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "time"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me the "
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can you tell me "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today's"
+            },
+            {
+              "entity": "Date-Time",
+              "slot_name": "Target",
+              "text": "date"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what day is "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "DateTime",
+              "text": "today"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}

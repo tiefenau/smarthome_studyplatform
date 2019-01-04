@@ -1,0 +1,36 @@
+what is today's [Target:Date-Time](date)
+what is the [Target:Date-Time](time)
+what is the present [Target:Date-Time](time) and [Target:Date-Time](date)?
+what is the [Target:Date-Time](date)?
+what is the [Target:Date-Time](time)?
+what will be the [Target:Date-Time](date) of [DateTime:snips/datetime](next wednesday)?
+what is [DateTime:snips/datetime](next tuesday's) [Target:Date-Time](date)?
+what was [DateTime:snips/datetime](yesterday's) [Target:Date-Time](date)?
+what is [DateTime:snips/datetime](tomorrow's) [Target:Date-Time](date)?
+what will be the [Target:Date-Time](date) [DateTime:snips/datetime](in 100 days) time?
+[DateTime:snips/datetime](100 hours from now), what will be the [Target:Date-Time](date)?
+[DateTime:snips/datetime](60 minutes from now), what will be the [Target:Date-Time](time)?
+can I know the [Target:Date-Time](date) please?
+can I know the [Target:Date-Time](time) please?
+please let me know the [Target:Date-Time](time) and [Target:Date-Time](date)
+I will be out for [DateTime:snips/datetime](6 hours), what time will I be coming back?
+what will be the [Target:Date-Time](time) in [DateTime:snips/datetime](40 hours from now)?
+what was the [Target:Date-Time](time) in [DateTime:snips/datetime](exactly 36 hours from now)?
+what was last [DateTime:snips/datetime](3 weeks thursday's) [Target:Date-Time](date)?
+what is next [DateTime:snips/datetime](2 weeks friday's) [Target:Date-Time](date)?
+what is [DateTime:snips/datetime](next week wednesday's) [Target:Date-Time](date)?
+I was told I have a meeting in [DateTime:snips/datetime](6 days time), what [Target:Date-Time](date) is that?
+next [DateTime:snips/datetime](week tuesday) is my sister's birthday, what day will that be?
+what is [DateTime:snips/datetime](today's) [Target:Date-Time](date)?
+please call out the [Target:Date-Time](time)
+What will be the [Target:Date-Time](time) in [DateTime:snips/datetime](45 minues time)?
+what will the [Target:Date-Time](date) be in [DateTime:snips/datetime](5 days time)?
+what is the [Target:Date-Time](time) please?
+what is the [Target:Date-Time](date) please
+can I know the present [Target:Date-Time](time)?
+what will be the [Target:Date-Time](date) in [DateTime:snips/datetime](two days time)?
+what is next week [DateTime:snips/datetime](thurday's) [Target:Date-Time](date)?
+can you tell me the [Target:Date-Time](time)?
+can you tell me the [Target:Date-Time](date)?
+can you tell me [DateTime:snips/datetime](today's) [Target:Date-Time](date)?
+what day is [DateTime:snips/datetime](today)?
