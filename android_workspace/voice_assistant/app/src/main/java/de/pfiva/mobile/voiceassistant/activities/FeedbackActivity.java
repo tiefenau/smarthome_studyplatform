@@ -28,6 +28,7 @@ import retrofit2.Response;
 public class FeedbackActivity extends AppCompatActivity {
 
     private TextView userFeedbackQuery;
+    private TextView userQuery;
     private LinearLayout feedbackQueryContainer;
     private LinearLayout intentFeedbackButtonBar;
     private LinearLayout intentFeedbackContainer;
@@ -45,6 +46,7 @@ public class FeedbackActivity extends AppCompatActivity {
 
         feedbackQueryContainer = (LinearLayout) findViewById(R.id.feedback_query_container);
         userFeedbackQuery = (TextView) findViewById(R.id.feedback_query);
+        userQuery = (TextView) findViewById(R.id.user_query);
 
         // Intent Feedback components
         intentFeedbackButtonBar = (LinearLayout) findViewById(R.id.intent_feedback_button_bar);
@@ -86,6 +88,7 @@ public class FeedbackActivity extends AppCompatActivity {
             feedbackData = (FeedbackData) intent.getSerializableExtra(Constants.FEEDBACK_DATA_KEY);
             if(feedbackData != null) {
                 userFeedbackQuery.setText(feedbackData.getText());
+                userQuery.setText(feedbackData.getUserQuery());
                 if(feedbackData.getFeedbackType() == FeedbackType.GENERAL) {
                     createScreenForGeneralFeedback();
                 } else {

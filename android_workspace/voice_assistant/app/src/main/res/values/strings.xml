@@ -5,7 +5,9 @@
     <string name="response_other">Other</string>
     <string name="feedback">Feedback</string>
     <string name="feedback_query_default">User Feedback Query</string>
-    <string name="feedback_query_title">Query</string>
+    <string name="user_query_default">Defaull User Query</string>
+    <string name="user_query_title">User Query :</string>
+    <string name="feedback_query_title">Query :</string>
     <string name="feedback_title">Feedback</string>
     <string name="submit">Submit</string>
     <string name="pfiva_user_query_title">User Query :</string>
