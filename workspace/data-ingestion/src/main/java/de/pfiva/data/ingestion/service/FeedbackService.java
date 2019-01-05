@@ -105,16 +105,20 @@ public class FeedbackService {
 		if(intentName != null && !intentName.trim().isEmpty()) {
 			switch (intentName) {
 			case IntentNames.SEARCHWEATHERFORECAST:
-				parsedIntent = "weather";
+				parsedIntent = "Weather Forecast";
 				break;
-			case IntentNames.SEARCHWEATHERFORECASTCONDITION:
-				parsedIntent = "weather forecast conditions";
+			case IntentNames.SEARCH_WIKIPEDIA:
+				parsedIntent = "Wikipedia Search";
 				break;
-			case IntentNames.SEARCHWEATHERFORECASTITEM:
-				parsedIntent = "weather forecast conditions";
+			case IntentNames.CONVERT_CURENCY:
+				parsedIntent = "Currency Conversion";
 				break;
-			case IntentNames.SEARCHWEATHERFORECASTTEMPERATURE:
-				parsedIntent = "weather forecast conditions";
+			case IntentNames.GET_NEWS:
+				parsedIntent = "News";
+				break;
+			case IntentNames.TELL_TIME_DATE:
+				parsedIntent = "Date/Time";
+				break;
 			default:
 				parsedIntent = IntentNames.UNKNOWN_INTENT;
 				break;
