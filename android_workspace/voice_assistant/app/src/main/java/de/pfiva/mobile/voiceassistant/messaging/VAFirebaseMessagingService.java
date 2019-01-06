@@ -47,29 +47,34 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
             Log.i(TAG, "Data payload: " + data);
 
             Data.DataType datatype = Data.DataType.valueOf(data.get("datatype"));
+            String notificationTitle = null;
             if(datatype == Data.DataType.FEEDBACK) {
                 FeedbackData feedbackData = new FeedbackData();
                 feedbackData.setFeedbackId(Integer.valueOf(data.get("feedbackId")));
                 feedbackData.setFeedbackType(FeedbackType.valueOf(data.get("feedbackType")));
                 feedbackData.setText(data.get("text"));
+                feedbackData.setUserQuery(data.get("userQuery"));
+                notificationTitle = "PFIVA Feedback";
 
                 Intent intent = processFeedbackData(feedbackData);
-                sendNotification(intent, feedbackData.getText());
+                sendNotification(notificationTitle, intent, feedbackData.getText());
             } else if(datatype == Data.DataType.MESSAGE) {
                 MessageData messageData = new MessageData();
                 messageData.setMessageId(Integer.valueOf(data.get("messageId")));
                 messageData.setMessageText(data.get("messageText"));
                 messageData.setUserId(Integer.valueOf(data.get("userId")));
+                notificationTitle = "PFIVA Message";
 
                 Intent intent = processMessageData(messageData);
-                sendNotification(intent, messageData.getMessageText());
+                sendNotification(notificationTitle, intent, messageData.getMessageText());
             } else if(datatype == Data.DataType.SURVEY) {
                 SurveyData surveyData = new SurveyData();
                 surveyData.setSurvey(extractSurveyData(data.get("survey")));
                 surveyData.setUserId(Integer.valueOf(data.get("userId")));
+                notificationTitle = "PFIVA Survey";
 
                 Intent intent = processSurveyData(surveyData);
-                sendNotification(intent, surveyData.getSurvey().getSurveyName());
+                sendNotification(notificationTitle, intent, surveyData.getSurvey().getSurveyName());
             } else {
                 Log.e(TAG, "Data not supported");
             }
@@ -88,7 +93,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
         return survey;
     }
 
-    private void sendNotification(Intent intent, String contextText) {
+    private void sendNotification(String notificationTitle, Intent intent, String contextText) {
         PendingIntent pendingIntent = PendingIntent
                 .getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
@@ -96,7 +101,7 @@ public class VAFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
         notificationBuilder.setSmallIcon(R.drawable.ic_stat_name);
-        notificationBuilder.setContentTitle("PFIVA");
+        notificationBuilder.setContentTitle(notificationTitle);
         notificationBuilder.setContentText(contextText);
         notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
         notificationBuilder.setAutoCancel(true);
