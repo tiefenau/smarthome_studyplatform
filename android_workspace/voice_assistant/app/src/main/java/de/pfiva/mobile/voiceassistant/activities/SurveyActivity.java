@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -42,7 +43,7 @@ public class SurveyActivity extends AppCompatActivity {
     private LinearLayout questionsContainer;
     private LinearLayout textOptionsContainer;
     private LinearLayout mcOptionsContainer;
-    private RadioGroup radiogroup;
+
     private LinearLayout checkboxOptionContainer;
     private LinearLayout confirmationContainer;
     private TextView questionNumber;
@@ -55,6 +56,10 @@ public class SurveyActivity extends AppCompatActivity {
     private Map<Integer, Response> responseMap = new HashMap<>();
     private int questionCounter = 0; // because list index starts from 0
     private int questionsSize;
+
+    private Map<Integer, RadioGroup> questionsOptionsRadioGroup;
+    private Map<Integer, LinearLayout> checkboxesLayoutGroup;
+    private Map<Integer, EditText> textboxGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +91,6 @@ public class SurveyActivity extends AppCompatActivity {
         mcOptionsContainer = (LinearLayout) findViewById(R.id.mc_options_container);
         mcOptionsContainer.setVisibility(View.GONE);
 
-        radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
-
         checkboxOptionContainer = (LinearLayout) findViewById(R.id.checkbox_option_container);
         checkboxOptionContainer.setVisibility(View.GONE);
 
@@ -115,7 +118,7 @@ public class SurveyActivity extends AppCompatActivity {
                     questionNumber.setText(String.valueOf(questionCounter));
                     final Question question = questions.get(questionCounter - 1);
                     surveyQuestion.setText(question.getQuestion());
-                    displayOptions(question.getQuestionType(), question.getOptions());
+                    displayOptions(question.getId(), question.getQuestionType(), question.getOptions());
                     questionCounter = questionCounter - 1;
                     if(questionCounter == 0) {
                         previousQuestion.setVisibility(View.GONE);
@@ -178,6 +181,10 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     private void startSurvey(SurveyData surveyData) {
+        questionsOptionsRadioGroup = new HashMap<Integer, RadioGroup>();
+        checkboxesLayoutGroup = new HashMap<Integer, LinearLayout>();
+        textboxGroup = new HashMap<Integer, EditText>();
+
         instructionsContainer.setVisibility(View.GONE);
 
         questionsContainer.setVisibility(View.VISIBLE);
@@ -195,7 +202,8 @@ public class SurveyActivity extends AppCompatActivity {
             surveyQuestion.setVisibility(View.VISIBLE);
             final Question question = questions.get(questionCounter);
             surveyQuestion.setText(question.getQuestion());
-            displayOptions(question.getQuestionType(), question.getOptions());
+            displayOptions(question.getId(), question.getQuestionType(),
+                    question.getOptions());
 
             nextQuestion.setVisibility(View.VISIBLE);
             nextQuestion.setOnClickListener(new View.OnClickListener() {
@@ -216,7 +224,8 @@ public class SurveyActivity extends AppCompatActivity {
                             questionNumber.setText(String.valueOf(questionCounter + 1));
                             final Question question = questions.get(questionCounter);
                             surveyQuestion.setText(question.getQuestion());
-                            displayOptions(question.getQuestionType(), question.getOptions());
+                            displayOptions(question.getId(), question.getQuestionType(),
+                                    question.getOptions());
                         }
                     }
                 }
@@ -233,18 +242,20 @@ public class SurveyActivity extends AppCompatActivity {
             response.setUser(user);
             List<String> values = new LinkedList<>();
             if(question.getQuestionType().equals("Text")) {
-                EditText textbox = (EditText) textOptionsContainer.getChildAt(1);
+                EditText textbox = textboxGroup.get(question.getId());
                 String value = textbox.getText().toString();
                 values.add(value);
             } else if (question.getQuestionType().equals("Single Choice")) {
+                RadioGroup radiogroup = questionsOptionsRadioGroup.get(question.getId());
                 int selectedId = radiogroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) findViewById(selectedId);
                 String value = radioButton.getText().toString();
                 values.add(value);
             } else if (question.getQuestionType().equals("Multiple Choice")) {
-                final int childCount = checkboxOptionContainer.getChildCount();
+                LinearLayout layout = checkboxesLayoutGroup.get(question.getId());
+                final int childCount = layout.getChildCount();
                 for(int i = 0; i < childCount; i++) {
-                    CheckBox checkBox = (CheckBox) checkboxOptionContainer.getChildAt(i);
+                    CheckBox checkBox = (CheckBox) layout.getChildAt(i);
                     if(checkBox.isChecked()) {
                         values.add(checkBox.getText().toString());
                     }
@@ -273,33 +284,75 @@ public class SurveyActivity extends AppCompatActivity {
         submitSurvey.setVisibility(View.VISIBLE);
     }
 
-    private void displayOptions(String questionType, List<Option> options) {
+    private void displayOptions(int questionId, String questionType, List<Option> options) {
         if(questionType.equals("Text")) {
             textOptionsContainer.setVisibility(View.VISIBLE);
             mcOptionsContainer.setVisibility(View.GONE);
             checkboxOptionContainer.setVisibility(View.GONE);
+
+            textOptionsContainer.removeAllViews();
+
+            TextView textView = new TextView(this);
+            textView.setText(R.string.response_title);
+            textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+            textOptionsContainer.addView(textView);
+
+            EditText editText;
+            if(textboxGroup.get(questionId) == null) {
+                editText = new EditText(this);
+                editText.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT));
+                textboxGroup.put(questionId, editText);
+            } else {
+                editText = textboxGroup.get(questionId);
+            }
+            textOptionsContainer.addView(editText, 1);
+
         } else if(questionType.equals("Single Choice")) {
             mcOptionsContainer.setVisibility(View.VISIBLE);
             textOptionsContainer.setVisibility(View.GONE);
             checkboxOptionContainer.setVisibility(View.GONE);
-            if(radiogroup.getChildCount() == 0) {
-                for(Option option : options) {
-                    RadioButton radioButton = new RadioButton(SurveyActivity.this);
-                    radioButton.setText(option.getValue());
-                    radiogroup.addView(radioButton);
+
+            mcOptionsContainer.removeAllViews();
+            RadioGroup radioGroup;
+            if(questionsOptionsRadioGroup.get(questionId) == null) {
+                radioGroup = new RadioGroup(this);
+                if(radioGroup.getChildCount() == 0) {
+                    for(Option option : options) {
+                        RadioButton radioButton = new RadioButton(SurveyActivity.this);
+                        radioButton.setText(option.getValue());
+                        radioGroup.addView(radioButton);
+                    }
                 }
+                questionsOptionsRadioGroup.put(questionId, radioGroup);
+            } else {
+                radioGroup = questionsOptionsRadioGroup.get(questionId);
             }
+            mcOptionsContainer.addView(radioGroup);
+
         } else if(questionType.equals("Multiple Choice")) {
             checkboxOptionContainer.setVisibility(View.VISIBLE);
             textOptionsContainer.setVisibility(View.GONE);
             mcOptionsContainer.setVisibility(View.GONE);
-            if(checkboxOptionContainer.getChildCount() == 0) {
+
+            checkboxOptionContainer.removeAllViews();
+            LinearLayout layout;
+            if(checkboxesLayoutGroup.get(questionId) == null) {
+                layout = new LinearLayout(this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+                layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
                 for(Option option : options) {
                     CheckBox checkBox = new CheckBox(SurveyActivity.this);
                     checkBox.setText(option.getValue());
-                    checkboxOptionContainer.addView(checkBox);
+                    layout.addView(checkBox);
                 }
+                checkboxesLayoutGroup.put(questionId, layout);
+            } else {
+                layout = checkboxesLayoutGroup.get(questionId);
             }
+            checkboxOptionContainer.addView(layout);
         }
     }
 

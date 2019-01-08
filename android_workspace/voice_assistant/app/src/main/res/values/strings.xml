@@ -26,7 +26,7 @@
     <string name="response">Response</string>
     <string name="instructions_title">Instructions</string>
     <string name="start_instructions">
-        This survey is being conducted to analyze privacy concerns in intelligent voice assistants.
+        This survey is being conducted to analyze the performance of our platform for intelligent voice assistants.
     </string>
     <string name="middle_instructions">
         The questions could be of type :\n
@@ -44,6 +44,6 @@
     <string name="survey_confirmation">
         Thank you for taking the time to complete this survey.
         We truly value the information you have provided.
-        Your responses will contribute to our analysis of privacy concerns in intelligent voice assistants.
+        Your responses will contribute to our analysis of our platform for intelligent voice assistants.
     </string>
 </resources>
