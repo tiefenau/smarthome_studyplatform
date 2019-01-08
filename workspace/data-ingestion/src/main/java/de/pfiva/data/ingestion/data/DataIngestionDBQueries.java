@@ -121,7 +121,7 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_SURVEYS = "SELECT s.survey_id, s.survey_name,"
 			+ " s.status, s.delivery_date, t.topic_name from survey_tbl as s"
-			+ " INNER JOIN topic_tbl as t ON s.topic_id = t.topic_id";
+			+ " INNER JOIN topic_tbl as t ON s.topic_id = t.topic_id ORDER BY s.survey_id ASC";
 	
 	public static final String GET_SURVEY = "SELECT s.survey_id, s.survey_name,"
 			+ " s.status, s.delivery_date, t.topic_name from survey_tbl as s"
@@ -130,7 +130,7 @@ public interface DataIngestionDBQueries {
 	public static final String GET_SURVEYS_BY_TOPIC = "select s.survey_id, s.survey_name, s.status, s.delivery_date,"
 			+ " t.topic_name from survey_tbl as s INNER JOIN topic_tbl as t"
 			+ " ON s.topic_id = t.topic_id AND s.topic_id ="
-			+ " (SELECT topic_id from topic_tbl where topic_name = ?)";
+			+ " (SELECT topic_id from topic_tbl where topic_name = ?) ORDER BY s.survey_id ASC";
 	
 	public static final String GET_QUESTIONS_BY_SURVEY_ID = "SELECT question_id,"
 			+ " question, question_type from questions_tbl where survey_id = ?";
