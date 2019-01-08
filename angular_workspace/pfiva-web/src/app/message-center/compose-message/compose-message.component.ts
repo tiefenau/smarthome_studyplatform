@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { User } from '../../data-model/User';
 import { MessageService } from '../message.service';
@@ -16,7 +17,8 @@ export class ComposeMessageComponent implements OnInit {
   users: User[];
   topics: string[];
 
-  constructor(private messageService: MessageService) { 
+  constructor(private messageService: MessageService,
+    private router: Router) { 
     
   }
 
@@ -31,6 +33,8 @@ export class ComposeMessageComponent implements OnInit {
     this.composeMessageForm.reset();
     this.composeMessageForm.form.patchValue({ 'deliveryDateTime':'Send Now' });
     this.composeMessageForm.form.patchValue({ 'topic': this.topics[0] });
+
+    this.router.navigate(['message-center']);
   }
 
   private fetchUsers() {

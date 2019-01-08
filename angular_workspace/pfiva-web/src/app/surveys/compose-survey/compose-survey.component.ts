@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../data-model/User';
 import { SurveyService } from '../survey.service';
 import { NgForm } from '@angular/forms';
@@ -26,7 +27,8 @@ export class ComposeSurveyComponent implements OnInit {
   @ViewChild('optionsTable') optionsTable: ElementRef;
   @ViewChild('surveyData') composeSurveyForm: NgForm;
   
-  constructor(private surveyService: SurveyService) { }
+  constructor(private surveyService: SurveyService,
+    private router: Router) { }
 
   ngOnInit() {
     this.rowCount = [1];
@@ -82,6 +84,8 @@ export class ComposeSurveyComponent implements OnInit {
     this.error = '';
     this.questionTemplateValid = true;
     this.rowCount = [1];
+
+    this.router.navigate(['surveys']);
   }
 
   onQuestionTypeChange() {
