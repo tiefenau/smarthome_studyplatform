@@ -6,15 +6,15 @@ import json
 import datetime
 import os
 import ASUS.GPIO as GPIO
-#import RPi.GPIO as GPIO
- 
-logging.basicConfig(filename='/home/tinkerboard/assistant3_logs.log', level=logging.INFO,
+#import RPi.GPIO as GPIO  
+logging.basicConfig(filename='/root/assistant3_logs.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger(__name__)
 
 r = sr.Recognizer()
-m = sr.Microphone()
+m = sr.Microphone(sample_rate=44100, chunk_size=512)
+print(m.list_microphone_names())
 
 BLUE = 164
 GPIO.setmode(GPIO.ASUS)
@@ -50,7 +50,7 @@ def parseLanguageForSpeech(speechLanguage):
 
 
 def createAudioDumpsDirectory():
-	audioDumpsPath = '/home/tinkerboard/audioDumps'
+	audioDumpsPath = '/root/audioDumps'
 	try:
 		if not os.path.exists(audioDumpsPath):
 			os.mkdir(audioDumpsPath)
@@ -65,7 +65,7 @@ def createAudioDumpsDirectory():
 def main(speechLanguage, api, user, serverAddress):
 	createAudioDumpsDirectory()
 	try:
-		audioDirectoryPath = '/home/tinkerboard/audioDumps/' + user
+		audioDirectoryPath = '/root/audioDumps/' + user
 		try:
 			if not os.path.exists(audioDirectoryPath):
 				os.mkdir(audioDirectoryPath)
