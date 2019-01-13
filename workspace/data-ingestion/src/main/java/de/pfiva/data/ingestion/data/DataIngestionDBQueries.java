@@ -88,7 +88,7 @@ public interface DataIngestionDBQueries {
 	
 	public static final String GET_MESSAGES = "SELECT m.message_id, m.message_text,"
 			+ " m.status, m.delivery_date, t.topic_name from messages_tbl as m"
-			+ " INNER JOIN topic_tbl as t ON m.topic_id = t.topic_id";
+			+ " INNER JOIN topic_tbl as t ON m.topic_id = t.topic_id ORDER BY m.message_id ASC";
 	
 	public static final String GET_MESSAGE = "SELECT m.message_id, m.message_text,"
 			+ " m.status, m.delivery_date, t.topic_name from messages_tbl as m"
@@ -97,7 +97,7 @@ public interface DataIngestionDBQueries {
 	public static final String GET_MESSAGES_BY_TOPIC = "select m.message_id, m.message_text, m.status, m.delivery_date,"
 			+ " t.topic_name from messages_tbl as m INNER JOIN topic_tbl as t"
 			+ " ON m.topic_id = t.topic_id AND m.topic_id ="
-			+ " (SELECT topic_id from topic_tbl where topic_name = ?)";
+			+ " (SELECT topic_id from topic_tbl where topic_name = ?) ORDER BY m.message_id ASC";
 	
 	public static final String GET_MESSAGE_RESPONSES = "select r.response_id, r.value, u.user_id,"
 			+ " u.username from message_response_tbl as r JOIN user_tbl as u"
